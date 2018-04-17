@@ -35,7 +35,6 @@
 			this.btnThem = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.tbMaKhachSuaXe = new System.Windows.Forms.TextBox();
-			this.button1 = new System.Windows.Forms.Button();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
@@ -49,7 +48,7 @@
 			this.tbTenChuXe = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.dtgvThaoTac = new System.Windows.Forms.DataGridView();
-			this.button2 = new System.Windows.Forms.Button();
+			this.btnLichSuThaoTac = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dtgvThaoTac)).BeginInit();
@@ -111,7 +110,6 @@
 			// panel2
 			// 
 			this.panel2.Controls.Add(this.tbMaKhachSuaXe);
-			this.panel2.Controls.Add(this.button1);
 			this.panel2.Controls.Add(this.label8);
 			this.panel2.Controls.Add(this.label7);
 			this.panel2.Controls.Add(this.label6);
@@ -136,21 +134,12 @@
 			this.tbMaKhachSuaXe.Size = new System.Drawing.Size(214, 20);
 			this.tbMaKhachSuaXe.TabIndex = 47;
 			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(78, 71);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(40, 27);
-			this.button1.TabIndex = 46;
-			this.button1.Text = "Auto";
-			this.button1.UseVisualStyleBackColor = true;
-			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.label8.ForeColor = System.Drawing.Color.Red;
-			this.label8.Location = new System.Drawing.Point(36, 164);
+			this.label8.ForeColor = System.Drawing.Color.Black;
+			this.label8.Location = new System.Drawing.Point(27, 175);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(63, 16);
 			this.label8.TabIndex = 45;
@@ -160,8 +149,8 @@
 			// 
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.label7.ForeColor = System.Drawing.Color.Red;
-			this.label7.Location = new System.Drawing.Point(33, 106);
+			this.label7.ForeColor = System.Drawing.Color.Black;
+			this.label7.Location = new System.Drawing.Point(22, 82);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(66, 16);
 			this.label7.TabIndex = 43;
@@ -171,8 +160,8 @@
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.label6.ForeColor = System.Drawing.Color.Red;
-			this.label6.Location = new System.Drawing.Point(57, 135);
+			this.label6.ForeColor = System.Drawing.Color.Black;
+			this.label6.Location = new System.Drawing.Point(24, 147);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(42, 16);
 			this.label6.TabIndex = 44;
@@ -180,7 +169,7 @@
 			// 
 			// tbEmail
 			// 
-			this.tbEmail.Location = new System.Drawing.Point(133, 135);
+			this.tbEmail.Location = new System.Drawing.Point(133, 147);
 			this.tbEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.tbEmail.Name = "tbEmail";
 			this.tbEmail.Size = new System.Drawing.Size(215, 20);
@@ -198,8 +187,8 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.label4.ForeColor = System.Drawing.Color.Red;
-			this.label4.Location = new System.Drawing.Point(24, 77);
+			this.label4.ForeColor = System.Drawing.Color.Black;
+			this.label4.Location = new System.Drawing.Point(24, 113);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(48, 16);
 			this.label4.TabIndex = 36;
@@ -209,8 +198,8 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.label2.ForeColor = System.Drawing.Color.Red;
-			this.label2.Location = new System.Drawing.Point(9, 44);
+			this.label2.ForeColor = System.Drawing.Color.Black;
+			this.label2.Location = new System.Drawing.Point(22, 46);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(68, 16);
 			this.label2.TabIndex = 37;
@@ -220,7 +209,7 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.label5.ForeColor = System.Drawing.Color.Red;
+			this.label5.ForeColor = System.Drawing.Color.Black;
 			this.label5.Location = new System.Drawing.Point(22, 15);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(103, 16);
@@ -229,7 +218,7 @@
 			// 
 			// tbDiaChi
 			// 
-			this.tbDiaChi.Location = new System.Drawing.Point(134, 74);
+			this.tbDiaChi.Location = new System.Drawing.Point(133, 109);
 			this.tbDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.tbDiaChi.Name = "tbDiaChi";
 			this.tbDiaChi.Size = new System.Drawing.Size(214, 20);
@@ -237,7 +226,7 @@
 			// 
 			// tbDienThoai
 			// 
-			this.tbDienThoai.Location = new System.Drawing.Point(134, 102);
+			this.tbDienThoai.Location = new System.Drawing.Point(134, 80);
 			this.tbDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.tbDienThoai.Name = "tbDienThoai";
 			this.tbDienThoai.Size = new System.Drawing.Size(214, 20);
@@ -267,22 +256,23 @@
 			this.dtgvThaoTac.Size = new System.Drawing.Size(383, 210);
 			this.dtgvThaoTac.TabIndex = 33;
 			// 
-			// button2
+			// btnLichSuThaoTac
 			// 
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Location = new System.Drawing.Point(9, 391);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(170, 40);
-			this.button2.TabIndex = 34;
-			this.button2.Text = "Lịch Sử Thao Tác";
-			this.button2.UseVisualStyleBackColor = true;
+			this.btnLichSuThaoTac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLichSuThaoTac.Location = new System.Drawing.Point(9, 391);
+			this.btnLichSuThaoTac.Name = "btnLichSuThaoTac";
+			this.btnLichSuThaoTac.Size = new System.Drawing.Size(170, 40);
+			this.btnLichSuThaoTac.TabIndex = 34;
+			this.btnLichSuThaoTac.Text = "Lịch Sử Thao Tác";
+			this.btnLichSuThaoTac.UseVisualStyleBackColor = true;
+			this.btnLichSuThaoTac.Click += new System.EventHandler(this.btnLichSuThaoTac_Click);
 			// 
 			// fThaoTacKhachHang
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(388, 642);
-			this.Controls.Add(this.button2);
+			this.Controls.Add(this.btnLichSuThaoTac);
 			this.Controls.Add(this.dtgvThaoTac);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.label1);
@@ -305,7 +295,6 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label6;
@@ -319,7 +308,7 @@
 		private System.Windows.Forms.TextBox tbTenChuXe;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.DataGridView dtgvThaoTac;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button btnLichSuThaoTac;
 		private System.Windows.Forms.Button btnXoa;
 		private System.Windows.Forms.Button btnCapNhat;
 		private System.Windows.Forms.Button btnThem;

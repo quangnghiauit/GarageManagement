@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-	class XeDTO
+	public class XeDTO
 	{
 		private string bienSo;
 		public string BienSo
@@ -15,41 +15,41 @@ namespace DTO
 			set { bienSo = value; }
 		}
 
-		private string maKhachSuaXe;
-		public string MaKhachSuaXe
+		private string tenChuXe;
+		public string TenChuXe
 		{
-			get { return maKhachSuaXe; }
-			set { maKhachSuaXe = value; }
+			get { return tenChuXe; }
+			set { tenChuXe = value; }
 		}
 
-		private string dienThoai;
-		public string DienThoai
+		private string tenHieuXe;
+		public string TenHieuXe
 		{
-			get { return dienThoai; }
-			set { dienThoai = value; }
+			get { return tenHieuXe; }
+			set { tenHieuXe = value; }
 		}
 
-		private string diaChi;
-		public string DiaChi
+		private int tienNo;
+		public int TienNo
 		{
-			get { return diaChi; }
-			set { diaChi = value; }
+			get { return tienNo; }
+			set { tienNo = value; }
 		}
 
-		private string maHieuXe;
-		public string MaHieuXe
-		{
-			get { return maKhachSuaXe; }
-			set { maKhachSuaXe = value; }
-		}
-
-		public XeDTO(string bienSo, string maKhachSuaXe, string dienThoai, string diaChi, string maHieuXe)
+		public XeDTO(string bienSo, string tenChuXe, string hieuXe, int tienNo)
 		{
 			this.bienSo = bienSo;
-			this.maKhachSuaXe = maKhachSuaXe;
-			this.dienThoai = dienThoai;
-			this.diaChi = diaChi;
-			this.maHieuXe = maHieuXe;
+			this.tenChuXe = tenChuXe;
+			this.tenHieuXe = hieuXe;
+			this.tienNo = tienNo;
+			
+		}
+		public XeDTO()
+		{
+			bienSo = "";
+			tenChuXe = "";
+			tenHieuXe = "";
+			tienNo = 0;
 		}
 		~XeDTO() { }
 	}

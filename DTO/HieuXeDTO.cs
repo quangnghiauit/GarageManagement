@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-	class HieuXeDTO
+	public class HieuXeDTO
 	{
 		private string maHieuXe;
 		public string MaHieuXe
@@ -28,7 +28,11 @@ namespace DTO
 			this.maHieuXe = maHieuXe;
 			this.tenHieuXe = tenHieuXe;
 		}
-
+		HieuXeDTO()
+		{
+			maHieuXe = "";
+			tenHieuXe = "";
+		}
 		~HieuXeDTO() { }
 	}
 }

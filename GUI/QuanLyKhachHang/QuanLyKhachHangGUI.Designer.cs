@@ -89,7 +89,7 @@ namespace GUI
 			this.groupBox1.Controls.Add(this.tbEmailTraCuu);
 			this.groupBox1.Controls.Add(this.tbTenKhachHangTraCuu);
 			this.groupBox1.Controls.Add(this.textBox2);
-			this.groupBox1.ForeColor = System.Drawing.Color.Red;
+			this.groupBox1.ForeColor = System.Drawing.Color.Black;
 			this.groupBox1.Location = new System.Drawing.Point(21, 12);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(778, 213);
@@ -107,6 +107,7 @@ namespace GUI
 			// 
 			// btnXuatFile
 			// 
+			this.btnXuatFile.ForeColor = System.Drawing.Color.Black;
 			this.btnXuatFile.Location = new System.Drawing.Point(638, 173);
 			this.btnXuatFile.Name = "btnXuatFile";
 			this.btnXuatFile.Size = new System.Drawing.Size(109, 34);
@@ -116,6 +117,7 @@ namespace GUI
 			// 
 			// btnTimTatCa
 			// 
+			this.btnTimTatCa.ForeColor = System.Drawing.Color.Black;
 			this.btnTimTatCa.Location = new System.Drawing.Point(512, 173);
 			this.btnTimTatCa.Name = "btnTimTatCa";
 			this.btnTimTatCa.Size = new System.Drawing.Size(109, 34);
@@ -145,7 +147,7 @@ namespace GUI
 			// 
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.label8.ForeColor = System.Drawing.Color.Red;
+			this.label8.ForeColor = System.Drawing.Color.Black;
 			this.label8.Location = new System.Drawing.Point(262, 145);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(63, 16);
@@ -165,8 +167,8 @@ namespace GUI
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.label4.ForeColor = System.Drawing.Color.Red;
-			this.label4.Location = new System.Drawing.Point(527, 71);
+			this.label4.ForeColor = System.Drawing.Color.Black;
+			this.label4.Location = new System.Drawing.Point(533, 39);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(48, 16);
 			this.label4.TabIndex = 3;
@@ -176,7 +178,7 @@ namespace GUI
 			// 
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.label7.ForeColor = System.Drawing.Color.Red;
+			this.label7.ForeColor = System.Drawing.Color.Black;
 			this.label7.Location = new System.Drawing.Point(262, 98);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(66, 16);
@@ -187,7 +189,7 @@ namespace GUI
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.label2.ForeColor = System.Drawing.Color.Red;
+			this.label2.ForeColor = System.Drawing.Color.Black;
 			this.label2.Location = new System.Drawing.Point(235, 67);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(97, 16);
@@ -198,8 +200,8 @@ namespace GUI
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.label6.ForeColor = System.Drawing.Color.Red;
-			this.label6.Location = new System.Drawing.Point(527, 35);
+			this.label6.ForeColor = System.Drawing.Color.Black;
+			this.label6.Location = new System.Drawing.Point(533, 71);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(42, 16);
 			this.label6.TabIndex = 3;
@@ -209,7 +211,7 @@ namespace GUI
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.label1.ForeColor = System.Drawing.Color.Red;
+			this.label1.ForeColor = System.Drawing.Color.Black;
 			this.label1.Location = new System.Drawing.Point(239, 35);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(95, 16);
@@ -218,7 +220,7 @@ namespace GUI
 			// 
 			// tbDiaChiTraCuu
 			// 
-			this.tbDiaChiTraCuu.Location = new System.Drawing.Point(616, 67);
+			this.tbDiaChiTraCuu.Location = new System.Drawing.Point(617, 35);
 			this.tbDiaChiTraCuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.tbDiaChiTraCuu.Name = "tbDiaChiTraCuu";
 			this.tbDiaChiTraCuu.Size = new System.Drawing.Size(130, 20);
@@ -234,7 +236,7 @@ namespace GUI
 			// 
 			// tbEmailTraCuu
 			// 
-			this.tbEmailTraCuu.Location = new System.Drawing.Point(615, 35);
+			this.tbEmailTraCuu.Location = new System.Drawing.Point(617, 67);
 			this.tbEmailTraCuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.tbEmailTraCuu.Name = "tbEmailTraCuu";
 			this.tbEmailTraCuu.Size = new System.Drawing.Size(131, 20);
@@ -261,7 +263,7 @@ namespace GUI
 			this.label15.AutoSize = true;
 			this.label15.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label15.ForeColor = System.Drawing.Color.Maroon;
+			this.label15.ForeColor = System.Drawing.Color.Black;
 			this.label15.Location = new System.Drawing.Point(185, 245);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(480, 31);

@@ -23,8 +23,6 @@ CREATE TABLE XE
 (
 	BIENSO CHAR(10) NOT NULL,
 	MAKHACHSUAXE CHAR(10),
-	DIENTHOAI CHAR(20),
-	DIACHI CHAR(100),
 	MAHIEUXE CHAR(10),
 	PRIMARY KEY (BIENSO)
 );
@@ -139,24 +137,8 @@ alter table CHITIETPHIEUSUACHUA add foreign key (MAVATTUPHUTUNG) references VATT
 alter table CHITIETPHIEUSUACHUA add foreign key (MAPHIEUSUACHUA) references PHIEUSUACHUA (MAPHIEUSUACHUA);
 
 
-DELIMITER //
-create procedure insertTIEPNHANXESUA ( in _TenChuXe char(100), in _BienSo char(10), in _DiaChi char(100), in _DienThoai char(20), in _MaHieuXe char(10), in _NgayTiepNhan date)
-Begin
-	insert into TIEPNHANXESUA values ( _BienSo, _NgayTiepNhan);
-	insert into KHACHSUAXE value ( _TenChuXe, _DienThoai);
-	insert into XE value ( _MaHieuXe, _DiaChi);
-End //
-DELIMITER ; 
 
-DELIMITER //
-Create Procedure UpdateTIEPNHANXESUA(in _TenChuXe char(100), in _BienSo char(10), in _DiaChi char(100), in _DienThoai char(20), in _MaHieuXe char(10), in _NgayTiepNhan date)
-Begin
-	update TIEPNHANHXESUA set NgayTiepNhan = _NgayTiepNhan where BIENSO = _BienSo;
-	update KHACHSUAXE set TenChuXe = _TenChuXe, DienThoai = _DienThoai;
-	update XE set DiaChi = _DiaChi where MaHieuXe = _MaHieuXe;
-End //
-DELIMITER ;
-
+/*Phần này sử dụng trong bảng quản lý khách hàng và thao tác khách hàng*/
 DELIMITER //
 Create Procedure LoadAllKHACHSUAXE()
 Begin
@@ -184,14 +166,6 @@ Begin
 	delete from KHACHSUAXE where  MaKhachSuaXe = _MaKhachSuaXe;
 End //
 
-DELIMITER ;
-
-
-DELIMITER //
-Create Procedure UpdateTienNo (in _MaKhachHang char(10), in _SoTien decimal)
-Begin
-	update KhachHang set TienNo = TienNo + _SoTien where MaKhachHang=_MaKhachHang;
-End //
 DELIMITER ;
 
 DELIMITER //
@@ -226,10 +200,66 @@ Begin
             drop table SoTienNoTable; 
 End //
 DELIMITER ;
+/*Thao tác với hiệu xe*/
+DELIMITER //
+Create Procedure LoadAllHIEUXE()
+Begin
+	select MaHieuXe as 'Mã hiệu xe', TenHieuXe as 'Tên Hiệu Xe' from HIEUXE;
+End //
+DELIMITER ;
+DELIMITER //
+Create Procedure InsertHIEUXE( in _MaHieuXe char(10), in _TenHieuXe char(100))
+Begin
+	insert into HIEUXE values(_MaHieuXe, _TenHieuXe);
+End //
+DELIMITER ;
+DELIMITER //
+Create Procedure RemoveHIEUXE(in _MaHieuXe char(10))
+Begin
+	delete from HIEUXE where  MaHieuXe = _MaHieuXe;
+End //
 
-        
+DELIMITER ;
+
+DELIMITER //
+Create Procedure GetNewIDHIEUXE( in _MaHieuXe char(10), in _TenHieuXe char(100))
+Begin
+	select Max(cast(Substring(MaTheLoai,3, length(MaTheLoai)-2) as unsigned)) as 'MaxMaTheLoai' from HIEUXE;
+End //
+DELIMITER ;
+
+        /*Phần này sử dụng trong bảng quản lý xe và thao tác xe*/
+DELIMITER //
+Create Procedure LoadAllXE()
+Begin
+	select BienSo as 'Biển sổ', TenChuXe as 'Tên Chủ Xe',  TenHieuXe as 'Tên Hiệu Xe', TienNo as 'Tiền Nợ' 
+    from XE,HIEUXE,KHACHSUAXE where XE.MaHieuXe=HIEUXE.MaHieuXe 
+    and XE.MAKHACHSUAXE=KHACHSUAXE.MAKHACHSUAXE;
+End //
+DELIMITER ;
+
+DELIMITER //
+Create Procedure InsertXE( in _BienSo char(20), in _TenChuXe char(100), in _TenHieuXe char(100), in _TienNo decimal)
+Begin
+
+	insert into HoaDon (MaNV) values (11);
+
+SELECT @MaHD = SCOPE_IDENTITY();
+
+insert into ChiTietHD (MaHD, MaMonAn)
+values (@MaHD, '01');
+End //
+DELIMITER ;
+
+
+
    
-
+DELIMITER //
+Create Procedure UpdateTienNo (in _MaKhachHang char(10), in _SoTien decimal)
+Begin
+	update KhachHang set TienNo = TienNo + _SoTien where MaKhachHang=_MaKhachHang;
+End //
+DELIMITER ;
 
 DELIMITER // 
 create procedure TimXE ( in _BienSo char(10), in _MaKhachSuaXe char(10))
@@ -308,6 +338,22 @@ Begin
 End //
 DELIMITER ;
 
+/*DELIMITER //
+create procedure insertTIEPNHANXESUA ( in _TenChuXe char(100), in _BienSo char(10), in _DiaChi char(100), in _DienThoai char(20), in _MaHieuXe char(10), in _NgayTiepNhan date)
+Begin
+	insert into TIEPNHANXESUA values ( _BienSo, _NgayTiepNhan);
+	insert into KHACHSUAXE value ( _TenChuXe, _DienThoai);
+	insert into XE value ( _MaHieuXe, _DiaChi);
+End //
+DELIMITER ; 
 
+DELIMITER //
+Create Procedure UpdateTIEPNHANXESUA(in _TenChuXe char(100), in _BienSo char(10), in _DiaChi char(100), in _DienThoai char(20), in _MaHieuXe char(10), in _NgayTiepNhan date)
+Begin
+	update TIEPNHANHXESUA set NgayTiepNhan = _NgayTiepNhan where BIENSO = _BienSo;
+	update KHACHSUAXE set TenChuXe = _TenChuXe, DienThoai = _DienThoai;
+	update XE set DiaChi = _DiaChi where MaHieuXe = _MaHieuXe;
+End //
+DELIMITER ;*/
 
 

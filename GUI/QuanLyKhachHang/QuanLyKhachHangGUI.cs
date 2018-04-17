@@ -94,7 +94,7 @@ namespace GUI
 			{
 				SoTienNoCompareType = Decimal.Parse(tbSoTienNoTraCuu.Text);
 			}
-			if (!fMainForm.cNullTB(tbMaKhachHangTraCuu.Text) && !fMainForm.cNullTB(tbTenKhachHangTraCuu.Text) && !fMainForm.cNullTB(tbDienThoaiTraCuu.Text) && !fMainForm.cNullTB(tbDiaChiTraCuu.Text) && !fMainForm.cNullTB(tbEmailTraCuu.Text) && !fMainForm.cNullTB(tbSoTienNoTraCuu.Text))
+			if (!fMainForm.cNullTB(tbMaKhachHangTraCuu.Text)|| !fMainForm.cNullTB(tbSoTienNoTraCuu.Text))
 			{
 				if (KhachSuaXeBUS.cPrimaryKey(tbMaKhachHangTraCuu.Text.Trim()))
 				{

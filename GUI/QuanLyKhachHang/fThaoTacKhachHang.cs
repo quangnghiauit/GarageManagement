@@ -17,7 +17,7 @@ namespace GUI
 {
 	public partial class fThaoTacKhachHang : Form
 	{
-		MySqlConnection cnn;
+		
 		private void fThaoTacKhachHang_Load(object sender, EventArgs e)
 		{
 			
@@ -139,6 +139,12 @@ namespace GUI
 
 
 		}
+		//Lịch sử thao tác
+		private void btnLichSuThaoTac_Click(object sender, EventArgs e)
+		{
+			dtgvThaoTac.DataSource = KhachSuaXeBUS.loadTatCaKhachHang();
+		}
+
 		#endregion
 
 

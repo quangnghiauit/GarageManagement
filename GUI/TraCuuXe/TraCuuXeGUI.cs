@@ -26,5 +26,22 @@ namespace GUI
 		{
 
 		}
+
+		private void fTraCuuXe_Load(object sender, EventArgs e)
+		{
+			//Setup cbbTienNo
+
+			cbbTienNoTraCuu.Items.Add("Bằng");
+
+
+			cbbTienNoTraCuu.Items.Add("Lớn hơn");
+
+			cbbTienNoTraCuu.Items.Add("Lớn hơn hoặc bằng");
+
+			cbbTienNoTraCuu.Items.Add("Nhỏ hơn");
+
+			cbbTienNoTraCuu.Items.Add("Nhỏ hơn hoặc bằng");
+			cbbTienNoTraCuu.SelectedIndex = 0;
+		}
 	}
 }
