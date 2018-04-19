@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-	class VatTuPhuTung
+	public class VatTuPhuTungDTO 
 	{
 		private string maVatTuPhuTung;
 		public string MaVatTuPhuTung
@@ -35,8 +35,15 @@ namespace DTO
 			get { return soLuongVatTu; }
 			set { soLuongVatTu = value; }
 		}
+		public VatTuPhuTungDTO()
+		{
+			maVatTuPhuTung = "";
+			tenVatTuPhuTung = "";
+			donGia = 0;
+			soLuongVatTu = 0;
+		}
 
-		public VatTuPhuTung(string maVatTuPhuTung, string tenVatTuPhuTung, int donGia, int soLuongVatTu)
+		public VatTuPhuTungDTO(string maVatTuPhuTung, string tenVatTuPhuTung, int donGia, int soLuongVatTu)
 		{
 			this.maVatTuPhuTung = maVatTuPhuTung;
 			this.tenVatTuPhuTung = tenVatTuPhuTung;
@@ -44,6 +51,6 @@ namespace DTO
 			this.soLuongVatTu = soLuongVatTu;
 		}
 
-		~VatTuPhuTung() { }
+		~VatTuPhuTungDTO() { }
 	}
 }

@@ -356,39 +356,91 @@ DELIMITER ;
 
 
 
+/*Sử dụng cho bảng vật tư phụ tùng*/
+
+DELIMITER //
+
+DELIMITER //
+Create Procedure LoadAllSpareParts()
+Begin
+	select MAVATTUPHUTUNG as 'Mã Vật Tư Phụ Tùng', TENVATTUPHUTUNG as 'Tên Vật Tư Phụ Tùng',  DONGIA as 'Đơn Giá', SOLUONGVATTU  as 'Số lượng ' from VATTUPHUTUNG;
+End //
+DELIMITER ;
+
+
+
+
 
 
 DELIMITER // 
-create procedure InsertVATTUPHUTUNG ( in _MaVatTuPhuTung char(10), in _TenVatTuPhuTung char(100), in _DonGia decimal, in _SoLuongVatTu int)
+create procedure InsertSpareParts ( in _MaVatTuPhuTung char(10), in _TenVatTuPhuTung char(100), in _DonGia decimal, in _SoLuongVatTu int)
 Begin 
 	Insert into VATTUPHUTUNG values (_MaVatTuPhuTung, _TenVatTuPhuTung, _DonGia, _SoluongVatTu);
 End //
 DELIMITER ;
 
+
+
 DELIMITER // 
-create procedure UpdateVATTUPHUTUNG (  in _MaVatTuPhuTung char(10), in _TenVatTuPhuTung char(100), in _DonGia decimal, in _SoLuongVatTu int)
+create procedure UpdateSpareParts (  in _MaVatTuPhuTung char(10), in _TenVatTuPhuTung char(100), in _DonGia decimal, in _SoLuongVatTu int)
 Begin 
 	update VATTUPHUTUNG set TenVatTuPhuTung = _TenVatTuPhuTung, DonGia = _DonGia, SoLuongVatTu = _SoLuongVatTu
     where MaVatTuPhuTung = _MaVatTuPhuTung;
 End //
 DELIMITER ;
 
+
+
 DELIMITER //
-create procedure UpdateSoLuong (in _MaVatTuPhuTung char(10), in _SoLuong int)
+create procedure UpdateSoLuongSpareParts (in _MaVatTuPhuTung char(10), in _SoLuong int)
 Begin
 	update VATTUPHUTUNG set SoLuongVatTu = SoLuongVatTu + _SoLuong;
 End //
 DELIMITER ;
 
+
+
 DELIMITER //
-Create Procedure TimVATTUPHUTUNG (in _MaVatTuPhuTung char(10))
+Create Procedure RemoveSpareParts(in _MaVatTuPhuTung char(10))
+Begin
+	delete from VATTUPHUTUNG where MaVatTuPhuTung=_MaVatTuPhuTung;
+	
+    
+End //
+DELIMITER ;
+
+
+
+
+DELIMITER //
+Create Procedure FindSpareParts (in _MaVatTuPhuTung char(10))
 Begin	
    
-    select *
+    select MaVatTuPhuTung as 'Mã Vật Tư Phụ Tùng', TenVatTuPhuTung as 'Tên Vật Tư Phụ Tùng',  DonGia as 'Đơn Giá', SoLuongVatTu as 'Số lượng ' 
     from VATTUPHUTUNG
     where MaVatTuPhuTung = _MaVatTuPhuTung;
 End //
 DELIMITER ;
+
+
+
+
+DELIMITER // 
+create procedure SearchSpareParts (in _MaVatTuPhuTung char(10), in _TenVatTuPhuTung char(100), in _DonGia decimal, in _SoLuongVatTu int)
+Begin 
+		     select    MaVatTuPhuTung as 'Mã Vật Tư Phụ Tùng', TenVatTuPhuTung as 'Tên Vật Tư Phụ Tùng',  CONCAT('', Format(DonGia,0), ' đ') As 'Đơn giá', SoLuongVatTu as 'Số lượng '   
+            
+            
+            from VATTUPHUTUNG
+            where MaVatTuPhuTung like CONCAT('%', _MaVatTuPhuTung, '%') and TenVatTuPhuTung like CONCAT('%', _TenVatTuPhuTung, '%')  and
+            DonGia like CONCAT('%', _DonGia, '%') and SoLuongVatTu like CONCAT('%', _SoLuongVatTu, '%') and MaVatTuPhuTung = _MaVatTuPhuTung;
+            
+         
+End //
+DELIMITER ;
+
+
+
 
 
 /*Procedure dung cho PHIEUTHUTIEN*/

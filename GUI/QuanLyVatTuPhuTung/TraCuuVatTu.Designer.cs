@@ -29,20 +29,20 @@
 		private void InitializeComponent()
 		{
 			this.label15 = new System.Windows.Forms.Label();
-			this.dtgvKhachHang = new System.Windows.Forms.DataGridView();
+			this.dtgvVatTu = new System.Windows.Forms.DataGridView();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.tbMaKhachHangTraCuu = new System.Windows.Forms.TextBox();
 			this.btnXuatFile = new System.Windows.Forms.Button();
 			this.btnTimTatCa = new System.Windows.Forms.Button();
-			this.tbSoTienNoTraCuu = new System.Windows.Forms.TextBox();
+			this.tbSoLuongTraCuu = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.tbDienThoaiTraCuu = new System.Windows.Forms.TextBox();
-			this.tbTenKhachHangTraCuu = new System.Windows.Forms.TextBox();
+			this.tbDonGiaTraCuu = new System.Windows.Forms.TextBox();
+			this.tbTenVatTuTraCuu = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
-			((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).BeginInit();
+			this.cbbMaVatTuTraCuu = new System.Windows.Forms.ComboBox();
+			((System.ComponentModel.ISupportInitialize)(this.dtgvVatTu)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -58,38 +58,31 @@
 			this.label15.TabIndex = 14;
 			this.label15.Text = "QUẢN LÝ VẬT TƯ PHỤ TÙNG";
 			// 
-			// dtgvKhachHang
+			// dtgvVatTu
 			// 
-			this.dtgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dtgvKhachHang.Location = new System.Drawing.Point(36, 284);
-			this.dtgvKhachHang.Name = "dtgvKhachHang";
-			this.dtgvKhachHang.Size = new System.Drawing.Size(763, 253);
-			this.dtgvKhachHang.TabIndex = 15;
+			this.dtgvVatTu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dtgvVatTu.Location = new System.Drawing.Point(36, 284);
+			this.dtgvVatTu.Name = "dtgvVatTu";
+			this.dtgvVatTu.Size = new System.Drawing.Size(763, 253);
+			this.dtgvVatTu.TabIndex = 15;
 			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.tbMaKhachHangTraCuu);
+			this.panel1.Controls.Add(this.cbbMaVatTuTraCuu);
 			this.panel1.Controls.Add(this.btnXuatFile);
 			this.panel1.Controls.Add(this.btnTimTatCa);
-			this.panel1.Controls.Add(this.tbSoTienNoTraCuu);
+			this.panel1.Controls.Add(this.tbSoLuongTraCuu);
 			this.panel1.Controls.Add(this.label8);
 			this.panel1.Controls.Add(this.label7);
 			this.panel1.Controls.Add(this.label2);
 			this.panel1.Controls.Add(this.label1);
-			this.panel1.Controls.Add(this.tbDienThoaiTraCuu);
-			this.panel1.Controls.Add(this.tbTenKhachHangTraCuu);
+			this.panel1.Controls.Add(this.tbDonGiaTraCuu);
+			this.panel1.Controls.Add(this.tbTenVatTuTraCuu);
 			this.panel1.Controls.Add(this.textBox2);
 			this.panel1.Location = new System.Drawing.Point(31, 21);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(794, 191);
 			this.panel1.TabIndex = 16;
-			// 
-			// tbMaKhachHangTraCuu
-			// 
-			this.tbMaKhachHangTraCuu.Location = new System.Drawing.Point(389, 9);
-			this.tbMaKhachHangTraCuu.Name = "tbMaKhachHangTraCuu";
-			this.tbMaKhachHangTraCuu.Size = new System.Drawing.Size(195, 20);
-			this.tbMaKhachHangTraCuu.TabIndex = 27;
 			// 
 			// btnXuatFile
 			// 
@@ -110,14 +103,15 @@
 			this.btnTimTatCa.TabIndex = 25;
 			this.btnTimTatCa.Text = "Tìm tất cả";
 			this.btnTimTatCa.UseVisualStyleBackColor = true;
+			this.btnTimTatCa.Click += new System.EventHandler(this.btnTimTatCa_Click);
 			// 
-			// tbSoTienNoTraCuu
+			// tbSoLuongTraCuu
 			// 
-			this.tbSoTienNoTraCuu.Location = new System.Drawing.Point(389, 109);
-			this.tbSoTienNoTraCuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.tbSoTienNoTraCuu.Name = "tbSoTienNoTraCuu";
-			this.tbSoTienNoTraCuu.Size = new System.Drawing.Size(195, 20);
-			this.tbSoTienNoTraCuu.TabIndex = 24;
+			this.tbSoLuongTraCuu.Location = new System.Drawing.Point(389, 109);
+			this.tbSoLuongTraCuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.tbSoLuongTraCuu.Name = "tbSoLuongTraCuu";
+			this.tbSoLuongTraCuu.Size = new System.Drawing.Size(195, 20);
+			this.tbSoLuongTraCuu.TabIndex = 24;
 			// 
 			// label8
 			// 
@@ -163,21 +157,21 @@
 			this.label1.TabIndex = 22;
 			this.label1.Text = "Mã vật tư";
 			// 
-			// tbDienThoaiTraCuu
+			// tbDonGiaTraCuu
 			// 
-			this.tbDienThoaiTraCuu.Location = new System.Drawing.Point(389, 68);
-			this.tbDienThoaiTraCuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.tbDienThoaiTraCuu.Name = "tbDienThoaiTraCuu";
-			this.tbDienThoaiTraCuu.Size = new System.Drawing.Size(195, 20);
-			this.tbDienThoaiTraCuu.TabIndex = 17;
+			this.tbDonGiaTraCuu.Location = new System.Drawing.Point(389, 68);
+			this.tbDonGiaTraCuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.tbDonGiaTraCuu.Name = "tbDonGiaTraCuu";
+			this.tbDonGiaTraCuu.Size = new System.Drawing.Size(195, 20);
+			this.tbDonGiaTraCuu.TabIndex = 17;
 			// 
-			// tbTenKhachHangTraCuu
+			// tbTenVatTuTraCuu
 			// 
-			this.tbTenKhachHangTraCuu.Location = new System.Drawing.Point(389, 41);
-			this.tbTenKhachHangTraCuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.tbTenKhachHangTraCuu.Name = "tbTenKhachHangTraCuu";
-			this.tbTenKhachHangTraCuu.Size = new System.Drawing.Size(195, 20);
-			this.tbTenKhachHangTraCuu.TabIndex = 18;
+			this.tbTenVatTuTraCuu.Location = new System.Drawing.Point(389, 41);
+			this.tbTenVatTuTraCuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.tbTenVatTuTraCuu.Name = "tbTenVatTuTraCuu";
+			this.tbTenVatTuTraCuu.Size = new System.Drawing.Size(195, 20);
+			this.tbTenVatTuTraCuu.TabIndex = 18;
 			// 
 			// textBox2
 			// 
@@ -187,18 +181,27 @@
 			this.textBox2.Size = new System.Drawing.Size(130, 20);
 			this.textBox2.TabIndex = 19;
 			// 
+			// cbbMaVatTuTraCuu
+			// 
+			this.cbbMaVatTuTraCuu.FormattingEnabled = true;
+			this.cbbMaVatTuTraCuu.Location = new System.Drawing.Point(389, 11);
+			this.cbbMaVatTuTraCuu.Name = "cbbMaVatTuTraCuu";
+			this.cbbMaVatTuTraCuu.Size = new System.Drawing.Size(194, 21);
+			this.cbbMaVatTuTraCuu.TabIndex = 27;
+			// 
 			// fmTraCuuVatTu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(850, 540);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.dtgvKhachHang);
+			this.Controls.Add(this.dtgvVatTu);
 			this.Controls.Add(this.label15);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "fmTraCuuVatTu";
 			this.Text = "TraCuuVatTu";
-			((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).EndInit();
+			this.Load += new System.EventHandler(this.fmTraCuuVatTu_Load);
+			((System.ComponentModel.ISupportInitialize)(this.dtgvVatTu)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
@@ -208,18 +211,18 @@
 
 		#endregion
 		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.DataGridView dtgvKhachHang;
+		private System.Windows.Forms.DataGridView dtgvVatTu;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.TextBox tbMaKhachHangTraCuu;
 		private System.Windows.Forms.Button btnXuatFile;
 		private System.Windows.Forms.Button btnTimTatCa;
-		private System.Windows.Forms.TextBox tbSoTienNoTraCuu;
+		private System.Windows.Forms.TextBox tbSoLuongTraCuu;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox tbDienThoaiTraCuu;
-		private System.Windows.Forms.TextBox tbTenKhachHangTraCuu;
+		private System.Windows.Forms.TextBox tbDonGiaTraCuu;
+		private System.Windows.Forms.TextBox tbTenVatTuTraCuu;
 		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.ComboBox cbbMaVatTuTraCuu;
 	}
 }

@@ -30,14 +30,14 @@
 		{
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.tbMaKhachSuaXe = new System.Windows.Forms.TextBox();
+			this.tbMaVatTuThaoTac = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.tbDiaChi = new System.Windows.Forms.TextBox();
-			this.tbDienThoai = new System.Windows.Forms.TextBox();
-			this.tbTenChuXe = new System.Windows.Forms.TextBox();
+			this.tbSoLuongThaoTac = new System.Windows.Forms.TextBox();
+			this.tbDonGiaThaoTac = new System.Windows.Forms.TextBox();
+			this.tbTenVatTuThaoTac = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btnXoa = new System.Windows.Forms.Button();
@@ -62,26 +62,26 @@
 			// 
 			// panel2
 			// 
-			this.panel2.Controls.Add(this.tbMaKhachSuaXe);
+			this.panel2.Controls.Add(this.tbMaVatTuThaoTac);
 			this.panel2.Controls.Add(this.label7);
 			this.panel2.Controls.Add(this.label4);
 			this.panel2.Controls.Add(this.label2);
 			this.panel2.Controls.Add(this.label5);
-			this.panel2.Controls.Add(this.tbDiaChi);
-			this.panel2.Controls.Add(this.tbDienThoai);
-			this.panel2.Controls.Add(this.tbTenChuXe);
+			this.panel2.Controls.Add(this.tbSoLuongThaoTac);
+			this.panel2.Controls.Add(this.tbDonGiaThaoTac);
+			this.panel2.Controls.Add(this.tbTenVatTuThaoTac);
 			this.panel2.Controls.Add(this.textBox2);
 			this.panel2.Location = new System.Drawing.Point(6, 34);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(372, 161);
 			this.panel2.TabIndex = 33;
 			// 
-			// tbMaKhachSuaXe
+			// tbMaVatTuThaoTac
 			// 
-			this.tbMaKhachSuaXe.Location = new System.Drawing.Point(134, 17);
-			this.tbMaKhachSuaXe.Name = "tbMaKhachSuaXe";
-			this.tbMaKhachSuaXe.Size = new System.Drawing.Size(214, 20);
-			this.tbMaKhachSuaXe.TabIndex = 47;
+			this.tbMaVatTuThaoTac.Location = new System.Drawing.Point(134, 17);
+			this.tbMaVatTuThaoTac.Name = "tbMaVatTuThaoTac";
+			this.tbMaVatTuThaoTac.Size = new System.Drawing.Size(214, 20);
+			this.tbMaVatTuThaoTac.TabIndex = 47;
 			// 
 			// label7
 			// 
@@ -127,29 +127,29 @@
 			this.label5.TabIndex = 38;
 			this.label5.Text = "Mã vật tư ";
 			// 
-			// tbDiaChi
+			// tbSoLuongThaoTac
 			// 
-			this.tbDiaChi.Location = new System.Drawing.Point(133, 109);
-			this.tbDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.tbDiaChi.Name = "tbDiaChi";
-			this.tbDiaChi.Size = new System.Drawing.Size(214, 20);
-			this.tbDiaChi.TabIndex = 31;
+			this.tbSoLuongThaoTac.Location = new System.Drawing.Point(133, 109);
+			this.tbSoLuongThaoTac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.tbSoLuongThaoTac.Name = "tbSoLuongThaoTac";
+			this.tbSoLuongThaoTac.Size = new System.Drawing.Size(214, 20);
+			this.tbSoLuongThaoTac.TabIndex = 31;
 			// 
-			// tbDienThoai
+			// tbDonGiaThaoTac
 			// 
-			this.tbDienThoai.Location = new System.Drawing.Point(134, 80);
-			this.tbDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.tbDienThoai.Name = "tbDienThoai";
-			this.tbDienThoai.Size = new System.Drawing.Size(214, 20);
-			this.tbDienThoai.TabIndex = 32;
+			this.tbDonGiaThaoTac.Location = new System.Drawing.Point(134, 80);
+			this.tbDonGiaThaoTac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.tbDonGiaThaoTac.Name = "tbDonGiaThaoTac";
+			this.tbDonGiaThaoTac.Size = new System.Drawing.Size(214, 20);
+			this.tbDonGiaThaoTac.TabIndex = 32;
 			// 
-			// tbTenChuXe
+			// tbTenVatTuThaoTac
 			// 
-			this.tbTenChuXe.Location = new System.Drawing.Point(134, 44);
-			this.tbTenChuXe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.tbTenChuXe.Name = "tbTenChuXe";
-			this.tbTenChuXe.Size = new System.Drawing.Size(214, 20);
-			this.tbTenChuXe.TabIndex = 33;
+			this.tbTenVatTuThaoTac.Location = new System.Drawing.Point(134, 44);
+			this.tbTenVatTuThaoTac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.tbTenVatTuThaoTac.Name = "tbTenVatTuThaoTac";
+			this.tbTenVatTuThaoTac.Size = new System.Drawing.Size(214, 20);
+			this.tbTenVatTuThaoTac.TabIndex = 33;
 			// 
 			// textBox2
 			// 
@@ -178,6 +178,7 @@
 			this.btnXoa.TabIndex = 2;
 			this.btnXoa.Text = "XÓA";
 			this.btnXoa.UseVisualStyleBackColor = true;
+			this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
 			// 
 			// btnCapNhat
 			// 
@@ -188,6 +189,7 @@
 			this.btnCapNhat.TabIndex = 1;
 			this.btnCapNhat.Text = "CẬP NHẬT";
 			this.btnCapNhat.UseVisualStyleBackColor = true;
+			this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
 			// 
 			// btnThem
 			// 
@@ -198,6 +200,7 @@
 			this.btnThem.TabIndex = 0;
 			this.btnThem.Text = "THÊM";
 			this.btnThem.UseVisualStyleBackColor = true;
+			this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
 			// 
 			// btnLichSuThaoTac
 			// 
@@ -208,6 +211,7 @@
 			this.btnLichSuThaoTac.TabIndex = 35;
 			this.btnLichSuThaoTac.Text = "Lịch Sử Thao Tác";
 			this.btnLichSuThaoTac.UseVisualStyleBackColor = true;
+			this.btnLichSuThaoTac.Click += new System.EventHandler(this.btnLichSuThaoTac_Click);
 			// 
 			// dtgvThaoTac
 			// 
@@ -243,14 +247,14 @@
 
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.TextBox tbMaKhachSuaXe;
+		private System.Windows.Forms.TextBox tbMaVatTuThaoTac;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.TextBox tbDiaChi;
-		private System.Windows.Forms.TextBox tbDienThoai;
-		private System.Windows.Forms.TextBox tbTenChuXe;
+		private System.Windows.Forms.TextBox tbSoLuongThaoTac;
+		private System.Windows.Forms.TextBox tbDonGiaThaoTac;
+		private System.Windows.Forms.TextBox tbTenVatTuThaoTac;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Button btnXoa;
