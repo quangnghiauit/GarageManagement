@@ -31,19 +31,19 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fTraCuuXe));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.cbbTienNoTraCuu = new System.Windows.Forms.ComboBox();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnXuatFileTraCuuXe = new System.Windows.Forms.Button();
+			this.btnTimTatCaTraCuuXe = new System.Windows.Forms.Button();
 			this.tbTienNoTraCuu = new System.Windows.Forms.TextBox();
-			this.tbTenChuXeTraCuu = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.tbHieuXeTraCuu = new System.Windows.Forms.TextBox();
-			this.tbBienSoTraCuu = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.Labekl = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.dtgvTraCuuXe = new System.Windows.Forms.DataGridView();
 			this.label14 = new System.Windows.Forms.Label();
+			this.cbbBienSoTraCuu = new System.Windows.Forms.ComboBox();
+			this.cbbTenChuXeTraCuu = new System.Windows.Forms.ComboBox();
+			this.cbbHieuXeTraCuu = new System.Windows.Forms.ComboBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dtgvTraCuuXe)).BeginInit();
@@ -51,20 +51,20 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.cbbHieuXeTraCuu);
+			this.groupBox1.Controls.Add(this.cbbTenChuXeTraCuu);
+			this.groupBox1.Controls.Add(this.cbbBienSoTraCuu);
 			this.groupBox1.Controls.Add(this.cbbTienNoTraCuu);
-			this.groupBox1.Controls.Add(this.button2);
-			this.groupBox1.Controls.Add(this.button1);
+			this.groupBox1.Controls.Add(this.btnXuatFileTraCuuXe);
+			this.groupBox1.Controls.Add(this.btnTimTatCaTraCuuXe);
 			this.groupBox1.Controls.Add(this.tbTienNoTraCuu);
-			this.groupBox1.Controls.Add(this.tbTenChuXeTraCuu);
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.pictureBox1);
-			this.groupBox1.Controls.Add(this.tbHieuXeTraCuu);
-			this.groupBox1.Controls.Add(this.tbBienSoTraCuu);
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.Labekl);
 			this.groupBox1.Controls.Add(this.label6);
 			this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.groupBox1.ForeColor = System.Drawing.Color.Red;
+			this.groupBox1.ForeColor = System.Drawing.Color.Black;
 			this.groupBox1.Location = new System.Drawing.Point(12, 13);
 			this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.groupBox1.Name = "groupBox1";
@@ -83,25 +83,26 @@
 			this.cbbTienNoTraCuu.Size = new System.Drawing.Size(192, 24);
 			this.cbbTienNoTraCuu.TabIndex = 14;
 			// 
-			// button2
+			// btnXuatFileTraCuuXe
 			// 
-			this.button2.ForeColor = System.Drawing.Color.Black;
-			this.button2.Location = new System.Drawing.Point(590, 172);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(109, 34);
-			this.button2.TabIndex = 13;
-			this.button2.Text = "Xuất file excel";
-			this.button2.UseVisualStyleBackColor = true;
+			this.btnXuatFileTraCuuXe.ForeColor = System.Drawing.Color.Black;
+			this.btnXuatFileTraCuuXe.Location = new System.Drawing.Point(590, 172);
+			this.btnXuatFileTraCuuXe.Name = "btnXuatFileTraCuuXe";
+			this.btnXuatFileTraCuuXe.Size = new System.Drawing.Size(109, 34);
+			this.btnXuatFileTraCuuXe.TabIndex = 13;
+			this.btnXuatFileTraCuuXe.Text = "Xuất file excel";
+			this.btnXuatFileTraCuuXe.UseVisualStyleBackColor = true;
 			// 
-			// button1
+			// btnTimTatCaTraCuuXe
 			// 
-			this.button1.ForeColor = System.Drawing.Color.Black;
-			this.button1.Location = new System.Drawing.Point(447, 172);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(109, 34);
-			this.button1.TabIndex = 12;
-			this.button1.Text = "Tìm tất cả";
-			this.button1.UseVisualStyleBackColor = true;
+			this.btnTimTatCaTraCuuXe.ForeColor = System.Drawing.Color.Black;
+			this.btnTimTatCaTraCuuXe.Location = new System.Drawing.Point(447, 172);
+			this.btnTimTatCaTraCuuXe.Name = "btnTimTatCaTraCuuXe";
+			this.btnTimTatCaTraCuuXe.Size = new System.Drawing.Size(109, 34);
+			this.btnTimTatCaTraCuuXe.TabIndex = 12;
+			this.btnTimTatCaTraCuuXe.Text = "Tìm tất cả";
+			this.btnTimTatCaTraCuuXe.UseVisualStyleBackColor = true;
+			this.btnTimTatCaTraCuuXe.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// tbTienNoTraCuu
 			// 
@@ -109,14 +110,6 @@
 			this.tbTienNoTraCuu.Name = "tbTienNoTraCuu";
 			this.tbTienNoTraCuu.Size = new System.Drawing.Size(178, 22);
 			this.tbTienNoTraCuu.TabIndex = 11;
-			// 
-			// tbTenChuXeTraCuu
-			// 
-			this.tbTenChuXeTraCuu.Location = new System.Drawing.Point(324, 58);
-			this.tbTenChuXeTraCuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.tbTenChuXeTraCuu.Name = "tbTenChuXeTraCuu";
-			this.tbTenChuXeTraCuu.Size = new System.Drawing.Size(193, 22);
-			this.tbTenChuXeTraCuu.TabIndex = 10;
 			// 
 			// label5
 			// 
@@ -137,22 +130,6 @@
 			this.pictureBox1.Size = new System.Drawing.Size(200, 161);
 			this.pictureBox1.TabIndex = 8;
 			this.pictureBox1.TabStop = false;
-			// 
-			// tbHieuXeTraCuu
-			// 
-			this.tbHieuXeTraCuu.Location = new System.Drawing.Point(324, 93);
-			this.tbHieuXeTraCuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.tbHieuXeTraCuu.Name = "tbHieuXeTraCuu";
-			this.tbHieuXeTraCuu.Size = new System.Drawing.Size(193, 22);
-			this.tbHieuXeTraCuu.TabIndex = 3;
-			// 
-			// tbBienSoTraCuu
-			// 
-			this.tbBienSoTraCuu.Location = new System.Drawing.Point(324, 19);
-			this.tbBienSoTraCuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.tbBienSoTraCuu.Name = "tbBienSoTraCuu";
-			this.tbBienSoTraCuu.Size = new System.Drawing.Size(193, 22);
-			this.tbBienSoTraCuu.TabIndex = 3;
 			// 
 			// label4
 			// 
@@ -191,9 +168,9 @@
 			// dtgvTraCuuXe
 			// 
 			this.dtgvTraCuuXe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dtgvTraCuuXe.Location = new System.Drawing.Point(21, 304);
+			this.dtgvTraCuuXe.Location = new System.Drawing.Point(41, 285);
 			this.dtgvTraCuuXe.Name = "dtgvTraCuuXe";
-			this.dtgvTraCuuXe.Size = new System.Drawing.Size(811, 215);
+			this.dtgvTraCuuXe.Size = new System.Drawing.Size(763, 253);
 			this.dtgvTraCuuXe.TabIndex = 10;
 			// 
 			// label14
@@ -202,17 +179,41 @@
 			this.label14.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label14.ForeColor = System.Drawing.Color.Black;
-			this.label14.Location = new System.Drawing.Point(309, 239);
+			this.label14.Location = new System.Drawing.Point(314, 239);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(175, 31);
 			this.label14.TabIndex = 11;
 			this.label14.Text = "TRA CỨU XE";
 			// 
+			// cbbBienSoTraCuu
+			// 
+			this.cbbBienSoTraCuu.FormattingEnabled = true;
+			this.cbbBienSoTraCuu.Location = new System.Drawing.Point(323, 16);
+			this.cbbBienSoTraCuu.Name = "cbbBienSoTraCuu";
+			this.cbbBienSoTraCuu.Size = new System.Drawing.Size(192, 24);
+			this.cbbBienSoTraCuu.TabIndex = 15;
+			// 
+			// cbbTenChuXeTraCuu
+			// 
+			this.cbbTenChuXeTraCuu.FormattingEnabled = true;
+			this.cbbTenChuXeTraCuu.Location = new System.Drawing.Point(323, 58);
+			this.cbbTenChuXeTraCuu.Name = "cbbTenChuXeTraCuu";
+			this.cbbTenChuXeTraCuu.Size = new System.Drawing.Size(192, 24);
+			this.cbbTenChuXeTraCuu.TabIndex = 16;
+			// 
+			// cbbHieuXeTraCuu
+			// 
+			this.cbbHieuXeTraCuu.FormattingEnabled = true;
+			this.cbbHieuXeTraCuu.Location = new System.Drawing.Point(323, 96);
+			this.cbbHieuXeTraCuu.Name = "cbbHieuXeTraCuu";
+			this.cbbHieuXeTraCuu.Size = new System.Drawing.Size(192, 24);
+			this.cbbHieuXeTraCuu.TabIndex = 17;
+			// 
 			// fTraCuuXe
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(850, 520);
+			this.ClientSize = new System.Drawing.Size(850, 540);
 			this.Controls.Add(this.label14);
 			this.Controls.Add(this.dtgvTraCuuXe);
 			this.Controls.Add(this.groupBox1);
@@ -233,18 +234,18 @@
 
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.TextBox tbHieuXeTraCuu;
-		private System.Windows.Forms.TextBox tbBienSoTraCuu;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label Labekl;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.DataGridView dtgvTraCuuXe;
 		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.TextBox tbTenChuXeTraCuu;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox tbTienNoTraCuu;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnXuatFileTraCuuXe;
+		private System.Windows.Forms.Button btnTimTatCaTraCuuXe;
 		private System.Windows.Forms.ComboBox cbbTienNoTraCuu;
+		private System.Windows.Forms.ComboBox cbbHieuXeTraCuu;
+		private System.Windows.Forms.ComboBox cbbTenChuXeTraCuu;
+		private System.Windows.Forms.ComboBox cbbBienSoTraCuu;
 	}
 }

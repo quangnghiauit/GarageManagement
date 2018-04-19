@@ -45,11 +45,6 @@ namespace GUI
 
 		}
 
-		private void fThayDoiVatTu_Click(object sender, EventArgs e)
-		{
-			fThayDoiVatTu myForm = new fThayDoiVatTu();
-			myForm.ShowDialog();
-			this.Show();
-		}
+		
 	}
 }

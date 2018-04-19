@@ -22,36 +22,45 @@ namespace BUS
 {
 	public class XeBUS
 	{
-		// Loa tat ca xe từ bảng
-		public static DataTable loadTatCaXe()
+		
+		public static DataTable loadAllCar()
 		{
 			return XeDAO.getData();
 		}
-		//Them xe  vào bảng 
-		public static void addXe(XeDTO xe)
+		
+		public static void addCar(string BienSo, int MaKhachSuaXe, string MaHieuXe, int TienNo)
 		{
-			XeDAO.ThemXe(xe);
-		}
-		//Cập nhật khach hang vào bảng 
-		public static void updateKhachHang(KhachSuaXeDTO kh)
-		{
-			KhachSuaXeDAO.SuaKhachHang(kh);
-		}
-		// Xoa Khách sửa xe từ Bảng KHACHSUAXE
-		public static void delKhachSuaXe(string _MaKhachSuaXe)
-		{
-			KhachSuaXeDAO.XoaKhachHang(_MaKhachSuaXe);
+			XeDAO.InsertCar(BienSo,  MaKhachSuaXe,MaHieuXe,  TienNo);
 		}
 
-		public static void SearchAllKhachSuaXe(KhachSuaXeDTO kh, string SoTienNoCompareType)
+		public static void updateCar(string BienSo, int MaKhachSuaXe, string MaHieuXe, int TienNo)
 		{
-			KhachSuaXeDAO.SearchKhachHang(kh, SoTienNoCompareType);
+			XeDAO.UpdateCar(BienSo, MaKhachSuaXe, MaHieuXe, TienNo);
 		}
+
+
+
+		public static void delCar(string BienSo, int MaKhachSuaXe, string MaHieuXe)
+		{
+			XeDAO.RemoveCar(BienSo, MaKhachSuaXe, MaHieuXe);
+		}
+
+		public static DataTable SearchAllCar(string _BienSo, int _MaKhachSuaXe, string _MaHieuXe, string _TenChuXe, string _TenHieuXe, int _TienNo, string SoTienNoCompareType)
+		{
+			return XeDAO.SearchCar(_BienSo, _MaKhachSuaXe, _MaHieuXe,_TenChuXe,_TenHieuXe,_TienNo, SoTienNoCompareType);
+
+		}
+
 
 		// Kiểm tra biển số nhập vào có trùng biển số
 		public static bool cPrimaryKey(string _cPrim)
 		{
 			return XeDAO.KiemTraBienSo(_cPrim);
 		}
+
+		
+		
+
+		
 	}
 }

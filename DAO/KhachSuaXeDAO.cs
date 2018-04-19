@@ -24,7 +24,7 @@ namespace DAO
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
-			MySqlCommand cmd = new MySqlCommand("LoadAllKHACHSUAXE", Conn);
+			MySqlCommand cmd = new MySqlCommand("LoadAllCustomer", Conn);
 			
 
 			Conn.Open();
@@ -38,11 +38,13 @@ namespace DAO
 		#endregion
 		#region Insert, Update, Remove
 		
-		public static void ThemKhachHang(KhachSuaXeDTO kh)
+		public static void InsertCustomer(KhachSuaXeDTO kh)
 		{
-
 			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
-			MySqlCommand cmd = new MySqlCommand("InsertKHACHSUAXE", Conn);
+			
+			
+			
+			MySqlCommand cmd = new MySqlCommand("InsertCustomer", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
 			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.VarChar, 10);
@@ -65,11 +67,11 @@ namespace DAO
 
 
 		
-		public static void SuaKhachHang(KhachSuaXeDTO kh)
+		public static void UpdateCustomer(KhachSuaXeDTO kh)
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
-			MySqlCommand cmd = new MySqlCommand("UpdateKHACHSUAXE", Conn);
+			MySqlCommand cmd = new MySqlCommand("UpdateCustomer", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
 			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.VarChar, 10);
@@ -93,11 +95,11 @@ namespace DAO
 
 
 		
-		public static void XoaKhachHang(string _MaKhachSuaXe)
+		public static void RemoveCustomer(int _MaKhachSuaXe)
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
-			MySqlCommand cmd = new MySqlCommand("RemoveKHACHSUAXE", Conn);
+			MySqlCommand cmd = new MySqlCommand("RemoveCustomer", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
 			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.VarChar, 10);
@@ -109,7 +111,7 @@ namespace DAO
 		#endregion
 		#region Find Customers
 		//Tìm khách hàng theo mã khách hàng
-		public static void TimKhachHangByID(KhachSuaXeDTO kh)
+		public static void FindCustomerByID(KhachSuaXeDTO kh)
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
@@ -126,7 +128,7 @@ namespace DAO
 			Conn.Close();
 		}
 		//Tìm khách hàng theo nhiều điều kiện
-		public static void SearchKhachHang(KhachSuaXeDTO kh, string SoTienNoCompareType)
+		public static DataTable SearchCustomer(KhachSuaXeDTO kh, string SoTienNoCompareType)
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
@@ -150,13 +152,19 @@ namespace DAO
 			cmd.Parameters["@_SoTienNoCompareType"].Value = SoTienNoCompareType;
 
 			Conn.Open();
-			cmd.ExecuteNonQuery();
+			MySqlDataAdapter da = new MySqlDataAdapter();
+			da.SelectCommand = cmd;
+			DataTable dt = new DataTable();
+			da.Fill(dt);
 			Conn.Close();
+			return dt;
+
+			
 		}
 
 		#endregion
 		#region Check
-		public static bool KiemTraKhoaChinh(string _textBox)
+		public static bool CheckPrimary(string _textBox)
 		{
 			bool check = false;
 

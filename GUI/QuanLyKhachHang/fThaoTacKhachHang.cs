@@ -58,7 +58,8 @@ namespace GUI
 				if (!KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
 				{
 
-					string MaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
+					string strMaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
+					int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
 					string TenChuXe = tbTenChuXe.Text;
 					string DienThoai = tbDienThoai.Text;
 					string DiaChi = tbDiaChi.Text;
@@ -67,8 +68,8 @@ namespace GUI
 
 
 					KhachSuaXeDTO kh = new KhachSuaXeDTO(MaKhachSuaXe,TenChuXe,DienThoai,DiaChi,Email,TienNo);
-					KhachSuaXeBUS.addKhachHang(kh);
-					dtgvThaoTac.DataSource = KhachSuaXeBUS.loadTatCaKhachHang();
+					KhachSuaXeBUS.addCustomer(kh);
+					dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
 
 				}
 				else
@@ -93,9 +94,10 @@ namespace GUI
 			{
 				if (KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
 				{
-					string MaKhach = tbMaKhachSuaXe.Text;
-					KhachSuaXeBUS.delKhachSuaXe(MaKhach);
-					dtgvThaoTac.DataSource = KhachSuaXeBUS.loadTatCaKhachHang();
+					string strMaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
+					int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
+					KhachSuaXeBUS.delCustomer(MaKhachSuaXe);
+					dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
 				}
 				else
 				{
@@ -112,7 +114,8 @@ namespace GUI
 				if (KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
 				{
 
-					string MaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
+					string strMaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
+					int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
 					string TenChuXe = tbTenChuXe.Text;
 					string DienThoai = tbDienThoai.Text;
 					string DiaChi = tbDiaChi.Text;
@@ -121,8 +124,8 @@ namespace GUI
 
 
 					KhachSuaXeDTO kh = new KhachSuaXeDTO(MaKhachSuaXe, TenChuXe, DienThoai, DiaChi, Email, TienNo);
-					KhachSuaXeBUS.updateKhachHang(kh);
-					dtgvThaoTac.DataSource = KhachSuaXeBUS.loadTatCaKhachHang();
+					KhachSuaXeBUS.updateCustomer(kh);
+					dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
 
 				}
 				else
@@ -142,7 +145,7 @@ namespace GUI
 		//Lịch sử thao tác
 		private void btnLichSuThaoTac_Click(object sender, EventArgs e)
 		{
-			dtgvThaoTac.DataSource = KhachSuaXeBUS.loadTatCaKhachHang();
+			dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
 		}
 
 		#endregion

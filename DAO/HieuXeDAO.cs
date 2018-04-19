@@ -52,6 +52,7 @@ namespace DAO
 
 			cmd.Parameters["@_MaHieuXe"].Value = hx.MaHieuXe;
 			cmd.Parameters["@_TenHieuXe"].Value = hx.TenHieuXe;
+
 			
 
 			Conn.Open();

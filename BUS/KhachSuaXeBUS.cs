@@ -23,36 +23,37 @@ namespace BUS
 {
 	public class KhachSuaXeBUS
 	{
-		// Loa tat ca khach hang từ bảng
-		public static DataTable loadTatCaKhachHang()
+		
+		public static DataTable loadAllCustomer()
 		{
 			return KhachSuaXeDAO.getData();
 		}
-		//Them khach hang vào bảng 
-		public static void addKhachHang(KhachSuaXeDTO kh)
+		
+		public static void addCustomer(KhachSuaXeDTO kh)
 		{
-			KhachSuaXeDAO.ThemKhachHang(kh);
+			KhachSuaXeDAO.InsertCustomer(kh);
 		}
-		//Cập nhật khach hang vào bảng 
-		public static void updateKhachHang(KhachSuaXeDTO kh)
+		
+		public static void updateCustomer(KhachSuaXeDTO kh)
 		{
-			KhachSuaXeDAO.SuaKhachHang(kh);
+			KhachSuaXeDAO.UpdateCustomer(kh);
 		}
-		// Xoa Khách sửa xe từ Bảng KHACHSUAXE
-		public static void delKhachSuaXe(string _MaKhachSuaXe)
+		
+		public static void delCustomer(int _MaKhachSuaXe)
 		{
-			KhachSuaXeDAO.XoaKhachHang(_MaKhachSuaXe);
-		}
-
-		public static void SearchAllKhachSuaXe(KhachSuaXeDTO kh, string SoTienNoCompareType)
-		{
-			KhachSuaXeDAO.SearchKhachHang(kh, SoTienNoCompareType);
+			KhachSuaXeDAO.RemoveCustomer(_MaKhachSuaXe);
 		}
 
-		// Kiem tra du lieu nhap vao co bi trung khoa chinh
+		public static DataTable SearchAllCustomer(KhachSuaXeDTO kh, string SoTienNoCompareType)
+		{
+			return KhachSuaXeDAO.SearchCustomer(kh, SoTienNoCompareType);
+			
+		}
+
+		
 		public static bool cPrimaryKey(string _cPrim)
 		{
-			return KhachSuaXeDAO.KiemTraKhoaChinh(_cPrim);
+			return KhachSuaXeDAO.CheckPrimary(_cPrim);
 		}
 
 		

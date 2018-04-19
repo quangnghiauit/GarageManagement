@@ -106,5 +106,26 @@ namespace GUI
 			myForm1.Show();
 			#endregion
 		}
+
+		private void btnQuanLyVatTu_Click(object sender, EventArgs e)
+		{
+			#region Export  information
+			pnMain.Controls.Clear();
+			fmTraCuuVatTu myForm = new fmTraCuuVatTu();
+			myForm.TopLevel = false;
+			myForm.AutoScroll = true;
+			pnMain.Controls.Add(myForm);
+			myForm.Show();
+			#endregion
+
+			#region Export  operations
+			pnThaoTac.Controls.Clear();
+			fmThaoTacVatTu myForm1 = new fmThaoTacVatTu();
+			myForm1.TopLevel = false;
+			myForm1.AutoScroll = true;
+			pnThaoTac.Controls.Add(myForm1);
+			myForm1.Show();
+			#endregion
+		}
 	}
 }

@@ -11,6 +11,7 @@ CREATE TABLE PHIEUTHUTIEN
 	PRIMARY KEY (MAPHIEUTHUTIEN)
 );
 
+
 CREATE TABLE DOANHSO 
 (
 	MADOANHSO CHAR(10) NOT NULL,
@@ -19,13 +20,15 @@ CREATE TABLE DOANHSO
 	PRIMARY KEY (MADOANHSO)
 );
 
+
 CREATE TABLE XE 
 (
 	BIENSO CHAR(10) NOT NULL,
-	MAKHACHSUAXE CHAR(10),
+	MAKHACHSUAXE int,
 	MAHIEUXE CHAR(10),
 	PRIMARY KEY (BIENSO)
 );
+
 
 CREATE TABLE TIEPNHANXESUA
 (
@@ -34,6 +37,7 @@ CREATE TABLE TIEPNHANXESUA
 	NGAYTIEPNHAN DATE,
 	PRIMARY KEY (MATIEPNHANXESUA)
 );
+
 
 CREATE TABLE CHITIETDOANHSO
 (
@@ -46,9 +50,10 @@ CREATE TABLE CHITIETDOANHSO
 	PRIMARY KEY (MACHITIETDOANHSO)
 );
 
+
 CREATE TABLE KHACHSUAXE 
 (
-	MAKHACHSUAXE CHAR(10) NOT NULL,
+	MAKHACHSUAXE int NOT NULL,
 	TENCHUXE CHAR(100),
 	DIENTHOAI CHAR(20),
     DIACHI CHAR(100),
@@ -57,6 +62,7 @@ CREATE TABLE KHACHSUAXE
 	PRIMARY KEY (MAKHACHSUAXE)
 );
 
+
 CREATE TABLE BAOCAOTON
 (
 	MABAOCAOTON CHAR(10) NOT NULL,
@@ -64,6 +70,7 @@ CREATE TABLE BAOCAOTON
 	NAMBAOCAOTON DATE,
 	PRIMARY KEY (MABAOCAOTON)
 );
+
 
 CREATE TABLE CHITIETTON
 (
@@ -76,15 +83,17 @@ CREATE TABLE CHITIETTON
 	PRIMARY KEY (MACHITIETTON)
 );
 
+
 CREATE TABLE PHIEUSUACHUA 
 (
 	MAPHIEUSUACHUA CHAR(10) NOT NULL,
 	BIENSO CHAR(20),
 	NGAYSUACHUA DATE,
 	TONGTIEN DECIMAL,
-	MAKHACHSUAXE CHAR(10),
+	MAKHACHSUAXE int,
 	PRIMARY KEY (MAPHIEUSUACHUA)
 );
+
 
 CREATE TABLE VATTUPHUTUNG 
 (
@@ -94,6 +103,7 @@ CREATE TABLE VATTUPHUTUNG
 	SOLUONGVATTU INT,
 	PRIMARY KEY (MAVATTUPHUTUNG)
 );
+
 
 CREATE TABLE CHITIETPHIEUSUACHUA
 (
@@ -107,12 +117,14 @@ CREATE TABLE CHITIETPHIEUSUACHUA
 	PRIMARY KEY (MACTPHIEUSUAXE)
 );
 
+
 CREATE TABLE HIEUXE
 (
 	MAHIEUXE CHAR(10) NOT NULL,
 	TENHIEUXE CHAR(100),
 	PRIMARY KEY (MAHIEUXE)
 );
+
 
 CREATE TABLE THAMSO
 (
@@ -123,6 +135,9 @@ CREATE TABLE THAMSO
 	SOLUONGHIEUXETOIDA INT,
 	SOXESUACHUATOIDA INT
 );
+
+
+
 alter table CHITIETDOANHSO add foreign key (MADOANHSO) references DOANHSO (MADOANHSO);
 alter table TIEPNHANXESUA add foreign key (BIENSO) references XE (BIENSO);
 alter table PHIEUTHUTIEN add foreign key (BIENSO) references XE (BIENSO);
@@ -138,38 +153,43 @@ alter table CHITIETPHIEUSUACHUA add foreign key (MAPHIEUSUACHUA) references PHIE
 
 
 
+
+
 /*Phần này sử dụng trong bảng quản lý khách hàng và thao tác khách hàng*/
 DELIMITER //
-Create Procedure LoadAllKHACHSUAXE()
+Create Procedure LoadAllCustomer()
 Begin
 	select MaKhachSuaXe as 'Mã khách sửa xe', TenChuXe as 'Tên Chủ Xe', DienThoai as 'Điện Thoại', DiaChi as 'Địa Chỉ', Email as 'Email', TienNo as 'Tiền Nợ' from KHACHSUAXE;
 End //
 DELIMITER ;
 
+
 DELIMITER //
-Create Procedure InsertKHACHSUAXE( in _MaKhachSuaXe char(10), in _TenChuXe char(100), in _DienThoai char(20),in _DiaChi char(100), in _Email char(40), in _TienNo decimal)
+Create Procedure InsertCustomer( in _MaKhachSuaXe int, in _TenChuXe char(100), in _DienThoai char(20),in _DiaChi char(100), in _Email char(40), in _TienNo decimal)
 Begin
 	insert into KHACHSUAXE values(_MaKhachSuaXe, _TenChuXe, _DienThoai,_DiaChi, _Email, _TienNo);
 End //
 DELIMITER ;
 
+
 DELIMITER //
-Create Procedure UpdateKHACHSUAXE(in _MaKhachSuaXe char(10), in _TenChuXe char(100), in _DienThoai char(20),in _DiaChi char(100), in _Email char(40), in _TienNo decimal)
+Create Procedure UpdateCustomer(in _MaKhachSuaXe int, in _TenChuXe char(100), in _DienThoai char(20),in _DiaChi char(100), in _Email char(40), in _TienNo decimal)
 Begin
 	update KHACHSUAXE set TenChuXe = _TenChuXe, DienThoai = _DienThoai,DiaChi=_DiaChi, Email = _Email, TienNo = _TienNo where MaKhachSuaXe = _MaKhachSuaXe;
 End //
 DELIMITER ;
 
+
 DELIMITER //
-Create Procedure RemoveKHACHSUAXE(in _MaKhachSuaXe char(10))
+Create Procedure RemoveCustomer(in _MaKhachSuaXe int)
 Begin
 	delete from KHACHSUAXE where  MaKhachSuaXe = _MaKhachSuaXe;
 End //
-
 DELIMITER ;
 
+
 DELIMITER //
-Create Procedure FindCustomer (in _MaKhachSuaXe char(10))
+Create Procedure FindCustomer (in _MaKhachSuaXe int)
 Begin	
    
     select *
@@ -179,10 +199,11 @@ Begin
 End //
 DELIMITER ;
 
+
 DELIMITER // 
-create procedure FindCustomers (in _MaKhachSuaXe char(10), in _TenChuXe char(100), in _DienThoai char(20),in _DiaChi char(100), in _Email char(40), in _TienNo decimal, in _SoTienNoCompareType varchar(2))
+create procedure FindCustomers (in _MaKhachSuaXe int , in _TenChuXe char(100), in _DienThoai char(20),in _DiaChi char(100), in _Email char(40), in _TienNo decimal, in _SoTienNoCompareType varchar(2))
 Begin 
-		create temporary table SoTienNoTable (MaKhachSuaXe char(10));
+		create temporary table SoTienNoTable (MaKhachSuaXe int);
         case _SoTienNoCompareType
 			when '=' then insert into SoTienNoTable select MaKhachSuaXe from KHACHSUAXE where TienNo = _TienNo;
             when '>' then insert into SoTienNoTable select MaKhachSuaXe from KHACHSUAXE where TienNo > _TienNo;
@@ -200,6 +221,18 @@ Begin
             drop table SoTienNoTable; 
 End //
 DELIMITER ;
+
+
+
+DELIMITER //
+Create Procedure UpdateTienNo (in _MaKhachHang int, in _SoTien decimal)
+Begin
+	update KHACHSUAXE set TienNo = TienNo + _SoTien where MaKhachHang=_MaKhachHang;
+End //
+DELIMITER ;
+
+
+
 /*Thao tác với hiệu xe*/
 DELIMITER //
 Create Procedure LoadAllHIEUXE()
@@ -207,30 +240,39 @@ Begin
 	select MaHieuXe as 'Mã hiệu xe', TenHieuXe as 'Tên Hiệu Xe' from HIEUXE;
 End //
 DELIMITER ;
+
+
 DELIMITER //
 Create Procedure InsertHIEUXE( in _MaHieuXe char(10), in _TenHieuXe char(100))
 Begin
 	insert into HIEUXE values(_MaHieuXe, _TenHieuXe);
 End //
 DELIMITER ;
+
+
+
 DELIMITER //
 Create Procedure RemoveHIEUXE(in _MaHieuXe char(10))
 Begin
 	delete from HIEUXE where  MaHieuXe = _MaHieuXe;
 End //
-
 DELIMITER ;
 
-DELIMITER //
+
+
+/*DELIMITER //
 Create Procedure GetNewIDHIEUXE( in _MaHieuXe char(10), in _TenHieuXe char(100))
 Begin
 	select Max(cast(Substring(MaTheLoai,3, length(MaTheLoai)-2) as unsigned)) as 'MaxMaTheLoai' from HIEUXE;
 End //
 DELIMITER ;
+*/
+
+
 
         /*Phần này sử dụng trong bảng quản lý xe và thao tác xe*/
 DELIMITER //
-Create Procedure LoadAllXE()
+Create Procedure LoadAllCar()
 Begin
 	select BienSo as 'Biển sổ', TenChuXe as 'Tên Chủ Xe',  TenHieuXe as 'Tên Hiệu Xe', TienNo as 'Tiền Nợ' 
     from XE,HIEUXE,KHACHSUAXE where XE.MaHieuXe=HIEUXE.MaHieuXe 
@@ -238,37 +280,82 @@ Begin
 End //
 DELIMITER ;
 
+
+
 DELIMITER //
-Create Procedure InsertXE( in _BienSo char(20), in _TenChuXe char(100), in _TenHieuXe char(100), in _TienNo decimal)
+Create Procedure InsertCar( in _BienSo char(10), in _MaKhachSuaXe int, in _MaHieuXe char(10),_TienNo decimal)
 Begin
 
-	insert into HoaDon (MaNV) values (11);
 
-SELECT @MaHD = SCOPE_IDENTITY();
+update KHACHSUAXE set TienNo = _TienNo  where MaKhachSuaXe=_MaKhachSuaXe;
 
-insert into ChiTietHD (MaHD, MaMonAn)
-values (@MaHD, '01');
+
+insert into XE values(_BienSo, _MaKhachSuaXe,_MaHieuXe);
+    
 End //
 DELIMITER ;
 
+
+
+
+DELIMITER //
+Create Procedure UpdateCar( in _BienSo char(10), in _MaKhachSuaXe int, in _MaHieuXe char(10),_TienNo decimal)
+Begin
+	update KHACHSUAXE set  TienNo = _TienNo where MaKhachSuaXe = _MaKhachSuaXe;
+End //
+DELIMITER ;
+
+
+DELIMITER //
+Create Procedure RemoveCar(in _BienSo char(10), in _MaKhachSuaXe int, in _MaHieuXe char(10))
+Begin
+	delete from XE where BienSo=_BienSo;
+	
+    
+End //
+DELIMITER ;
+
+
+DELIMITER //
+Create Procedure FindCar (in _BienSo char(10))
+Begin	
+   
+    select *
+    from XE
+    where BienSo = _BienSo;
+          	
+End //
+DELIMITER ;
+
+
+DELIMITER // 
+create procedure FindCars (in _BienSo char(10) , in _MaKhachSuaXe int, in _MaHieuXe char(10),in _TenChuXe char(100),in _TenHieuXe char(100), in _TienNo decimal, in _SoTienNoCompareType varchar(2))
+Begin 
+		create temporary table SoTienNoTable (MaKhachSuaXe int);
+        case _SoTienNoCompareType
+			when '=' then insert into SoTienNoTable select MaKhachSuaXe from KHACHSUAXE where TienNo = _TienNo;
+            when '>' then insert into SoTienNoTable select MaKhachSuaXe from KHACHSUAXE where TienNo > _TienNo;
+            when '>=' then insert into SoTienNoTable select MaKhachSuaXe from KHACHSUAXE where TienNo >= _TienNo;
+            when '<' then insert into SoTienNoTable select MaKhachSuaXe from KHACHSUAXE where TienNo < _TienNo;
+            when '<=' then insert into SoTienNoTable select MaKhachSuaXe from KHACHSUAXE where TienNo <= _TienNo;
+            end case;
+            
+            select BienSo As 'Biển số', TenChuXe As 'Tên chủ xe', TenHieuXe As 'Tên hiệu xe',
+            CONCAT('', Format(TienNo,0), ' đ') As 'Số Tiền Nợ'
+            from KHACHSUAXE,XE,HIEUXE
+            where TenChuXe like CONCAT('%', _TenChuXe, '%') and TenHieuXe like CONCAT('%', _TenHieuXe, '%')  and
+            MaKhachSuaXe in (select MaKhachSuaXe from SoTienNoTable)  and
+            HIEUXE.MaHieuXe= _MaHieuXe and XE.MaHieuXe= _MaHieuXe;
+            
+            drop table SoTienNoTable; 
+End //
+DELIMITER ;
 
 
    
-DELIMITER //
-Create Procedure UpdateTienNo (in _MaKhachHang char(10), in _SoTien decimal)
-Begin
-	update KhachHang set TienNo = TienNo + _SoTien where MaKhachHang=_MaKhachHang;
-End //
-DELIMITER ;
 
-DELIMITER // 
-create procedure TimXE ( in _BienSo char(10), in _MaKhachSuaXe char(10))
-Begin 
-	select *
-    from XE
-    where BienSo = _BienSo and MaKhachSuaXe = _MaKhachSuaXe;
-End //
-DELIMITER ;
+
+
 
 
 DELIMITER // 
@@ -338,22 +425,5 @@ Begin
 End //
 DELIMITER ;
 
-/*DELIMITER //
-create procedure insertTIEPNHANXESUA ( in _TenChuXe char(100), in _BienSo char(10), in _DiaChi char(100), in _DienThoai char(20), in _MaHieuXe char(10), in _NgayTiepNhan date)
-Begin
-	insert into TIEPNHANXESUA values ( _BienSo, _NgayTiepNhan);
-	insert into KHACHSUAXE value ( _TenChuXe, _DienThoai);
-	insert into XE value ( _MaHieuXe, _DiaChi);
-End //
-DELIMITER ; 
-
-DELIMITER //
-Create Procedure UpdateTIEPNHANXESUA(in _TenChuXe char(100), in _BienSo char(10), in _DiaChi char(100), in _DienThoai char(20), in _MaHieuXe char(10), in _NgayTiepNhan date)
-Begin
-	update TIEPNHANHXESUA set NgayTiepNhan = _NgayTiepNhan where BIENSO = _BienSo;
-	update KHACHSUAXE set TenChuXe = _TenChuXe, DienThoai = _DienThoai;
-	update XE set DiaChi = _DiaChi where MaHieuXe = _MaHieuXe;
-End //
-DELIMITER ;*/
 
 

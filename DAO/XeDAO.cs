@@ -24,7 +24,7 @@ namespace DAO
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
-			MySqlCommand cmd = new MySqlCommand("LoadAllXE", Conn);
+			MySqlCommand cmd = new MySqlCommand("LoadAllCar", Conn);
 
 
 			Conn.Open();
@@ -37,22 +37,29 @@ namespace DAO
 		}
 		#endregion
 		#region Insert, Update, Remove
+		
 
-		public static void ThemXe(XeDTO xe)
+		public static void InsertCar(string BienSo,int MaKhachSuaXe,string MaHieuXe,int TienNo)
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
-			MySqlCommand cmd = new MySqlCommand("InsertXE", Conn);
+
+
+
+			MySqlCommand cmd = new MySqlCommand("InsertCar", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
-			cmd.Parameters.Add("@_BienSo", MySqlDbType.VarChar, 20);
-			cmd.Parameters.Add("@_TenChuXe", MySqlDbType.VarChar, 100);
-			cmd.Parameters.Add("@_TenHieuXe", MySqlDbType.VarChar, 100);
+			cmd.Parameters.Add("@_BienSo", MySqlDbType.VarChar, 10);
+			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.Decimal);
+			cmd.Parameters.Add("@_MaHieuXe", MySqlDbType.VarChar, 20);
+			
 			cmd.Parameters.Add("@_TienNo", MySqlDbType.Decimal);
-			cmd.Parameters["@_BienSo"].Value = xe.BienSo;
-			cmd.Parameters["@_TenChuXe"].Value = xe.TenChuXe;
-			cmd.Parameters["@_TenHieuXe"].Value = xe.TenHieuXe;
-			cmd.Parameters["@_TienNo"].Value = xe.TienNo;
+			cmd.Parameters["@_BienSo"].Value = BienSo;
+			cmd.Parameters["@_MaKhachSuaXe"].Value = MaKhachSuaXe;
+
+			cmd.Parameters["@_MaHieuXe"].Value = MaHieuXe;
+
+			cmd.Parameters["@_TienNo"].Value = TienNo;
 
 			Conn.Open();
 			cmd.ExecuteNonQuery();
@@ -60,26 +67,24 @@ namespace DAO
 		}
 
 
-
-		public static void SuaKhachHang(KhachSuaXeDTO kh)
+		public static void UpdateCar(string BienSo, int MaKhachSuaXe, string MaHieuXe, int TienNo)
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
-			MySqlCommand cmd = new MySqlCommand("UpdateKHACHSUAXE", Conn);
+			MySqlCommand cmd = new MySqlCommand("UpdateCar", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
-			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.VarChar, 10);
-			cmd.Parameters.Add("@_TenChuXe", MySqlDbType.VarChar, 100);
-			cmd.Parameters.Add("@_DienThoai", MySqlDbType.VarChar, 20);
-			cmd.Parameters.Add("@_DiaChi", MySqlDbType.VarChar, 100);
-			cmd.Parameters.Add("@_Email", MySqlDbType.VarChar, 40);
+			cmd.Parameters.Add("@_BienSo", MySqlDbType.VarChar, 10);
+			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.Decimal);
+			cmd.Parameters.Add("@_MaHieuXe", MySqlDbType.VarChar, 20);
+
 			cmd.Parameters.Add("@_TienNo", MySqlDbType.Decimal);
-			cmd.Parameters["@_MaKhachSuaXe"].Value = kh.MaKhachSuaXe;
-			cmd.Parameters["@_TenChuXe"].Value = kh.TenChuXe;
-			cmd.Parameters["@_DienThoai"].Value = kh.DienThoai;
-			cmd.Parameters["@_DiaChi"].Value = kh.DiaChi;
-			cmd.Parameters["@_Email"].Value = kh.Email;
-			cmd.Parameters["@_TienNo"].Value = kh.TienNo;
+			cmd.Parameters["@_BienSo"].Value = BienSo;
+			cmd.Parameters["@_MaKhachSuaXe"].Value = MaKhachSuaXe;
+
+			cmd.Parameters["@_MaHieuXe"].Value = MaHieuXe;
+
+			cmd.Parameters["@_TienNo"].Value = TienNo;
 
 			Conn.Open();
 			cmd.ExecuteNonQuery();
@@ -89,69 +94,96 @@ namespace DAO
 
 
 
-		public static void XoaKhachHang(string _MaKhachSuaXe)
+		public static void RemoveCar(string BienSo, int MaKhachSuaXe, string MaHieuXe)
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
-			MySqlCommand cmd = new MySqlCommand("RemoveKHACHSUAXE", Conn);
+			MySqlCommand cmd = new MySqlCommand("RemoveCar", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
-			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.VarChar, 10);
-			cmd.Parameters["@_MaKhachSuaXe"].Value = _MaKhachSuaXe;
+			cmd.Parameters.Add("@_BienSo", MySqlDbType.VarChar, 10);
+			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.Decimal);
+			cmd.Parameters.Add("@_MaHieuXe", MySqlDbType.VarChar, 20);
+
+			
+			cmd.Parameters["@_BienSo"].Value = BienSo;
+			cmd.Parameters["@_MaKhachSuaXe"].Value = MaKhachSuaXe;
+
+			cmd.Parameters["@_MaHieuXe"].Value = MaHieuXe;
+
+			
 			Conn.Open();
 			cmd.ExecuteNonQuery();
 			Conn.Close();
 		}
+
+
+
+
+
 		#endregion
+
+
 		#region Find Customers
-		//Tìm khách hàng theo mã khách hàng
-		public static void TimKhachHangByID(KhachSuaXeDTO kh)
+		//Tìm xe theo bien so
+		public static void FindCarByID(XeDTO xe)
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
-			MySqlCommand cmd = new MySqlCommand("FindCustomer", Conn);
+			MySqlCommand cmd = new MySqlCommand("FindCar", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
-			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.VarChar, 10);
+			cmd.Parameters.Add("@_BienSo", MySqlDbType.VarChar, 10);
 
-			cmd.Parameters["@_MaKhachSuaXe"].Value = kh.MaKhachSuaXe;
+			cmd.Parameters["@_BienSo"].Value = xe.BienSo;
 
 
 			Conn.Open();
 			cmd.ExecuteNonQuery();
 			Conn.Close();
 		}
-		//Tìm khách hàng theo nhiều điều kiện
-		public static void SearchKhachHang(KhachSuaXeDTO kh, string SoTienNoCompareType)
+		//Tìm xe theo nhiều điều kiện
+		public static DataTable SearchCar(string _BienSo , int _MaKhachSuaXe , string  _MaHieuXe ,string  _TenChuXe ,string  _TenHieuXe , int  _TienNo , string SoTienNoCompareType )
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
-			MySqlCommand cmd = new MySqlCommand("FindCustomers", Conn);
+			MySqlCommand cmd = new MySqlCommand("FindCars", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
-			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.VarChar, 10);
+			cmd.Parameters.Add("@_BienSo", MySqlDbType.VarChar, 10);
 			cmd.Parameters.Add("@_TenChuXe", MySqlDbType.VarChar, 100);
-			cmd.Parameters.Add("@_DienThoai", MySqlDbType.VarChar, 20);
-			cmd.Parameters.Add("@_DiaChi", MySqlDbType.VarChar, 100);
-			cmd.Parameters.Add("@_Email", MySqlDbType.VarChar, 40);
+			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.Decimal);
+			cmd.Parameters.Add("@_MaHieuXe", MySqlDbType.VarChar, 10);
+			cmd.Parameters.Add("@_TenHieuXe", MySqlDbType.VarChar, 100);
 			cmd.Parameters.Add("@_TienNo", MySqlDbType.Decimal);
 			cmd.Parameters.Add("@_SoTienNoCompareType", MySqlDbType.VarChar, 2);
 
-			cmd.Parameters["@_MaKhachSuaXe"].Value = kh.MaKhachSuaXe;
-			cmd.Parameters["@_TenChuXe"].Value = kh.TenChuXe;
-			cmd.Parameters["@_DienThoai"].Value = kh.DienThoai;
-			cmd.Parameters["@_DiaChi"].Value = kh.DiaChi;
-			cmd.Parameters["@_Email"].Value = kh.Email;
-			cmd.Parameters["@_TienNo"].Value = kh.TienNo;
+			cmd.Parameters["@_BienSo"].Value = _BienSo;
+			cmd.Parameters["@_TenChuXe"].Value = _TenChuXe;
+			cmd.Parameters["@_MaKhachSuaXe"].Value = _MaKhachSuaXe;
+			cmd.Parameters["@_MaHieuXe"].Value = _MaHieuXe;
+			cmd.Parameters["@_TenHieuXe"].Value = _TenHieuXe;
+			cmd.Parameters["@_TienNo"].Value = _TienNo;
 			cmd.Parameters["@_SoTienNoCompareType"].Value = SoTienNoCompareType;
 
 			Conn.Open();
-			cmd.ExecuteNonQuery();
+			MySqlDataAdapter da = new MySqlDataAdapter();
+			da.SelectCommand = cmd;
+			DataTable dt = new DataTable();
+			da.Fill(dt);
 			Conn.Close();
+			return dt;
+
+			
+
+			
+
+			
+
+
 		}
 
 		#endregion
-		
 		#region Check
 		public static bool KiemTraBienSo(string _textBox)
 		{

@@ -10,7 +10,7 @@ namespace DTO
 	
 	public class KhachSuaXeDTO
 	{
-		private string maKhachSuaXe;
+		private int maKhachSuaXe;
 		private string tenChuXe;
 		private string diaChi;
 		private string dienThoai;
@@ -18,7 +18,7 @@ namespace DTO
 		private int tienNo;
 		
 		#region Properties
-		public string MaKhachSuaXe
+		public int MaKhachSuaXe
 		{
 			get { return maKhachSuaXe; }
 			set { maKhachSuaXe = value; }
@@ -64,7 +64,7 @@ namespace DTO
 		#region Constructor and Destructor
 		public KhachSuaXeDTO()
 		{
-			MaKhachSuaXe = "";
+			MaKhachSuaXe = 0;
 			TenChuXe = "";
 			DienThoai = "";
 			DiaChi = "";
@@ -75,7 +75,7 @@ namespace DTO
 
 
 
-		public KhachSuaXeDTO(string maKhachSuaXe, string tenChuXe, string dienThoai, string diaChi, string email, int tienNo)
+		public KhachSuaXeDTO(int maKhachSuaXe, string tenChuXe, string dienThoai, string diaChi, string email, int tienNo)
 		{
 			this.maKhachSuaXe = maKhachSuaXe;
 			this.tenChuXe = tenChuXe;

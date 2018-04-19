@@ -31,7 +31,6 @@
 			this.btnThayDoiDatabase = new System.Windows.Forms.Button();
 			this.btnThayDoiQuyDinh = new System.Windows.Forms.Button();
 			this.fThayDoiTienCong = new System.Windows.Forms.Button();
-			this.fThayDoiVatTu = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnThayDoiDatabase
@@ -56,7 +55,7 @@
 			// 
 			// fThayDoiTienCong
 			// 
-			this.fThayDoiTienCong.Location = new System.Drawing.Point(438, 253);
+			this.fThayDoiTienCong.Location = new System.Drawing.Point(155, 254);
 			this.fThayDoiTienCong.Name = "fThayDoiTienCong";
 			this.fThayDoiTienCong.Size = new System.Drawing.Size(207, 119);
 			this.fThayDoiTienCong.TabIndex = 4;
@@ -64,23 +63,12 @@
 			this.fThayDoiTienCong.UseVisualStyleBackColor = true;
 			this.fThayDoiTienCong.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// fThayDoiVatTu
-			// 
-			this.fThayDoiVatTu.Location = new System.Drawing.Point(155, 253);
-			this.fThayDoiVatTu.Name = "fThayDoiVatTu";
-			this.fThayDoiVatTu.Size = new System.Drawing.Size(198, 119);
-			this.fThayDoiVatTu.TabIndex = 3;
-			this.fThayDoiVatTu.Text = "Thay Đổi Số Loại\r\nVật Tư Phụ Tùng\r\n";
-			this.fThayDoiVatTu.UseVisualStyleBackColor = true;
-			this.fThayDoiVatTu.Click += new System.EventHandler(this.fThayDoiVatTu_Click);
-			// 
 			// fThongTin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(848, 515);
+			this.ClientSize = new System.Drawing.Size(850, 540);
 			this.Controls.Add(this.fThayDoiTienCong);
-			this.Controls.Add(this.fThayDoiVatTu);
 			this.Controls.Add(this.btnThayDoiQuyDinh);
 			this.Controls.Add(this.btnThayDoiDatabase);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -95,6 +83,5 @@
 		private System.Windows.Forms.Button btnThayDoiDatabase;
 		private System.Windows.Forms.Button btnThayDoiQuyDinh;
 		private System.Windows.Forms.Button fThayDoiTienCong;
-		private System.Windows.Forms.Button fThayDoiVatTu;
 	}
 }

@@ -52,9 +52,22 @@ namespace GUI
 			cbbTienNo.Items.Add("Nhỏ hơn");
 
 			cbbTienNo.Items.Add("Nhỏ hơn hoặc bằng");
-			cbbTienNo.SelectedIndex = 0;
+			cbbTienNo.SelectedIndex = 2;
+
+			//load CustomerID
+			
+			MySqlConnection Conncustomer = DatabaseConnectionDAO.HamKetNoi();
+			MySqlCommand cmdcustomer = new MySqlCommand("select MAKHACHSUAXE from KHACHSUAXE", Conncustomer);
 
 
+			Conncustomer.Open();
+			MySqlDataAdapter dacustomer = new MySqlDataAdapter();
+			dacustomer.SelectCommand = cmdcustomer;
+			DataSet dscustomer = new DataSet();
+			dacustomer.Fill(dscustomer, "MaKhachSuaXe");
+			cbbMaKhachHangTraCuu.DataSource = dscustomer.Tables[0];
+			cbbMaKhachHangTraCuu.DisplayMember = "MaKhachSuaXe";
+			cbbMaKhachHangTraCuu.ValueMember = "MaKhachSuaXe";
 
 
 
@@ -94,12 +107,13 @@ namespace GUI
 			{
 				SoTienNoCompareType = Decimal.Parse(tbSoTienNoTraCuu.Text);
 			}
-			if (!fMainForm.cNullTB(tbMaKhachHangTraCuu.Text)|| !fMainForm.cNullTB(tbSoTienNoTraCuu.Text))
+			if (!fMainForm.cNullTB(cbbMaKhachHangTraCuu.DisplayMember) && !fMainForm.cNullTB(tbSoTienNoTraCuu.Text))
 			{
-				if (KhachSuaXeBUS.cPrimaryKey(tbMaKhachHangTraCuu.Text.Trim()))
+				if (KhachSuaXeBUS.cPrimaryKey(cbbMaKhachHangTraCuu.SelectedValue.ToString().Trim()))
 				{
 
-					string MaKhachSuaXe = tbMaKhachHangTraCuu.Text.Trim();
+					string strMaKhachSuaXe = cbbMaKhachHangTraCuu.SelectedValue.ToString().Trim();
+					int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
 					string TenChuXe =tbTenKhachHangTraCuu.Text;
 					string DienThoai = tbDienThoaiTraCuu.Text;
 					string DiaChi = tbDiaChiTraCuu.Text;
@@ -108,9 +122,8 @@ namespace GUI
 
 
 					KhachSuaXeDTO kh = new KhachSuaXeDTO(MaKhachSuaXe, TenChuXe, DienThoai, DiaChi, Email, TienNo);
-					KhachSuaXeBUS.SearchAllKhachSuaXe(kh, CompareType);
-					dtgvKhachHang.DataSource = KhachSuaXeBUS.loadTatCaKhachHang();
-
+					
+					dtgvKhachHang.DataSource = KhachSuaXeBUS.SearchAllCustomer(kh, CompareType);
 				}
 				else
 				{

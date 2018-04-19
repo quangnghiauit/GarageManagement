@@ -36,24 +36,28 @@
 			this.btnQLKH = new System.Windows.Forms.Button();
 			this.pnThaoTac = new System.Windows.Forms.Panel();
 			this.pnMain = new System.Windows.Forms.Panel();
+			this.btnTroGiup = new System.Windows.Forms.Button();
+			this.btnQuanLyVatTu = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.btnGD);
+			this.panel1.Controls.Add(this.btnQuanLyVatTu);
+			this.panel1.Controls.Add(this.btnTroGiup);
 			this.panel1.Controls.Add(this.btnTT);
 			this.panel1.Controls.Add(this.btnBC);
-			this.panel1.Controls.Add(this.btnGD);
 			this.panel1.Controls.Add(this.btnTCX);
 			this.panel1.Controls.Add(this.btnQLKH);
-			this.panel1.Location = new System.Drawing.Point(37, 12);
+			this.panel1.Location = new System.Drawing.Point(12, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(849, 93);
+			this.panel1.Size = new System.Drawing.Size(1250, 93);
 			this.panel1.TabIndex = 0;
 			// 
 			// btnTT
 			// 
-			this.btnTT.Location = new System.Drawing.Point(676, 3);
+			this.btnTT.Location = new System.Drawing.Point(905, 3);
 			this.btnTT.Name = "btnTT";
 			this.btnTT.Size = new System.Drawing.Size(162, 83);
 			this.btnTT.TabIndex = 4;
@@ -63,7 +67,7 @@
 			// 
 			// btnBC
 			// 
-			this.btnBC.Location = new System.Drawing.Point(508, 3);
+			this.btnBC.Location = new System.Drawing.Point(726, 3);
 			this.btnBC.Name = "btnBC";
 			this.btnBC.Size = new System.Drawing.Size(162, 83);
 			this.btnBC.TabIndex = 3;
@@ -73,7 +77,7 @@
 			// 
 			// btnGD
 			// 
-			this.btnGD.Location = new System.Drawing.Point(340, 3);
+			this.btnGD.Location = new System.Drawing.Point(548, 3);
 			this.btnGD.Name = "btnGD";
 			this.btnGD.Size = new System.Drawing.Size(162, 83);
 			this.btnGD.TabIndex = 2;
@@ -83,7 +87,7 @@
 			// 
 			// btnTCX
 			// 
-			this.btnTCX.Location = new System.Drawing.Point(172, 3);
+			this.btnTCX.Location = new System.Drawing.Point(202, 3);
 			this.btnTCX.Name = "btnTCX";
 			this.btnTCX.Size = new System.Drawing.Size(162, 83);
 			this.btnTCX.TabIndex = 1;
@@ -93,7 +97,7 @@
 			// 
 			// btnQLKH
 			// 
-			this.btnQLKH.Location = new System.Drawing.Point(4, 3);
+			this.btnQLKH.Location = new System.Drawing.Point(34, 3);
 			this.btnQLKH.Name = "btnQLKH";
 			this.btnQLKH.Size = new System.Drawing.Size(162, 83);
 			this.btnQLKH.TabIndex = 0;
@@ -103,17 +107,36 @@
 			// 
 			// pnThaoTac
 			// 
-			this.pnThaoTac.Location = new System.Drawing.Point(894, 12);
+			this.pnThaoTac.Location = new System.Drawing.Point(882, 117);
 			this.pnThaoTac.Name = "pnThaoTac";
-			this.pnThaoTac.Size = new System.Drawing.Size(388, 642);
+			this.pnThaoTac.Size = new System.Drawing.Size(380, 540);
 			this.pnThaoTac.TabIndex = 1;
 			// 
 			// pnMain
 			// 
-			this.pnMain.Location = new System.Drawing.Point(38, 134);
+			this.pnMain.Location = new System.Drawing.Point(12, 117);
 			this.pnMain.Name = "pnMain";
-			this.pnMain.Size = new System.Drawing.Size(850, 520);
+			this.pnMain.Size = new System.Drawing.Size(850, 540);
 			this.pnMain.TabIndex = 2;
+			// 
+			// btnTroGiup
+			// 
+			this.btnTroGiup.Location = new System.Drawing.Point(1073, 3);
+			this.btnTroGiup.Name = "btnTroGiup";
+			this.btnTroGiup.Size = new System.Drawing.Size(162, 83);
+			this.btnTroGiup.TabIndex = 5;
+			this.btnTroGiup.Text = "Trợ Giúp";
+			this.btnTroGiup.UseVisualStyleBackColor = true;
+			// 
+			// btnQuanLyVatTu
+			// 
+			this.btnQuanLyVatTu.Location = new System.Drawing.Point(380, 3);
+			this.btnQuanLyVatTu.Name = "btnQuanLyVatTu";
+			this.btnQuanLyVatTu.Size = new System.Drawing.Size(162, 83);
+			this.btnQuanLyVatTu.TabIndex = 6;
+			this.btnQuanLyVatTu.Text = "Quản Lý Vật Tư";
+			this.btnQuanLyVatTu.UseVisualStyleBackColor = true;
+			this.btnQuanLyVatTu.Click += new System.EventHandler(this.btnQuanLyVatTu_Click);
 			// 
 			// fMainForm
 			// 
@@ -141,6 +164,8 @@
 		private System.Windows.Forms.Button btnQLKH;
 		private System.Windows.Forms.Panel pnThaoTac;
 		private System.Windows.Forms.Panel pnMain;
+		private System.Windows.Forms.Button btnQuanLyVatTu;
+		private System.Windows.Forms.Button btnTroGiup;
 	}
 }
 

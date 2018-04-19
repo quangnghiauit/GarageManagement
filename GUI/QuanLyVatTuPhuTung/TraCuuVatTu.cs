@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-	public partial class fThayDoiVatTu : Form
+	public partial class fmTraCuuVatTu : Form
 	{
-		public fThayDoiVatTu()
+		public fmTraCuuVatTu()
 		{
 			InitializeComponent();
 		}

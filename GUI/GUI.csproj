@@ -72,17 +72,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LapPhieuSuaChua.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyVatTuPhuTung\ThaoTacVatTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyVatTuPhuTung\ThaoTacVatTu.Designer.cs">
+      <DependentUpon>ThaoTacVatTu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongTin\ThayDoiTienCong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThongTin\ThayDoiTienCong.Designer.cs">
       <DependentUpon>ThayDoiTienCong.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThongTin\ThayDoiVatTu.cs">
+    <Compile Include="QuanLyVatTuPhuTung\TraCuuVatTu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongTin\ThayDoiVatTu.Designer.cs">
-      <DependentUpon>ThayDoiVatTu.cs</DependentUpon>
+    <Compile Include="QuanLyVatTuPhuTung\TraCuuVatTu.Designer.cs">
+      <DependentUpon>TraCuuVatTu.cs</DependentUpon>
     </Compile>
     <Compile Include="TraCuuXe\fThemHieuXe.cs">
       <SubType>Form</SubType>
@@ -173,11 +179,14 @@
     <EmbeddedResource Include="BaoCao\fBaoCao.resx">
       <DependentUpon>fBaoCao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyVatTuPhuTung\ThaoTacVatTu.resx">
+      <DependentUpon>ThaoTacVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyVatTuPhuTung\TraCuuVatTu.resx">
+      <DependentUpon>TraCuuVatTu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThongTin\ThayDoiTienCong.resx">
       <DependentUpon>ThayDoiTienCong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ThongTin\ThayDoiVatTu.resx">
-      <DependentUpon>ThayDoiVatTu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TraCuuXe\fThaoTacXe.resx">
       <DependentUpon>fThaoTacXe.cs</DependentUpon>

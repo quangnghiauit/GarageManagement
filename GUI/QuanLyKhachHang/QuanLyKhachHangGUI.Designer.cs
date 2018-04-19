@@ -43,7 +43,6 @@ namespace GUI
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyKhachHang));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.tbMaKhachHangTraCuu = new System.Windows.Forms.TextBox();
 			this.btnXuatFile = new System.Windows.Forms.Button();
 			this.btnTimTatCa = new System.Windows.Forms.Button();
 			this.tbSoTienNoTraCuu = new System.Windows.Forms.TextBox();
@@ -61,18 +60,17 @@ namespace GUI
 			this.tbTenKhachHangTraCuu = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.label15 = new System.Windows.Forms.Label();
-			this.panel1 = new System.Windows.Forms.Panel();
 			this.dtgvKhachHang = new System.Windows.Forms.DataGridView();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+			this.cbbMaKhachHangTraCuu = new System.Windows.Forms.ComboBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.tbMaKhachHangTraCuu);
+			this.groupBox1.Controls.Add(this.cbbMaKhachHangTraCuu);
 			this.groupBox1.Controls.Add(this.btnXuatFile);
 			this.groupBox1.Controls.Add(this.btnTimTatCa);
 			this.groupBox1.Controls.Add(this.tbSoTienNoTraCuu);
@@ -97,13 +95,6 @@ namespace GUI
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Quản lý khách hàng";
 			this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-			// 
-			// tbMaKhachHangTraCuu
-			// 
-			this.tbMaKhachHangTraCuu.Location = new System.Drawing.Point(360, 35);
-			this.tbMaKhachHangTraCuu.Name = "tbMaKhachHangTraCuu";
-			this.tbMaKhachHangTraCuu.Size = new System.Drawing.Size(130, 20);
-			this.tbMaKhachHangTraCuu.TabIndex = 16;
 			// 
 			// btnXuatFile
 			// 
@@ -264,34 +255,34 @@ namespace GUI
 			this.label15.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label15.ForeColor = System.Drawing.Color.Black;
-			this.label15.Location = new System.Drawing.Point(185, 245);
+			this.label15.Location = new System.Drawing.Point(188, 242);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(480, 31);
 			this.label15.TabIndex = 13;
 			this.label15.Text = "QUẢN LÝ THÔNG TIN KHÁCH HÀNG";
 			// 
-			// panel1
-			// 
-			this.panel1.Controls.Add(this.dtgvKhachHang);
-			this.panel1.Location = new System.Drawing.Point(12, 286);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(809, 227);
-			this.panel1.TabIndex = 14;
-			// 
 			// dtgvKhachHang
 			// 
 			this.dtgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dtgvKhachHang.Location = new System.Drawing.Point(3, 10);
+			this.dtgvKhachHang.Location = new System.Drawing.Point(36, 286);
 			this.dtgvKhachHang.Name = "dtgvKhachHang";
-			this.dtgvKhachHang.Size = new System.Drawing.Size(792, 216);
+			this.dtgvKhachHang.Size = new System.Drawing.Size(763, 253);
 			this.dtgvKhachHang.TabIndex = 0;
+			// 
+			// cbbMaKhachHangTraCuu
+			// 
+			this.cbbMaKhachHangTraCuu.FormattingEnabled = true;
+			this.cbbMaKhachHangTraCuu.Location = new System.Drawing.Point(359, 34);
+			this.cbbMaKhachHangTraCuu.Name = "cbbMaKhachHangTraCuu";
+			this.cbbMaKhachHangTraCuu.Size = new System.Drawing.Size(131, 21);
+			this.cbbMaKhachHangTraCuu.TabIndex = 16;
 			// 
 			// fQuanLyKhachHang
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(850, 520);
-			this.Controls.Add(this.panel1);
+			this.ClientSize = new System.Drawing.Size(850, 540);
+			this.Controls.Add(this.dtgvKhachHang);
 			this.Controls.Add(this.label15);
 			this.Controls.Add(this.groupBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -301,7 +292,6 @@ namespace GUI
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			this.panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -324,13 +314,12 @@ namespace GUI
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.DataGridView dtgvKhachHang;
 		private System.Windows.Forms.ToolTip toolTip1;
 		private System.Windows.Forms.ComboBox cbbTienNo;
 		private System.Windows.Forms.TextBox tbSoTienNoTraCuu;
 		private System.Windows.Forms.Button btnXuatFile;
 		private System.Windows.Forms.Button btnTimTatCa;
-		private TextBox tbMaKhachHangTraCuu;
+		private ComboBox cbbMaKhachHangTraCuu;
 	}
 }
