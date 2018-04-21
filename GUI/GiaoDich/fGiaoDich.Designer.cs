@@ -35,7 +35,7 @@
 			// 
 			// btnLapPhieuSuaChua
 			// 
-			this.btnLapPhieuSuaChua.Location = new System.Drawing.Point(45, 154);
+			this.btnLapPhieuSuaChua.Location = new System.Drawing.Point(334, 154);
 			this.btnLapPhieuSuaChua.Name = "btnLapPhieuSuaChua";
 			this.btnLapPhieuSuaChua.Size = new System.Drawing.Size(174, 152);
 			this.btnLapPhieuSuaChua.TabIndex = 0;
@@ -45,7 +45,7 @@
 			// 
 			// btnLapPhieuThuTien
 			// 
-			this.btnLapPhieuThuTien.Location = new System.Drawing.Point(269, 154);
+			this.btnLapPhieuThuTien.Location = new System.Drawing.Point(560, 154);
 			this.btnLapPhieuThuTien.Name = "btnLapPhieuThuTien";
 			this.btnLapPhieuThuTien.Size = new System.Drawing.Size(174, 152);
 			this.btnLapPhieuThuTien.TabIndex = 1;
@@ -55,7 +55,7 @@
 			// 
 			// btnTiepNhanBaoTriXe
 			// 
-			this.btnTiepNhanBaoTriXe.Location = new System.Drawing.Point(505, 154);
+			this.btnTiepNhanBaoTriXe.Location = new System.Drawing.Point(97, 154);
 			this.btnTiepNhanBaoTriXe.Name = "btnTiepNhanBaoTriXe";
 			this.btnTiepNhanBaoTriXe.Size = new System.Drawing.Size(174, 152);
 			this.btnTiepNhanBaoTriXe.TabIndex = 2;

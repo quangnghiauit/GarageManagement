@@ -67,11 +67,6 @@
     <Compile Include="BaoCao\fBaoCao.Designer.cs">
       <DependentUpon>fBaoCao.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoDich\LapPhieuSuaChua.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LapPhieuSuaChua.xsd</DependentUpon>
-    </Compile>
     <Compile Include="QuanLyVatTuPhuTung\ThaoTacVatTu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,17 +232,6 @@
     <EmbeddedResource Include="TraCuuXe\TraCuuXeGUI.resx">
       <DependentUpon>TraCuuXeGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="GiaoDich\LapPhieuSuaChua.xsc">
-      <DependentUpon>LapPhieuSuaChua.xsd</DependentUpon>
-    </None>
-    <None Include="GiaoDich\LapPhieuSuaChua.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LapPhieuSuaChua.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="GiaoDich\LapPhieuSuaChua.xss">
-      <DependentUpon>LapPhieuSuaChua.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
