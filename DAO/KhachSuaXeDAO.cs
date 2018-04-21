@@ -23,7 +23,7 @@ namespace DAO
 		public static DataTable getData()
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("LoadAllCustomer", Conn);
 			
 
@@ -40,7 +40,7 @@ namespace DAO
 		
 		public static void InsertCustomer(KhachSuaXeDTO kh)
 		{
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			
 			
 			
@@ -70,7 +70,7 @@ namespace DAO
 		public static void UpdateCustomer(KhachSuaXeDTO kh)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("UpdateCustomer", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -98,7 +98,7 @@ namespace DAO
 		public static void RemoveCustomer(int _MaKhachSuaXe)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("RemoveCustomer", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -114,7 +114,7 @@ namespace DAO
 		public static void FindCustomerByID(KhachSuaXeDTO kh)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("FindCustomer", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -131,7 +131,7 @@ namespace DAO
 		public static DataTable SearchCustomer(KhachSuaXeDTO kh, string SoTienNoCompareType)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("FindCustomers", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -169,7 +169,7 @@ namespace DAO
 			bool check = false;
 
 			string cPrimaryKey = "Select *From KHACHSUAXE Where MAKHACHSUAXE = '" + _textBox + "' ";
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand(cPrimaryKey, Conn);
 			cmd.CommandType = CommandType.Text;
 			Conn.Open();

@@ -23,7 +23,7 @@ namespace DAO
 		public static DataTable getData()
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("LoadAllHIEUXE", Conn);
 
 
@@ -43,7 +43,7 @@ namespace DAO
 		public static void ThemHieuXe(HieuXeDTO hx)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("InsertHIEUXE", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -62,7 +62,7 @@ namespace DAO
 		public static void XoaHieuXe(string _MaHieuXe)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("RemoveHIEUXE", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -80,7 +80,7 @@ namespace DAO
 			bool check = false;
 
 			string cPrimaryKey = "Select *From HIEUXE Where MAHIEUXE = '" + _textBox + "' ";
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand(cPrimaryKey, Conn);
 			cmd.CommandType = CommandType.Text;
 			Conn.Open();

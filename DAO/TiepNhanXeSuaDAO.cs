@@ -15,7 +15,7 @@ namespace DAO
         {
             DataTable data = new DataTable();
 
-            using (MySqlConnection connection = DatabaseConnectionDAO.HamKetNoi())
+            using (MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase())
             {
                 MySqlCommand command = new MySqlCommand("SelectAllPhieuThuTien", connection);
 
@@ -34,7 +34,7 @@ namespace DAO
         public static void insertPhieuThuTien(TiepNhanXeSuaDTO TiepNhan)
         {
 
-            MySqlConnection connect = DatabaseConnectionDAO.HamKetNoi();
+            MySqlConnection connect = DatabaseConnectionDAO.connectionDatabase();
 
             MySqlCommand command = new MySqlCommand("InsertPHIEUTHUTIEN", connect);
             command.CommandType = CommandType.StoredProcedure;

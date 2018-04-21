@@ -134,7 +134,7 @@ namespace GUI
 		{
 			#region Load car name and customer name
 			//display car name and set value car
-			MySqlConnection ConnCar = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection ConnCar = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmdCar = new MySqlCommand("select MAHIEUXE,TENHIEUXE from HIEUXE", ConnCar);
 
 
@@ -148,7 +148,7 @@ namespace GUI
 			cbbHieuXe.ValueMember = "MaHieuXe";
 
 			//display customer name and set value ID customer
-			MySqlConnection Conncustomer = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmdcustomer = new MySqlCommand("select MAKHACHSUAXE,TENCHUXE from KHACHSUAXE", Conncustomer);
 
 

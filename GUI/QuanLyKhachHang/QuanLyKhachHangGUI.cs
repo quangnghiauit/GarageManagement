@@ -56,7 +56,7 @@ namespace GUI
 
 			//load CustomerID
 			
-			MySqlConnection Conncustomer = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmdcustomer = new MySqlCommand("select MAKHACHSUAXE from KHACHSUAXE", Conncustomer);
 
 

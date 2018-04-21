@@ -21,7 +21,7 @@ namespace DAO
 		public static DataTable getData()
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("LoadAllSpareParts", Conn);
 
 
@@ -38,7 +38,7 @@ namespace DAO
 
 		public static void InsertSpareParts(VatTuPhuTungDTO vatTu)
 		{
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 
 
 
@@ -65,7 +65,7 @@ namespace DAO
 		public static void UpdateSpareParts(VatTuPhuTungDTO vatTu)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 
 
 
@@ -93,7 +93,7 @@ namespace DAO
 		public static void RemoveSpareParts(string _MaVatTuPhuTung)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("RemoveSpareParts", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -109,7 +109,7 @@ namespace DAO
 		public static DataTable FindSpareParts(string _MaVatTuPhuTung)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("FindSpareParts", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -130,7 +130,7 @@ namespace DAO
 		public static DataTable SearchSpareParts(VatTuPhuTungDTO vatTu)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("SearchSpareParts", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -162,7 +162,7 @@ namespace DAO
 			bool check = false;
 
 			string cPrimaryKey = "Select *From VATTUPHUTUNG Where MaVatTuPhuTung = '" + _textBox + "' ";
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand(cPrimaryKey, Conn);
 			cmd.CommandType = CommandType.Text;
 			Conn.Open();

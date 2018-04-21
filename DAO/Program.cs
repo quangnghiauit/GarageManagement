@@ -15,7 +15,7 @@ namespace DAO
 		static void Main(string[] args)
 		{
 			Console.WriteLine("Getting Connection ...");
-			MySqlConnection conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection conn = DatabaseConnectionDAO.connectionDatabase();
 
 			try
 			{

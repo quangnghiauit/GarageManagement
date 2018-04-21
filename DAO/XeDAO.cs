@@ -23,7 +23,7 @@ namespace DAO
 		public static DataTable getData()
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("LoadAllCar", Conn);
 
 
@@ -42,7 +42,7 @@ namespace DAO
 		public static void InsertCar(string BienSo,int MaKhachSuaXe,string MaHieuXe,int TienNo)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 
 
 
@@ -70,7 +70,7 @@ namespace DAO
 		public static void UpdateCar(string BienSo, int MaKhachSuaXe, string MaHieuXe, int TienNo)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("UpdateCar", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -97,7 +97,7 @@ namespace DAO
 		public static void RemoveCar(string BienSo, int MaKhachSuaXe, string MaHieuXe)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("RemoveCar", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -129,7 +129,7 @@ namespace DAO
 		public static void FindCarByID(XeDTO xe)
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("FindCar", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -146,7 +146,7 @@ namespace DAO
 		public static DataTable SearchCar(string _BienSo , int _MaKhachSuaXe , string  _MaHieuXe ,string  _TenChuXe ,string  _TenHieuXe , int  _TienNo , string SoTienNoCompareType )
 		{
 
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand("FindCars", Conn);
 			cmd.CommandType = CommandType.StoredProcedure;
 
@@ -190,7 +190,7 @@ namespace DAO
 			bool check = false;
 
 			string cPrimaryKey = "Select *From XE Where BIENSO = '" + _textBox + "' ";
-			MySqlConnection Conn = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand(cPrimaryKey, Conn);
 			cmd.CommandType = CommandType.Text;
 			Conn.Open();

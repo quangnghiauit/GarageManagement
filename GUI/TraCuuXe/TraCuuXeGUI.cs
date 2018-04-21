@@ -53,7 +53,7 @@ namespace GUI
 			cbbTienNoTraCuu.Items.Add("Nhỏ hơn hoặc bằng");
 			cbbTienNoTraCuu.SelectedIndex = 2;
 			//set up IDCar
-			MySqlConnection ConnIDCar = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection ConnIDCar = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmdIDCar = new MySqlCommand("select BIENSO from XE", ConnIDCar);
 
 
@@ -67,7 +67,7 @@ namespace GUI
 			cbbBienSoTraCuu.ValueMember = "BienSo";
 
 			//display car name and set value car
-			MySqlConnection ConnCar = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection ConnCar = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmdCar = new MySqlCommand("select MAHIEUXE,TENHIEUXE from HIEUXE", ConnCar);
 
 
@@ -81,7 +81,7 @@ namespace GUI
 			cbbHieuXeTraCuu.ValueMember = "MaHieuXe";
 
 			//display customer name and set value ID customer
-			MySqlConnection Conncustomer = DatabaseConnectionDAO.HamKetNoi();
+			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmdcustomer = new MySqlCommand("select MAKHACHSUAXE,TENCHUXE from KHACHSUAXE", Conncustomer);
 
 
