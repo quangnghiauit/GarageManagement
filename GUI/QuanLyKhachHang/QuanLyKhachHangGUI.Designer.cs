@@ -43,6 +43,7 @@ namespace GUI
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyKhachHang));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.tbMaKhachHangTraCuu = new System.Windows.Forms.TextBox();
 			this.btnXuatFile = new System.Windows.Forms.Button();
 			this.btnTimTatCa = new System.Windows.Forms.Button();
 			this.tbSoTienNoTraCuu = new System.Windows.Forms.TextBox();
@@ -62,8 +63,6 @@ namespace GUI
 			this.label15 = new System.Windows.Forms.Label();
 			this.dtgvKhachHang = new System.Windows.Forms.DataGridView();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.tbMaKhachHangTraCuu = new System.Windows.Forms.TextBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).BeginInit();
@@ -72,7 +71,6 @@ namespace GUI
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.tbMaKhachHangTraCuu);
-			this.groupBox1.Controls.Add(this.textBox1);
 			this.groupBox1.Controls.Add(this.btnXuatFile);
 			this.groupBox1.Controls.Add(this.btnTimTatCa);
 			this.groupBox1.Controls.Add(this.tbSoTienNoTraCuu);
@@ -97,6 +95,13 @@ namespace GUI
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Quản lý khách hàng";
 			this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+			// 
+			// tbMaKhachHangTraCuu
+			// 
+			this.tbMaKhachHangTraCuu.Location = new System.Drawing.Point(361, 33);
+			this.tbMaKhachHangTraCuu.Name = "tbMaKhachHangTraCuu";
+			this.tbMaKhachHangTraCuu.Size = new System.Drawing.Size(129, 20);
+			this.tbMaKhachHangTraCuu.TabIndex = 17;
 			// 
 			// btnXuatFile
 			// 
@@ -272,20 +277,6 @@ namespace GUI
 			this.dtgvKhachHang.Size = new System.Drawing.Size(763, 253);
 			this.dtgvKhachHang.TabIndex = 0;
 			// 
-			// textBox1
-			// 
-			this.textBox1.Location = new System.Drawing.Point(646, 181);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(100, 20);
-			this.textBox1.TabIndex = 16;
-			// 
-			// tbMaKhachHangTraCuu
-			// 
-			this.tbMaKhachHangTraCuu.Location = new System.Drawing.Point(361, 33);
-			this.tbMaKhachHangTraCuu.Name = "tbMaKhachHangTraCuu";
-			this.tbMaKhachHangTraCuu.Size = new System.Drawing.Size(129, 20);
-			this.tbMaKhachHangTraCuu.TabIndex = 17;
-			// 
 			// fQuanLyKhachHang
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,6 +321,5 @@ namespace GUI
 		private System.Windows.Forms.Button btnXuatFile;
 		private System.Windows.Forms.Button btnTimTatCa;
 		private TextBox tbMaKhachHangTraCuu;
-		private TextBox textBox1;
 	}
 }

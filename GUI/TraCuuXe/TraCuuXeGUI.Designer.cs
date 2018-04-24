@@ -30,8 +30,6 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fTraCuuXe));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.cbbHieuXeTraCuu = new System.Windows.Forms.ComboBox();
-			this.cbbTenChuXeTraCuu = new System.Windows.Forms.ComboBox();
 			this.cbbBienSoTraCuu = new System.Windows.Forms.ComboBox();
 			this.btnXuatFileTraCuuXe = new System.Windows.Forms.Button();
 			this.btnTimTatCaTraCuuXe = new System.Windows.Forms.Button();
@@ -43,6 +41,8 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.dtgvTraCuuXe = new System.Windows.Forms.DataGridView();
 			this.label14 = new System.Windows.Forms.Label();
+			this.tbTenChuXeTraCuu = new System.Windows.Forms.TextBox();
+			this.tbTenHieuXeTraCuu = new System.Windows.Forms.TextBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dtgvTraCuuXe)).BeginInit();
@@ -50,8 +50,8 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.cbbHieuXeTraCuu);
-			this.groupBox1.Controls.Add(this.cbbTenChuXeTraCuu);
+			this.groupBox1.Controls.Add(this.tbTenHieuXeTraCuu);
+			this.groupBox1.Controls.Add(this.tbTenChuXeTraCuu);
 			this.groupBox1.Controls.Add(this.cbbBienSoTraCuu);
 			this.groupBox1.Controls.Add(this.btnXuatFileTraCuuXe);
 			this.groupBox1.Controls.Add(this.btnTimTatCaTraCuuXe);
@@ -72,22 +72,6 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Quản lý xe";
 			this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-			// 
-			// cbbHieuXeTraCuu
-			// 
-			this.cbbHieuXeTraCuu.FormattingEnabled = true;
-			this.cbbHieuXeTraCuu.Location = new System.Drawing.Point(323, 96);
-			this.cbbHieuXeTraCuu.Name = "cbbHieuXeTraCuu";
-			this.cbbHieuXeTraCuu.Size = new System.Drawing.Size(192, 24);
-			this.cbbHieuXeTraCuu.TabIndex = 17;
-			// 
-			// cbbTenChuXeTraCuu
-			// 
-			this.cbbTenChuXeTraCuu.FormattingEnabled = true;
-			this.cbbTenChuXeTraCuu.Location = new System.Drawing.Point(323, 58);
-			this.cbbTenChuXeTraCuu.Name = "cbbTenChuXeTraCuu";
-			this.cbbTenChuXeTraCuu.Size = new System.Drawing.Size(192, 24);
-			this.cbbTenChuXeTraCuu.TabIndex = 16;
 			// 
 			// cbbBienSoTraCuu
 			// 
@@ -200,6 +184,20 @@
 			this.label14.TabIndex = 11;
 			this.label14.Text = "TRA CỨU XE";
 			// 
+			// tbTenChuXeTraCuu
+			// 
+			this.tbTenChuXeTraCuu.Location = new System.Drawing.Point(321, 58);
+			this.tbTenChuXeTraCuu.Name = "tbTenChuXeTraCuu";
+			this.tbTenChuXeTraCuu.Size = new System.Drawing.Size(193, 22);
+			this.tbTenChuXeTraCuu.TabIndex = 16;
+			// 
+			// tbTenHieuXeTraCuu
+			// 
+			this.tbTenHieuXeTraCuu.Location = new System.Drawing.Point(319, 96);
+			this.tbTenHieuXeTraCuu.Name = "tbTenHieuXeTraCuu";
+			this.tbTenHieuXeTraCuu.Size = new System.Drawing.Size(194, 22);
+			this.tbTenHieuXeTraCuu.TabIndex = 17;
+			// 
 			// fTraCuuXe
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,8 +232,8 @@
 		private System.Windows.Forms.TextBox tbTienNoTraCuu;
 		private System.Windows.Forms.Button btnXuatFileTraCuuXe;
 		private System.Windows.Forms.Button btnTimTatCaTraCuuXe;
-		private System.Windows.Forms.ComboBox cbbHieuXeTraCuu;
-		private System.Windows.Forms.ComboBox cbbTenChuXeTraCuu;
 		private System.Windows.Forms.ComboBox cbbBienSoTraCuu;
+		private System.Windows.Forms.TextBox tbTenHieuXeTraCuu;
+		private System.Windows.Forms.TextBox tbTenChuXeTraCuu;
 	}
 }

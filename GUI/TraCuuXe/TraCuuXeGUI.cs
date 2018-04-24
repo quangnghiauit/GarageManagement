@@ -69,32 +69,32 @@ namespace GUI
 			cbbBienSoTraCuu.ValueMember = "BienSo";
 
 			//display car name and set value car
-			MySqlConnection ConnCar = DatabaseConnectionDAO.connectionDatabase();
-			MySqlCommand cmdCar = new MySqlCommand("select MAHIEUXE,TENHIEUXE from HIEUXE", ConnCar);
+			//MySqlConnection ConnCar = DatabaseConnectionDAO.connectionDatabase();
+			//MySqlCommand cmdCar = new MySqlCommand("select MAHIEUXE,TENHIEUXE from HIEUXE", ConnCar);
 
 
-			ConnCar.Open();
-			MySqlDataAdapter daCar = new MySqlDataAdapter();
-			daCar.SelectCommand = cmdCar;
-			DataSet dsCar = new DataSet();
-			daCar.Fill(dsCar, "TenHieuXe");
-			cbbHieuXeTraCuu.DataSource = dsCar.Tables[0];
-			cbbHieuXeTraCuu.DisplayMember = "TenHieuXe";
-			cbbHieuXeTraCuu.ValueMember = "MaHieuXe";
+			//ConnCar.Open();
+			//MySqlDataAdapter daCar = new MySqlDataAdapter();
+			//daCar.SelectCommand = cmdCar;
+			//DataSet dsCar = new DataSet();
+			//daCar.Fill(dsCar, "TenHieuXe");
+			//cbbHieuXeTraCuu.DataSource = dsCar.Tables[0];
+			//cbbHieuXeTraCuu.DisplayMember = "TenHieuXe";
+			//cbbHieuXeTraCuu.ValueMember = "MaHieuXe";
 
-			//display customer name and set value ID customer
-			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
-			MySqlCommand cmdcustomer = new MySqlCommand("select MAKHACHSUAXE,TENCHUXE from KHACHSUAXE", Conncustomer);
+			////display customer name and set value ID customer
+			//MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
+			//MySqlCommand cmdcustomer = new MySqlCommand("select MAKHACHSUAXE,TENCHUXE from KHACHSUAXE", Conncustomer);
 
 
-			Conncustomer.Open();
-			MySqlDataAdapter dacustomer = new MySqlDataAdapter();
-			dacustomer.SelectCommand = cmdcustomer;
-			DataSet dscustomer = new DataSet();
-			dacustomer.Fill(dscustomer, "TenChuXe");
-			cbbTenChuXeTraCuu.DataSource = dscustomer.Tables[0];
-			cbbTenChuXeTraCuu.DisplayMember = "TenChuXe";
-			cbbTenChuXeTraCuu.ValueMember = "MaKhachSuaXe";
+			//Conncustomer.Open();
+			//MySqlDataAdapter dacustomer = new MySqlDataAdapter();
+			//dacustomer.SelectCommand = cmdcustomer;
+			//DataSet dscustomer = new DataSet();
+			//dacustomer.Fill(dscustomer, "TenChuXe");
+			//cbbTenChuXeTraCuu.DataSource = dscustomer.Tables[0];
+			//cbbTenChuXeTraCuu.DisplayMember = "TenChuXe";
+			//cbbTenChuXeTraCuu.ValueMember = "MaKhachSuaXe";
 
 			#endregion
 		}

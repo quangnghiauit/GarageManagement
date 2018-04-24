@@ -30,6 +30,41 @@ namespace GUI
 			myForm.ShowDialog();
 			
 			this.Show();
+			RefreshGUI();
+		
+		}
+		private void RefreshGUI()
+		{
+			#region Load car name and customer name
+			//display car name and set value car
+			MySqlConnection ConnCar = DatabaseConnectionDAO.connectionDatabase();
+			MySqlCommand cmdCar = new MySqlCommand("select MAHIEUXE,TENHIEUXE from HIEUXE", ConnCar);
+
+
+			ConnCar.Open();
+			MySqlDataAdapter daCar = new MySqlDataAdapter();
+			daCar.SelectCommand = cmdCar;
+			DataSet dsCar = new DataSet();
+			daCar.Fill(dsCar, "TenHieuXe");
+			cbbHieuXe.DataSource = dsCar.Tables[0];
+			cbbHieuXe.DisplayMember = "TenHieuXe";
+			cbbHieuXe.ValueMember = "MaHieuXe";
+
+			//display customer name and set value ID customer
+			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
+			MySqlCommand cmdcustomer = new MySqlCommand("select MAKHACHSUAXE,TENCHUXE from KHACHSUAXE", Conncustomer);
+
+
+			Conncustomer.Open();
+			MySqlDataAdapter dacustomer = new MySqlDataAdapter();
+			dacustomer.SelectCommand = cmdcustomer;
+			DataSet dscustomer = new DataSet();
+			dacustomer.Fill(dscustomer, "TenChuXe");
+			cbbTenChuXe.DataSource = dscustomer.Tables[0];
+			cbbTenChuXe.DisplayMember = "TenChuXe";
+			cbbTenChuXe.ValueMember = "MaKhachSuaXe";
+
+			#endregion
 		}
 		#region Insert , Update, Remove
 		private void btnThemXe_Click(object sender, EventArgs e)

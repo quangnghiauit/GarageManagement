@@ -183,7 +183,8 @@ DELIMITER ;
 DELIMITER //
 Create Procedure RemoveCustomer(in _MaKhachSuaXe int)
 Begin
-	delete from KHACHSUAXE where  MaKhachSuaXe = _MaKhachSuaXe;
+	delete from KHACHSUAXE where  KHACHSUAXE.MaKhachSuaXe = _MaKhachSuaXe;
+    
 End //
 DELIMITER ;
 

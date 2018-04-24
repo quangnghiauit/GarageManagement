@@ -50,6 +50,7 @@ namespace GUI
 
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
+		
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
