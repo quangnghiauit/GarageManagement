@@ -71,5 +71,10 @@ namespace GUI
 			}
 		}
 		#endregion
+
+		private void btnLichSu_Click(object sender, EventArgs e)
+		{
+			dtgvHieuXe.DataSource = HieuXeBUS.loadTatCaHieuXe();
+		}
 	}
 }

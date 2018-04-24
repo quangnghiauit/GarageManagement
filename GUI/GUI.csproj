@@ -67,11 +67,23 @@
     <Compile Include="BaoCao\fBaoCao.Designer.cs">
       <DependentUpon>fBaoCao.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyVatTuPhuTung\ThaoTacVatTu.cs">
+    <Compile Include="QuanLyKhachHang\QuanLyKhachHangGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyVatTuPhuTung\ThaoTacVatTu.Designer.cs">
-      <DependentUpon>ThaoTacVatTu.cs</DependentUpon>
+    <Compile Include="QuanLyKhachHang\QuanLyKhachHangGUI.Designer.cs">
+      <DependentUpon>QuanLyKhachHangGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyVatTuPhuTung\QuanLyVatTuPhuTungGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyVatTuPhuTung\QuanLyVatTuPhuTungGUI.Designer.cs">
+      <DependentUpon>QuanLyVatTuPhuTungGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuXe\QuanLyXeGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraCuuXe\QuanLyXeGUI.Designer.cs">
+      <DependentUpon>QuanLyXeGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongTin\ThayDoiTienCong.cs">
       <SubType>Form</SubType>
@@ -79,29 +91,11 @@
     <Compile Include="ThongTin\ThayDoiTienCong.Designer.cs">
       <DependentUpon>ThayDoiTienCong.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyVatTuPhuTung\TraCuuVatTu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyVatTuPhuTung\TraCuuVatTu.Designer.cs">
-      <DependentUpon>TraCuuVatTu.cs</DependentUpon>
-    </Compile>
     <Compile Include="TraCuuXe\fThemHieuXe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TraCuuXe\fThemHieuXe.Designer.cs">
       <DependentUpon>fThemHieuXe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TraCuuXe\fThaoTacXe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TraCuuXe\fThaoTacXe.Designer.cs">
-      <DependentUpon>fThaoTacXe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyKhachHang\fThaoTacKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyKhachHang\fThaoTacKhachHang.Designer.cs">
-      <DependentUpon>fThaoTacKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongTin\fThongTin.cs">
       <SubType>Form</SubType>
@@ -141,12 +135,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyKhachHang\QuanLyKhachHangGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyKhachHang\QuanLyKhachHangGUI.Designer.cs">
-      <DependentUpon>QuanLyKhachHangGUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="ThongTin\ThayDoiDatabaseGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,12 +147,6 @@
     <Compile Include="ThongTin\ThayDoiQuyDinhGUI.Designer.cs">
       <DependentUpon>ThayDoiQuyDinhGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="TraCuuXe\TraCuuXeGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TraCuuXe\TraCuuXeGUI.Designer.cs">
-      <DependentUpon>TraCuuXeGUI.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="BaoCao\BaoCaoTonGUI.resx">
       <DependentUpon>BaoCaoTonGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,17 +156,17 @@
     <EmbeddedResource Include="BaoCao\fBaoCao.resx">
       <DependentUpon>fBaoCao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyVatTuPhuTung\ThaoTacVatTu.resx">
-      <DependentUpon>ThaoTacVatTu.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyKhachHang\QuanLyKhachHangGUI.resx">
+      <DependentUpon>QuanLyKhachHangGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyVatTuPhuTung\TraCuuVatTu.resx">
-      <DependentUpon>TraCuuVatTu.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyVatTuPhuTung\QuanLyVatTuPhuTungGUI.resx">
+      <DependentUpon>QuanLyVatTuPhuTungGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraCuuXe\QuanLyXeGUI.resx">
+      <DependentUpon>QuanLyXeGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongTin\ThayDoiTienCong.resx">
       <DependentUpon>ThayDoiTienCong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TraCuuXe\fThaoTacXe.resx">
-      <DependentUpon>fThaoTacXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDich\fGiaoDich.resx">
       <DependentUpon>fGiaoDich.cs</DependentUpon>
@@ -210,13 +192,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QuanLyKhachHang\fThaoTacKhachHang.resx">
-      <DependentUpon>fThaoTacKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyKhachHang\QuanLyKhachHangGUI.resx">
-      <DependentUpon>QuanLyKhachHangGUI.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="ThongTin\fThongTin.resx">
       <DependentUpon>fThongTin.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,9 +203,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TraCuuXe\fThemHieuXe.resx">
       <DependentUpon>fThemHieuXe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TraCuuXe\TraCuuXeGUI.resx">
-      <DependentUpon>TraCuuXeGUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

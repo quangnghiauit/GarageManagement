@@ -67,65 +67,55 @@ namespace GUI
 
 		private void btnQLKH_Click(object sender, EventArgs e)
 		{
-			#region Export customer information
+			
+			pnMainGara.Controls.Clear();
 			pnMain.Controls.Clear();
-			fQuanLyKhachHang myForm = new fQuanLyKhachHang();
+			pnThaoTac.Controls.Clear();
+			fQuanLyKhachHangGUI myForm = new fQuanLyKhachHangGUI();
 			myForm.TopLevel = false;
 			myForm.AutoScroll = true;
-			pnMain.Controls.Add(myForm);
+			pnMainGara.Controls.Add(myForm);
 			myForm.Show();
-			#endregion
+			
 
-			#region Export customer operations
-			pnThaoTac.Controls.Clear();
-			fThaoTacKhachHang myForm1 = new fThaoTacKhachHang();
-			myForm1.TopLevel = false;
-			myForm1.AutoScroll = true;
-			pnThaoTac.Controls.Add(myForm1);
-			myForm1.Show();
-			#endregion
+			
+			
+			
+
 		}
 
 		private void btnTCX_Click(object sender, EventArgs e)
 		{
-			#region Export car information
+			pnMainGara.Controls.Clear();
 			pnMain.Controls.Clear();
-			fTraCuuXe myForm = new fTraCuuXe();
+			pnThaoTac.Controls.Clear();
+			fQuanLyXeGUI myForm = new fQuanLyXeGUI();
 			myForm.TopLevel = false;
 			myForm.AutoScroll = true;
-			pnMain.Controls.Add(myForm);
+			pnMainGara.Controls.Add(myForm);
 			myForm.Show();
-			#endregion
+			
 
-			#region Export car operations
-			pnThaoTac.Controls.Clear();
-			fThaoTacXe myForm1 = new fThaoTacXe();
-			myForm1.TopLevel = false;
-			myForm1.AutoScroll = true;
-			pnThaoTac.Controls.Add(myForm1);
-			myForm1.Show();
-			#endregion
+			
+			
+			
 		}
 
 		private void btnQuanLyVatTu_Click(object sender, EventArgs e)
 		{
-			#region Export  information
+			pnMainGara.Controls.Clear();
 			pnMain.Controls.Clear();
-			fmTraCuuVatTu myForm = new fmTraCuuVatTu();
+			pnThaoTac.Controls.Clear();
+			fQuanLyVatTuPhuTungGUI myForm = new fQuanLyVatTuPhuTungGUI();
 			myForm.TopLevel = false;
 			myForm.AutoScroll = true;
-			pnMain.Controls.Add(myForm);
+			pnMainGara.Controls.Add(myForm);
 			myForm.Show();
-			#endregion
+			
 
-			#region Export  operations
-			pnThaoTac.Controls.Clear();
-			fmThaoTacVatTu myForm1 = new fmThaoTacVatTu();
-			myForm1.TopLevel = false;
-			myForm1.AutoScroll = true;
-			pnThaoTac.Controls.Add(myForm1);
-			myForm1.Show();
-			#endregion
+			
+			
+		
 		}
 	}
 }

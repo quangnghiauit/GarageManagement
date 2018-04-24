@@ -15,31 +15,41 @@ using DTO;
 using System.Globalization;
 using Microsoft.Office.Interop.Excel;
 using app = Microsoft.Office.Interop.Excel.Application;
+
+
 namespace GUI
 {
-	public partial class fQuanLyKhachHang : Form
+	public partial class fQuanLyKhachHangGUI : Form
 	{
-
-		#region Form Load
-		public fQuanLyKhachHang()
+		public fQuanLyKhachHangGUI()
 		{
 			InitializeComponent();
-			//Load_MaKhachSuaXe();
 		}
 
 
-
-		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+		//button search customer
+		private void btnTimKiem_Click(object sender, EventArgs e)
 		{
+			string tbMaKhachHangTraCuu = "0";
 
+			string tbTenKhachHangTraCuu = "";
+			string tbDienThoaiTraCuu = "";
+			string tbDiaChiTraCuu = "";
+			string tbEmailTraCuu = "";
+			string tbSoTienNoTraCuu = "";
+			FindCustomer();
 		}
 
-		private void groupBox1_Enter(object sender, EventArgs e)
+
+		//button export file excel
+		private void btnXuatFile_Click(object sender, EventArgs e)
+		{
+			export2Excel(dtgvKhachHang, @"E:\", "ExportCustomers");
+		}
+
+		private void fQuanLyKhachHangGUI_Load(object sender, EventArgs e)
 		{
 
-		}
-		private void fQuanLyKhachHang_Load(object sender, EventArgs e)
-		{
 			//Setup cbbTienNo
 
 			cbbTienNo.Items.Add("Bằng");
@@ -56,10 +66,10 @@ namespace GUI
 
 
 
-				// setup form
-			
+			// setup form
+
 			//load CustomerID
-			
+
 			//MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
 			//MySqlCommand cmdcustomer = new MySqlCommand("select MAKHACHSUAXE from KHACHSUAXE", Conncustomer);
 
@@ -77,9 +87,7 @@ namespace GUI
 
 
 
-
 		}
-		#endregion
 		#region Functions
 		//Conditional customer search function
 		private void FindCustomer()
@@ -113,23 +121,23 @@ namespace GUI
 			{
 				SoTienNoCompareType = Decimal.Parse(tbSoTienNoTraCuu.Text);
 			}
-			if (!fMainForm.cNullTB(tbMaKhachHangTraCuu.Text) || !fMainForm.cNullTB(tbSoTienNoTraCuu.Text))
+			if (!fMainForm.cNullTB(tbMaKhachHangTraCuu.Text) && !fMainForm.cNullTB(tbSoTienNoTraCuu.Text))
 			{
 				//if (KhachSuaXeBUS.cPrimaryKey(cbbMaKhachHangTraCuu.SelectedValue.ToString().Trim()))
 				//{
 
-					string strMaKhachSuaXe = tbMaKhachHangTraCuu.Text.Trim();
-					int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
-					string TenChuXe = tbTenKhachHangTraCuu.Text;
-					string DienThoai = tbDienThoaiTraCuu.Text;
-					string DiaChi = tbDiaChiTraCuu.Text;
-					string Email = tbEmailTraCuu.Text;
-					int TienNo = Convert.ToInt32(tbSoTienNoTraCuu.Text);
+				string strMaKhachSuaXe = tbMaKhachHangTraCuu.Text.Trim();
+				int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
+				string TenChuXe = tbTenKhachHangTraCuu.Text;
+				string DienThoai = tbDienThoaiTraCuu.Text;
+				string DiaChi = tbDiaChiTraCuu.Text;
+				string Email = tbEmailTraCuu.Text;
+				int TienNo = Convert.ToInt32(tbSoTienNoTraCuu.Text);
 
 
-					KhachSuaXeDTO kh = new KhachSuaXeDTO(MaKhachSuaXe, TenChuXe, DienThoai, DiaChi, Email, TienNo);
+				KhachSuaXeDTO kh = new KhachSuaXeDTO(MaKhachSuaXe, TenChuXe, DienThoai, DiaChi, Email, TienNo);
 
-					dtgvKhachHang.DataSource = KhachSuaXeBUS.SearchAllCustomer(kh, CompareType);
+				dtgvKhachHang.DataSource = KhachSuaXeBUS.SearchAllCustomer(kh, CompareType);
 				//}
 				//else
 				//{
@@ -172,26 +180,110 @@ namespace GUI
 
 
 		#endregion
-		#region Button
-		//button search customer
-		private void btnTimTatCa_Click(object sender, EventArgs e)
+
+		private void pnThaoTac_Paint(object sender, PaintEventArgs e)
 		{
-			string tbMaKhachHangTraCuu = "0";
-			
-			string  tbTenKhachHangTraCuu = "";
-			string tbDienThoaiTraCuu = "";
-			string tbDiaChiTraCuu = "";
-			string tbEmailTraCuu = "";
-			string tbSoTienNoTraCuu = "";
-			FindCustomer();
 
 		}
-		//button export file excel
-		private void btnXuatFile_Click(object sender, EventArgs e)
-		{
-			export2Excel(dtgvKhachHang, @"E:\", "ExportCustomers");
-		}
+
+		#region Buttons Insert, Update, Remove
 		
+
+		
+
+		private void btnThem_Click_1(object sender, EventArgs e)
+		{
+			if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text) && !fMainForm.cNullTB(tbTenChuXe.Text) && !fMainForm.cNullTB(tbDienThoai.Text) && !fMainForm.cNullTB(tbDiaChi.Text) && !fMainForm.cNullTB(tbEmail.Text) && !fMainForm.cNullTB(tbSoTienNo.Text))
+			{
+				if (!KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
+				{
+
+					string strMaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
+					int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
+					string TenChuXe = tbTenChuXe.Text;
+					string DienThoai = tbDienThoai.Text;
+					string DiaChi = tbDiaChi.Text;
+					string Email = tbEmail.Text;
+					int TienNo = Convert.ToInt32(tbSoTienNo.Text);
+
+
+					KhachSuaXeDTO kh = new KhachSuaXeDTO(MaKhachSuaXe, TenChuXe, DienThoai, DiaChi, Email, TienNo);
+					KhachSuaXeBUS.addCustomer(kh);
+					dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
+
+				}
+				else
+				{
+					MessageBox.Show("Dữ liệu vừa nhập vào không hợp lệ, do bị trùng khóa chính.");
+				}
+
+			}
+			else
+			{
+
+				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
+			}
+
+
+		}
+
+		private void btnCapNhat_Click_1(object sender, EventArgs e)
+		{
+			if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text) && !fMainForm.cNullTB(tbTenChuXe.Text) && !fMainForm.cNullTB(tbDienThoai.Text) && !fMainForm.cNullTB(tbDiaChi.Text) && !fMainForm.cNullTB(tbEmail.Text) && !fMainForm.cNullTB(tbSoTienNo.Text))
+			{
+				if (KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
+				{
+
+					string strMaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
+					int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
+					string TenChuXe = tbTenChuXe.Text;
+					string DienThoai = tbDienThoai.Text;
+					string DiaChi = tbDiaChi.Text;
+					string Email = tbEmail.Text;
+					int TienNo = Convert.ToInt32(tbSoTienNo.Text);
+
+
+					KhachSuaXeDTO kh = new KhachSuaXeDTO(MaKhachSuaXe, TenChuXe, DienThoai, DiaChi, Email, TienNo);
+					KhachSuaXeBUS.updateCustomer(kh);
+					dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
+
+				}
+				else
+				{
+					MessageBox.Show("Mã khách hàng vừa nhập vào không tồn tại.Kiểm tra lại mã để cập nhật dữ liệu.");
+				}
+
+			}
+			else
+			{
+
+				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
+			}
+		}
+
+		private void btnXoa_Click_1(object sender, EventArgs e)
+		{
+
+			if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text))
+			{
+				if (KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
+				{
+					string strMaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
+					int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
+					KhachSuaXeBUS.delCustomer(MaKhachSuaXe);
+					dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
+				}
+				else
+				{
+
+					MessageBox.Show("Dữ liệu nhập vào chưa đúng vui lòng nhập vào ô Mã Khách Sửa Xe.");
+				}
+			}
+		}
 		#endregion
+		private void btnLichSuThaoTac_Click_1(object sender, EventArgs e)
+		{
+			dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
+		}
 	}
 }

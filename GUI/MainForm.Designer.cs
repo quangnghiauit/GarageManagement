@@ -29,16 +29,18 @@
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnGD = new System.Windows.Forms.Button();
+			this.btnQuanLyVatTu = new System.Windows.Forms.Button();
+			this.btnTroGiup = new System.Windows.Forms.Button();
 			this.btnTT = new System.Windows.Forms.Button();
 			this.btnBC = new System.Windows.Forms.Button();
-			this.btnGD = new System.Windows.Forms.Button();
 			this.btnTCX = new System.Windows.Forms.Button();
 			this.btnQLKH = new System.Windows.Forms.Button();
-			this.pnThaoTac = new System.Windows.Forms.Panel();
+			this.pnMainGara = new System.Windows.Forms.Panel();
 			this.pnMain = new System.Windows.Forms.Panel();
-			this.btnTroGiup = new System.Windows.Forms.Button();
-			this.btnQuanLyVatTu = new System.Windows.Forms.Button();
+			this.pnThaoTac = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
+			this.pnMainGara.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -54,6 +56,35 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1250, 93);
 			this.panel1.TabIndex = 0;
+			// 
+			// btnGD
+			// 
+			this.btnGD.Location = new System.Drawing.Point(548, 3);
+			this.btnGD.Name = "btnGD";
+			this.btnGD.Size = new System.Drawing.Size(162, 83);
+			this.btnGD.TabIndex = 2;
+			this.btnGD.Text = "Giao Dịch";
+			this.btnGD.UseVisualStyleBackColor = true;
+			this.btnGD.Click += new System.EventHandler(this.btnGD_Click);
+			// 
+			// btnQuanLyVatTu
+			// 
+			this.btnQuanLyVatTu.Location = new System.Drawing.Point(380, 3);
+			this.btnQuanLyVatTu.Name = "btnQuanLyVatTu";
+			this.btnQuanLyVatTu.Size = new System.Drawing.Size(162, 83);
+			this.btnQuanLyVatTu.TabIndex = 6;
+			this.btnQuanLyVatTu.Text = "Quản Lý Vật Tư";
+			this.btnQuanLyVatTu.UseVisualStyleBackColor = true;
+			this.btnQuanLyVatTu.Click += new System.EventHandler(this.btnQuanLyVatTu_Click);
+			// 
+			// btnTroGiup
+			// 
+			this.btnTroGiup.Location = new System.Drawing.Point(1073, 3);
+			this.btnTroGiup.Name = "btnTroGiup";
+			this.btnTroGiup.Size = new System.Drawing.Size(162, 83);
+			this.btnTroGiup.TabIndex = 5;
+			this.btnTroGiup.Text = "Trợ Giúp";
+			this.btnTroGiup.UseVisualStyleBackColor = true;
 			// 
 			// btnTT
 			// 
@@ -75,16 +106,6 @@
 			this.btnBC.UseVisualStyleBackColor = true;
 			this.btnBC.Click += new System.EventHandler(this.btnBC_Click);
 			// 
-			// btnGD
-			// 
-			this.btnGD.Location = new System.Drawing.Point(548, 3);
-			this.btnGD.Name = "btnGD";
-			this.btnGD.Size = new System.Drawing.Size(162, 83);
-			this.btnGD.TabIndex = 2;
-			this.btnGD.Text = "Giao Dịch";
-			this.btnGD.UseVisualStyleBackColor = true;
-			this.btnGD.Click += new System.EventHandler(this.btnGD_Click);
-			// 
 			// btnTCX
 			// 
 			this.btnTCX.Location = new System.Drawing.Point(202, 3);
@@ -105,51 +126,41 @@
 			this.btnQLKH.UseVisualStyleBackColor = true;
 			this.btnQLKH.Click += new System.EventHandler(this.btnQLKH_Click);
 			// 
-			// pnThaoTac
+			// pnMainGara
 			// 
-			this.pnThaoTac.Location = new System.Drawing.Point(882, 117);
-			this.pnThaoTac.Name = "pnThaoTac";
-			this.pnThaoTac.Size = new System.Drawing.Size(380, 540);
-			this.pnThaoTac.TabIndex = 1;
+			this.pnMainGara.Controls.Add(this.pnThaoTac);
+			this.pnMainGara.Controls.Add(this.pnMain);
+			this.pnMainGara.Location = new System.Drawing.Point(12, 104);
+			this.pnMainGara.Name = "pnMainGara";
+			this.pnMainGara.Size = new System.Drawing.Size(1260, 550);
+			this.pnMainGara.TabIndex = 1;
 			// 
 			// pnMain
 			// 
-			this.pnMain.Location = new System.Drawing.Point(12, 117);
+			this.pnMain.Location = new System.Drawing.Point(3, 7);
 			this.pnMain.Name = "pnMain";
 			this.pnMain.Size = new System.Drawing.Size(850, 540);
-			this.pnMain.TabIndex = 2;
+			this.pnMain.TabIndex = 0;
 			// 
-			// btnTroGiup
+			// pnThaoTac
 			// 
-			this.btnTroGiup.Location = new System.Drawing.Point(1073, 3);
-			this.btnTroGiup.Name = "btnTroGiup";
-			this.btnTroGiup.Size = new System.Drawing.Size(162, 83);
-			this.btnTroGiup.TabIndex = 5;
-			this.btnTroGiup.Text = "Trợ Giúp";
-			this.btnTroGiup.UseVisualStyleBackColor = true;
-			// 
-			// btnQuanLyVatTu
-			// 
-			this.btnQuanLyVatTu.Location = new System.Drawing.Point(380, 3);
-			this.btnQuanLyVatTu.Name = "btnQuanLyVatTu";
-			this.btnQuanLyVatTu.Size = new System.Drawing.Size(162, 83);
-			this.btnQuanLyVatTu.TabIndex = 6;
-			this.btnQuanLyVatTu.Text = "Quản Lý Vật Tư";
-			this.btnQuanLyVatTu.UseVisualStyleBackColor = true;
-			this.btnQuanLyVatTu.Click += new System.EventHandler(this.btnQuanLyVatTu_Click);
+			this.pnThaoTac.Location = new System.Drawing.Point(870, 7);
+			this.pnThaoTac.Name = "pnThaoTac";
+			this.pnThaoTac.Size = new System.Drawing.Size(380, 540);
+			this.pnThaoTac.TabIndex = 1;
 			// 
 			// fMainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1284, 661);
-			this.Controls.Add(this.pnMain);
-			this.Controls.Add(this.pnThaoTac);
+			this.Controls.Add(this.pnMainGara);
 			this.Controls.Add(this.panel1);
 			this.Name = "fMainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Phần Mềm Quản Lý Gara Oto";
 			this.panel1.ResumeLayout(false);
+			this.pnMainGara.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -162,10 +173,11 @@
 		private System.Windows.Forms.Button btnGD;
 		private System.Windows.Forms.Button btnTCX;
 		private System.Windows.Forms.Button btnQLKH;
-		private System.Windows.Forms.Panel pnThaoTac;
-		private System.Windows.Forms.Panel pnMain;
 		private System.Windows.Forms.Button btnQuanLyVatTu;
 		private System.Windows.Forms.Button btnTroGiup;
+		private System.Windows.Forms.Panel pnMainGara;
+		private System.Windows.Forms.Panel pnThaoTac;
+		private System.Windows.Forms.Panel pnMain;
 	}
 }
 

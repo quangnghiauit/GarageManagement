@@ -35,6 +35,7 @@
 			this.tbTenHieuXe = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnDongYThem = new System.Windows.Forms.Button();
+			this.btnLichSu = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dtgvHieuXe)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -48,9 +49,9 @@
 			// 
 			// btnXoa
 			// 
-			this.btnXoa.Location = new System.Drawing.Point(431, 186);
+			this.btnXoa.Location = new System.Drawing.Point(538, 196);
 			this.btnXoa.Name = "btnXoa";
-			this.btnXoa.Size = new System.Drawing.Size(85, 46);
+			this.btnXoa.Size = new System.Drawing.Size(94, 46);
 			this.btnXoa.TabIndex = 1;
 			this.btnXoa.Text = "Xóa";
 			this.btnXoa.UseVisualStyleBackColor = true;
@@ -90,19 +91,30 @@
 			// 
 			// btnDongYThem
 			// 
-			this.btnDongYThem.Location = new System.Drawing.Point(534, 186);
+			this.btnDongYThem.Location = new System.Drawing.Point(422, 196);
 			this.btnDongYThem.Name = "btnDongYThem";
 			this.btnDongYThem.Size = new System.Drawing.Size(98, 46);
 			this.btnDongYThem.TabIndex = 7;
-			this.btnDongYThem.Text = "Đồng Ý Thêm";
+			this.btnDongYThem.Text = "Thêm";
 			this.btnDongYThem.UseVisualStyleBackColor = true;
 			this.btnDongYThem.Click += new System.EventHandler(this.btnDongYThem_Click);
+			// 
+			// btnLichSu
+			// 
+			this.btnLichSu.Location = new System.Drawing.Point(151, 265);
+			this.btnLichSu.Name = "btnLichSu";
+			this.btnLichSu.Size = new System.Drawing.Size(83, 29);
+			this.btnLichSu.TabIndex = 8;
+			this.btnLichSu.Text = "Lịch Sử";
+			this.btnLichSu.UseVisualStyleBackColor = true;
+			this.btnLichSu.Click += new System.EventHandler(this.btnLichSu_Click);
 			// 
 			// fThemHieuXe
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(644, 321);
+			this.Controls.Add(this.btnLichSu);
 			this.Controls.Add(this.btnDongYThem);
 			this.Controls.Add(this.tbTenHieuXe);
 			this.Controls.Add(this.label2);
@@ -128,5 +140,6 @@
 		private System.Windows.Forms.TextBox tbTenHieuXe;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button btnDongYThem;
+		private System.Windows.Forms.Button btnLichSu;
 	}
 }
