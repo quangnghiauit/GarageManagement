@@ -62,7 +62,8 @@ namespace GUI
 			this.label15 = new System.Windows.Forms.Label();
 			this.dtgvKhachHang = new System.Windows.Forms.DataGridView();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.cbbMaKhachHangTraCuu = new System.Windows.Forms.ComboBox();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.tbMaKhachHangTraCuu = new System.Windows.Forms.TextBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).BeginInit();
@@ -70,7 +71,8 @@ namespace GUI
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.cbbMaKhachHangTraCuu);
+			this.groupBox1.Controls.Add(this.tbMaKhachHangTraCuu);
+			this.groupBox1.Controls.Add(this.textBox1);
 			this.groupBox1.Controls.Add(this.btnXuatFile);
 			this.groupBox1.Controls.Add(this.btnTimTatCa);
 			this.groupBox1.Controls.Add(this.tbSoTienNoTraCuu);
@@ -105,6 +107,7 @@ namespace GUI
 			this.btnXuatFile.TabIndex = 15;
 			this.btnXuatFile.Text = "Xuất file excel";
 			this.btnXuatFile.UseVisualStyleBackColor = true;
+			this.btnXuatFile.Click += new System.EventHandler(this.btnXuatFile_Click);
 			// 
 			// btnTimTatCa
 			// 
@@ -269,13 +272,19 @@ namespace GUI
 			this.dtgvKhachHang.Size = new System.Drawing.Size(763, 253);
 			this.dtgvKhachHang.TabIndex = 0;
 			// 
-			// cbbMaKhachHangTraCuu
+			// textBox1
 			// 
-			this.cbbMaKhachHangTraCuu.FormattingEnabled = true;
-			this.cbbMaKhachHangTraCuu.Location = new System.Drawing.Point(359, 34);
-			this.cbbMaKhachHangTraCuu.Name = "cbbMaKhachHangTraCuu";
-			this.cbbMaKhachHangTraCuu.Size = new System.Drawing.Size(131, 21);
-			this.cbbMaKhachHangTraCuu.TabIndex = 16;
+			this.textBox1.Location = new System.Drawing.Point(646, 181);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(100, 20);
+			this.textBox1.TabIndex = 16;
+			// 
+			// tbMaKhachHangTraCuu
+			// 
+			this.tbMaKhachHangTraCuu.Location = new System.Drawing.Point(361, 33);
+			this.tbMaKhachHangTraCuu.Name = "tbMaKhachHangTraCuu";
+			this.tbMaKhachHangTraCuu.Size = new System.Drawing.Size(129, 20);
+			this.tbMaKhachHangTraCuu.TabIndex = 17;
 			// 
 			// fQuanLyKhachHang
 			// 
@@ -320,6 +329,7 @@ namespace GUI
 		private System.Windows.Forms.TextBox tbSoTienNoTraCuu;
 		private System.Windows.Forms.Button btnXuatFile;
 		private System.Windows.Forms.Button btnTimTatCa;
-		private ComboBox cbbMaKhachHangTraCuu;
+		private TextBox tbMaKhachHangTraCuu;
+		private TextBox textBox1;
 	}
 }

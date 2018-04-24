@@ -143,7 +143,7 @@ namespace DAO
 			Conn.Close();
 		}
 		//Tìm xe theo nhiều điều kiện
-		public static DataTable SearchCar(string _BienSo , int _MaKhachSuaXe , string  _MaHieuXe ,string  _TenChuXe ,string  _TenHieuXe , int  _TienNo , string SoTienNoCompareType )
+		public static DataTable SearchCar(string _BienSo )
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
@@ -151,20 +151,15 @@ namespace DAO
 			cmd.CommandType = CommandType.StoredProcedure;
 
 			cmd.Parameters.Add("@_BienSo", MySqlDbType.VarChar, 10);
-			cmd.Parameters.Add("@_TenChuXe", MySqlDbType.VarChar, 100);
-			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.Decimal);
-			cmd.Parameters.Add("@_MaHieuXe", MySqlDbType.VarChar, 10);
-			cmd.Parameters.Add("@_TenHieuXe", MySqlDbType.VarChar, 100);
-			cmd.Parameters.Add("@_TienNo", MySqlDbType.Decimal);
-			cmd.Parameters.Add("@_SoTienNoCompareType", MySqlDbType.VarChar, 2);
+			
+			
 
 			cmd.Parameters["@_BienSo"].Value = _BienSo;
-			cmd.Parameters["@_TenChuXe"].Value = _TenChuXe;
-			cmd.Parameters["@_MaKhachSuaXe"].Value = _MaKhachSuaXe;
-			cmd.Parameters["@_MaHieuXe"].Value = _MaHieuXe;
-			cmd.Parameters["@_TenHieuXe"].Value = _TenHieuXe;
-			cmd.Parameters["@_TienNo"].Value = _TienNo;
-			cmd.Parameters["@_SoTienNoCompareType"].Value = SoTienNoCompareType;
+			
+			
+
+
+
 
 			Conn.Open();
 			MySqlDataAdapter da = new MySqlDataAdapter();

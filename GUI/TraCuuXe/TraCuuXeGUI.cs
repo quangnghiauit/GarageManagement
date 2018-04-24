@@ -13,6 +13,8 @@ using DAO;
 using BUS;
 using DTO;
 using System.Globalization;
+using Microsoft.Office.Interop.Excel;
+using app = Microsoft.Office.Interop.Excel.Application;
 
 namespace GUI
 {
@@ -41,17 +43,17 @@ namespace GUI
 			#region Load and set up values
 			//Setup cbbTienNo
 
-			cbbTienNoTraCuu.Items.Add("Bằng");
+			//cbbTienNoTraCuu.Items.Add("Bằng");
 
 
-			cbbTienNoTraCuu.Items.Add("Lớn hơn");
+			//cbbTienNoTraCuu.Items.Add("Lớn hơn");
 
-			cbbTienNoTraCuu.Items.Add("Lớn hơn hoặc bằng");
+			//cbbTienNoTraCuu.Items.Add("Lớn hơn hoặc bằng");
 
-			cbbTienNoTraCuu.Items.Add("Nhỏ hơn");
+			//cbbTienNoTraCuu.Items.Add("Nhỏ hơn");
 
-			cbbTienNoTraCuu.Items.Add("Nhỏ hơn hoặc bằng");
-			cbbTienNoTraCuu.SelectedIndex = 2;
+			//cbbTienNoTraCuu.Items.Add("Nhỏ hơn hoặc bằng");
+			//cbbTienNoTraCuu.SelectedIndex = 2;
 			//set up IDCar
 			MySqlConnection ConnIDCar = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmdIDCar = new MySqlCommand("select BIENSO from XE", ConnIDCar);
@@ -99,55 +101,86 @@ namespace GUI
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			string CompareType = "";
+			//string CompareType = "";
 
-			switch (cbbTienNoTraCuu.SelectedIndex)
+			//switch (cbbTienNoTraCuu.SelectedIndex)
+			//{
+			//	case 0:
+			//		CompareType = "=";
+			//		break;
+			//	case 1:
+			//		CompareType = ">";
+			//		break;
+			//	case 2:
+			//		CompareType = ">=";
+			//		break;
+			//	case 3:
+			//		CompareType = "<";
+			//		break;
+			//	case 4:
+			//		CompareType = "<=";
+			//		break;
+			//}
+			//Decimal SoTienNoCompareType = -99999999;
+			//if (tbTienNoTraCuu.Text == "")
+			//{
+			//	CompareType = ">=";
+			//}
+			//else
+			//{
+			//	SoTienNoCompareType = Decimal.Parse(tbTienNoTraCuu.Text);
+			//}
+			//if (!fMainForm.cNullTB(cbbBienSoTraCuu.DisplayMember) && !fMainForm.cNullTB(tbTienNoTraCuu.Text))
+			//{
+
+			//	if (XeBUS.cPrimaryKey(cbbBienSoTraCuu.SelectedValue.ToString().Trim()))
+			//	{
+
+
+			//		string BienSo = cbbBienSoTraCuu.SelectedValue.ToString().Trim();
+			//		string strMaKhachSuaXe = cbbTenChuXeTraCuu.SelectedValue.ToString();
+			//		int MaKhachSuaXe= Convert.ToInt32(strMaKhachSuaXe);
+			//		string TenChuXe = cbbTenChuXeTraCuu.DisplayMember;
+			//		string MaHieuXe = cbbHieuXeTraCuu.SelectedValue.ToString();
+			//		string TenHieuXe = cbbHieuXeTraCuu.SelectedValue.ToString();
+
+			//		int TienNo = Convert.ToInt32(tbTienNoTraCuu.Text);
+
+
+			//		XeDTO xe = new XeDTO(BienSo, TenChuXe, TenHieuXe, TienNo);
+
+			//		dtgvTraCuuXe.DataSource = XeBUS.SearchAllCar(BienSo, MaKhachSuaXe, MaHieuXe, TenChuXe, TenHieuXe, TienNo, CompareType);
+			//	}
+			//	else
+			//	{
+			//		MessageBox.Show("Dữ liệu vừa nhập vào không có.Mời nhập lại.");
+			//	}
+
+			//}
+			//else
+			//{
+
+			//	MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
+			//}
+
+
+
+
+			if (!fMainForm.cNullTB(cbbBienSoTraCuu.DisplayMember) )
 			{
-				case 0:
-					CompareType = "=";
-					break;
-				case 1:
-					CompareType = ">";
-					break;
-				case 2:
-					CompareType = ">=";
-					break;
-				case 3:
-					CompareType = "<";
-					break;
-				case 4:
-					CompareType = "<=";
-					break;
-			}
-			Decimal SoTienNoCompareType = -99999999;
-			if (tbTienNoTraCuu.Text == "")
-			{
-				CompareType = ">=";
-			}
-			else
-			{
-				SoTienNoCompareType = Decimal.Parse(tbTienNoTraCuu.Text);
-			}
-			if (!fMainForm.cNullTB(cbbBienSoTraCuu.DisplayMember) && !fMainForm.cNullTB(tbTienNoTraCuu.Text))
-			{
-				
+
 				if (XeBUS.cPrimaryKey(cbbBienSoTraCuu.SelectedValue.ToString().Trim()))
 				{
 
 
 					string BienSo = cbbBienSoTraCuu.SelectedValue.ToString().Trim();
-					string strMaKhachSuaXe = cbbTenChuXeTraCuu.SelectedValue.ToString();
-					int MaKhachSuaXe= Convert.ToInt32(strMaKhachSuaXe);
-					string TenChuXe = cbbTenChuXeTraCuu.DisplayMember;
-					string MaHieuXe = cbbHieuXeTraCuu.SelectedValue.ToString();
-					string TenHieuXe = cbbHieuXeTraCuu.SelectedValue.ToString();
 					
-					int TienNo = Convert.ToInt32(tbTienNoTraCuu.Text);
+					
 
 
-					XeDTO xe = new XeDTO(BienSo, TenChuXe, TenHieuXe, TienNo);
+					
 
-					dtgvTraCuuXe.DataSource = XeBUS.SearchAllCar(BienSo, MaKhachSuaXe, MaHieuXe, TenChuXe, TenHieuXe, TienNo, CompareType);
+					dtgvTraCuuXe.DataSource = XeBUS.SearchAllCar(BienSo);
 				}
 				else
 				{
@@ -161,5 +194,38 @@ namespace GUI
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
 		}
+
+		
+		#region Export Excel
+		private void export2Excel(DataGridView g, string path, string filename)
+		{
+
+			app obj = new app();
+			obj.Application.Workbooks.Add(Type.Missing);
+			obj.Columns.ColumnWidth = 25;
+			for (int i = 1; i < g.Columns.Count + 1; i++)
+			{
+				obj.Cells[1, i] = g.Columns[i - 1].HeaderText;
+			}
+
+			for (int i = 0; i < g.Rows.Count; i++)
+			{
+				for (int j = 0; j < g.Columns.Count; j++)
+				{
+					if (g.Rows[i].Cells[j].Value != null)
+					{
+						obj.Cells[i + 2, j + 1] = g.Rows[i].Cells[j].Value.ToString();
+					}
+				}
+			}
+			obj.ActiveWorkbook.SaveCopyAs(path + filename + ".xlsx");
+			obj.ActiveWorkbook.Saved = true;
+		}
+
+		private void btnXuatFileTraCuuXe_Click(object sender, EventArgs e)
+		{
+			export2Excel(dtgvTraCuuXe, @"E:\", "ExportCars");
+		}
+		#endregion
 	}
 }

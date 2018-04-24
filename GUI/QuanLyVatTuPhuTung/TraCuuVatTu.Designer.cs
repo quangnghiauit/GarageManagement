@@ -31,6 +31,7 @@
 			this.label15 = new System.Windows.Forms.Label();
 			this.dtgvVatTu = new System.Windows.Forms.DataGridView();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.cbbMaVatTuTraCuu = new System.Windows.Forms.ComboBox();
 			this.btnXuatFile = new System.Windows.Forms.Button();
 			this.btnTimTatCa = new System.Windows.Forms.Button();
 			this.tbSoLuongTraCuu = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
 			this.tbDonGiaTraCuu = new System.Windows.Forms.TextBox();
 			this.tbTenVatTuTraCuu = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.cbbMaVatTuTraCuu = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.dtgvVatTu)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -84,6 +84,14 @@
 			this.panel1.Size = new System.Drawing.Size(794, 191);
 			this.panel1.TabIndex = 16;
 			// 
+			// cbbMaVatTuTraCuu
+			// 
+			this.cbbMaVatTuTraCuu.FormattingEnabled = true;
+			this.cbbMaVatTuTraCuu.Location = new System.Drawing.Point(389, 11);
+			this.cbbMaVatTuTraCuu.Name = "cbbMaVatTuTraCuu";
+			this.cbbMaVatTuTraCuu.Size = new System.Drawing.Size(194, 21);
+			this.cbbMaVatTuTraCuu.TabIndex = 27;
+			// 
 			// btnXuatFile
 			// 
 			this.btnXuatFile.ForeColor = System.Drawing.Color.Black;
@@ -93,6 +101,7 @@
 			this.btnXuatFile.TabIndex = 26;
 			this.btnXuatFile.Text = "Xuất file excel";
 			this.btnXuatFile.UseVisualStyleBackColor = true;
+			this.btnXuatFile.Click += new System.EventHandler(this.btnXuatFile_Click);
 			// 
 			// btnTimTatCa
 			// 
@@ -180,14 +189,6 @@
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(130, 20);
 			this.textBox2.TabIndex = 19;
-			// 
-			// cbbMaVatTuTraCuu
-			// 
-			this.cbbMaVatTuTraCuu.FormattingEnabled = true;
-			this.cbbMaVatTuTraCuu.Location = new System.Drawing.Point(389, 11);
-			this.cbbMaVatTuTraCuu.Name = "cbbMaVatTuTraCuu";
-			this.cbbMaVatTuTraCuu.Size = new System.Drawing.Size(194, 21);
-			this.cbbMaVatTuTraCuu.TabIndex = 27;
 			// 
 			// fmTraCuuVatTu
 			// 

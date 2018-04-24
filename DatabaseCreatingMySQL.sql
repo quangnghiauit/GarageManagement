@@ -327,7 +327,7 @@ Begin
 End //
 DELIMITER ;
 
-
+/*
 DELIMITER // 
 create procedure FindCars (in _BienSo char(10) , in _MaKhachSuaXe int, in _MaHieuXe char(10),in _TenChuXe char(100),in _TenHieuXe char(100), in _TienNo decimal, in _SoTienNoCompareType varchar(2))
 Begin 
@@ -350,7 +350,23 @@ Begin
             drop table SoTienNoTable; 
 End //
 DELIMITER ;
+*/
 
+
+
+DELIMITER // 
+create procedure FindCars (in _BienSo char(10) )
+Begin 
+		
+            select BienSo As 'Biển số', TenChuXe As 'Tên chủ xe', TenHieuXe As 'Tên hiệu xe',
+            CONCAT('', Format(TienNo,0), ' đ') As 'Số Tiền Nợ'
+            from KHACHSUAXE,XE,HIEUXE
+            where  
+            HIEUXE.MaHieuXe= XE.MaHieuXe and XE.MaKhachSuaXe= KHACHSUAXE.MaKhachSuaXe;
+            
+            
+End //
+DELIMITER ;
 
    
 

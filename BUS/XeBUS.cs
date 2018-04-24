@@ -45,9 +45,9 @@ namespace BUS
 			XeDAO.RemoveCar(BienSo, MaKhachSuaXe, MaHieuXe);
 		}
 
-		public static DataTable SearchAllCar(string _BienSo, int _MaKhachSuaXe, string _MaHieuXe, string _TenChuXe, string _TenHieuXe, int _TienNo, string SoTienNoCompareType)
+		public static DataTable SearchAllCar(string _BienSo)
 		{
-			return XeDAO.SearchCar(_BienSo, _MaKhachSuaXe, _MaHieuXe,_TenChuXe,_TenHieuXe,_TienNo, SoTienNoCompareType);
+			return XeDAO.SearchCar(_BienSo);
 
 		}
 
