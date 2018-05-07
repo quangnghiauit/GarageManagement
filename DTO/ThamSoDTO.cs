@@ -8,26 +8,9 @@ namespace DTO
 {
 	class ThamSoDTO
 	{
-		private int tiepNhanSuaToiDa;
-		public int TiepNhanSuaToiDa
-		{
-			get { return tiepNhanSuaToiDa; }
-			set { tiepNhanSuaToiDa = value; }
-		}
+		
 
-		private string danhSachLoaiPhuTung;
-		public string DanhSachLoaiPhuTung
-		{
-			get { return danhSachLoaiPhuTung; }
-			set { danhSachLoaiPhuTung = value; }
-		}
-
-		private string danhSachLoaiTienCong;
-		public string DanhSachLoaiTienCong
-		{
-			get { return danhSachLoaiTienCong; }
-			set { danhSachLoaiTienCong = value; }
-		}
+		
 
 		private bool suDungQuyDinh4;
 		public bool SuDungQuyDinh4
@@ -36,11 +19,11 @@ namespace DTO
 			set { suDungQuyDinh4 = value; }
 		}
 
-		private int soLuongHieuXeToiDa;
-		public int SoLuongHieuXeToiDa
+		private int soTienNoToiDa;
+		public int SoTienNoToiDa
 		{
-			get { return soLuongHieuXeToiDa; }
-			set { soLuongHieuXeToiDa = value; }
+			get { return soTienNoToiDa; }
+			set { soTienNoToiDa = value; }
 		}
 
 		private int soXeSuaChuaToiDa;
@@ -50,32 +33,23 @@ namespace DTO
 			set { soXeSuaChuaToiDa = value; }
 		}
 
-		private int soLoaiVatTuPhuTung;
-		public int SoLoaiVatTuPhuTung
+		public ThamSoDTO()
 		{
-			get { return soLoaiVatTuPhuTung; }
-			set { soLoaiVatTuPhuTung = value; }
+			soXeSuaChuaToiDa = 100;
+			soTienNoToiDa = 0;
+			suDungQuyDinh4 = false;
 		}
 
-		private int soLoaiTienCong;
-		public int SoLoaiTienCong
-		{
-			get { return soLoaiTienCong; }
-			set { soLoaiTienCong = value; }
-		}
 
-		public ThamSoDTO(int tiepNhanSuaToiDa, string danhSachLoaiPhuTung, string danhSachLoaiTienCong, bool suDungQuyDinh4, int soLuongHieuXeToiDa, int soXeSuaChuaToiDa, int soLoaiVatTuPhuTung, int soLoaiTienCong)
+
+		public ThamSoDTO(bool suDungQuyDinh4, int soTienNoToiDa, int soXeSuaChuaToiDa)
 		{
-			this.tiepNhanSuaToiDa = tiepNhanSuaToiDa;
-			this.danhSachLoaiPhuTung = danhSachLoaiPhuTung;
-			this.danhSachLoaiTienCong = danhSachLoaiTienCong;
+
 			this.suDungQuyDinh4 = suDungQuyDinh4;
-			this.soLuongHieuXeToiDa = soLuongHieuXeToiDa;
+			this.soTienNoToiDa = soTienNoToiDa;
 			this.soXeSuaChuaToiDa = soXeSuaChuaToiDa;
-			this.soLoaiVatTuPhuTung = soLoaiVatTuPhuTung;
-			this.soLoaiTienCong = soLoaiTienCong;
-		}
 
+		}
 		~ThamSoDTO() { }
 	}
 }

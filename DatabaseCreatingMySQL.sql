@@ -126,13 +126,18 @@ CREATE TABLE HIEUXE
 );
 
 
+create table TIENCONG
+(
+MATIENCONG char(10) not null,
+TENTIENCONG char(100),
+primary key(MATIENCONG)
+);
+
 CREATE TABLE THAMSO
 (
-	TIEPNHANSUACHUATOIDA INT,
-	SOLOAIPHUTUNG INT,
-	SOLOAITIENCONG INT,
+	
 	SUDUNGQUYDINH4 BOOL,
-	SOLUONGHIEUXETOIDA INT,
+	SOTIENNOTOIDA INT,
 	SOXESUACHUATOIDA INT
 );
 
@@ -456,6 +461,35 @@ Begin
 End //
 DELIMITER ;
 
+
+
+
+/*Phần này sử dụng cho bảng tiền công*/
+DELIMITER //
+Create Procedure LoadAllSalary()
+Begin
+	select MATIENCONG as 'Mã Tiền Công', TENTIENCONG as 'Tên Tiền Công' from TIENCONG;
+End //
+DELIMITER ;
+
+
+
+DELIMITER // 
+create procedure InsertSalary( in _MaTienCong char(10), in _TenTienCong char(100))
+Begin 
+	Insert into TIENCONG values (_MaTienCong, _TenTienCong);
+End //
+DELIMITER ;
+
+
+DELIMITER //
+Create Procedure RemoveSalary(in _MaTienCong char(10))
+Begin
+	delete from TIENCONG where MaTienCong=_MaTienCong;
+	
+    
+End //
+DELIMITER ;
 
 
 

@@ -28,6 +28,21 @@ namespace DAO
 			return Conn;
 		}
 
+		public static MySqlConnection connectionDatabase(string strServer,string strDatabase,string strUser,string strPassword,string exception="")
+		{
+			MySqlConnection Conn = new MySqlConnection();
+			try
+			{
+				
+				Conn.ConnectionString = String.Format("Server = {0} ; Database = {1}; port = 3306 ; User Id = {2} ; password = {3}", strServer, strDatabase, strUser, strPassword);
+				Conn.Open();
+			}
+			catch(MySqlException ex)
+			{
+				exception = ex.Message;
+			}
+			return Conn;
+		}
 	}
 
 }

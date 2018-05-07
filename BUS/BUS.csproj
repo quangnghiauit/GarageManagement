@@ -53,6 +53,7 @@
     <Compile Include="ChiTietDoanhSoBUS.cs" />
     <Compile Include="ChiTietPhieuSuaChuaBUS.cs" />
     <Compile Include="ChiTietTonBUS.cs" />
+    <Compile Include="DatabaseConnectionBUS.cs" />
     <Compile Include="DoanhSoBUS.cs" />
     <Compile Include="HieuXeBUS.cs" />
     <Compile Include="KhachSuaXeBUS.cs" />
