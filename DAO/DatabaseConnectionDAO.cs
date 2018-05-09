@@ -19,6 +19,12 @@ namespace DAO
 
 	public class DatabaseConnectionDAO
 	{
+		private static MySqlDataReader _reader = null;
+		private static MySqlConnection _mySql = null;
+		private static MySqlDataAdapter _adapter;
+		
+
+
 
 		public static MySqlConnection connectionDatabase()
 		{
@@ -42,6 +48,29 @@ namespace DAO
 				exception = ex.Message;
 			}
 			return Conn;
+		}
+
+		public static MySqlDataReader ExcuteQuery(string query , string exception ="")
+		{
+			// we have to close previous reader first to be able to excute new reader
+			if(!(_reader ==null))
+			{
+				_reader.Close();
+			}
+
+			MySqlCommand command = new MySqlCommand(query, _mySql);
+			//Excute reader
+			try
+			{
+				_reader = command.ExecuteReader();
+			}
+			catch(MySqlException ex)
+			{
+				exception = ex.Message;
+			}
+			command.Dispose();
+			return _reader;
+		
 		}
 	}
 

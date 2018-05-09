@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-	class ThamSoDTO
+	public class ThamSoDTO
 	{
-		
+		public bool suDungQuyDinh4 = false;
+		public int soTienNoToiDa = 0;
+		public int soXeSuaChuaToiDa = 100;
 
-		
 
-		private bool suDungQuyDinh4;
 		public bool SuDungQuyDinh4
 		{
 			get { return suDungQuyDinh4; }
 			set { suDungQuyDinh4 = value; }
 		}
 
-		private int soTienNoToiDa;
+		
 		public int SoTienNoToiDa
 		{
 			get { return soTienNoToiDa; }
 			set { soTienNoToiDa = value; }
 		}
 
-		private int soXeSuaChuaToiDa;
+		
 		public int SoXeSuaChuaToiDa
 		{
 			get { return soXeSuaChuaToiDa; }

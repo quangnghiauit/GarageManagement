@@ -494,6 +494,26 @@ DELIMITER ;
 
 
 
+/*Phần này sử dụng cho bảng tham số*/
+DELIMITER //
+Create Procedure GetParameters()
+Begin
+	select SUDUNGQUYDINH4 as 'Sử dụng quy định 4' , SOTIENNOTOIDA as 'Số tiền nợ tối đa', SOXESUACHUATOIDA as'Số xe sửa chữa tối đa' from THAMSO;
+End //
+DELIMITER ;
+
+
+
+DELIMITER //
+create procedure UpdateParameters (in _SuDungQuyDinh4 bool , in _SoTienNoToiDa int, in _SoXeSuaChuaToiDa int)
+Begin
+	update THAMSO set SUDUNGQUYDINH4 = _SuDungQuyDinh4,SOTIENNOTOIDA=_SoTienNoToiDa,SOXESUACHUATOIDA=_SoXeSuaChuaToiDa;
+End //
+DELIMITER ;
+
+
+
+
 /*Procedure dung cho PHIEUTHUTIEN*/
 DELIMITER // 
 create procedure InsertPHIEUTHUTIEN ( in _BienSo char(10), in _NgayThuTien date, in _SoTienThu decimal)

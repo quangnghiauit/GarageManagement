@@ -1,22 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-
-using System.Data.SqlClient;
-using System.Media;
-using System.IO;
-
-using System.Linq;
-
-using System.Threading.Tasks;
+﻿using System.Data;
 using DTO;
 using DAO;
-using MySql.Data.MySqlClient;
 
-using System.Windows.Forms;
+
+
 
 namespace BUS
 {

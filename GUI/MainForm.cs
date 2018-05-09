@@ -32,36 +32,39 @@ namespace GUI
 		private void btnBC_Click(object sender, EventArgs e)
 		{
 			//Export report table
+			pnMainGara.Controls.Clear();
 			pnMain.Controls.Clear();
 			pnThaoTac.Controls.Clear();
 			fBaoCao myForm = new fBaoCao();
 			myForm.TopLevel = false;
 			myForm.AutoScroll = true;
-			pnMain.Controls.Add(myForm);
+			pnMainGara.Controls.Add(myForm);
 			myForm.Show();
 		}
 
 		private void btnGD_Click(object sender, EventArgs e)
 		{
 			//Export transaction table
+			pnMainGara.Controls.Clear();
 			pnMain.Controls.Clear();
 			pnThaoTac.Controls.Clear();
 			fGiaoDich myForm = new fGiaoDich();
 			myForm.TopLevel = false;
 			myForm.AutoScroll = true;
-			pnMain.Controls.Add(myForm);
+			pnMainGara.Controls.Add(myForm);
 			myForm.Show();
 		}
 
 		private void btnTT_Click(object sender, EventArgs e)
 		{
 			//Export table information
+			pnMainGara.Controls.Clear();
 			pnMain.Controls.Clear();
 			pnThaoTac.Controls.Clear();
 			fThongTin myForm = new fThongTin();
 			myForm.TopLevel = false;
 			myForm.AutoScroll = true;
-			pnMain.Controls.Add(myForm);
+			pnMainGara.Controls.Add(myForm);
 			myForm.Show();
 		}
 
