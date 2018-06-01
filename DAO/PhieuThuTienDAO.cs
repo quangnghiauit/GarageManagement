@@ -7,26 +7,27 @@ using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
 using DTO;
+using System.Windows.Forms;
 
 namespace DAO
 {
-	public class PhieuThuTienDAO
-	{
+    public class PhieuThuTienDAO
+    {
         public static DataTable selectAllPhieuThuTien()
         {
             DataTable data = new DataTable();
 
             using (MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase())
             {
-                MySqlCommand command = new MySqlCommand("SelectAllTIEPNHANXESUA", connection);
+                MySqlCommand command = new MySqlCommand("SelectAllPHIEUTHUTIEN", connection);
 
                 connection.Open();
                 MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                                
+
                 adapter.Fill(data);
 
                 connection.Close();
-            }            
+            }
 
             return data;
         }
@@ -46,10 +47,32 @@ namespace DAO
             command.Parameters["@_BienSo"].Value = PhieuThu.BienSo;
             command.Parameters["@_NgayThuTien"].Value = PhieuThu.NgayThuTien;
             command.Parameters["@_SoTienThu"].Value = PhieuThu.SoTienThu;
-            
+
             connect.Open();
             command.ExecuteNonQuery();
             connect.Close();
+        }
+
+        public static void fillCBO(string column, string table, ComboBox receiver)
+        {
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            MySqlCommand cmd = new MySqlCommand("select * from " + table, connection);
+            MySqlDataReader reader;
+            try
+            {
+                connection.Open();
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string getter = reader.GetString(column);
+                    receiver.Items.Add(getter);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

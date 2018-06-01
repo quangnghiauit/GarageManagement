@@ -29,7 +29,7 @@ namespace DAO
 		public static MySqlConnection connectionDatabase()
 		{
 
-			MySqlConnection Conn = new MySqlConnection("Server = localhost ; Database = gara; port = 3306 ; User Id = root ; password = 123456");
+			MySqlConnection Conn = new MySqlConnection("Server = localhost ; Database = gara; port = 3306 ; User Id = root ; password = 123654");
 
 			return Conn;
 		}

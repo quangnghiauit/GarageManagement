@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-	class PhieuSuaChuaDTO
+	public class PhieuSuaChuaDTO
 	{
 		private string maPhieuSuaChua;
 		public string MaPhieuSuaChua
@@ -44,6 +44,15 @@ namespace DTO
 			get { return maKhachSuaXe; }
 			set { maKhachSuaXe = value; }
 		}
+
+        public PhieuSuaChuaDTO()
+        {
+            this.maPhieuSuaChua = "";
+            this.bienSo = "";
+            this.ngaySuaChua = new DateTime();
+            this.tongTien = 0;
+            this.maKhachSuaXe = "";
+        }
 
 		public PhieuSuaChuaDTO(string maPhieuSuaChua, string bienSo, DateTime ngaySuaChua, Int64 tongTien, string maKhachSuaXe)
 		{

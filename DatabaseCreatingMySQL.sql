@@ -8,8 +8,12 @@ CREATE TABLE PHIEUTHUTIEN
 	BIENSO CHAR(10), 
 	NGAYTHUTIEN DATE,
 	SOTIENTHU DECIMAL, 
+    SOTIENKHACHTRA DECIMAL,
+    SOTIENTRAKHACH DECIMAL,
 	PRIMARY KEY (MAPHIEUTHUTIEN)
 );
+#drop table PHIEUTHUTIEN;
+#create lai table PHIEUTHUTIEN, them vao 2 col moi SOTIENTRAKHACH va SOTIENKHACHTRA
 
 
 CREATE TABLE DOANHSO 
@@ -32,11 +36,13 @@ CREATE TABLE XE
 
 CREATE TABLE TIEPNHANXESUA
 (
-	MATIEPNHANXESUA CHAR(10) NOT NULL,
+	MATIEPNHANXESUA INT(10) NOT NULL AUTO_INCREMENT,
 	BIENSO CHAR(10),
 	NGAYTIEPNHAN DATE,
 	PRIMARY KEY (MATIEPNHANXESUA)
 );
+#drop table TIEPNHANXESUA;
+#Chinh lai col MaTiepNhanXeSua co them auto increment
 
 
 CREATE TABLE CHITIETDOANHSO
@@ -105,9 +111,10 @@ CREATE TABLE VATTUPHUTUNG
 );
 
 
+
 CREATE TABLE CHITIETPHIEUSUACHUA
 (
-	MACTPHIEUSUAXE CHAR(10) NOT NULL,
+	MACTPHIEUSUAXE INT(10) NOT NULL AUTO_INCREMENT,
 	MAPHIEUSUACHUA CHAR(10),
 	NOIDUNG CHAR(100),
 	MAVATTUPHUTUNG CHAR(10),
@@ -116,6 +123,8 @@ CREATE TABLE CHITIETPHIEUSUACHUA
 	THANHTIEN DECIMAL,
 	PRIMARY KEY (MACTPHIEUSUAXE)
 );
+#drop table CHITIETPHIEUSUACHUA;
+#Chinh lai col MaCTPhieuSuaXe co them auto increment
 
 
 CREATE TABLE HIEUXE
@@ -525,13 +534,13 @@ DELIMITER ;
 DELIMITER //
 Create Procedure SelectAllPHIEUTHUTIEN()
 Begin
-	select BienSo as 'Biển số', NgayThuTien as 'Ngày thu tiền', SoTienThu as 'Số tiền thu' from PHIEUTHUTIEN;
+	select MAPHIEUTHUTIEN as 'Số phiếu thu tiền', BIENSO as 'Biển số', NGAYTHUTIEN as 'Ngày thu tiền', SOTIENTHU as 'Số tiền thu' from PHIEUTHUTIEN;
 End //
 DELIMITER ;
 
 
 /* xóa procedure SelectALLPHIEUTHUTIEN và tạo lại bằng cái create đã được chỉnh sửa */
-/*drop procedure SelectALLPHIEUTHUTIEN*/
+#drop procedure SelectALLPHIEUTHUTIEN
 
 /*Procedure dung cho TIEPNHANXESUA*/
 DELIMITER //
@@ -544,9 +553,38 @@ DELIMITER ;
 DELIMITER // 
 create procedure InsertTIEPNHANXESUA ( in _BienSo char(10), in _NgayTiepNhan date)
 Begin 
-	Insert into PHIEUTHUTIEN values (_BienSo, _NgayTiepNhan);
+	Insert into PHIEUTHUTIEN values ( _BienSo, _NgayTiepNhan);
+End //
+DELIMITER ;
+#drop procedure InsertTIEPNHANXESUA;
+
+
+/*Procedure dung cho PHIEUSUACHUA*/
+DELIMITER //
+Create Procedure SelectAllCHITIETPHIEUSUACHUA()
+Begin
+	select MACHITIETPHIEUSUACHUA as 'Mã chi tiết phiếu sửa chữa', NOIDUNG as 'Nội dung',
+    MAVATTUPHUTUNG as 'Mã vật tư phụ tùng', SOLUONGSUACHUA as 'Số lượng',
+    TIENCONG as 'Tiền công', THANHTIEN as 'Thành tiền' from CHITIETPHIEUSUACHUA;
 End //
 DELIMITER ;
 
+DELIMITER // 
+create procedure InsertCHITIETPHIEUSUACHUA ( in _MaPhieuSuaChua char(10), in _NoiDung char(100),
+ in _MaVatTuPhuTung char(10), _SoLuongSuaChua int, in _TienCong decimal, _ThanhTien decimal)
+Begin 
+	Insert into PHIEUTHUTIEN values ( _MaPhieuSuaChua, _NoiDung, _MaVatTuPhuTung, _SoLuongSuaChua,
+    _TienCong, _ThanhTien);
+End //
+DELIMITER ;
+#drop procedure InsertCHITIETPHIEUSUACHUA;
 
-
+DELIMITER //
+Create Procedure SelectAllPHIEUSUACHUA()
+Begin
+	select MAPHIEUSUACHUA as 'Số phiếu sửa chữa', BIENSO as 'Biển số',
+    NGAYSUACHUA as 'Ngày sửa chữa', TONGTIEN as 'Tổng tiền',
+    MAKHACHSUAXE as 'Mã khách sửa xe' from PHIEUSUACHUA;
+End //
+DELIMITER ;
+#drop procedure SelectAllPHIEUSUACHUA;

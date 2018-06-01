@@ -18,21 +18,22 @@ namespace GUI
 		public fLapPhieuThuTien()
 		{
 			InitializeComponent();
+            fillCboTenChuXe();
 		}
 
         private void btnLapPhieu_Click(object sender, EventArgs e)
         {
-            if (!fMainForm.cNullTB(tbBienSo.Text) && !fMainForm.cNullTB(tbTenChuXe.Text) && !fMainForm.cNullTB(tbDienThoai.Text)
-                && !fMainForm.cNullTB(tbEmail.Text) && !fMainForm.cNullTB(tbSoTienNo.Text) && !fMainForm.cNullTB(tbSoTienNo.Text) &&
-                    !fMainForm.cNullTB(tbTienKhachTra.Text) && !fMainForm.cNullTB(tbTienTraKhach.Text) && !fMainForm.cNullTB(tbTienThu.Text))
+            if (!fMainForm.cNullTB(cboBienSo.Text) && !fMainForm.cNullTB(txtTenChuXe.Text) && !fMainForm.cNullTB(txtDienThoai.Text)
+                && !fMainForm.cNullTB(txtEmail.Text) && !fMainForm.cNullTB(txtSoTienNo.Text) && !fMainForm.cNullTB(txtSoTienNo.Text) &&
+                    !fMainForm.cNullTB(txtTienKhachTra.Text) && !fMainForm.cNullTB(txtTienTraKhach.Text) && !fMainForm.cNullTB(txtTienThu.Text))
             {
-                string BienSo = tbBienSo.Text;
+                string BienSo = cboBienSo.Text;
                 DateTime NgayThuTien = dtmNgayThuTien.Value;
-                int SoTienThu = int.Parse(tbTienThu.Text);
+                int SoTienThu = int.Parse(txtTienThu.Text);
 
                 PhieuThuTienDTO PhieuThu = new PhieuThuTienDTO("", BienSo,NgayThuTien,SoTienThu);
                 PhieuThuTienBUS.addPhieuThuTien(PhieuThu);
-                dtgvLichSuPTT.DataSource = PhieuThuTienBUS.selectAllPhieuThuTien();
+                dgvLichSuPTT.DataSource = PhieuThuTienBUS.selectAllPhieuThuTien();
             }
             else
             {
@@ -43,7 +44,12 @@ namespace GUI
 
         private void btnLichSuThuTien_Click(object sender, EventArgs e)
         {
-            dtgvLichSuPTT.DataSource = PhieuThuTienBUS.selectAllPhieuThuTien();
+            dgvLichSuPTT.DataSource = PhieuThuTienBUS.selectAllPhieuThuTien();
+        }
+
+        private void fillCboTenChuXe()
+        {
+            LapPhieuThuTienDAO.fillCBO("BIENSO", "XE", cboBienSo);
         }
     }
 }

@@ -8,9 +8,9 @@ namespace DTO
 {
 	public class TiepNhanXeSuaDTO
 	{
-		private string maTiepNhanXeSua;
+		private Int64 maTiepNhanXeSua;
 
-		public string MaTiepNhanXeSua
+		public Int64 MaTiepNhanXeSua
 		{
 			get { return maTiepNhanXeSua; }
 			set { maTiepNhanXeSua = value; }
@@ -33,16 +33,14 @@ namespace DTO
 
         public TiepNhanXeSuaDTO()
         {
-            this.maTiepNhanXeSua = "";
-            this.bienSo = "";
+            this.BienSo = "";
             this.ngayTiepNhan = new DateTime();
         }
 
-		public TiepNhanXeSuaDTO(string maTiepNhanXeSua, string bienSo, DateTime ngayTiepNhan)
+		public TiepNhanXeSuaDTO( string _bienSo,  DateTime _ngayTiepNhan)
 		{
-			this.maTiepNhanXeSua = maTiepNhanXeSua;
-			this.bienSo = bienSo;
-			this.ngayTiepNhan = ngayTiepNhan;
+            this.bienSo = _bienSo;
+			this.ngayTiepNhan = _ngayTiepNhan;
 		}
 
 		~TiepNhanXeSuaDTO() { }

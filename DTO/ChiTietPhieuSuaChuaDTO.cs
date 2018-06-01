@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-	class ChiTietPhieuSuaChuaDTO
+	public class ChiTietPhieuSuaChuaDTO
 	{
 		private string maChiTietPhieuSuaChua;
 		public string MaChiTietPhieuSuaChua
@@ -57,15 +57,24 @@ namespace DTO
 			set { thanhTien = value; }
 		}
 
-		public ChiTietPhieuSuaChuaDTO(string maChiTietPhieuSuaChua, string maPhieuSuaChua, string noiDung, string maVatTuPhuTung, int soLuongSuaChua, int tienCong, Int64 thanhTien)
-		{
-			this.maChiTietPhieuSuaChua = maChiTietPhieuSuaChua;
-			this.maPhieuSuaChua = maPhieuSuaChua;
-			this.noiDung = noiDung;
-			this.maVatTuPhuTung = maVatTuPhuTung; ;
-			this.soLuongSuaChua = soLuongSuaChua;
-			this.tienCong = tienCong;
-			this.thanhTien = thanhTien;
+        public ChiTietPhieuSuaChuaDTO()
+        {
+            this.maPhieuSuaChua = "";
+            this.noiDung = "";
+            this.maVatTuPhuTung = ""; ;
+            this.soLuongSuaChua = 0;
+            this.tienCong = 0;
+            this.thanhTien = 0;
+        }
+
+        public ChiTietPhieuSuaChuaDTO(string _maPhieuSuaChua, string _noiDung, string _maVatTuPhuTung, int _soLuongSuaChua, int _tienCong, Int64 _thanhTien)
+		{			
+			this.maPhieuSuaChua = _maPhieuSuaChua;
+			this.noiDung = _noiDung;
+			this.maVatTuPhuTung = _maVatTuPhuTung; ;
+			this.soLuongSuaChua = _soLuongSuaChua;
+			this.tienCong = _tienCong;
+			this.thanhTien = _thanhTien;
 		}
 
 		~ChiTietPhieuSuaChuaDTO() { }
