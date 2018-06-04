@@ -6,18 +6,23 @@ namespace BUS
 {
 	public class ThamSoBUS
 	{
-		public bool UpdateParameters(bool _SuDungQuyDinh4, int _SoTienNoToiDa, int _SoXeSuaChuaToiDa, string exception ="")
+		public static bool UpdateParameters( string exception ="")
 		{
 
-			if(_SoTienNoToiDa<0||_SoXeSuaChuaToiDa<0)
+			if(ThamSoDTO.SoTienNoToiDa<0||ThamSoDTO.SoXeSuaChuaToiDa<0)
 			{
 				exception = "Gía trị tham số không được phép nhỏ hơn 0";
 				return false;
 
 			}
-			return ThamSoDAO.UpdateParameters(_SuDungQuyDinh4, _SoTienNoToiDa, _SoXeSuaChuaToiDa, exception);
+			return ThamSoDAO.UpdateParameters(exception);
 
 		}
+		public static bool GetParameters(string exception ="")
+		{
+			return ThamSoDAO.GetParameters(exception);
+		}
+
 
 	}
 }
