@@ -241,6 +241,7 @@
             // 
             this.txtTienThu.Location = new System.Drawing.Point(654, 169);
             this.txtTienThu.Name = "txtTienThu";
+            this.txtTienThu.ReadOnly = true;
             this.txtTienThu.Size = new System.Drawing.Size(93, 20);
             this.txtTienThu.TabIndex = 18;
             // 
@@ -250,6 +251,7 @@
             this.txtTienTraKhach.Name = "txtTienTraKhach";
             this.txtTienTraKhach.Size = new System.Drawing.Size(93, 20);
             this.txtTienTraKhach.TabIndex = 16;
+            this.txtTienTraKhach.TextChanged += new System.EventHandler(this.txtTienTraKhach_TextChanged);
             // 
             // txtTienKhachTra
             // 
@@ -257,6 +259,7 @@
             this.txtTienKhachTra.Name = "txtTienKhachTra";
             this.txtTienKhachTra.Size = new System.Drawing.Size(93, 20);
             this.txtTienKhachTra.TabIndex = 14;
+            this.txtTienKhachTra.TextChanged += new System.EventHandler(this.txtTienKhachTra_TextChanged);
             // 
             // txtSoTienNo
             // 

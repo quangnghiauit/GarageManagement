@@ -30,10 +30,21 @@ namespace GUI
                 string BienSo = cboBienSo.Text;
                 DateTime NgayThuTien = dtmNgayThuTien.Value;
                 int SoTienThu = int.Parse(txtTienThu.Text);
+                int SoTienKhachTra = int.Parse(txtTienKhachTra.Text);
+                int SoTienTraKhach = int.Parse(txtTienTraKhach.Text);
 
-                PhieuThuTienDTO PhieuThu = new PhieuThuTienDTO("", BienSo,NgayThuTien,SoTienThu);
+                PhieuThuTienDTO PhieuThu = new PhieuThuTienDTO("", BienSo,NgayThuTien,SoTienThu, SoTienKhachTra, SoTienTraKhach);
                 PhieuThuTienBUS.addPhieuThuTien(PhieuThu);
                 dgvLichSuPTT.DataSource = PhieuThuTienBUS.selectAllPhieuThuTien();
+
+                cboBienSo.SelectedIndex = -1;
+                dtmNgayThuTien.Value = DateTime.Today;
+                txtTenChuXe.Clear();
+                txtDienThoai.Clear();
+                txtEmail.Clear();
+                txtSoTienNo.Clear();
+                txtTienKhachTra.Clear();
+                txtTienTraKhach.Clear();
             }
             else
             {
@@ -50,6 +61,18 @@ namespace GUI
         private void fillCboTenChuXe()
         {
             LapPhieuThuTienDAO.fillCBO("BIENSO", "XE", cboBienSo);
+        }
+
+        private void txtTienKhachTra_TextChanged(object sender, EventArgs e)
+        {
+            if (!fMainForm.cNullTB(txtTienKhachTra.Text) && !fMainForm.cNullTB(txtTienTraKhach.Text))
+                txtTienThu.Text = (int.Parse(txtTienKhachTra.Text) - int.Parse(txtTienTraKhach.Text)).ToString();
+        }
+
+        private void txtTienTraKhach_TextChanged(object sender, EventArgs e)
+        {
+            if (!fMainForm.cNullTB(txtTienKhachTra.Text) && !fMainForm.cNullTB(txtTienTraKhach.Text))
+                txtTienThu.Text = (int.Parse(txtTienKhachTra.Text) - int.Parse(txtTienTraKhach.Text)).ToString();
         }
     }
 }

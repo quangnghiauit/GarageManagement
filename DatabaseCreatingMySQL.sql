@@ -4,7 +4,7 @@ USE GARA;
 
 CREATE TABLE PHIEUTHUTIEN
 (
-	MAPHIEUTHUTIEN CHAR(10) NOT NULL,
+	MAPHIEUTHUTIEN INT(10) NOT NULL AUTO_INCREMENT,
 	BIENSO CHAR(10), 
 	NGAYTHUTIEN DATE,
 	SOTIENTHU DECIMAL, 
@@ -14,6 +14,7 @@ CREATE TABLE PHIEUTHUTIEN
 );
 #drop table PHIEUTHUTIEN;
 #create lai table PHIEUTHUTIEN, them vao 2 col moi SOTIENTRAKHACH va SOTIENKHACHTRA
+#create lai table PHIEUTHUTIEN, doi ma phieu thanh auto-increment
 
 
 CREATE TABLE DOANHSO 
@@ -525,11 +526,16 @@ DELIMITER ;
 
 /*Procedure dung cho PHIEUTHUTIEN*/
 DELIMITER // 
-create procedure InsertPHIEUTHUTIEN ( in _BienSo char(10), in _NgayThuTien date, in _SoTienThu decimal)
+create procedure InsertPHIEUTHUTIEN ( in _BienSo char(10), in _NgayThuTien date,
+in _SoTienThu decimal, in _SoTienKhachTra decimal, in _SoTienTraKhach decimal)
 Begin 
-	Insert into PHIEUTHUTIEN values (_BienSo, _NgayThuTien, _SoTienThu);
+	Insert into PHIEUTHUTIEN (BIENSO, NGAYTHUTIEN, SOTIENTHU, SOTIENKHACHTRA, SOTIENTRAKHACH)
+    values (_BienSo, _NgayThuTien, _SoTienThu, _SoTienKhachTra, _SoTienTraKhach);
 End //
 DELIMITER ;
+#drop procedure InsertPHIEUTHUTIEN;
+
+
 
 DELIMITER //
 Create Procedure SelectAllPHIEUTHUTIEN()
@@ -553,7 +559,8 @@ DELIMITER ;
 DELIMITER // 
 create procedure InsertTIEPNHANXESUA ( in _BienSo char(10), in _NgayTiepNhan date)
 Begin 
-	Insert into PHIEUTHUTIEN values ( _BienSo, _NgayTiepNhan);
+	Insert into TIEPNHANXESUA (BIENSO, NGAYTIEPNHAN)
+    values (select BIENSO from 	XE where BIENSO = _BienSo, _NgayTiepNhan);
 End //
 DELIMITER ;
 #drop procedure InsertTIEPNHANXESUA;

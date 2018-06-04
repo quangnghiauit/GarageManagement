@@ -44,9 +44,13 @@ namespace DAO
             command.Parameters.Add("@_BienSo", MySqlDbType.VarChar, 10);
             command.Parameters.Add("@_NgayThuTien", MySqlDbType.Date);
             command.Parameters.Add("@_SoTienThu", MySqlDbType.Decimal);
+            command.Parameters.Add("@_SoTienKhachTra", MySqlDbType.Decimal);
+            command.Parameters.Add("@_SoTienTraKhach", MySqlDbType.Decimal);
             command.Parameters["@_BienSo"].Value = PhieuThu.BienSo;
             command.Parameters["@_NgayThuTien"].Value = PhieuThu.NgayThuTien;
             command.Parameters["@_SoTienThu"].Value = PhieuThu.SoTienThu;
+            command.Parameters["@_SoTienKhachTra"].Value = PhieuThu.SoTienKhachTra;
+            command.Parameters["@_SoTienTraKhach"].Value = PhieuThu.SoTienTraKhach;
 
             connect.Open();
             command.ExecuteNonQuery();

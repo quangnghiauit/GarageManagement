@@ -37,6 +37,19 @@ namespace DTO
 			get { return soTienThu; }
 			set { soTienThu = value; }
 		}
+        private int soTienTraKhach;
+        public int SoTienTraKhach
+        {
+            get { return soTienTraKhach; }
+            set { soTienTraKhach = value; }
+        }
+
+        private int soTienKhachTra;
+        public int SoTienKhachTra
+        {
+            get { return soTienKhachTra; }
+            set { soTienKhachTra = value; }
+        }
 
         public PhieuThuTienDTO()
         {
@@ -44,14 +57,18 @@ namespace DTO
             bienSo = "";
             ngayThuTien = new DateTime();
             soTienThu = 0;
+            soTienTraKhach = 0;
+            soTienKhachTra = 0;
         }
 
-		public PhieuThuTienDTO(string maPhieuThuTien, string bienSo, DateTime ngayThuTien, int soTienThu)
+		public PhieuThuTienDTO(string maPhieuThuTien, string bienSo, DateTime ngayThuTien, int soTienThu, int soTienKhachTra, int soTienTraKhach)
 		{
 			this.maPhieuThuTien = maPhieuThuTien;
 			this.BienSo = bienSo;
 			this.ngayThuTien = ngayThuTien;
 			this.soTienThu = soTienThu;
+            this.soTienKhachTra = soTienKhachTra;
+            this.soTienTraKhach = soTienTraKhach;            
 		}
 
 		~PhieuThuTienDTO() { }
