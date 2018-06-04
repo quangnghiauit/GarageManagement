@@ -15,7 +15,7 @@ namespace DAO
 	{
 		
 
-		public static Boolean UpdateParameters(bool _SuDungQuyDinh4, int _SoTienNoToiDa, int _SoXeSuaChuaToiDa,   string exception="")
+		public static Boolean UpdateParameters( string exception="")
 		{
 			try
 			{
@@ -23,7 +23,7 @@ namespace DAO
 
 				//query
 				string query = string.Format("update THAMSO set SUDUNGQUYDINH4 = {0}, " +
-					"SOTIENNOTOIDA = {1}, SOXESUACHUATOIDA = {2}", _SuDungQuyDinh4, _SoTienNoToiDa, _SoXeSuaChuaToiDa);
+					"SOTIENNOTOIDA = {1}, SOXESUACHUATOIDA = {2}",ThamSoDTO.SuDungQuyDinh4 ,ThamSoDTO.SoTienNoToiDa,ThamSoDTO.SoXeSuaChuaToiDa );
 
 				//excute reader
 				MySqlDataReader reader = DatabaseConnectionDAO.ExcuteQuery(query, exception);
@@ -44,34 +44,41 @@ namespace DAO
 		}
 
 
-		//public static Boolean GetParameters( string exception ="")
-		//{
-		//	try
-		//	{
-		//		//query
-		//		string query = string.Format("Select * from THAMSO");
+		public static Boolean GetParameters(string exception = "")
+		{
+			try
+			{
+				//query
+				string query = string.Format("Select * from THAMSO");
 
-		//		//excute reader
-		//		MySqlDataReader reader = DatabaseConnectionDAO.ExcuteQuery(query, exception);
+				//excute reader
+				MySqlDataReader reader = DatabaseConnectionDAO.ExcuteQuery(query, exception);
 
-		//		//if there is no exception
-		//		if(exception=="")
-		//		{
-		//			//get Parameters
-		//			while (reader.Read())
-		//			{
-		//				ThamSoDTO thamSoDTO;
-		//				thamSoDTO.SuDungQuyDinh4 = reader.GetBoolean("SUDUNGQUYDINH4");
-		//			}
-		//		}
-
-
-
-		//	}
-		//}
+				//if there is no exception
+				if (exception == "")
+				{
+					//get Parameters
+					while (reader.Read())
+					{
+						ThamSoDTO.SoTienNoToiDa = decimal.Parse(reader.GetString("SoTienNoToiDa"));
+						ThamSoDTO.SoXeSuaChuaToiDa = decimal.Parse(reader.GetString("SoXeSuaChuaToiDa"));
+						ThamSoDTO.SuDungQuyDinh4 = bool.Parse( reader.GetString("SuDungQuyDinh4"));
+					}
+					return true;
+				}
 
 
 
-		
+			}
+			catch(Exception ex)
+			{
+				exception = ex.Message;
+			}
+			return false;
+		}
+
+
+
+
 	}
 }
