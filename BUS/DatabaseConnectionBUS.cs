@@ -34,5 +34,19 @@ namespace BUS
 			}
 			return false;
 		}
+
+		public static bool DisConnectToDatabase(string exception ="")
+		{
+			try
+			{
+				DatabaseConnectionDAO.DisConnectFromDatabase();
+				return true;
+			}
+			catch(Exception ex)
+			{
+				exception = ex.Message;
+			}
+			return false;
+		}
 	}
 }

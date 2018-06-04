@@ -29,7 +29,7 @@ namespace DAO
 		public static MySqlConnection connectionDatabase()
 		{
 
-			MySqlConnection Conn = new MySqlConnection("Server = localhost ; Database = gara; port = 3306 ; User Id = root ; password = 123654");
+			MySqlConnection Conn = new MySqlConnection("Server = localhost ; Database = gara; port = 3306 ; User Id = root ; password = 123456");
 
 			return Conn;
 		}
@@ -50,7 +50,29 @@ namespace DAO
 			}
 			return Conn;
 		}
+		public static void DisConnectFromDatabase(string exception ="")
+		{
+			try
+			{
+				_mySql.Close();
+			}
+			catch(MySqlException ex)
+			{
+				exception = ex.Message;
+			}
+			_mySql.Dispose();
+			if(_reader != null)
+			{
+				_reader.Dispose();
+			}
+			if(_adapter!=null)
+			{
+				_adapter.Dispose();
+			}
 
+			
+
+		}
 		public static MySqlDataReader ExcuteQuery(string query , string exception ="")
 		{
 			// we have to close previous reader first to be able to excute new reader
