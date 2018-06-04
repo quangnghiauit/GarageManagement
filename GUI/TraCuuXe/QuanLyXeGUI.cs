@@ -23,6 +23,7 @@ namespace GUI
 		public fQuanLyXeGUI()
 		{
 			InitializeComponent();
+			//fillCboBienSo();
 		}
 
 		private void panel1_Paint(object sender, PaintEventArgs e)
@@ -408,5 +409,10 @@ namespace GUI
 
 			#endregion
 		}
+
+		//private void fillCboBienSo()
+		//{
+		//	TiepNhanXeSuaDAO.fillCBO("BIENSO", "XE", cbbBienSoTraCuu);
+		//}
 	}
 }

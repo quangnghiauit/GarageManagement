@@ -23,6 +23,7 @@ namespace GUI
 		public fQuanLyVatTuPhuTungGUI()
 		{
 			InitializeComponent();
+			//fillCboBienSo();
 		}
 
 		private void btnTimKiemTraCuu_Click(object sender, EventArgs e)
@@ -195,5 +196,9 @@ namespace GUI
 		{
 			dtgvThaoTac.DataSource = VatTuPhuTungBUS.loadAllSpareParts();
 		}
+		//private void fillCboBienSo()
+		//{
+		//	TiepNhanXeSuaDAO.fillCBO("MaVatTuPhuTung", "VATTUPHUTUNG", cbbMaVatTuTraCuu);
+		//}
 	}
 }

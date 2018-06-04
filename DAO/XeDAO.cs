@@ -35,9 +35,31 @@ namespace DAO
 			Conn.Close();
 			return dt;
 		}
+
+		//public static void fillCBO(string column, string table, ComboBox receiver)
+		//{
+		//	MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+		//	MySqlCommand cmd = new MySqlCommand("select * from " + table, connection);
+		//	MySqlDataReader reader;
+		//	try
+		//	{
+		//		connection.Open();
+		//		reader = cmd.ExecuteReader();
+
+		//		while (reader.Read())
+		//		{
+		//			string getter = reader.GetString(column);
+		//			receiver.Items.Add(getter);
+		//		}
+		//	}
+		//	catch (Exception ex)
+		//	{
+		//		MessageBox.Show(ex.Message);
+		//	}
+		//}
 		#endregion
 		#region Insert, Update, Remove
-		
+
 
 		public static void InsertCar(string BienSo,int MaKhachSuaXe,string MaHieuXe,int TienNo)
 		{
