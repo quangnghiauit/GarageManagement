@@ -8,26 +8,26 @@ namespace DTO
 {
 	public class ThamSoDTO
 	{
-		public bool suDungQuyDinh4 = false;
-		public int soTienNoToiDa = 0;
-		public int soXeSuaChuaToiDa = 100;
+		static bool suDungQuyDinh4 = false;
+		static decimal soTienNoToiDa = 0;
+		static decimal soXeSuaChuaToiDa = 100;
 
 
-		public bool SuDungQuyDinh4
+		public static bool SuDungQuyDinh4
 		{
 			get { return suDungQuyDinh4; }
 			set { suDungQuyDinh4 = value; }
 		}
 
 		
-		public int SoTienNoToiDa
+		public static decimal SoTienNoToiDa
 		{
 			get { return soTienNoToiDa; }
 			set { soTienNoToiDa = value; }
 		}
 
 		
-		public int SoXeSuaChuaToiDa
+		public static decimal SoXeSuaChuaToiDa
 		{
 			get { return soXeSuaChuaToiDa; }
 			set { soXeSuaChuaToiDa = value; }
@@ -42,14 +42,7 @@ namespace DTO
 
 
 
-		public ThamSoDTO(bool suDungQuyDinh4, int soTienNoToiDa, int soXeSuaChuaToiDa)
-		{
-
-			this.suDungQuyDinh4 = suDungQuyDinh4;
-			this.soTienNoToiDa = soTienNoToiDa;
-			this.soXeSuaChuaToiDa = soXeSuaChuaToiDa;
-
-		}
+		
 		~ThamSoDTO() { }
 	}
 }
