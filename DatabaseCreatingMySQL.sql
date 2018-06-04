@@ -93,13 +93,15 @@ CREATE TABLE CHITIETTON
 
 CREATE TABLE PHIEUSUACHUA 
 (
-	MAPHIEUSUACHUA CHAR(10) NOT NULL,
+	MAPHIEUSUACHUA INT(10) NOT NULL AUTO_INCREMENT,
 	BIENSO CHAR(20),
 	NGAYSUACHUA DATE,
 	TONGTIEN DECIMAL,
 	MAKHACHSUAXE int,
 	PRIMARY KEY (MAPHIEUSUACHUA)
 );
+#drop table PHIEUSUACHUA
+#Thay doi MaPhieuSuaChua thanh auto-increment
 
 
 CREATE TABLE VATTUPHUTUNG 
@@ -116,7 +118,7 @@ CREATE TABLE VATTUPHUTUNG
 CREATE TABLE CHITIETPHIEUSUACHUA
 (
 	MACTPHIEUSUAXE INT(10) NOT NULL AUTO_INCREMENT,
-	MAPHIEUSUACHUA CHAR(10),
+	MAPHIEUSUACHUA INT(10) NOT NULL,
 	NOIDUNG CHAR(100),
 	MAVATTUPHUTUNG CHAR(10),
 	SOLUONGSUACHUA INT,
@@ -556,11 +558,16 @@ Begin
 End //
 DELIMITER ;
 
+
 DELIMITER // 
 create procedure InsertTIEPNHANXESUA ( in _BienSo char(10), in _NgayTiepNhan date)
-Begin 
-	Insert into TIEPNHANXESUA (BIENSO, NGAYTIEPNHAN)
-    values (select BIENSO from 	XE where BIENSO = _BienSo, _NgayTiepNhan);
+Begin
+	declare bienSo char(10);
+    set @bienSo = (select BIENSO
+			from XE
+            where XE.BIENSO = _BienSo);
+	Insert into TIEPNHANXESUA (TIEPNHANXESUA.BIENSO, NGAYTIEPNHAN)
+    values (@bienSo, _NgayTiepNhan);
 End //
 DELIMITER ;
 #drop procedure InsertTIEPNHANXESUA;
@@ -580,7 +587,8 @@ DELIMITER //
 create procedure InsertCHITIETPHIEUSUACHUA ( in _MaPhieuSuaChua char(10), in _NoiDung char(100),
  in _MaVatTuPhuTung char(10), _SoLuongSuaChua int, in _TienCong decimal, _ThanhTien decimal)
 Begin 
-	Insert into PHIEUTHUTIEN values ( _MaPhieuSuaChua, _NoiDung, _MaVatTuPhuTung, _SoLuongSuaChua,
+	Insert into PHIEUTHUTIEN (MAPHIEUSUACHUA, NOIDUNG, MAVATTUPHUTUNG, SOLUONGSUACHUA, TIENCONG, THANHTIEN)
+    values ( _MaPhieuSuaChua, _NoiDung, _MaVatTuPhuTung, _SoLuongSuaChua,
     _TienCong, _ThanhTien);
 End //
 DELIMITER ;
@@ -595,3 +603,12 @@ Begin
 End //
 DELIMITER ;
 #drop procedure SelectAllPHIEUSUACHUA;
+
+DELIMITER // 
+create procedure InsertPHIEUSUACHUA( in _BienSo char(20), in _NgaySuaChua date,
+in _TongTien decimal, in _MaKhachSuaXe int)
+Begin
+	insert into PHIEUSUACHUA (BIENSO, NGAYSUACHUA, TONGTIEN, MAKHACHSUAXE)
+    values (_BienSo, _NgaySuaChua, _TongTien, _MaKhachSuaXe);
+End //
+DELIMITER ;

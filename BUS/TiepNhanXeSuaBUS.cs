@@ -13,12 +13,12 @@ namespace BUS
 	{
         public static DataTable selectAllTiepNhanXeSua()
         {
-            return LapPhieuThuTienDAO.selectAllTiepNhanXeSua();
+            return TiepNhanXeSuaDAO.selectAllTiepNhanXeSua();
         }
 
         public static void addTiepNhanXeSua(TiepNhanXeSuaDTO TiepNhan)
         {
-            LapPhieuThuTienDAO.insertPhieuThuTien(TiepNhan);
+            TiepNhanXeSuaDAO.insertTiepNhanXeSua(TiepNhan);
         }
     }
 }

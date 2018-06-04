@@ -37,7 +37,7 @@ namespace DTO
             this.ngayTiepNhan = new DateTime();
         }
 
-		public TiepNhanXeSuaDTO( string _bienSo,  DateTime _ngayTiepNhan)
+		public TiepNhanXeSuaDTO(string _bienSo, DateTime _ngayTiepNhan)
 		{
             this.bienSo = _bienSo;
 			this.ngayTiepNhan = _ngayTiepNhan;

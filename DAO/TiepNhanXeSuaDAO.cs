@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DAO
 {
-	public class LapPhieuThuTienDAO
+	public class TiepNhanXeSuaDAO
 	{
         public static DataTable selectAllTiepNhanXeSua()
         {
@@ -32,7 +32,7 @@ namespace DAO
         }
 
         //Insert
-        public static void insertPhieuThuTien(TiepNhanXeSuaDTO TiepNhan)
+        public static void insertTiepNhanXeSua(TiepNhanXeSuaDTO TiepNhan)
         {
 
             MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();

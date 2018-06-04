@@ -37,6 +37,7 @@ namespace GUI
                 PhieuThuTienBUS.addPhieuThuTien(PhieuThu);
                 dgvLichSuPTT.DataSource = PhieuThuTienBUS.selectAllPhieuThuTien();
 
+                #region Reset value of form after insertion
                 cboBienSo.SelectedIndex = -1;
                 dtmNgayThuTien.Value = DateTime.Today;
                 txtTenChuXe.Clear();
@@ -45,6 +46,7 @@ namespace GUI
                 txtSoTienNo.Clear();
                 txtTienKhachTra.Clear();
                 txtTienTraKhach.Clear();
+                #endregion
             }
             else
             {
@@ -60,9 +62,10 @@ namespace GUI
 
         private void fillCboTenChuXe()
         {
-            LapPhieuThuTienDAO.fillCBO("BIENSO", "XE", cboBienSo);
+            TiepNhanXeSuaDAO.fillCBO("BIENSO", "XE", cboBienSo);
         }
 
+        #region Calculate value of SoTienThu
         private void txtTienKhachTra_TextChanged(object sender, EventArgs e)
         {
             if (!fMainForm.cNullTB(txtTienKhachTra.Text) && !fMainForm.cNullTB(txtTienTraKhach.Text))
@@ -74,5 +77,6 @@ namespace GUI
             if (!fMainForm.cNullTB(txtTienKhachTra.Text) && !fMainForm.cNullTB(txtTienTraKhach.Text))
                 txtTienThu.Text = (int.Parse(txtTienKhachTra.Text) - int.Parse(txtTienTraKhach.Text)).ToString();
         }
+        #endregion
     }
 }

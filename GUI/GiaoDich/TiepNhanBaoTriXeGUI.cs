@@ -49,12 +49,12 @@ namespace GUI
 
         private void fillCboBienSo()
         {
-            LapPhieuThuTienDAO.fillCBO("BIENSO", "XE", cboBienSo);
+            TiepNhanXeSuaDAO.fillCBO("BIENSO", "XE", cboBienSo);
         }
 
         private void fillCboHieuXe()
         {
-            LapPhieuThuTienDAO.fillCBO("TENHIEUXE", "HIEUXE", cboHieuXe);
+            TiepNhanXeSuaDAO.fillCBO("TENHIEUXE", "HIEUXE", cboHieuXe);
         }
         #endregion
     }
