@@ -28,28 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Quản lý khách hàng");
-			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Tra cứu xe");
-			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Quản lý vật tư");
-			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Tiếp nhận bảo trì xe");
-			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Lập phiếu sữa chữa");
-			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Lập phiếu thu tiền");
-			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Giao dịch", new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5,
-            treeNode6});
-			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Báo cáo tồn");
-			System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Doanh số");
-			System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Báo cáo", new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9});
-			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Thay đổi Database");
-			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Thay đổi quy định");
-			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Thay đổi số loại tiền công");
-			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Thông tin", new System.Windows.Forms.TreeNode[] {
-            treeNode11,
-            treeNode12,
-            treeNode13});
 			this.tvHelp = new System.Windows.Forms.TreeView();
 			this.label1 = new System.Windows.Forms.Label();
 			this.tbHelp = new System.Windows.Forms.TextBox();
@@ -61,42 +39,6 @@
 			// 
 			this.tvHelp.Location = new System.Drawing.Point(44, 157);
 			this.tvHelp.Name = "tvHelp";
-			treeNode1.Name = "Node0";
-			treeNode1.Text = "Quản lý khách hàng";
-			treeNode1.ToolTipText = "gkjhfjh";
-			treeNode2.Name = "Node1";
-			treeNode2.Text = "Tra cứu xe";
-			treeNode3.Name = "Node2";
-			treeNode3.Text = "Quản lý vật tư";
-			treeNode4.Name = "Node8";
-			treeNode4.Text = "Tiếp nhận bảo trì xe";
-			treeNode5.Name = "Node9";
-			treeNode5.Text = "Lập phiếu sữa chữa";
-			treeNode6.Name = "Node10";
-			treeNode6.Text = "Lập phiếu thu tiền";
-			treeNode7.Name = "Node3";
-			treeNode7.Text = "Giao dịch";
-			treeNode8.Name = "Node11";
-			treeNode8.Text = "Báo cáo tồn";
-			treeNode9.Name = "Node12";
-			treeNode9.Text = "Doanh số";
-			treeNode10.Name = "Node4";
-			treeNode10.Text = "Báo cáo";
-			treeNode11.Name = "Node13";
-			treeNode11.Text = "Thay đổi Database";
-			treeNode12.Name = "Node14";
-			treeNode12.Text = "Thay đổi quy định";
-			treeNode13.Name = "Node15";
-			treeNode13.Text = "Thay đổi số loại tiền công";
-			treeNode14.Name = "Node5";
-			treeNode14.Text = "Thông tin";
-			this.tvHelp.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode7,
-            treeNode10,
-            treeNode14});
 			this.tvHelp.Size = new System.Drawing.Size(181, 298);
 			this.tvHelp.TabIndex = 0;
 			this.tvHelp.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
