@@ -65,6 +65,14 @@ namespace GUI
 			cbbTienNo.SelectedIndex = 2;
 
 
+			//Set up some text boxes to prevent user type in
+			tbMaKhachSuaXe.ReadOnly = true;
+			tbTenChuXe.ReadOnly = true;
+			tbDiaChi.ReadOnly = true;
+			tbDienThoai.ReadOnly = true;
+			tbEmail.ReadOnly = true;
+			tbSoTienNo.ReadOnly = true;
+				
 
 			// setup form
 
@@ -193,6 +201,26 @@ namespace GUI
 
 		private void btnThem_Click_1(object sender, EventArgs e)
 		{
+			//Set background
+			btnThem.BackColor = Color.DimGray;
+			btnThem.ForeColor = Color.White;
+
+			btnXoa.BackColor = Color.LightGray;
+			btnXoa.ForeColor = Color.Black;
+
+
+			btnCapNhat.BackColor = Color.LightGray;
+			btnCapNhat.ForeColor = Color.Black;
+
+
+			//Set up some text boxes to prevent user type in
+			tbMaKhachSuaXe.ReadOnly = false;
+			tbTenChuXe.ReadOnly = false;
+			tbDiaChi.ReadOnly = false;
+			tbDienThoai.ReadOnly = false;
+			tbEmail.ReadOnly = false;
+			tbSoTienNo.ReadOnly = false;
+
 			if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text) && !fMainForm.cNullTB(tbTenChuXe.Text) && !fMainForm.cNullTB(tbDienThoai.Text) && !fMainForm.cNullTB(tbDiaChi.Text) && !fMainForm.cNullTB(tbEmail.Text) && !fMainForm.cNullTB(tbSoTienNo.Text))
 			{
 				if (!KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
@@ -229,6 +257,8 @@ namespace GUI
 
 		private void btnCapNhat_Click_1(object sender, EventArgs e)
 		{
+			
+
 			if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text) && !fMainForm.cNullTB(tbTenChuXe.Text) && !fMainForm.cNullTB(tbDienThoai.Text) && !fMainForm.cNullTB(tbDiaChi.Text) && !fMainForm.cNullTB(tbEmail.Text) && !fMainForm.cNullTB(tbSoTienNo.Text))
 			{
 				if (KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
@@ -285,5 +315,6 @@ namespace GUI
 		{
 			dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
 		}
+		
 	}
 }
