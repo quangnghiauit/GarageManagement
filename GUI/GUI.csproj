@@ -67,6 +67,12 @@
     <Compile Include="BaoCao\fBaoCao.Designer.cs">
       <DependentUpon>fBaoCao.cs</DependentUpon>
     </Compile>
+    <Compile Include="TroGiup\Helps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TroGiup\Helps.Designer.cs">
+      <DependentUpon>Helps.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyKhachHang\QuanLyKhachHangGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TraCuuXe\fThemHieuXe.resx">
       <DependentUpon>fThemHieuXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TroGiup\Helps.resx">
+      <DependentUpon>Helps.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -535,7 +535,7 @@
 			this.Controls.Add(this.pnMain);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "fQuanLyKhachHangGUI";
-			this.Text = "QuanLyKhachHangGUI";
+			this.Text = " ";
 			this.Load += new System.EventHandler(this.fQuanLyKhachHangGUI_Load);
 			this.pnMain.ResumeLayout(false);
 			this.pnMain.PerformLayout();

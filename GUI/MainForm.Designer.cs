@@ -37,8 +37,8 @@
 			this.btnTCX = new System.Windows.Forms.Button();
 			this.btnQLKH = new System.Windows.Forms.Button();
 			this.pnMainGara = new System.Windows.Forms.Panel();
-			this.pnMain = new System.Windows.Forms.Panel();
 			this.pnThaoTac = new System.Windows.Forms.Panel();
+			this.pnMain = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.pnMainGara.SuspendLayout();
 			this.SuspendLayout();
@@ -85,6 +85,7 @@
 			this.btnTroGiup.TabIndex = 5;
 			this.btnTroGiup.Text = "Trợ Giúp";
 			this.btnTroGiup.UseVisualStyleBackColor = true;
+			this.btnTroGiup.Click += new System.EventHandler(this.btnTroGiup_Click);
 			// 
 			// btnTT
 			// 
@@ -135,19 +136,19 @@
 			this.pnMainGara.Size = new System.Drawing.Size(1260, 550);
 			this.pnMainGara.TabIndex = 1;
 			// 
-			// pnMain
-			// 
-			this.pnMain.Location = new System.Drawing.Point(3, 7);
-			this.pnMain.Name = "pnMain";
-			this.pnMain.Size = new System.Drawing.Size(850, 540);
-			this.pnMain.TabIndex = 0;
-			// 
 			// pnThaoTac
 			// 
 			this.pnThaoTac.Location = new System.Drawing.Point(870, 7);
 			this.pnThaoTac.Name = "pnThaoTac";
 			this.pnThaoTac.Size = new System.Drawing.Size(380, 540);
 			this.pnThaoTac.TabIndex = 1;
+			// 
+			// pnMain
+			// 
+			this.pnMain.Location = new System.Drawing.Point(3, 7);
+			this.pnMain.Name = "pnMain";
+			this.pnMain.Size = new System.Drawing.Size(850, 540);
+			this.pnMain.TabIndex = 0;
 			// 
 			// fMainForm
 			// 

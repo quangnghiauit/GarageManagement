@@ -120,5 +120,17 @@ namespace GUI
 			
 		
 		}
+
+		private void btnTroGiup_Click(object sender, EventArgs e)
+		{
+			pnMainGara.Controls.Clear();
+			pnMain.Controls.Clear();
+			pnThaoTac.Controls.Clear();
+			fHelps myForm = new fHelps();
+			myForm.TopLevel = false;
+			myForm.AutoScroll = true;
+			pnMainGara.Controls.Add(myForm);
+			myForm.Show();
+		}
 	}
 }

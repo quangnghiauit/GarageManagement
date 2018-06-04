@@ -141,6 +141,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "fThayDoiQuyDinh";
 			this.Text = "ThayDoiQuyDinh";
+			this.Load += new System.EventHandler(this.fThayDoiQuyDinh_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

@@ -29,7 +29,7 @@ namespace GUI
 			
 			if(ex!="")
 			{
-				MessageBox.Show(ex,"Kết nối không thành công!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+				MessageBox.Show(ex,"Lỗi!",MessageBoxButtons.OK,MessageBoxIcon.Error);
 
 			}
 			else
