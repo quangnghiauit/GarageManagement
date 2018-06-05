@@ -21,8 +21,7 @@ namespace GUI
             InitializeComponent();
             fillCboBienSo();
             fillCboHieuXe();
-            cboBienSo.SelectedIndex = -1;
-            cboHieuXe.SelectedIndex = -1;
+            
         }
 
         private void btnTiepNhan_Click(object sender, EventArgs e)
@@ -63,6 +62,7 @@ namespace GUI
             cboBienSo.DataSource = dataset.Tables[0];
             cboBienSo.DisplayMember = "BIENSO";
             cboBienSo.ValueMember = "BIENSO";
+			cboBienSo.SelectedIndex = -1;
             //TiepNhanXeSuaDAO.fillCBO("BIENSO", "XE", cboBienSo);
         }
 

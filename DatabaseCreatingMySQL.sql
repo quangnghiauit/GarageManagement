@@ -402,7 +402,7 @@ Begin
             CONCAT('', Format(TienNo,0), ' đ') As 'Số Tiền Nợ'
             from KHACHSUAXE,XE,HIEUXE
             where  
-            HIEUXE.MaHieuXe= XE.MaHieuXe and XE.MaKhachSuaXe= KHACHSUAXE.MaKhachSuaXe;
+            HIEUXE.MaHieuXe= XE.MaHieuXe and XE.MaKhachSuaXe= KHACHSUAXE.MaKhachSuaXe and XE.BienSo=_BienSo;
             
             
 End //

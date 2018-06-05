@@ -100,7 +100,7 @@ namespace GUI
 
 
 
-			if (!fMainForm.cNullTB(cbbBienSoTraCuu.DisplayMember))
+			if (!fMainForm.cNullTB(cbbBienSoTraCuu.Text))
 			{
 
 				if (XeBUS.cPrimaryKey(cbbBienSoTraCuu.SelectedValue.ToString().Trim()))
@@ -222,6 +222,8 @@ namespace GUI
 			//cbbTenChuXeTraCuu.DataSource = dscustomer.Tables[0];
 			//cbbTenChuXeTraCuu.DisplayMember = "TenChuXe";
 			//cbbTenChuXeTraCuu.ValueMember = "MaKhachSuaXe";
+			tbTienNoTraCuu.Text = "0";
+			tbTienNo.Text = "0";
 
 			#endregion
 
@@ -275,6 +277,11 @@ namespace GUI
 			cbbBienSoTraCuu.DataSource = dsIDCar.Tables[0];
 			cbbBienSoTraCuu.DisplayMember = "BienSo";
 			cbbBienSoTraCuu.ValueMember = "BienSo";
+			cbbBienSoTraCuu.SelectedIndex = -1;
+
+
+			tbBienSoXe.Text = "";
+			tbTienNo.Text = "";
 		}
 		#region Insert , Update, Remove
 		private void btnThemXe_Click(object sender, EventArgs e)
@@ -309,7 +316,8 @@ namespace GUI
 
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
-
+			RefreshGUI();
+			RefreshTraCuuXeGUI();
 
 		}
 
@@ -344,6 +352,8 @@ namespace GUI
 
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
+			RefreshGUI();
+			RefreshTraCuuXeGUI();
 		}
 
 		private void btnXoaXe_Click(object sender, EventArgs e)
@@ -365,6 +375,8 @@ namespace GUI
 
 					MessageBox.Show("Dữ liệu nhập vào chưa đúng vui lòng nhập vào ô Mã Khách Sửa Xe.");
 				}
+				RefreshGUI();
+				RefreshTraCuuXeGUI();
 			}
 		}
 		#endregion
@@ -399,6 +411,8 @@ namespace GUI
 			cbbHieuXe.DataSource = dsCar.Tables[0];
 			cbbHieuXe.DisplayMember = "TenHieuXe";
 			cbbHieuXe.ValueMember = "MaHieuXe";
+			cbbHieuXe.SelectedIndex = -1;
+
 
 			//display customer name and set value ID customer
 			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
@@ -413,6 +427,7 @@ namespace GUI
 			cbbTenChuXe.DataSource = dscustomer.Tables[0];
 			cbbTenChuXe.DisplayMember = "TenChuXe";
 			cbbTenChuXe.ValueMember = "MaKhachSuaXe";
+			cbbTenChuXe.SelectedIndex = -1;
 
 			#endregion
 		}

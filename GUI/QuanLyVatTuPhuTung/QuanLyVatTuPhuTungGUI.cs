@@ -106,6 +106,11 @@ namespace GUI
 			cbbMaVatTuTraCuu.DisplayMember = "MaVatTuPhuTung";
 			cbbMaVatTuTraCuu.ValueMember = "MaVatTuPhuTung";
 			cbbMaVatTuTraCuu.SelectedIndex = -1;
+			tbDonGiaThaoTac.Text = "0";
+			tbSoLuongThaoTac.Text = "0";
+			
+			tbDonGiaTraCuu.Text = "0";
+			tbSoLuongTraCuu.Text = "0";
 		}
 		#region Buttons Insert, Update, Remove
 		private void btnThem_Click(object sender, EventArgs e)
@@ -144,6 +149,7 @@ namespace GUI
 
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
+			RefreshGUI();
 		}
 
 		private void btnCapNhat_Click(object sender, EventArgs e)
@@ -177,6 +183,7 @@ namespace GUI
 
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
+			RefreshGUI();
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
@@ -196,6 +203,7 @@ namespace GUI
 					MessageBox.Show("Dữ liệu nhập vào chưa đúng vui lòng nhập vào ô Mã Khách Sửa Xe.");
 				}
 			}
+			RefreshGUI();
 		}
 		#endregion
 		private void btnLichSuThaoTac_Click(object sender, EventArgs e)
@@ -206,5 +214,30 @@ namespace GUI
 		//{
 		//	TiepNhanXeSuaDAO.fillCBO("MaVatTuPhuTung", "VATTUPHUTUNG", cbbMaVatTuTraCuu);
 		//}
+		private void RefreshGUI()
+		{
+			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
+			MySqlCommand cmdcustomer = new MySqlCommand("select MaVatTuPhuTung from VATTUPHUTUNG", Conncustomer);
+
+
+			Conncustomer.Open();
+			MySqlDataAdapter dacustomer = new MySqlDataAdapter();
+			dacustomer.SelectCommand = cmdcustomer;
+			DataSet dscustomer = new DataSet();
+			dacustomer.Fill(dscustomer, "MaVatTuPhuTung");
+			cbbMaVatTuTraCuu.DataSource = dscustomer.Tables[0];
+			cbbMaVatTuTraCuu.DisplayMember = "MaVatTuPhuTung";
+			cbbMaVatTuTraCuu.ValueMember = "MaVatTuPhuTung";
+			cbbMaVatTuTraCuu.SelectedIndex = -1;
+
+
+			tbMaVatTuThaoTac.Text = "";
+			tbTenVatTuThaoTac.Text = "";
+			tbDonGiaThaoTac.Text = "0";
+			tbSoLuongThaoTac.Text = "0";
+			tbTenVatTuTraCuu.Text = "";
+			tbDonGiaTraCuu.Text = "0";
+			tbSoLuongTraCuu.Text = "0";
+		}
 	}
 }

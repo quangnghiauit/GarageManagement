@@ -65,6 +65,9 @@ namespace GUI
 			cbbTienNo.SelectedIndex = 2;
 
 
+			//set value tbSoTienNoTraCuu
+			tbSoTienNoTraCuu.Text = "0";
+			tbSoTienNo.Text = "0";
 			//Set up some text boxes to prevent user type in
 			//tbMaKhachSuaXe.ReadOnly = true;
 			//tbTenChuXe.ReadOnly = true;
@@ -72,7 +75,7 @@ namespace GUI
 			//tbDienThoai.ReadOnly = true;
 			//tbEmail.ReadOnly = true;
 			//tbSoTienNo.ReadOnly = true;
-				
+
 
 			// setup form
 
@@ -186,7 +189,15 @@ namespace GUI
 		}
 
 
-
+		private void RefreshQLKH()
+		{
+			tbMaKhachSuaXe.Text = "";
+			tbTenChuXe.Text = "";
+			tbDienThoai.Text = "";
+			tbDiaChi.Text = "";
+			tbEmail.Text = "";
+			tbSoTienNo.Text = "";
+		}
 		#endregion
 
 		private void pnThaoTac_Paint(object sender, PaintEventArgs e)
@@ -202,24 +213,25 @@ namespace GUI
 		private void btnThem_Click_1(object sender, EventArgs e)
 		{
 			//Set background
-			btnThem.BackColor = Color.DimGray;
-			btnThem.ForeColor = Color.White;
+			//btnThem.BackColor = Color.DimGray;
+			//btnThem.ForeColor = Color.White;
 
-			btnXoa.BackColor = Color.LightGray;
-			btnXoa.ForeColor = Color.Black;
+			//btnXoa.BackColor = Color.LightGray;
+			//btnXoa.ForeColor = Color.Black;
 
 
-			btnCapNhat.BackColor = Color.LightGray;
-			btnCapNhat.ForeColor = Color.Black;
+			//btnCapNhat.BackColor = Color.LightGray;
+			//btnCapNhat.ForeColor = Color.Black;
 
 
 			//Set up some text boxes to prevent user type in
-			tbMaKhachSuaXe.ReadOnly = false;
-			tbTenChuXe.ReadOnly = false;
-			tbDiaChi.ReadOnly = false;
-			tbDienThoai.ReadOnly = false;
-			tbEmail.ReadOnly = false;
-			tbSoTienNo.ReadOnly = false;
+			//tbMaKhachSuaXe.ReadOnly = false;
+			//tbTenChuXe.ReadOnly = false;
+			//tbDiaChi.ReadOnly = false;
+			//tbDienThoai.ReadOnly = false;
+			//tbEmail.ReadOnly = false;
+			//tbSoTienNo.ReadOnly = false;
+
 
 			if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text) && !fMainForm.cNullTB(tbTenChuXe.Text) && !fMainForm.cNullTB(tbDienThoai.Text) && !fMainForm.cNullTB(tbDiaChi.Text) && !fMainForm.cNullTB(tbEmail.Text) && !fMainForm.cNullTB(tbSoTienNo.Text))
 			{
@@ -252,12 +264,21 @@ namespace GUI
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
 
-
+			RefreshQLKH();
 		}
 
 		private void btnCapNhat_Click_1(object sender, EventArgs e)
 		{
-			
+			//Set background
+			//btnThem.BackColor = Color.LightGray;
+			//btnThem.ForeColor = Color.Black;
+
+			//btnXoa.BackColor = Color.LightGray;
+			//btnXoa.ForeColor = Color.Black;
+
+
+			//btnCapNhat.BackColor = Color.DimGray;
+			//btnCapNhat.ForeColor = Color.White;
 
 			if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text) && !fMainForm.cNullTB(tbTenChuXe.Text) && !fMainForm.cNullTB(tbDienThoai.Text) && !fMainForm.cNullTB(tbDiaChi.Text) && !fMainForm.cNullTB(tbEmail.Text) && !fMainForm.cNullTB(tbSoTienNo.Text))
 			{
@@ -289,10 +310,22 @@ namespace GUI
 
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
+			RefreshQLKH();
 		}
 
 		private void btnXoa_Click_1(object sender, EventArgs e)
 		{
+			//Set background
+			//btnThem.BackColor = Color.LightGray;
+			//btnThem.ForeColor = Color.Black;
+
+			//btnXoa.BackColor = Color.DimGray;
+			//btnXoa.ForeColor = Color.White;
+
+
+			//btnCapNhat.BackColor = Color.LightGray;
+			//btnCapNhat.ForeColor = Color.Black;
+
 
 			if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text))
 			{
@@ -309,6 +342,7 @@ namespace GUI
 					MessageBox.Show("Dữ liệu nhập vào chưa đúng vui lòng nhập vào ô Mã Khách Sửa Xe.");
 				}
 			}
+			RefreshQLKH();
 		}
 		#endregion
 		private void btnLichSuThaoTac_Click_1(object sender, EventArgs e)
