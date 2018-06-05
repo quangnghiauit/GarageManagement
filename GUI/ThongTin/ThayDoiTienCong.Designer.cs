@@ -36,12 +36,14 @@
 			this.btnXoa = new System.Windows.Forms.Button();
 			this.dtgvTienCong = new System.Windows.Forms.DataGridView();
 			this.btnView = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.tbSoTienCong = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dtgvTienCong)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnThem
 			// 
-			this.btnThem.Location = new System.Drawing.Point(422, 190);
+			this.btnThem.Location = new System.Drawing.Point(422, 243);
 			this.btnThem.Name = "btnThem";
 			this.btnThem.Size = new System.Drawing.Size(98, 56);
 			this.btnThem.TabIndex = 15;
@@ -59,7 +61,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(462, 90);
+			this.label2.Location = new System.Drawing.Point(458, 85);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(78, 13);
 			this.label2.TabIndex = 12;
@@ -83,7 +85,7 @@
 			// 
 			// btnXoa
 			// 
-			this.btnXoa.Location = new System.Drawing.Point(526, 190);
+			this.btnXoa.Location = new System.Drawing.Point(526, 243);
 			this.btnXoa.Name = "btnXoa";
 			this.btnXoa.Size = new System.Drawing.Size(106, 56);
 			this.btnXoa.TabIndex = 9;
@@ -109,11 +111,29 @@
 			this.btnView.UseVisualStyleBackColor = true;
 			this.btnView.Click += new System.EventHandler(this.btnView_Click);
 			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(458, 152);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(40, 13);
+			this.label3.TabIndex = 17;
+			this.label3.Text = "Số tiền";
+			// 
+			// tbSoTienCong
+			// 
+			this.tbSoTienCong.Location = new System.Drawing.Point(455, 177);
+			this.tbSoTienCong.Name = "tbSoTienCong";
+			this.tbSoTienCong.Size = new System.Drawing.Size(163, 20);
+			this.tbSoTienCong.TabIndex = 18;
+			// 
 			// fThayDoiTienCong
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(644, 321);
+			this.Controls.Add(this.tbSoTienCong);
+			this.Controls.Add(this.label3);
 			this.Controls.Add(this.btnView);
 			this.Controls.Add(this.btnThem);
 			this.Controls.Add(this.tbTenTienCong);
@@ -141,5 +161,7 @@
 		private System.Windows.Forms.Button btnXoa;
 		private System.Windows.Forms.DataGridView dtgvTienCong;
 		private System.Windows.Forms.Button btnView;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.TextBox tbSoTienCong;
 	}
 }

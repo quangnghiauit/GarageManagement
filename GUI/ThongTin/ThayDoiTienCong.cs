@@ -33,10 +33,12 @@ namespace GUI
 
 					string MaTienCong = tbMaTienCong.Text.Trim();
 					string TenTienCong = tbTenTienCong.Text;
+					string soTienCong = tbSoTienCong.Text;
+					decimal SoTienCong = decimal.Parse(soTienCong);
 
 
 
-					TienCongDTO tienCong = new TienCongDTO(MaTienCong, TenTienCong);
+					TienCongDTO tienCong = new TienCongDTO(MaTienCong, TenTienCong,SoTienCong);
 					TienCongBUS.addSalary(tienCong);
 					dtgvTienCong.DataSource = TienCongBUS.loadAllSalary();
 
@@ -52,7 +54,7 @@ namespace GUI
 
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
-
+			RefreshGUI();
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
@@ -71,6 +73,7 @@ namespace GUI
 					MessageBox.Show("Dữ liệu nhập vào chưa đúng vui lòng nhập vào ô Mã Hiệu Xe.");
 				}
 			}
+			RefreshGUI();
 		}
 		
 		private void btnView_Click(object sender, EventArgs e)
@@ -79,5 +82,11 @@ namespace GUI
 		}
 
 		#endregion
+		private void RefreshGUI()
+		{
+			tbMaTienCong.Text = "";
+			tbTenTienCong.Text = "";
+			tbSoTienCong.Text = "0";
+		}
 	}
 }

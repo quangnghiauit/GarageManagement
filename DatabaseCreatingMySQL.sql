@@ -144,6 +144,7 @@ create table TIENCONG
 (
 MATIENCONG char(10) not null,
 TENTIENCONG char(100),
+SOTIENCONG decimal,
 primary key(MATIENCONG)
 );
 
@@ -494,16 +495,16 @@ DELIMITER ;
 DELIMITER //
 Create Procedure LoadAllSalary()
 Begin
-	select MATIENCONG as 'Mã Tiền Công', TENTIENCONG as 'Tên Tiền Công' from TIENCONG;
+	select MATIENCONG as 'Mã Tiền Công', TENTIENCONG as 'Tên Tiền Công',SOTIENCONG as 'Số Tiền Công' from TIENCONG;
 End //
 DELIMITER ;
 
 
 
 DELIMITER // 
-create procedure InsertSalary( in _MaTienCong char(10), in _TenTienCong char(100))
+create procedure InsertSalary( in _MaTienCong char(10), in _TenTienCong char(100), in _SoTienCong decimal)
 Begin 
-	Insert into TIENCONG values (_MaTienCong, _TenTienCong);
+	Insert into TIENCONG values (_MaTienCong, _TenTienCong,_SoTienCong);
 End //
 DELIMITER ;
 

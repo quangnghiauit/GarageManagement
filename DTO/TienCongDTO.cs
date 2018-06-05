@@ -10,6 +10,7 @@ namespace DTO
 	{
 		public string maTienCong;
 		public string tenTienCong;
+		public decimal soTienCong;
 
 		public string MaTienCong
 		{
@@ -23,15 +24,22 @@ namespace DTO
 			set { tenTienCong = value; }
 		}
 
+		public decimal SoTienCong
+		{
+			get { return soTienCong; }
+			set { soTienCong = value; }
+		}
 		public TienCongDTO ()
 		{
 			maTienCong = "";
 			tenTienCong = "";
+			soTienCong = 0;
 			}
-		public TienCongDTO(string maTienCong,string tenTienCong)
+		public TienCongDTO(string maTienCong,string tenTienCong,decimal soTienCong)
 		{
 			this.maTienCong = maTienCong;
 			this.tenTienCong = tenTienCong;
+			this.soTienCong = soTienCong;
 		}
 		~TienCongDTO() { }
 	}

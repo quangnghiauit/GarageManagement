@@ -41,11 +41,7 @@ namespace GUI
 		}
 
 
-		//button export file excel
-		private void btnXuatFile_Click(object sender, EventArgs e)
-		{
-			export2Excel(dtgvKhachHang, @"E:\", "ExportCustomers");
-		}
+		
 
 		private void fQuanLyKhachHangGUI_Load(object sender, EventArgs e)
 		{
@@ -187,7 +183,11 @@ namespace GUI
 			obj.ActiveWorkbook.SaveCopyAs(path + filename + ".xlsx");
 			obj.ActiveWorkbook.Saved = true;
 		}
-
+		//button export file excel
+		private void btnXuatFile_Click(object sender, EventArgs e)
+		{
+			export2Excel(dtgvKhachHang, @"E:\", "ExportCustomers");
+		}
 
 		private void RefreshQLKH()
 		{

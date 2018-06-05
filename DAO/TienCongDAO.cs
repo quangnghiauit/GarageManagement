@@ -43,11 +43,12 @@ namespace DAO
 
 			cmd.Parameters.Add("@_MaTienCong", MySqlDbType.VarChar, 10);
 			cmd.Parameters.Add("@_TenTienCong", MySqlDbType.VarChar, 100);
+			cmd.Parameters.Add("@_SoTienCong", MySqlDbType.Decimal);
 
 
 			cmd.Parameters["@_MaTienCong"].Value = tienCong.maTienCong;
 			cmd.Parameters["@_TenTienCong"].Value = tienCong.tenTienCong;
-			
+			cmd.Parameters["@_SoTienCong"].Value = tienCong.soTienCong;
 
 			Conn.Open();
 			cmd.ExecuteNonQuery();
