@@ -105,6 +105,7 @@ namespace GUI
 			cbbMaVatTuTraCuu.DataSource = dscustomer.Tables[0];
 			cbbMaVatTuTraCuu.DisplayMember = "MaVatTuPhuTung";
 			cbbMaVatTuTraCuu.ValueMember = "MaVatTuPhuTung";
+			cbbMaVatTuTraCuu.SelectedIndex = -1;
 		}
 		#region Buttons Insert, Update, Remove
 		private void btnThem_Click(object sender, EventArgs e)

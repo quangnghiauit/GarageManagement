@@ -25,7 +25,7 @@ namespace GUI
 
         private void btnTiepNhan_Click(object sender, EventArgs e)
         {
-            if (!fMainForm.cNullTB(txtTenChuXe.Text) && !fMainForm.cNullTB(cboBienSo.Text) && !fMainForm.cNullTB(cboHieuXe.Text)
+            if (!fMainForm.cNullTB(txtTenChuXe.Text) && !fMainForm.cNullTB(cboBienSo.DisplayMember) && !fMainForm.cNullTB(cboHieuXe.DisplayMember)
                 && !fMainForm.cNullTB(txtDiaChi.Text) && !fMainForm.cNullTB(txtDienThoai.Text))
             {
                 string BienSo = cboBienSo.SelectedValue.ToString().Trim();
@@ -48,37 +48,37 @@ namespace GUI
 
         #region Fill ComboBox
 
-        private void fillCboBienSo()
-        {
-            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
-            MySqlCommand cmd = new MySqlCommand("select BIENSO from XE", connection);
+        //private void fillCboBienSo()
+        //{
+        //    MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+        //    MySqlCommand cmd = new MySqlCommand("select BIENSO from XE", connection);
 
-            connection.Open();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            DataSet dataset = new DataSet();
-            adapter.SelectCommand = cmd;
-            adapter.Fill(dataset, "BIENSO");
-            cboBienSo.DataSource = dataset.Tables[0];
-            cboBienSo.DisplayMember = "BIENSO";
-            cboBienSo.ValueMember = "BIENSO";
-            //TiepNhanXeSuaDAO.fillCBO("BIENSO", "XE", cboBienSo);
-        }
+        //    connection.Open();
+        //    MySqlDataAdapter adapter = new MySqlDataAdapter();
+        //    DataSet dataset = new DataSet();
+        //    adapter.SelectCommand = cmd;
+        //    adapter.Fill(dataset, "BIENSO");
+        //    cboBienSo.DataSource = dataset.Tables[0];
+        //    cboBienSo.DisplayMember = "BIENSO";
+        //    cboBienSo.ValueMember = "BIENSO";
+        //    //TiepNhanXeSuaDAO.fillCBO("BIENSO", "XE", cboBienSo);
+        //}
 
-        private void fillCboHieuXe()
-        {
-            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
-            MySqlCommand cmd = new MySqlCommand("select MAHIEUXE from XE", connection);
+        //private void fillCboHieuXe()
+        //{
+        //    MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+        //    MySqlCommand cmd = new MySqlCommand("select MAHIEUXE from XE", connection);
 
-            connection.Open();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            DataSet dataset = new DataSet();
-            adapter.SelectCommand = cmd;
-            adapter.Fill(dataset, "MAHIEUXE");
-            cboHieuXe.DataSource = dataset.Tables[0];
-            cboHieuXe.DisplayMember = "TENHIEUXE";
-            cboHieuXe.ValueMember = "MAHIEUXE";
-            //TiepNhanXeSuaDAO.fillCBO("TENHIEUXE", "HIEUXE", cboHieuXe);
-        }
+        //    connection.Open();
+        //    MySqlDataAdapter adapter = new MySqlDataAdapter();
+        //    DataSet dataset = new DataSet();
+        //    adapter.SelectCommand = cmd;
+        //    adapter.Fill(dataset, "MAHIEUXE");
+        //    cboHieuXe.DataSource = dataset.Tables[0];
+        //    cboHieuXe.DisplayMember = "TENHIEUXE";
+        //    cboHieuXe.ValueMember = "MAHIEUXE";
+        //    //TiepNhanXeSuaDAO.fillCBO("TENHIEUXE", "HIEUXE", cboHieuXe);
+        //}
         #endregion
 
         private void fTiepNhanBaoTriXe_Load(object sender, EventArgs e)
@@ -97,7 +97,10 @@ namespace GUI
 
             cboBienSo.SelectedIndex = -1;
 
-            MySqlConnection connection2 = DatabaseConnectionDAO.connectionDatabase();
+					
+					
+
+			MySqlConnection connection2 = DatabaseConnectionDAO.connectionDatabase();
             MySqlCommand cmd2 = new MySqlCommand("select MAHIEUXE from XE", connection2);
 
             connection2.Open();

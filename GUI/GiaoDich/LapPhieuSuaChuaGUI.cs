@@ -87,7 +87,7 @@ namespace GUI
                 DataRow topItem = table.NewRow();
                 topItem[0] = 0;
                 topItem[1] = "Select";
-                VatTuPhuTung.ValueMember = "TENVATTUPHUTUNG";
+                VatTuPhuTung.ValueMember = "MAVATTUPHUTUNG";
                 VatTuPhuTung.DisplayMember = "TENVATTUPHUTUNG";
                 VatTuPhuTung.DataSource = table.Copy();
                 

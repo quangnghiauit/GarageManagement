@@ -23,8 +23,9 @@ namespace GUI
 		public fQuanLyXeGUI()
 		{
 			InitializeComponent();
-			
+
 			//fillCboBienSo();
+			cbbBienSoTraCuu.SelectedIndex = -1;
 		}
 
 		private void panel1_Paint(object sender, PaintEventArgs e)
@@ -193,6 +194,7 @@ namespace GUI
 			cbbBienSoTraCuu.DisplayMember = "BienSo";
 			cbbBienSoTraCuu.ValueMember = "BienSo";
 
+			cbbBienSoTraCuu.SelectedIndex = -1;
 			//display car name and set value car
 			//MySqlConnection ConnCar = DatabaseConnectionDAO.connectionDatabase();
 			//MySqlCommand cmdCar = new MySqlCommand("select MAHIEUXE,TENHIEUXE from HIEUXE", ConnCar);
@@ -237,6 +239,7 @@ namespace GUI
 			cbbHieuXe.DataSource = dsCar.Tables[0];
 			cbbHieuXe.DisplayMember = "TenHieuXe";
 			cbbHieuXe.ValueMember = "MaHieuXe";
+			cbbHieuXe.SelectedIndex = -1;
 
 			//display customer name and set value ID customer
 			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
@@ -251,6 +254,9 @@ namespace GUI
 			cbbTenChuXe.DataSource = dscustomer.Tables[0];
 			cbbTenChuXe.DisplayMember = "TenChuXe";
 			cbbTenChuXe.ValueMember = "MaKhachSuaXe";
+
+			cbbTenChuXe.SelectedIndex = -1;
+
 
 			#endregion
 		}
