@@ -39,9 +39,9 @@ namespace BUS
 			KhachSuaXeDAO.UpdateCustomer(kh);
 		}
 		
-		public static void delCustomer(int _MaKhachSuaXe)
+		public static bool  delCustomer(int _MaKhachSuaXe,string exception ="")
 		{
-			KhachSuaXeDAO.RemoveCustomer(_MaKhachSuaXe);
+			return KhachSuaXeDAO.RemoveCustomer(_MaKhachSuaXe,exception);
 		}
 
 		public static DataTable SearchAllCustomer(KhachSuaXeDTO kh, string SoTienNoCompareType)

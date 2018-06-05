@@ -95,18 +95,32 @@ namespace DAO
 
 
 		
-		public static void RemoveCustomer(int _MaKhachSuaXe)
+		public static bool RemoveCustomer(int _MaKhachSuaXe,string exception="")
 		{
+			try
+			{
+				//ExcuteQuery
+				DatabaseConnectionDAO.ExcuteProcedure("RemoveCustomer", exception, new MySqlParameter[] { new MySqlParameter ("@_MaKhachSuaXe", _MaKhachSuaXe) });
+				//if there is no exception
+				if(exception=="")
+				{
+					return true;
+				}
+			}
+			catch(Exception ex)
+			{
+				exception = ex.Message;
+			}
+			return false;
+			//MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
+			//MySqlCommand cmd = new MySqlCommand("RemoveCustomer", Conn);
+			//cmd.CommandType = CommandType.StoredProcedure;
 
-			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
-			MySqlCommand cmd = new MySqlCommand("RemoveCustomer", Conn);
-			cmd.CommandType = CommandType.StoredProcedure;
-
-			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.VarChar, 10);
-			cmd.Parameters["@_MaKhachSuaXe"].Value = _MaKhachSuaXe;
-			Conn.Open();
-			cmd.ExecuteNonQuery();
-			Conn.Close();
+			//cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.VarChar, 10);
+			//cmd.Parameters["@_MaKhachSuaXe"].Value = _MaKhachSuaXe;
+			//Conn.Open();
+			//cmd.ExecuteNonQuery();
+			//Conn.Close();
 		}
 		#endregion
 		#region Find Customers

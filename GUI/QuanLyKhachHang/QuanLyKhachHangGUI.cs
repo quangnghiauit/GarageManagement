@@ -327,14 +327,44 @@ namespace GUI
 			//btnCapNhat.ForeColor = Color.Black;
 
 
+			//if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text))
+			//{
+			//	if (KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
+			//	{
+			//		string strMaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
+			//		int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
+			//		KhachSuaXeBUS.delCustomer(MaKhachSuaXe);
+			//		dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
+			//	}
+			//	else
+			//	{
+
+			//		MessageBox.Show("Dữ liệu nhập vào chưa đúng vui lòng nhập vào ô Mã Khách Sửa Xe.");
+			//	}
+			//}
+
+			string ex = "";
 			if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text))
 			{
+				
 				if (KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
 				{
 					string strMaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
 					int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
-					KhachSuaXeBUS.delCustomer(MaKhachSuaXe);
-					dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
+
+					if(KhachSuaXeBUS.delCustomer(MaKhachSuaXe,ex)==true)
+					{
+						//show message
+						MessageBox.Show("Xóa thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
+						RefreshQLKH();
+						return;
+					}
+					//Or something bad happened
+					MessageBox.Show("Bạn phải xóa tất cả các xe của khách hàng này. Sau đó mới được quyền xóa khách hàng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+					//KhachSuaXeBUS.delCustomer(MaKhachSuaXe);
+
 				}
 				else
 				{
@@ -342,7 +372,8 @@ namespace GUI
 					MessageBox.Show("Dữ liệu nhập vào chưa đúng vui lòng nhập vào ô Mã Khách Sửa Xe.");
 				}
 			}
-			RefreshQLKH();
+
+			
 		}
 		#endregion
 		private void btnLichSuThaoTac_Click_1(object sender, EventArgs e)

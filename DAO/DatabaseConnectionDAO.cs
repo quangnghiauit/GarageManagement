@@ -95,6 +95,32 @@ namespace DAO
 			return _reader;
 		
 		}
+
+		public static MySqlDataReader ExcuteProcedure(string procedureName,string exception, MySqlParameter[] values)
+		{
+			//we have to close previous reader first to be able to excute new reader
+			if(!(_reader==null))
+			{
+				_reader.Close();
+
+			}
+			//Excute reader
+			MySqlCommand command = new MySqlCommand(procedureName, _mySql);
+			try
+			{
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.AddRange(values);
+				_reader = command.ExecuteReader();
+			
+			}
+			catch (MySqlException ex)
+			{
+				exception = ex.Message;
+			}
+			command.Dispose();
+			return _reader;
+
+		}
 	}
 
 }
