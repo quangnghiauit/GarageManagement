@@ -66,12 +66,12 @@ namespace GUI
 
 
 			//Set up some text boxes to prevent user type in
-			tbMaKhachSuaXe.ReadOnly = true;
-			tbTenChuXe.ReadOnly = true;
-			tbDiaChi.ReadOnly = true;
-			tbDienThoai.ReadOnly = true;
-			tbEmail.ReadOnly = true;
-			tbSoTienNo.ReadOnly = true;
+			//tbMaKhachSuaXe.ReadOnly = true;
+			//tbTenChuXe.ReadOnly = true;
+			//tbDiaChi.ReadOnly = true;
+			//tbDienThoai.ReadOnly = true;
+			//tbEmail.ReadOnly = true;
+			//tbSoTienNo.ReadOnly = true;
 				
 
 			// setup form

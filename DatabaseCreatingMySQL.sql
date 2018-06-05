@@ -175,7 +175,7 @@ create table QUANLYNHAPVATTU
 
 
 alter table CHITIETDOANHSO add foreign key (MADOANHSO) references DOANHSO (MADOANHSO);
-alter table TIEPNHANXESUA add foreign key (BIENSO) references XE (BIENSO);
+#alter table TIEPNHANXESUA add foreign key (BIENSO) references XE (BIENSO);
 alter table PHIEUTHUTIEN add foreign key (BIENSO) references XE (BIENSO);
 alter table PHIEUSUACHUA add foreign key (BIENSO) references XE (BIENSO);
 alter table XE add foreign key (MAKHACHSUAXE) references KHACHSUAXE (MAKHACHSUAXE);
@@ -576,7 +576,7 @@ DELIMITER ;
 DELIMITER //
 Create Procedure SelectAllTIEPNHANXESUA()
 Begin
-	select BienSo as 'Biển số', NgayTiepNhan as 'Ngày tiếp nhận' from TIEPNHANXESUA;
+	select MATIEPNHANXESUA as 'Mã Tiếp nhận xe sửa', TIEPNHANXESUA.BIENSO as 'Biển số', NgayTiepNhan as 'Ngày tiếp nhận' from TIEPNHANXESUA,XE;
 End //
 DELIMITER ;
 
@@ -584,12 +584,12 @@ DELIMITER ;
 DELIMITER // 
 create procedure InsertTIEPNHANXESUA ( in _BienSo char(10), in _NgayTiepNhan date)
 Begin
-	declare bienSo char(10);
+	/*declare bienSo char(10);
     set bienSo = (select BIENSO
 			from XE
-            where XE.BIENSO = _BienSo);
+            where XE.BIENSO = _BienSo);*/
 	Insert into TIEPNHANXESUA (TIEPNHANXESUA.BIENSO, NGAYTIEPNHAN)
-    values (bienSo, _NgayTiepNhan);
+    values (_BienSo, _NgayTiepNhan);
 End //
 DELIMITER ;
 #drop procedure InsertTIEPNHANXESUA;
