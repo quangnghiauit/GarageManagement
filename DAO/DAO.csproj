@@ -61,6 +61,7 @@
     <Compile Include="PhieuThuTienDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyNhapVatTuDAO.cs" />
     <Compile Include="ThamSoDAO.cs" />
     <Compile Include="TienCongDAO.cs" />
     <Compile Include="TiepNhanXeSuaDAO.cs" />

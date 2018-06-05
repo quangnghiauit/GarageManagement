@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.button1 = new System.Windows.Forms.Button();
             this.dtmNgayThuTien = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTenChuXe = new System.Windows.Forms.TextBox();
@@ -51,19 +50,10 @@
             this.txtSoTienNo = new System.Windows.Forms.TextBox();
             this.dgvLichSuPTT = new System.Windows.Forms.DataGridView();
             this.btnLichSuThuTien = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuPTT)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(223, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "PHIẾU THU TIỀN";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // dtmNgayThuTien
             // 
@@ -130,7 +120,6 @@
             // label9
             // 
             this.label9.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Location = new System.Drawing.Point(531, 163);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 28);
@@ -141,7 +130,6 @@
             // label8
             // 
             this.label8.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Location = new System.Drawing.Point(283, 163);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 28);
@@ -152,7 +140,6 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Location = new System.Drawing.Point(30, 163);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 28);
@@ -163,7 +150,6 @@
             // label6
             // 
             this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Location = new System.Drawing.Point(381, 74);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 28);
@@ -174,7 +160,6 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Location = new System.Drawing.Point(381, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 28);
@@ -185,7 +170,6 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Location = new System.Drawing.Point(30, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 28);
@@ -196,7 +180,6 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Location = new System.Drawing.Point(30, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 28);
@@ -207,7 +190,6 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Location = new System.Drawing.Point(30, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 28);
@@ -218,7 +200,6 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Location = new System.Drawing.Point(30, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 28);
@@ -286,15 +267,27 @@
             this.btnLichSuThuTien.UseVisualStyleBackColor = true;
             this.btnLichSuThuTien.Click += new System.EventHandler(this.btnLichSuThuTien_Click);
             // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1, 1);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(285, 35);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "PHIẾU THU TIỀN";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // fLapPhieuThuTien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 540);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnLichSuThuTien);
             this.Controls.Add(this.dgvLichSuPTT);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fLapPhieuThuTien";
             this.Text = "LapPhieuThuTien";
@@ -306,8 +299,6 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.DateTimePicker dtmNgayThuTien;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Button btnLapPhieu;
@@ -330,5 +321,6 @@
         private System.Windows.Forms.TextBox txtTenChuXe;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtDienThoai;
+        private System.Windows.Forms.Label label10;
     }
 }

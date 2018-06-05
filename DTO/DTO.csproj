@@ -60,10 +60,12 @@
     <Compile Include="PhieuThuTienDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyNhapVatTuDTO.cs" />
     <Compile Include="ThamSoDTO.cs" />
     <Compile Include="TienCongDTO.cs" />
     <Compile Include="TiepNhanXeSuaDTO.cs" />
     <Compile Include="VatLieuPhuTungDTO.cs" />
+    <Compile Include="VatTuTonDTO.cs" />
     <Compile Include="XeDTO.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -32,6 +32,9 @@
             this.btnLichSuTiepNhan = new System.Windows.Forms.Button();
             this.dgvLichSuTiepNhan = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.txtDienThoai = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtTenChuXe = new System.Windows.Forms.TextBox();
             this.cboHieuXe = new System.Windows.Forms.ComboBox();
             this.cboBienSo = new System.Windows.Forms.ComboBox();
             this.btnTiepNhan = new System.Windows.Forms.Button();
@@ -42,10 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtTenChuXe = new System.Windows.Forms.TextBox();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.txtDienThoai = new System.Windows.Forms.TextBox();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuTiepNhan)).BeginInit();
             this.panel8.SuspendLayout();
@@ -99,6 +99,27 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(761, 206);
             this.panel8.TabIndex = 8;
+            // 
+            // txtDienThoai
+            // 
+            this.txtDienThoai.Location = new System.Drawing.Point(467, 55);
+            this.txtDienThoai.Name = "txtDienThoai";
+            this.txtDienThoai.Size = new System.Drawing.Size(220, 20);
+            this.txtDienThoai.TabIndex = 20;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(467, 20);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(220, 20);
+            this.txtDiaChi.TabIndex = 19;
+            // 
+            // txtTenChuXe
+            // 
+            this.txtTenChuXe.Location = new System.Drawing.Point(132, 20);
+            this.txtTenChuXe.Name = "txtTenChuXe";
+            this.txtTenChuXe.Size = new System.Drawing.Size(200, 20);
+            this.txtTenChuXe.TabIndex = 18;
             // 
             // cboHieuXe
             // 
@@ -188,43 +209,24 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên Chủ Xe ";
             // 
-            // button1
+            // lbTitle
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(270, 45);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Tiếp Nhận Bảo Trì Xe";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // txtTenChuXe
-            // 
-            this.txtTenChuXe.Location = new System.Drawing.Point(132, 20);
-            this.txtTenChuXe.Name = "txtTenChuXe";
-            this.txtTenChuXe.Size = new System.Drawing.Size(200, 20);
-            this.txtTenChuXe.TabIndex = 18;
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Location = new System.Drawing.Point(467, 20);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(220, 20);
-            this.txtDiaChi.TabIndex = 19;
-            // 
-            // txtDienThoai
-            // 
-            this.txtDienThoai.Location = new System.Drawing.Point(467, 55);
-            this.txtDienThoai.Name = "txtDienThoai";
-            this.txtDienThoai.Size = new System.Drawing.Size(220, 20);
-            this.txtDienThoai.TabIndex = 20;
+            this.lbTitle.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lbTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Location = new System.Drawing.Point(1, 1);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(285, 35);
+            this.lbTitle.TabIndex = 3;
+            this.lbTitle.Text = "TIẾP NHẬN BẢO TRÌ XE";
+            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fTiepNhanBaoTriXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 540);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fTiepNhanBaoTriXe";
@@ -246,7 +248,6 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button btnLichSuTiepNhan;
 		private System.Windows.Forms.DataGridView dgvLichSuTiepNhan;
 		private System.Windows.Forms.Button btnTiepNhan;
@@ -255,5 +256,6 @@
         private System.Windows.Forms.TextBox txtDienThoai;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtTenChuXe;
+        private System.Windows.Forms.Label lbTitle;
     }
 }

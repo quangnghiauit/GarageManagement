@@ -120,11 +120,16 @@ namespace GUI
 					int DonGia = Convert.ToInt32(tbDonGiaThaoTac.Text);
 					int SoLuongVatTu = Convert.ToInt32(tbSoLuongThaoTac.Text);
 
+                    DateTime NgayNhap = dtmNgayNhap.Value; // Lay gia tri ngay nhap phu tung
 
 
 					VatTuPhuTungDTO vatTu = new VatTuPhuTungDTO(MaVatTuPhuTung, TenVatTuPhuTung, DonGia, SoLuongVatTu);
 					VatTuPhuTungBUS.addSpareParts(vatTu);
 					dtgvThaoTac.DataSource = VatTuPhuTungBUS.loadAllSpareParts();
+
+                    //Phan chuc nang moi
+                    QuanLyNhapVatTuDTO QuanLy = new QuanLyNhapVatTuDTO(MaVatTuPhuTung, SoLuongVatTu, NgayNhap);
+                    QuanLyNhapVatTuBUS.addQuanLyNhapVatTu(QuanLy);
 
 				}
 				else

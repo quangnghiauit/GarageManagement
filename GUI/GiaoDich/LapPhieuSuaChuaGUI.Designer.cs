@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtmNgaySuaChua = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.btnNhapExcel = new System.Windows.Forms.Button();
@@ -43,7 +42,6 @@
             this.dgvLichSuLapPhieu = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dgvPhieuSuaChua = new System.Windows.Forms.DataGridView();
-            this.btnLichSuLapPhieu = new System.Windows.Forms.Button();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VatTuPhuTung = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -51,6 +49,8 @@
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TienCong = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLichSuLapPhieu = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuLapPhieu)).BeginInit();
@@ -101,16 +101,6 @@
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ngày Sữa Chữa";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(259, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "LẬP PHIẾU SỬA CHỮA";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -186,16 +176,6 @@
             this.dgvPhieuSuaChua.TabIndex = 6;
             this.dgvPhieuSuaChua.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvPhieuSuaChua_RowsAdded);
             // 
-            // btnLichSuLapPhieu
-            // 
-            this.btnLichSuLapPhieu.Location = new System.Drawing.Point(8, 396);
-            this.btnLichSuLapPhieu.Name = "btnLichSuLapPhieu";
-            this.btnLichSuLapPhieu.Size = new System.Drawing.Size(117, 32);
-            this.btnLichSuLapPhieu.TabIndex = 7;
-            this.btnLichSuLapPhieu.Text = "Lịch Sử Lập Phiếu";
-            this.btnLichSuLapPhieu.UseVisualStyleBackColor = true;
-            this.btnLichSuLapPhieu.Click += new System.EventHandler(this.btnLichSuLapPhieu_Click);
-            // 
             // STT
             // 
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -248,16 +228,38 @@
             this.ThanhTien.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ThanhTien.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // btnLichSuLapPhieu
+            // 
+            this.btnLichSuLapPhieu.Location = new System.Drawing.Point(8, 396);
+            this.btnLichSuLapPhieu.Name = "btnLichSuLapPhieu";
+            this.btnLichSuLapPhieu.Size = new System.Drawing.Size(117, 32);
+            this.btnLichSuLapPhieu.TabIndex = 7;
+            this.btnLichSuLapPhieu.Text = "Lịch Sử Lập Phiếu";
+            this.btnLichSuLapPhieu.UseVisualStyleBackColor = true;
+            this.btnLichSuLapPhieu.Click += new System.EventHandler(this.btnLichSuLapPhieu_Click);
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1, 1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(285, 35);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "LẬP PHIẾU SỬA CHỮA";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // fLapPhieuSuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 540);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLichSuLapPhieu);
             this.Controls.Add(this.dgvPhieuSuaChua);
             this.Controls.Add(this.dgvLichSuLapPhieu);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fLapPhieuSuaChua";
@@ -277,7 +279,6 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.DateTimePicker dtmNgaySuaChua;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Button btnXuatExcel;
 		private System.Windows.Forms.Button btnNhapExcel;
@@ -295,5 +296,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewComboBoxColumn TienCong;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
+        private System.Windows.Forms.Label label3;
     }
 }

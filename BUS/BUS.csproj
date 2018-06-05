@@ -61,6 +61,7 @@
     <Compile Include="PhieuThuTienBUS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyNhapVatTuBUS.cs" />
     <Compile Include="ThamSoBUS.cs" />
     <Compile Include="TienCongBUS.cs" />
     <Compile Include="TiepNhanXeSuaBUS.cs" />

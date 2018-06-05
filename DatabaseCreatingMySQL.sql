@@ -153,6 +153,22 @@ CREATE TABLE THAMSO
 	SOXESUACHUATOIDA INT
 );
 
+#New Table
+create table VATTUTON
+(
+	MAVATTUPHUTUNG CHAR(10) NOT NULL,
+	SOLUONGTON INT,
+	THANG DATE
+);
+
+
+create table QUANLYNHAPVATTU
+(
+	MAVATTUPHUTUNG CHAR(10) NOT NULL,
+    SOLUONGNHAP INT,
+	NGAYNHAP DATE
+);
+
 
 
 alter table CHITIETDOANHSO add foreign key (MADOANHSO) references DOANHSO (MADOANHSO);
@@ -168,6 +184,9 @@ alter table CHITIETTON add foreign key (MAVATTUPHUTUNG) references VATTUPHUTUNG 
 alter table CHITIETPHIEUSUACHUA add foreign key (MAVATTUPHUTUNG) references VATTUPHUTUNG (MAVATTUPHUTUNG);
 alter table CHITIETPHIEUSUACHUA add foreign key (MAPHIEUSUACHUA) references PHIEUSUACHUA (MAPHIEUSUACHUA);
 
+#New FK
+alter table VATTUTON add foreign key (MAVATTUPHUTUNG) references VATTUPHUTUNG (MAVATTUPHUTUNG);
+alter table QUANLYNHAPVATTU add foreign key (MAVATTUPHUTUNG) references VATTUPHUTUNG (MAVATTUPHUTUNG);
 
 
 
@@ -567,7 +586,7 @@ Begin
 			from XE
             where XE.BIENSO = _BienSo);
 	Insert into TIEPNHANXESUA (TIEPNHANXESUA.BIENSO, NGAYTIEPNHAN)
-    values (@bienSo, _NgayTiepNhan);
+    values (bienSo, _NgayTiepNhan);
 End //
 DELIMITER ;
 #drop procedure InsertTIEPNHANXESUA;
@@ -612,3 +631,36 @@ Begin
     values (_BienSo, _NgaySuaChua, _TongTien, _MaKhachSuaXe);
 End //
 DELIMITER ;
+
+/*
+DELIMITER // 
+create procedure CreatePHIEUSUACHUA( in _BienSo char(20), in _NgaySuaChua date,
+in _TongTien decimal, in _MaKhachSuaXe int, in _MaPhieuSuaChua char(10), in _NoiDung char(100),
+ in _MaVatTuPhuTung char(10), _SoLuongSuaChua int, in _TienCong decimal, _ThanhTien decimal)
+Begin
+	insert into PHIEUSUACHUA (BIENSO, NGAYSUACHUA, TONGTIEN, MAKHACHSUAXE)
+    values (_BienSo, _NgaySuaChua, _TongTien, _MaKhachSuaXe);
+    
+    declare id int(10);
+    set id = LAST_INSERT_ID();
+    Insert into PHIEUTHUTIEN (MAPHIEUSUACHUA, NOIDUNG, MAVATTUPHUTUNG, SOLUONGSUACHUA, TIENCONG, THANHTIEN)
+    values ( _MaPhieuSuaChua, _NoiDung, _MaVatTuPhuTung, _SoLuongSuaChua,
+    _TienCong, _ThanhTien);
+End //
+DELIMITER ;
+*/
+
+#Procedure cho QuanLyNhapVatTu
+
+DELIMITER // 
+create procedure InsertQUANLYNHAPVATTU( in _MaVatTu char(10), in _SoLuongNhap int, in _NgayNhap date)
+begin
+	declare MaVT char(10);
+    set MaVT = (select MAVATTUPHUTUNG
+			   from VATTUPHUTUNG
+               where MAVATTUPHUTUNG = _MaVatTu);
+	insert into QUANLYNHAPVATTU (MAVATTUPHUTUNG, SOLUONGNHAP, NGAYNHAP)
+    values (MaVT, _SoLuongNhap, _NgayNhap);
+End //
+DELIMITER ;
+
