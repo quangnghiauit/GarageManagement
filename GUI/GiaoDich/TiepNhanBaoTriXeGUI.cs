@@ -68,19 +68,33 @@ namespace GUI
 
         private void fillCboHieuXe()
         {
-            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
-            MySqlCommand cmd = new MySqlCommand("select MAHIEUXE from XE", connection);
+            //MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            //MySqlCommand cmd = new MySqlCommand("select MAHIEUXE from XE", connection);
 
-            connection.Open();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            DataSet dataset = new DataSet();
-            adapter.SelectCommand = cmd;
-            adapter.Fill(dataset, "MAHIEUXE");
-            cboHieuXe.DataSource = dataset.Tables[0];
-            cboHieuXe.DisplayMember = "TENHIEUXE";
-            cboHieuXe.ValueMember = "MAHIEUXE";
-            //TiepNhanXeSuaDAO.fillCBO("TENHIEUXE", "HIEUXE", cboHieuXe);
-        }
+            //connection.Open();
+            //MySqlDataAdapter adapter = new MySqlDataAdapter();
+            //DataSet dataset = new DataSet();
+            //adapter.SelectCommand = cmd;
+            //adapter.Fill(dataset, "MAHIEUXE");
+            //cboHieuXe.DataSource = dataset.Tables[0];
+            //cboHieuXe.DisplayMember = "TENHIEUXE";
+            //cboHieuXe.ValueMember = "MAHIEUXE";
+			//TiepNhanXeSuaDAO.fillCBO("TENHIEUXE", "HIEUXE", cboHieuXe);
+
+			MySqlConnection ConnCar = DatabaseConnectionDAO.connectionDatabase();
+			MySqlCommand cmdCar = new MySqlCommand("select MAHIEUXE,TENHIEUXE from HIEUXE", ConnCar);
+
+
+			ConnCar.Open();
+			MySqlDataAdapter daCar = new MySqlDataAdapter();
+			daCar.SelectCommand = cmdCar;
+			DataSet dsCar = new DataSet();
+			daCar.Fill(dsCar, "TenHieuXe");
+			cboHieuXe.DataSource = dsCar.Tables[0];
+			cboHieuXe.DisplayMember = "TenHieuXe";
+			cboHieuXe.ValueMember = "MaHieuXe";
+			cboHieuXe.SelectedIndex = -1;
+		}
         #endregion
        
     }
