@@ -65,7 +65,6 @@
     <Compile Include="TienCongDTO.cs" />
     <Compile Include="TiepNhanXeSuaDTO.cs" />
     <Compile Include="VatLieuPhuTungDTO.cs" />
-    <Compile Include="VatTuTonDTO.cs" />
     <Compile Include="XeDTO.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

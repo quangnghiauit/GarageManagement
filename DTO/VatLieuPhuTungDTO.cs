@@ -35,20 +35,30 @@ namespace DTO
 			get { return soLuongVatTu; }
 			set { soLuongVatTu = value; }
 		}
+
+        //Thuoc tinh moi SoLuongTon
+        private int soLuongTon;
+        public int SoLuongTon
+        {
+            get { return soLuongTon; }
+            set { soLuongTon = value; }
+        }
 		public VatTuPhuTungDTO()
 		{
 			maVatTuPhuTung = "";
 			tenVatTuPhuTung = "";
 			donGia = 0;
 			soLuongVatTu = 0;
+            soLuongTon = 0;
 		}
 
-		public VatTuPhuTungDTO(string maVatTuPhuTung, string tenVatTuPhuTung, int donGia, int soLuongVatTu)
+		public VatTuPhuTungDTO(string maVatTuPhuTung, string tenVatTuPhuTung, int donGia, int soLuongVatTu, int soLuongTon)
 		{
 			this.maVatTuPhuTung = maVatTuPhuTung;
 			this.tenVatTuPhuTung = tenVatTuPhuTung;
 			this.donGia = donGia;
 			this.soLuongVatTu = soLuongVatTu;
+            this.soLuongTon = soLuongTon;
 		}
 
 		~VatTuPhuTungDTO() { }

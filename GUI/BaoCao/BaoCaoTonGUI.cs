@@ -37,14 +37,7 @@ namespace GUI
             MySqlCommand cmd = new MySqlCommand("select count(VATTUPHUTUNG.MAVATUPHUTUNG) from VATTUPHUTUNG", connection);
             int count = Convert.ToInt32(cmd.ExecuteScalar());
             
-            if (month != 6 && year != 2018 )
-                for (int i = 0; i < count; i++)
-                {
-
-                }
-            //VatTuTonDTO VatTu = new VatTuTonDTO()
-
-            //VatTuTonDAO.insertQuanLyNhapVatTu
+           
         }
     }
 }

@@ -48,7 +48,7 @@ CREATE TABLE TIEPNHANXESUA
 
 CREATE TABLE CHITIETDOANHSO
 (
-	MACHITIETDOANHSO CHAR(10) NOT NULL,
+	MACHITIETDOANHSO INT(10) NOT NULL AUTO_INCREMENT,
 	MADOANHSO CHAR(10),
 	MAHIEUXE CHAR(10),
 	SOLUOTSUA INT,
@@ -56,7 +56,8 @@ CREATE TABLE CHITIETDOANHSO
 	TILE TINYINT,
 	PRIMARY KEY (MACHITIETDOANHSO)
 );
-
+#drop table CHITIETDOANHSO
+#Sua lai bang chi tiet doanh so
 
 CREATE TABLE KHACHSUAXE 
 (
@@ -110,9 +111,10 @@ CREATE TABLE VATTUPHUTUNG
 	TENVATTUPHUTUNG CHAR(100),
 	DONGIA DECIMAL, 
 	SOLUONGVATTU INT,
+    SOLUONGTON INT, #Thuộc tính mới
 	PRIMARY KEY (MAVATTUPHUTUNG)
 );
-
+#drop table VATTUPHUTUNG;
 
 
 CREATE TABLE CHITIETPHIEUSUACHUA
@@ -154,14 +156,7 @@ CREATE TABLE THAMSO
 );
 
 #New Table
-create table VATTUTON
-(
-	MAVATTUPHUTUNG CHAR(10) NOT NULL,
-	SOLUONGTON INT,
-	THANG DECIMAL,
-    NAM DECIMAL,
-    PRIMARY KEY(MAVATTUPHUTUNG)
-);
+#Xoa bang Vat Tu Ton
 #drop table VATTUTON;
 
 create table QUANLYNHAPVATTU
@@ -187,10 +182,7 @@ alter table CHITIETTON add foreign key (MAVATTUPHUTUNG) references VATTUPHUTUNG 
 alter table CHITIETPHIEUSUACHUA add foreign key (MAVATTUPHUTUNG) references VATTUPHUTUNG (MAVATTUPHUTUNG);
 alter table CHITIETPHIEUSUACHUA add foreign key (MAPHIEUSUACHUA) references PHIEUSUACHUA (MAPHIEUSUACHUA);
 
-#New FK
-alter table VATTUTON add foreign key (MAVATTUPHUTUNG) references VATTUPHUTUNG (MAVATTUPHUTUNG);
 alter table QUANLYNHAPVATTU add foreign key (MAVATTUPHUTUNG) references VATTUPHUTUNG (MAVATTUPHUTUNG);
-
 
 
 
@@ -678,23 +670,63 @@ begin
 End //
 DELIMITER ;
 
+
+#Procedure tao bao cao doanh so
 DELIMITER // 
-create procedure InsertVATTUTON( in _MaVatTu char(10), in _SoLuongTon int, in _Thang date)
+create procedure createBAOCAODOANHSO(in _Thang int, in _Nam int)
 begin
-	declare MaVT char(10);
-    set MaVT = (select MAVATTUPHUTUNG
-			   from VATTUPHUTUNG
-               where MAVATTUPHUTUNG = _MaVatTu);
-	insert into VATTUTON (MAVATTUPHUTUNG, SOLUONGTON, THANG)
-    values (MaVT, _SoLuongTon, _Thang);
-End //
+	declare total int;
+    
+    set total = (select sum(PHIEUSUACHUA.TONGTIEN)
+    where PHIEUSUACHUA.NGAYSUACHUA = _Thang0);
+    
+	select HIEUXE.TENHIEUXE as 'Hiệu Xe',
+    count(PHIEUSUACHUA.MAPHIEUSUACHUA) as 'Số Lượt Sửa',
+    sum(PHIEUSUACHUA.TONGTIEN) as 'Thành Tiền',
+    (sum(PHIEUSUACHUA.TONGTIEN)/total*100) as 'Tỉ Lệ'
+    from HIEUXE, PHIEUSUACHUA, XE
+    where XE.BIENSO = PHIEUSUACHUA.BIENSO
+    and XE.MAHIEUXE = HIEUXE.MAHIEUXE
+    and month(PHIEUSUACHUA.NGAYSUACHUA) = _Thang
+    and year(PHIEUSUACHUA.NGAYSUACHUA) = _Nam
+    group by HIEUXE.TENHIEUXE;
+end //
+DELIMITER ;
+#drop procedure createBAOCAODOANHSO;
+
+DELIMITER // 
+create procedure insertBAOCAODOANHSO(in _MaBaoCao char(10), in _Thang0 date
+, in _Thang int, in _Nam int)
+begin
+	declare total int;
+    
+    set total = (select sum(PHIEUSUACHUA.TONGTIEN)
+    where PHIEUSUACHUA.NGAYSUACHUA = _Thang0);
+    
+    insert into DOANHSO (MADOANHSO, THANG, TONGDOANHSO)
+    values (_MaBaoCao, _Thang0, total);
+    
+    insert into CHITIETDOANHSO (MADOANHSO, MAHIEUXE, SOLUOTSUA, THANHTIEN, TILE)
+	(select _MaBaoCao, HIEUXE.TENHIEUXE,
+    count(PHIEUSUACHUA.MAPHIEUSUACHUA),
+    sum(PHIEUSUACHUA.TONGTIEN),
+    (
+    sum(PHIEUSUACHUA.TONGTIEN)/total*100)
+    from HIEUXE, PHIEUSUACHUA, XE
+    where XE.BIENSO = PHIEUSUACHUA.BIENSO
+    and XE.MAHIEUXE = HIEUXE.MAHIEUXE
+    and month(PHIEUSUACHUA.NGAYSUACHUA) = _Thang
+    and year(PHIEUSUACHUA.NGAYSUACHUA) = _Nam
+    group by HIEUXE.TENHIEUXE
+    );
+end //
 DELIMITER ;
 
-DELIMITER //
-create procedure countVATTU()
+DELIMITER // 
+create procedure selectTongDoanhThu(in _Thang0 date)
 begin
-	select count(VATTUPHUTUNG.MAVATUPHUTUNG)
-    from VATTUPHUTUNG;
-End //
+	select sum(PHIEUSUACHUA.TONGTIEN)
+    from PHIEUSUACHUA
+    where PHIEUSUACHUA.NGAYSUACHUA = _Thang0;
+end //
 DELIMITER ;
-

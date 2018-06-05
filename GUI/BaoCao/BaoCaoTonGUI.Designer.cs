@@ -29,12 +29,12 @@
 		private void InitializeComponent()
 		{
             this.dtmThangLapBaoCao = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBaoCaoTon = new System.Windows.Forms.DataGridView();
             this.btnLapBaoCao = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCaoTon)).BeginInit();
             this.SuspendLayout();
             // 
             // dtmThangLapBaoCao
@@ -45,13 +45,13 @@
             this.dtmThangLapBaoCao.Size = new System.Drawing.Size(125, 20);
             this.dtmThangLapBaoCao.TabIndex = 2;
             // 
-            // dataGridView1
+            // dgvBaoCaoTon
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(813, 325);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvBaoCaoTon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBaoCaoTon.Location = new System.Drawing.Point(5, 124);
+            this.dgvBaoCaoTon.Name = "dgvBaoCaoTon";
+            this.dgvBaoCaoTon.Size = new System.Drawing.Size(840, 320);
+            this.dgvBaoCaoTon.TabIndex = 3;
             // 
             // btnLapBaoCao
             // 
@@ -77,7 +77,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(67, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 39);
+            this.label1.Size = new System.Drawing.Size(160, 40);
             this.label1.TabIndex = 6;
             this.label1.Text = "Tháng Lập Báo Cáo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -87,9 +87,9 @@
             this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 1);
+            this.label2.Location = new System.Drawing.Point(1, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(285, 35);
+            this.label2.Size = new System.Drawing.Size(350, 35);
             this.label2.TabIndex = 7;
             this.label2.Text = "LẬP BÁO CÁO TỒN";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -103,20 +103,20 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnLapBaoCao);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvBaoCaoTon);
             this.Controls.Add(this.dtmThangLapBaoCao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fBaoCaoTon";
             this.Text = "BaoCaoTon";
             this.Load += new System.EventHandler(this.BaoCaoTon_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCaoTon)).EndInit();
             this.ResumeLayout(false);
 
 		}
 
 		#endregion
 		private System.Windows.Forms.DateTimePicker dtmThangLapBaoCao;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView dgvBaoCaoTon;
 		private System.Windows.Forms.Button btnLapBaoCao;
 		private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
