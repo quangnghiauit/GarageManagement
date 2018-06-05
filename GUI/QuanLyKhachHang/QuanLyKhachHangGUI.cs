@@ -360,8 +360,12 @@ namespace GUI
 						RefreshQLKH();
 						return;
 					}
-					//Or something bad happened
-					MessageBox.Show("Bạn phải xóa tất cả các xe của khách hàng này. Sau đó mới được quyền xóa khách hàng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					else
+					{
+						//Or something bad happened
+						MessageBox.Show("Bạn phải xóa tất cả các xe của khách hàng này. Sau đó mới được quyền xóa khách hàng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+					
 
 					//KhachSuaXeBUS.delCustomer(MaKhachSuaXe);
 

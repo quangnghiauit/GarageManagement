@@ -281,7 +281,7 @@ namespace GUI
 
 
 			tbBienSoXe.Text = "";
-			tbTienNo.Text = "";
+			tbTienNoTraCuu.Text = "0";
 		}
 		#region Insert , Update, Remove
 		private void btnThemXe_Click(object sender, EventArgs e)
@@ -358,7 +358,7 @@ namespace GUI
 
 		private void btnXoaXe_Click(object sender, EventArgs e)
 		{
-			if (!fMainForm.cNullTB(tbBienSoXe.Text) && !fMainForm.cNullTB(cbbTenChuXe.DisplayMember) && !fMainForm.cNullTB(cbbHieuXe.DisplayMember))
+			if (!fMainForm.cNullTB(tbBienSoXe.Text) && !fMainForm.cNullTB(cbbTenChuXe.Text) && !fMainForm.cNullTB(cbbHieuXe.Text))
 			{
 				if (XeBUS.cPrimaryKey(tbBienSoXe.Text.Trim()))
 				{
@@ -377,6 +377,11 @@ namespace GUI
 				}
 				RefreshGUI();
 				RefreshTraCuuXeGUI();
+			}
+			else
+			{
+
+				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
 		}
 		#endregion
@@ -429,6 +434,7 @@ namespace GUI
 			cbbTenChuXe.ValueMember = "MaKhachSuaXe";
 			cbbTenChuXe.SelectedIndex = -1;
 
+			tbTienNo.Text = "0";
 			#endregion
 		}
 
