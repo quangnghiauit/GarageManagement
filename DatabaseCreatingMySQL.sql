@@ -576,9 +576,20 @@ DELIMITER ;
 DELIMITER //
 Create Procedure SelectAllTIEPNHANXESUA()
 Begin
-	select MATIEPNHANXESUA as 'Mã Tiếp nhận xe sửa', TIEPNHANXESUA.BIENSO as 'Biển số', NgayTiepNhan as 'Ngày tiếp nhận' from TIEPNHANXESUA,XE;
+	select MATIEPNHANXESUA as 'Mã tiếp nhận xe sửa',
+    KHACHSUAXE.TENCHUXE as 'Tên chủ xe',    
+    TIEPNHANXESUA.BIENSO as 'Biển số',
+    HIEUXE.TENHIEUXE as 'Hiệu xe',    
+    NgayTiepNhan as 'Ngày tiếp nhận',
+    DIACHI as 'Địa chỉ',
+    DIENTHOAI as 'Điện thoại'
+    from TIEPNHANXESUA, XE, KHACHSUAXE, HIEUXE
+    where (TIEPNHANXESUA.BIENSO = XE.BIENSO
+    and XE.MAKHACHSUAXE = KHACHSUAXE.MAKHACHSUAXE
+    and HIEUXE.MAHIEUXE = XE.MAHIEUXE);
 End //
 DELIMITER ;
+#drop procedure SelectAllTIEPNHANXESUA;
 
 
 DELIMITER // 
@@ -679,9 +690,11 @@ begin
 End //
 DELIMITER ;
 
-create table VATTUTON
-(
-	MAVATTUPHUTUNG CHAR(10) NOT NULL,
-	SOLUONGTON int,
-	THANG DATE
-);
+DELIMITER //
+create procedure countVATTU()
+begin
+	select count(VATTUPHUTUNG.MAVATUPHUTUNG)
+    from VATTUPHUTUNG;
+End //
+DELIMITER ;
+
