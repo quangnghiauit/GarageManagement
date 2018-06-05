@@ -99,9 +99,9 @@ namespace DAO
 		{
 			try
 			{
-
+				
 				//ExcuteQuery
-				DatabaseConnectionDAO.ExcuteProcedure("RemoveCustomer", exception, new MySqlParameter[] { new MySqlParameter ("@_MaKhachSuaXe", _MaKhachSuaXe) });
+				DatabaseConnectionDAO.ExcuteProcedure("RemoveCustomer",ref exception, new MySqlParameter[] { new MySqlParameter ("@_MaKhachSuaXe", _MaKhachSuaXe) });
 				//if there is no exception
 				if(exception=="")
 				{

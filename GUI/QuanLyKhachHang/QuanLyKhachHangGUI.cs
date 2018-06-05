@@ -196,7 +196,7 @@ namespace GUI
 			tbDienThoai.Text = "";
 			tbDiaChi.Text = "";
 			tbEmail.Text = "";
-			tbSoTienNo.Text = "";
+			tbSoTienNo.Text = "0";
 		}
 		#endregion
 

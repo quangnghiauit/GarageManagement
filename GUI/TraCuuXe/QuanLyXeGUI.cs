@@ -317,6 +317,7 @@ namespace GUI
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
 			RefreshGUI();
+			RefreshHieuXe();
 			RefreshTraCuuXeGUI();
 
 		}
@@ -353,6 +354,7 @@ namespace GUI
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
 			RefreshGUI();
+			RefreshHieuXe();
 			RefreshTraCuuXeGUI();
 		}
 
@@ -376,6 +378,7 @@ namespace GUI
 					MessageBox.Show("Dữ liệu nhập vào chưa đúng vui lòng nhập vào ô Mã Khách Sửa Xe.");
 				}
 				RefreshGUI();
+				RefreshHieuXe();
 				RefreshTraCuuXeGUI();
 			}
 			else
@@ -398,25 +401,12 @@ namespace GUI
 			myForm.ShowDialog();
 
 			this.Show();
-			RefreshGUI();
+			RefreshHieuXe();
 		}
 		private void RefreshGUI()
 		{
 			#region Load car name and customer name
-			//display car name and set value car
-			MySqlConnection ConnCar = DatabaseConnectionDAO.connectionDatabase();
-			MySqlCommand cmdCar = new MySqlCommand("select MAHIEUXE,TENHIEUXE from HIEUXE", ConnCar);
-
-
-			ConnCar.Open();
-			MySqlDataAdapter daCar = new MySqlDataAdapter();
-			daCar.SelectCommand = cmdCar;
-			DataSet dsCar = new DataSet();
-			daCar.Fill(dsCar, "TenHieuXe");
-			cbbHieuXe.DataSource = dsCar.Tables[0];
-			cbbHieuXe.DisplayMember = "TenHieuXe";
-			cbbHieuXe.ValueMember = "MaHieuXe";
-			cbbHieuXe.SelectedIndex = -1;
+			
 
 
 			//display customer name and set value ID customer
@@ -442,5 +432,23 @@ namespace GUI
 		//{
 		//	TiepNhanXeSuaDAO.fillCBO("BIENSO", "XE", cbbBienSoTraCuu);
 		//}
+		private void RefreshHieuXe()
+		{
+			//display car name and set value car
+			MySqlConnection ConnCar = DatabaseConnectionDAO.connectionDatabase();
+			MySqlCommand cmdCar = new MySqlCommand("select MAHIEUXE,TENHIEUXE from HIEUXE", ConnCar);
+
+
+			ConnCar.Open();
+			MySqlDataAdapter daCar = new MySqlDataAdapter();
+			daCar.SelectCommand = cmdCar;
+			DataSet dsCar = new DataSet();
+			daCar.Fill(dsCar, "TenHieuXe");
+			cbbHieuXe.DataSource = dsCar.Tables[0];
+			cbbHieuXe.DisplayMember = "TenHieuXe";
+			cbbHieuXe.ValueMember = "MaHieuXe";
+			cbbHieuXe.SelectedIndex = -1;
+		}
+
 	}
 }

@@ -96,7 +96,7 @@ namespace DAO
 		
 		}
 
-		public static MySqlDataReader ExcuteProcedure(string procedureName,string exception, MySqlParameter[] values)
+		public static MySqlDataReader ExcuteProcedure(string procedureName,ref string exception, MySqlParameter[] values)
 		{
 			//we have to close previous reader first to be able to excute new reader
 			if(!(_reader==null))
