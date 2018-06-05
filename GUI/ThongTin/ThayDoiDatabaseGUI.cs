@@ -25,7 +25,7 @@ namespace GUI
 		private void btnConnect_Click(object sender, EventArgs e)
 		{
 			string ex = "";
-			DatabaseConnectionBUS.ConnectToDatabase(tbServer.Text, tbDatabaseName.Text, tbUser.Text, tbPassword.Text, ex);
+			DatabaseConnectionBUS.ConnectToDatabase(tbServer.Text, tbDatabaseName.Text, tbUser.Text, tbPassword.Text,ref ex);
 			
 			if(ex!="")
 			{

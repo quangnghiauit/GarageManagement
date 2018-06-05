@@ -16,13 +16,13 @@ namespace BUS
 {
 	public class DatabaseConnectionBUS
 	{
-		public static bool ConnectToDatabase(string server,string database,string user,string password,string exception)
+		public static bool ConnectToDatabase(string server,string database,string user,string password,ref string exception)
 		{
 			try
 			{
 
 
-				DatabaseConnectionDAO.connectionDatabase(server, database, user, password,exception);
+				DatabaseConnectionDAO.connectionDatabase(server, database, user, password,ref exception);
 				if(exception == "")
 				{
 					return true;

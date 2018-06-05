@@ -34,7 +34,7 @@ namespace DAO
 			return Conn;
 		}
 
-		public static MySqlConnection connectionDatabase(string strServer,string strDatabase,string strUser,string strPassword,string exception="")
+		public static MySqlConnection connectionDatabase(string strServer,string strDatabase,string strUser,string strPassword,ref string exception)
 		{
 			MySqlConnection Conn = new MySqlConnection();
 			try
