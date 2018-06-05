@@ -14,5 +14,10 @@ namespace BUS
         {
             QuanLyNhapVatTuDAO.insertQuanLyNhapVatTu(QuanLy);
         }
+
+        public static void removeQuanLyNhapVatTu(string MaVatTu)
+        {
+            QuanLyNhapVatTuDAO.deleteQuanLyNhapVatTu(MaVatTu);
+        }
     }
 }

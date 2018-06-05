@@ -193,8 +193,12 @@ namespace GUI
 				if (VatTuPhuTungBUS.cPrimaryKey(tbMaVatTuThaoTac.Text.Trim()))
 				{
 					string MaVatTuPhuTung = tbMaVatTuThaoTac.Text.Trim();
-
-					VatTuPhuTungBUS.delSpareParts(MaVatTuPhuTung);
+                    
+                    //New
+                    QuanLyNhapVatTuBUS.removeQuanLyNhapVatTu(MaVatTuPhuTung);
+                    //
+                    VatTuPhuTungBUS.delSpareParts(MaVatTuPhuTung);
+                    
 					dtgvThaoTac.DataSource = VatTuPhuTungBUS.loadAllSpareParts();
 				}
 				else

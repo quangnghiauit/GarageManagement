@@ -429,7 +429,7 @@ Begin
     values (_MaVatTuPhuTung, _TenVatTuPhuTung, _DonGia, _SoluongVatTu, 0);
 End //
 DELIMITER ;
-
+#drop procedure InsertSpareParts;
 
 
 DELIMITER // 
@@ -680,6 +680,15 @@ begin
 	insert into QUANLYNHAPVATTU (MAVATTUPHUTUNG, SOLUONGNHAP, NGAYNHAP)
     values (MaVT, _SoLuongNhap, _NgayNhap);
 End //
+DELIMITER ;
+
+#New
+DELIMITER //
+create procedure deleteQUANLYNHAPVATTU( in _MaVatTu char(10))
+begin
+	delete from QUANLYNHAPVATTU
+    where MAVATTUPHUTUNG = _MaVatTu;
+end //
 DELIMITER ;
 
 

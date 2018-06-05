@@ -31,5 +31,19 @@ namespace DAO
             command.ExecuteNonQuery();
             connection.Close();
         }
+
+        public static void deleteQuanLyNhapVatTu(string _MaVatTu)
+        {
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+
+            MySqlCommand command = new MySqlCommand("deleteQUANLYNHAPVATTU", connection);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add("@_MaVatTu", MySqlDbType.VarChar, 10);
+            command.Parameters["@_MaVatTu"].Value = _MaVatTu;
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }
