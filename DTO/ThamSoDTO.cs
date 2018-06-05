@@ -9,8 +9,8 @@ namespace DTO
 	public class ThamSoDTO
 	{
 		static bool suDungQuyDinh4 = false;
-		static decimal soTienNoToiDa = 0;
-		static decimal soXeSuaChuaToiDa = 100;
+		static decimal soTienNoToiDa = 1000000;
+		static decimal soXeSuaChuaToiDa = 30;
 
 
 		public static bool SuDungQuyDinh4
