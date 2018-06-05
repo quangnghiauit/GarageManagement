@@ -160,6 +160,8 @@
 			this.Name = "fMainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Phần Mềm Quản Lý Gara Oto";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fMainForm_FormClosing);
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fMainForm_FormClosed);
 			this.panel1.ResumeLayout(false);
 			this.pnMainGara.ResumeLayout(false);
 			this.ResumeLayout(false);

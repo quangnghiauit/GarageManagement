@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 
 namespace GUI
 {
@@ -131,6 +132,24 @@ namespace GUI
 			myForm.AutoScroll = true;
 			pnMainGara.Controls.Add(myForm);
 			myForm.Show();
+		}
+
+		private void fMainForm_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			DatabaseConnectionBUS.DisConnectToDatabase();
+		}
+
+		private void fMainForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if(MessageBox.Show("Một số công việc có thể chưa hoàn thành,bạn có chắc chắn muốn thoát không?","Cẩn Thận!!",MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2)==DialogResult.No)
+			{
+				e.Cancel = true;
+			}
+			
+
+				
+
+		
 		}
 	}
 }

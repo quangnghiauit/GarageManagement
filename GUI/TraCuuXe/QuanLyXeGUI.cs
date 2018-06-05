@@ -23,6 +23,7 @@ namespace GUI
 		public fQuanLyXeGUI()
 		{
 			InitializeComponent();
+			
 			//fillCboBienSo();
 		}
 
