@@ -104,8 +104,10 @@ namespace DAO
 				_reader.Close();
 
 			}
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
+			Conn.Open();
 			//Excute reader
-			MySqlCommand command = new MySqlCommand(procedureName, _mySql);
+			MySqlCommand command = new MySqlCommand(procedureName, Conn);
 			try
 			{
 				command.CommandType = CommandType.StoredProcedure;
