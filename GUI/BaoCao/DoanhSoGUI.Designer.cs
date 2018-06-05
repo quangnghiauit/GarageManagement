@@ -81,6 +81,7 @@
             // 
             this.txtTongDoanhThu.Location = new System.Drawing.Point(592, 92);
             this.txtTongDoanhThu.Name = "txtTongDoanhThu";
+            this.txtTongDoanhThu.ReadOnly = true;
             this.txtTongDoanhThu.Size = new System.Drawing.Size(182, 20);
             this.txtTongDoanhThu.TabIndex = 12;
             // 

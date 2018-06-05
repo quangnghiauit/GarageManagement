@@ -212,6 +212,14 @@ namespace GUI
         private void btnLichSuLapPhieu_Click(object sender, EventArgs e)
         {
             dgvLichSuLapPhieu.DataSource = PhieuSuaChuaBUS.selectAllPhieuSuaChua();
-        }        
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            //if (!fMainForm.cNullTB(txtNoiDung.Text) && !fMainForm.cNullTB(cboVatTuPhuTung.Text) &&
+            //    !fMainForm.cNullTB(txtSoLuong.Text) && !fMainForm.cNullTB(txtDonGia.Text) &&
+            //    !fMainForm.cNullTB(cboTienCong.Text))
+
+        }
     }
 }

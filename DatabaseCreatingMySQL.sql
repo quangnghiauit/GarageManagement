@@ -678,7 +678,8 @@ begin
 	declare total int;
     
     set total = (select sum(PHIEUSUACHUA.TONGTIEN)
-    where PHIEUSUACHUA.NGAYSUACHUA = _Thang0);
+    from PHIEUSUACHUA
+    where PHIEUSUACHUA.NGAYSUACHUA = _Thang);
     
 	select HIEUXE.TENHIEUXE as 'Hiệu Xe',
     count(PHIEUSUACHUA.MAPHIEUSUACHUA) as 'Số Lượt Sửa',
@@ -687,8 +688,8 @@ begin
     from HIEUXE, PHIEUSUACHUA, XE
     where XE.BIENSO = PHIEUSUACHUA.BIENSO
     and XE.MAHIEUXE = HIEUXE.MAHIEUXE
-    and month(PHIEUSUACHUA.NGAYSUACHUA) = _Thang
-    and year(PHIEUSUACHUA.NGAYSUACHUA) = _Nam
+    and month(PHIEUSUACHUA.NGAYSUACHUA) = 10
+    and year(PHIEUSUACHUA.NGAYSUACHUA) = 2018
     group by HIEUXE.TENHIEUXE;
 end //
 DELIMITER ;
@@ -701,7 +702,8 @@ begin
 	declare total int;
     
     set total = (select sum(PHIEUSUACHUA.TONGTIEN)
-    where PHIEUSUACHUA.NGAYSUACHUA = _Thang0);
+    from PHIEUSUACHUA
+    where PHIEUSUACHUA.NGAYSUACHUA = _Thang);
     
     insert into DOANHSO (MADOANHSO, THANG, TONGDOANHSO)
     values (_MaBaoCao, _Thang0, total);
@@ -721,6 +723,7 @@ begin
     );
 end //
 DELIMITER ;
+#drop procedure insertBAOCAODOANHSO;
 
 DELIMITER // 
 create procedure selectTongDoanhThu(in _Thang0 date)
