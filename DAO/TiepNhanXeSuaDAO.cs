@@ -54,23 +54,16 @@ namespace DAO
         public static void fillCBO(string column, string table,ComboBox receiver)
         {
             MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
-            MySqlCommand cmd = new MySqlCommand("select * from " + table, connection);
-            MySqlDataReader reader;
-            try
-            {
-                connection.Open();
-                reader = cmd.ExecuteReader();
+            MySqlCommand cmd = new MySqlCommand("select " + column  + " from " + table, connection);
 
-                while (reader.Read())
-                {
-                    string getter = reader.GetString(column);
-                    receiver.Items.Add(getter);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            connection.Open();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataSet dataset = new DataSet();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(dataset, column);
+            receiver.DataSource = dataset.Tables[0];
+            receiver.DisplayMember = column;
+            receiver.ValueMember = column;            
         }        
     }
 }

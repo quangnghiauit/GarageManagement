@@ -21,25 +21,34 @@ namespace DTO
             set { soLuongTon = value; }
         }
 
-        private DateTime thang;
-        public DateTime Thang
+        private decimal thang;
+        public decimal Thang
         {
             get { return thang; }
             set { thang = value; }
+        }
+
+        private decimal nam;
+        public decimal Nam
+        {
+            get { return nam; }
+            set { nam = value; }
         }
 
         VatTuTonDTO()
         {
             this.maVatTuPhuTung = "";
             this.soLuongTon = 0;
-            this.thang = new DateTime();
+            this.thang = 0;
+            this.nam = 0;
         }
 
-        VatTuTonDTO(string _MaVatTuPhuTung, int _SoLuongTon, DateTime _NgayNhap)
+        VatTuTonDTO(string _MaVatTuPhuTung, int _SoLuongTon, decimal _Thang, decimal _Nam)
         {
             this.maVatTuPhuTung = _MaVatTuPhuTung;
             this.soLuongTon = _SoLuongTon;
-            this.thang = _NgayNhap;
+            this.thang = _Thang;
+            this.nam = _Nam;
         }
 
         ~VatTuTonDTO() { }

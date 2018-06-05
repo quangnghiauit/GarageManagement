@@ -66,6 +66,7 @@
     <Compile Include="TienCongBUS.cs" />
     <Compile Include="TiepNhanXeSuaBUS.cs" />
     <Compile Include="VatTuPhuTungBUS.cs" />
+    <Compile Include="VatTuTonBUS.cs" />
     <Compile Include="XeBUS.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

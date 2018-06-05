@@ -28,32 +28,22 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtmThangLapBaoCao = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnLapBaoCao = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // dtmThangLapBaoCao
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(249, 56);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "LẬP BÁO CÁO TỒN";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(233, 80);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(125, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtmThangLapBaoCao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmThangLapBaoCao.Location = new System.Drawing.Point(233, 80);
+            this.dtmThangLapBaoCao.Name = "dtmThangLapBaoCao";
+            this.dtmThangLapBaoCao.Size = new System.Drawing.Size(125, 20);
+            this.dtmThangLapBaoCao.TabIndex = 2;
             // 
             // dataGridView1
             // 
@@ -63,14 +53,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(813, 325);
             this.dataGridView1.TabIndex = 3;
             // 
-            // button3
+            // btnLapBaoCao
             // 
-            this.button3.Location = new System.Drawing.Point(216, 472);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 43);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Lập Báo Cáo";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnLapBaoCao.Location = new System.Drawing.Point(216, 472);
+            this.btnLapBaoCao.Name = "btnLapBaoCao";
+            this.btnLapBaoCao.Size = new System.Drawing.Size(142, 43);
+            this.btnLapBaoCao.TabIndex = 4;
+            this.btnLapBaoCao.Text = "Lập Báo Cáo";
+            this.btnLapBaoCao.UseVisualStyleBackColor = true;
+            this.btnLapBaoCao.Click += new System.EventHandler(this.btnLapBaoCao_Click);
             // 
             // button4
             // 
@@ -91,17 +82,29 @@
             this.label1.Text = "Tháng Lập Báo Cáo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(285, 35);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "LẬP BÁO CÁO TỒN";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // fBaoCaoTon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 540);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnLapBaoCao);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dtmThangLapBaoCao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fBaoCaoTon";
             this.Text = "BaoCaoTon";
@@ -112,12 +115,11 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.DateTimePicker dtmThangLapBaoCao;
 		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button btnLapBaoCao;
 		private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

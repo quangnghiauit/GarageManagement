@@ -20,6 +20,8 @@ namespace GUI
             InitializeComponent();
             fillCboBienSo();
             fillCboHieuXe();
+            cboBienSo.SelectedIndex = -1;
+            cboHieuXe.SelectedIndex = -1;
         }
 
         private void btnTiepNhan_Click(object sender, EventArgs e)
@@ -27,7 +29,7 @@ namespace GUI
             if (!fMainForm.cNullTB(txtTenChuXe.Text) && !fMainForm.cNullTB(cboBienSo.Text) && !fMainForm.cNullTB(cboHieuXe.Text)
                 && !fMainForm.cNullTB(txtDiaChi.Text) && !fMainForm.cNullTB(txtDienThoai.Text))
             {
-                string BienSo = cboBienSo.SelectedText;
+                string BienSo = cboBienSo.SelectedValue.ToString().Trim();
                 DateTime NgayTiepNhan = dtmNgayTiepNhan.Value;
 
                 TiepNhanXeSuaDTO TiepNhan = new TiepNhanXeSuaDTO(BienSo, NgayTiepNhan);

@@ -19,9 +19,15 @@ namespace GUI
 
 		private void BaoCaoTon_Load(object sender, EventArgs e)
 		{
-			dateTimePicker1.Format = DateTimePickerFormat.Custom;
-			dateTimePicker1.CustomFormat = "MM   yyyy";
-			dateTimePicker1.ShowUpDown = true;
+			dtmThangLapBaoCao.Format = DateTimePickerFormat.Custom;
+			dtmThangLapBaoCao.CustomFormat = "MM / yyyy";
+			dtmThangLapBaoCao.ShowUpDown = true;
 		}
-	}
+
+        private void btnLapBaoCao_Click(object sender, EventArgs e)
+        {
+            int month = dtmThangLapBaoCao.Value.Month;
+            int year = dtmThangLapBaoCao.Value.Year;
+        }
+    }
 }

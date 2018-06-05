@@ -17,8 +17,7 @@ namespace GUI
 	{
 		public fLapPhieuThuTien()
 		{
-			InitializeComponent();
-            fillCboTenChuXe();
+			InitializeComponent();            
 		}
 
         private void btnLapPhieu_Click(object sender, EventArgs e)
@@ -78,5 +77,11 @@ namespace GUI
                 txtTienThu.Text = (int.Parse(txtTienKhachTra.Text) - int.Parse(txtTienTraKhach.Text)).ToString();
         }
         #endregion
+
+        private void fLapPhieuThuTien_Load(object sender, EventArgs e)
+        {
+            fillCboTenChuXe();
+            cboBienSo.SelectedIndex = -1;
+        }
     }
 }

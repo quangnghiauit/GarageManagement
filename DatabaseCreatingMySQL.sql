@@ -158,17 +158,20 @@ create table VATTUTON
 (
 	MAVATTUPHUTUNG CHAR(10) NOT NULL,
 	SOLUONGTON INT,
-	THANG DATE
+	THANG DECIMAL,
+    NAM DECIMAL,
+    PRIMARY KEY(MAVATTUPHUTUNG)
 );
-
+#drop table VATTUTON;
 
 create table QUANLYNHAPVATTU
 (
 	MAVATTUPHUTUNG CHAR(10) NOT NULL,
     SOLUONGNHAP INT,
-	NGAYNHAP DATE
+	NGAYNHAP DATE,
+    PRIMARY KEY(MAVATTUPHUTUNG)
 );
-
+#drop table QUANLYNHAPVATTU;
 
 
 alter table CHITIETDOANHSO add foreign key (MADOANHSO) references DOANHSO (MADOANHSO);
@@ -664,3 +667,21 @@ begin
 End //
 DELIMITER ;
 
+DELIMITER // 
+create procedure InsertVATTUTON( in _MaVatTu char(10), in _SoLuongTon int, in _Thang date)
+begin
+	declare MaVT char(10);
+    set MaVT = (select MAVATTUPHUTUNG
+			   from VATTUPHUTUNG
+               where MAVATTUPHUTUNG = _MaVatTu);
+	insert into VATTUTON (MAVATTUPHUTUNG, SOLUONGTON, THANG)
+    values (MaVT, _SoLuongTon, _Thang);
+End //
+DELIMITER ;
+
+create table VATTUTON
+(
+	MAVATTUPHUTUNG CHAR(10) NOT NULL,
+	SOLUONGTON int,
+	THANG DATE
+);
