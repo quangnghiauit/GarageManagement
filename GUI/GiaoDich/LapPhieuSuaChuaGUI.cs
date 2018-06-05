@@ -78,37 +78,19 @@ namespace GUI
         private void fillVatTuPhuTung()
         {
 
-            using (MySqlConnection conn = DatabaseConnectionDAO.connectionDatabase())
-            {
-                conn.Open();
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM VATTUPHUTUNG", conn);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                DataRow topItem = table.NewRow();
-                topItem[0] = 0;
-                topItem[1] = "Select";
-                VatTuPhuTung.ValueMember = "MAVATTUPHUTUNG";
-                VatTuPhuTung.DisplayMember = "TENVATTUPHUTUNG";
-                VatTuPhuTung.DataSource = table.Copy();
-                
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            MySqlCommand cmd = new MySqlCommand("select MAVATTUPHUTUNG, TENVATTUPHUTUNG from VATTUPHUTUNG", connection);
 
-                //dgvPhieuSuaChua.DataSource = new DataView(table).ToTable(true, new string[] { "MAVATTUPHUTUNG, TENVATTUPHUTUNG" });
-                //dgvPhieuSuaChua.DataSource = table;
-                //DataGridViewComboBoxColumn dgvCboColumn = new DataGridViewComboBoxColumn();
-                //dgvCboColumn.Name = "VatTuPhuTung";
-                //dgvPhieuSuaChua.Columns.Add(dgvCboColumn);
-                //foreach (DataGridViewRow row in dgvPhieuSuaChua.Rows)
-                //{
-                //    DataGridViewComboBoxCell cboVatTuPhuTung = (DataGridViewComboBoxCell)(row.Cells["VatTuPhuTung"]);
-                //    cboVatTuPhuTung.DataSource = row.Cells["TENVATTUPHUTUNG"];
-                //    cboVatTuPhuTung.DisplayMember = "TENVATTUPHUTUNG";
-                //    cboVatTuPhuTung.ValueMember = "MAVATTUPHUTUNG";
-                //}
-            }
-            dgvPhieuSuaChua.Update();
+            connection.Open();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataSet dataset = new DataSet();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(dataset, "TENVATTUPHUTUNG");
+            VatTuPhuTung.DataSource = dataset.Tables[0];
+            VatTuPhuTung.DisplayMember = "TENVATTUPHUTUNG";
+            VatTuPhuTung.ValueMember = "MAVATTUPHUTUNG";
 
-            //PhieuSuaChuaDAO.fillDGVCBO("TENVATTUPHUTUNG", "VATTUPHUTUNG", VatTuPhuTung);
-            //VatTuPhuTung.Items.Add("Testing item.");
+//            VatTuPhuTung.Items[-1];
         }
 
         private void dgvPhieuSuaChua_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -219,7 +201,42 @@ namespace GUI
             //if (!fMainForm.cNullTB(txtNoiDung.Text) && !fMainForm.cNullTB(cboVatTuPhuTung.Text) &&
             //    !fMainForm.cNullTB(txtSoLuong.Text) && !fMainForm.cNullTB(txtDonGia.Text) &&
             //    !fMainForm.cNullTB(cboTienCong.Text))
+            //    dgvPhieuSuaChua.Rows[rownum]
 
+        }
+
+        private void fillCBOVatTuPhuTung()
+        {
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            MySqlCommand cmd = new MySqlCommand("select MAVATTUPHUTUNG, TENVATTUPHUTUNG from VATTUPHUTUNG", connection);
+
+            connection.Open();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataSet dataset = new DataSet();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(dataset, "TENVATTUPHUTUNG");
+            cboVatTuPhuTung.DataSource = dataset.Tables[0];
+            cboVatTuPhuTung.DisplayMember = "TENVATTUPHUTUNG";
+            cboVatTuPhuTung.ValueMember = "MAVATTUPHUTUNG";
+
+            cboVatTuPhuTung.SelectedIndex = -1;            
+        }
+
+        private void fillCBOTIENCONG()
+        {
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            MySqlCommand cmd = new MySqlCommand("select  from TIENCONG", connection);
+
+            connection.Open();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataSet dataset = new DataSet();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(dataset, "TENVATTUPHUTUNG");
+            cboVatTuPhuTung.DataSource = dataset.Tables[0];
+            cboVatTuPhuTung.DisplayMember = "TENVATTUPHUTUNG";
+            cboVatTuPhuTung.ValueMember = "MAVATTUPHUTUNG";
+
+            cboVatTuPhuTung.SelectedIndex = -1;
         }
     }
 }

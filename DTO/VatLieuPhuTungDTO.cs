@@ -52,13 +52,12 @@ namespace DTO
             soLuongTon = 0;
 		}
 
-		public VatTuPhuTungDTO(string maVatTuPhuTung, string tenVatTuPhuTung, int donGia, int soLuongVatTu, int soLuongTon)
+		public VatTuPhuTungDTO(string maVatTuPhuTung, string tenVatTuPhuTung, int donGia, int soLuongVatTu)
 		{
 			this.maVatTuPhuTung = maVatTuPhuTung;
 			this.tenVatTuPhuTung = tenVatTuPhuTung;
 			this.donGia = donGia;
 			this.soLuongVatTu = soLuongVatTu;
-            this.soLuongTon = soLuongTon;
 		}
 
 		~VatTuPhuTungDTO() { }

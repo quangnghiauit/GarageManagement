@@ -148,6 +148,7 @@ SOTIENCONG decimal,
 primary key(MATIENCONG)
 );
 
+
 CREATE TABLE THAMSO
 (
 	
@@ -424,7 +425,8 @@ DELIMITER ;
 DELIMITER // 
 create procedure InsertSpareParts ( in _MaVatTuPhuTung char(10), in _TenVatTuPhuTung char(100), in _DonGia decimal, in _SoLuongVatTu int)
 Begin 
-	Insert into VATTUPHUTUNG values (_MaVatTuPhuTung, _TenVatTuPhuTung, _DonGia, _SoluongVatTu);
+	Insert into VATTUPHUTUNG(MAVATTUPHUTUNG, TENVATTUPHUTUNG, DONGIA, SOLUONGVATTU, SOLUONGTON)
+    values (_MaVatTuPhuTung, _TenVatTuPhuTung, _DonGia, _SoluongVatTu, 0);
 End //
 DELIMITER ;
 
@@ -472,6 +474,15 @@ End //
 DELIMITER ;
 
 
+#Cap nhat cho thuoc tinh moi cua VatTuPhuTung
+DELIMITER //
+create procedure updateSoLuongTonVT()
+begin
+	
+	update SOLUONGTON 
+    set SOLUONGTON = SOLUONGVATTU;
+end //
+DELIMITER //
 
 
 DELIMITER // 

@@ -129,7 +129,7 @@ namespace GUI
                     DateTime NgayNhap = dtmNgayNhap.Value; // Lay gia tri ngay nhap phu tung
 
 
-					VatTuPhuTungDTO vatTu = new VatTuPhuTungDTO(MaVatTuPhuTung, TenVatTuPhuTung, DonGia, SoLuongVatTu, 0);
+					VatTuPhuTungDTO vatTu = new VatTuPhuTungDTO(MaVatTuPhuTung, TenVatTuPhuTung, DonGia, SoLuongVatTu);
 					VatTuPhuTungBUS.addSpareParts(vatTu);
 					dtgvThaoTac.DataSource = VatTuPhuTungBUS.loadAllSpareParts();
 
@@ -167,7 +167,7 @@ namespace GUI
 
 
 
-					VatTuPhuTungDTO vatTu = new VatTuPhuTungDTO(MaVatTuPhuTung, TenVatTuPhuTung, DonGia, SoLuongVatTu, 0);
+					VatTuPhuTungDTO vatTu = new VatTuPhuTungDTO(MaVatTuPhuTung, TenVatTuPhuTung, DonGia, SoLuongVatTu);
 					VatTuPhuTungBUS.updateSpareParts(vatTu);
 					dtgvThaoTac.DataSource = VatTuPhuTungBUS.loadAllSpareParts();
 
