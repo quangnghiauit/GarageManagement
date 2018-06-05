@@ -585,7 +585,7 @@ DELIMITER //
 create procedure InsertTIEPNHANXESUA ( in _BienSo char(10), in _NgayTiepNhan date)
 Begin
 	declare bienSo char(10);
-    set @bienSo = (select BIENSO
+    set bienSo = (select BIENSO
 			from XE
             where XE.BIENSO = _BienSo);
 	Insert into TIEPNHANXESUA (TIEPNHANXESUA.BIENSO, NGAYTIEPNHAN)
