@@ -196,5 +196,16 @@ namespace DAO
 		//		MessageBox.Show(ex.Message);
 		//	}
 		//}
+
+        public static void updateSoLuongTon()
+        {
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            MySqlCommand cmd = new MySqlCommand("updateSoLuongTonVT", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
 	}
 }

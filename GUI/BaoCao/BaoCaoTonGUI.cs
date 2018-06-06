@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
 using DTO;
+using BUS;
 using MySql.Data.MySqlClient;
 
 namespace GUI
@@ -29,15 +30,23 @@ namespace GUI
 
         private void btnLapBaoCao_Click(object sender, EventArgs e)
         {
-            int month = dtmThangLapBaoCao.Value.Month;
-            int year = dtmThangLapBaoCao.Value.Year;
+            if (!fMainForm.cNullTB(txtMaBaoCao.Text))
+            {
+                string MaBaoCao = txtMaBaoCao.Text;
+                int Month = dtmThangLapBaoCao.Value.Month;
+                int Year = dtmThangLapBaoCao.Value.Year;
+                DateTime Time = dtmThangLapBaoCao.Value;
 
-            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
-            connection.Open();
-            MySqlCommand cmd = new MySqlCommand("select count(VATTUPHUTUNG.MAVATUPHUTUNG) from VATTUPHUTUNG", connection);
-            int count = Convert.ToInt32(cmd.ExecuteScalar());
-            
-           
+                BaoCaoTonDTO BaoCao = new BaoCaoTonDTO(MaBaoCao, Month, Year);
+                BaoCaoTonBUS.addBaoCaoTon(BaoCao);
+                ChiTietTonBUS.addChiTietTon(MaBaoCao, Time);
+
+                dgvBaoCaoTon.DataSource = BaoCaoTonBUS.createBaoCaoTon(Time);
+                VatTuPhuTungBUS.updateSoLuongTon();
+            }
+            else
+                MessageBox.Show("Hãy nhập mã báo cáo.");
+
         }
     }
 }

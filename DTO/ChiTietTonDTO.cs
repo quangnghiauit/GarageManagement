@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-	class ChiTietTonDTO
+	public class ChiTietTonDTO
 	{
 		private string maChiTietBaoCaoTon;
 		public string MaChiTietBaoCaoTon
@@ -50,9 +50,17 @@ namespace DTO
 			set { TonCuoi = value; }
 		}
 
-		public ChiTietTonDTO(string maChiTietBaoCaoTon, string maBaoCaoTon, string maVatTuPhuTung, int tonDau, int tonPhatSinh, int tonCuoi)
-		{
-			this.maChiTietBaoCaoTon = maChiTietBaoCaoTon;
+        public ChiTietTonDTO()
+        {
+            this.maBaoCaoTon = "";
+            this.maVatTuPhuTung = "";
+            this.TonDau = 0;
+            this.tonPhatSinh = 0;
+            this.TonCuoi = 0;            
+        }
+
+		public ChiTietTonDTO(string maBaoCaoTon, string maVatTuPhuTung, int tonDau, int tonPhatSinh, int tonCuoi)
+		{			
 			this.maBaoCaoTon = maBaoCaoTon;
 			this.maVatTuPhuTung = maVatTuPhuTung;
 			this.tonDau = tonDau;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-	class BaoCaoTonDTO
+	public class BaoCaoTonDTO
 	{
 		private string maBaoCaoTon;
 		public string MaBaoCaoTon
@@ -25,11 +25,16 @@ namespace DTO
 		private int namBaoCaoTon;
 		public int NamBaoCaoTon
 		{
-			get { return NamBaoCaoTon; }
-			set { NamBaoCaoTon = value; }
+			get { return namBaoCaoTon; }
+			set { namBaoCaoTon = value; }
 		}
 
-
+        public BaoCaoTonDTO()
+        {
+            this.maBaoCaoTon = "";
+            this.thangBaoCaoTon = 0;
+            this.namBaoCaoTon = 0;
+        }
 
 		public BaoCaoTonDTO(string maBaoCaoTon, int thangBaoCaoTon, int namBaoCaoTon)
 		{

@@ -54,6 +54,10 @@ namespace BUS
 			return VatTuPhuTungDAO.SearchSpareParts(vatTu);
 
 		}
+        public static void updateSoLuongTon()
+        {
+            VatTuPhuTungDAO.updateSoLuongTon();
+        }
 
 
 		public static bool cPrimaryKey(string _cPrim)
