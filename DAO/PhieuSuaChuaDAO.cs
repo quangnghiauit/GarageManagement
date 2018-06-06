@@ -6,55 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace DAO
 {
 	public class PhieuSuaChuaDAO
-	{      
-        public static void fillCBO(string column, string table, ComboBox receiver)
-        {
-            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
-            MySqlCommand cmd = new MySqlCommand("select * from " + table, connection);
-            MySqlDataReader reader;
-            try
-            {
-                connection.Open();
-                reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    string getter = reader.GetString(column);
-                    receiver.Items.Add(getter);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        public static void fillDGVCBO(string column, string table, DataGridViewComboBoxColumn receiver)
-        {
-            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
-            MySqlCommand cmd = new MySqlCommand("select * from " + table, connection);
-            MySqlDataReader reader;
-            try
-            {
-                connection.Open();
-                reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    string getter = reader.GetString(column);
-                    receiver.Items.Add(getter);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
+	{
         public static DataTable selectAllPhieuSuaChua()
         {
             DataTable data = new DataTable();
@@ -72,6 +29,28 @@ namespace DAO
             }
 
             return data;
+        }
+
+        public static void insertPHIEUSUACHUA(PhieuSuaChuaDTO PhieuSuaChua)
+        {
+            MySqlConnection connect = DatabaseConnectionDAO.connectionDatabase();
+
+            MySqlCommand command = new MySqlCommand("InsertPHIEUSUACHUA", connect);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add("@_MaPhieuSuaChua", MySqlDbType.VarChar, 10);
+            command.Parameters.Add("@_BienSo", MySqlDbType.VarChar, 10);
+            command.Parameters.Add("@_NgaySuaChua", MySqlDbType.Date);
+            command.Parameters.Add("@_TongTien", MySqlDbType.Decimal);
+
+            command.Parameters["@_MaPhieuSuaChua"].Value = PhieuSuaChua.MaPhieuSuaChua;
+            command.Parameters["@_BienSo"].Value = PhieuSuaChua.BienSo;
+            command.Parameters["@_NgaySuaChua"].Value = PhieuSuaChua.NgaySuaChua;
+            command.Parameters["@_TongTien"].Value = PhieuSuaChua.TongTien;
+
+            connect.Open();
+            command.ExecuteNonQuery();
+            connect.Close();
         }
     }
 }

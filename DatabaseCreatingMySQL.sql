@@ -96,7 +96,7 @@ CREATE TABLE CHITIETTON
 
 CREATE TABLE PHIEUSUACHUA 
 (
-	MAPHIEUSUACHUA INT(10) NOT NULL AUTO_INCREMENT,
+	MAPHIEUSUACHUA CHAR(10) NOT NULL,
 	BIENSO CHAR(20),
 	NGAYSUACHUA DATE,
 	TONGTIEN DECIMAL,
@@ -104,7 +104,6 @@ CREATE TABLE PHIEUSUACHUA
 	PRIMARY KEY (MAPHIEUSUACHUA)
 );
 #drop table PHIEUSUACHUA
-#Thay doi MaPhieuSuaChua thanh auto-increment
 
 
 CREATE TABLE VATTUPHUTUNG 
@@ -122,7 +121,7 @@ CREATE TABLE VATTUPHUTUNG
 CREATE TABLE CHITIETPHIEUSUACHUA
 (
 	MACTPHIEUSUAXE INT(10) NOT NULL AUTO_INCREMENT,
-	MAPHIEUSUACHUA INT(10) NOT NULL,
+	MAPHIEUSUACHUA CHAR(10) NOT NULL,
 	NOIDUNG CHAR(100),
 	MAVATTUPHUTUNG CHAR(10),
 	SOLUONGSUACHUA INT,
@@ -144,16 +143,15 @@ CREATE TABLE HIEUXE
 
 create table TIENCONG
 (
-MATIENCONG char(10) not null,
-TENTIENCONG char(100),
-SOTIENCONG decimal,
-primary key(MATIENCONG)
+	MATIENCONG char(10) not null,
+	TENTIENCONG char(100),
+	SOTIENCONG decimal,
+	primary key(MATIENCONG)
 );
 
 
 CREATE TABLE THAMSO
-(
-	
+(	
 	SUDUNGQUYDINH4 BOOL,
 	SOTIENNOTOIDA INT,
 	SOXESUACHUATOIDA INT
@@ -626,7 +624,7 @@ DELIMITER //
 create procedure InsertCHITIETPHIEUSUACHUA ( in _MaPhieuSuaChua char(10), in _NoiDung char(100),
  in _MaVatTuPhuTung char(10), _SoLuongSuaChua int, in _TienCong decimal, _ThanhTien decimal)
 Begin 
-	Insert into PHIEUTHUTIEN (MAPHIEUSUACHUA, NOIDUNG, MAVATTUPHUTUNG, SOLUONGSUACHUA, TIENCONG, THANHTIEN)
+	Insert into CHITIETPHIEUSUACHUA (MAPHIEUSUACHUA, NOIDUNG, MAVATTUPHUTUNG, SOLUONGSUACHUA, TIENCONG, THANHTIEN)
     values ( _MaPhieuSuaChua, _NoiDung, _MaVatTuPhuTung, _SoLuongSuaChua,
     _TienCong, _ThanhTien);
 End //
@@ -643,32 +641,22 @@ End //
 DELIMITER ;
 #drop procedure SelectAllPHIEUSUACHUA;
 
-DELIMITER // 
-create procedure InsertPHIEUSUACHUA( in _BienSo char(20), in _NgaySuaChua date,
-in _TongTien decimal, in _MaKhachSuaXe int)
-Begin
-	insert into PHIEUSUACHUA (BIENSO, NGAYSUACHUA, TONGTIEN, MAKHACHSUAXE)
-    values (_BienSo, _NgaySuaChua, _TongTien, _MaKhachSuaXe);
-End //
-DELIMITER ;
-
-/*
-DELIMITER // 
-create procedure CreatePHIEUSUACHUA( in _BienSo char(20), in _NgaySuaChua date,
-in _TongTien decimal, in _MaKhachSuaXe int, in _MaPhieuSuaChua char(10), in _NoiDung char(100),
- in _MaVatTuPhuTung char(10), _SoLuongSuaChua int, in _TienCong decimal, _ThanhTien decimal)
-Begin
-	insert into PHIEUSUACHUA (BIENSO, NGAYSUACHUA, TONGTIEN, MAKHACHSUAXE)
-    values (_BienSo, _NgaySuaChua, _TongTien, _MaKhachSuaXe);
-    
-    declare id int(10);
-    set id = LAST_INSERT_ID();
-    Insert into PHIEUTHUTIEN (MAPHIEUSUACHUA, NOIDUNG, MAVATTUPHUTUNG, SOLUONGSUACHUA, TIENCONG, THANHTIEN)
-    values ( _MaPhieuSuaChua, _NoiDung, _MaVatTuPhuTung, _SoLuongSuaChua,
-    _TienCong, _ThanhTien);
-End //
-DELIMITER ;
-*/
+	DELIMITER // 
+	create procedure InsertPHIEUSUACHUA(in _MaPhieuSuaChua char (10), in _BienSo char(20), in _NgaySuaChua date,
+	in _TongTien decimal)
+	Begin
+		declare MaKhachSuaXe int;
+		set MaKhachSuaXe =
+		(
+		select MaKhachSuaXe
+		from XE
+		where XE.BIENSO = _BienSo
+		);    
+		insert into PHIEUSUACHUA (MAPHIEUSUACHUA, BIENSO, NGAYSUACHUA, TONGTIEN, MAKHACHSUAXE)
+		values (_MaPhieuSuaChua, _BienSo, _NgaySuaChua, _TongTien, MaKhachSuaXe);
+	End //
+	DELIMITER ;
+#drop procedure InsertPHIEUSUACHUA;
 
 #Procedure cho QuanLyNhapVatTu
 
@@ -771,8 +759,11 @@ begin
 	insert into CHITIETTON (MABAOCAOTON, MAVATTUPHUTUNG, TONDAU, TONPHATSINH, TONCUOI)
     values(
     (
-    select _MaBaoCao, VATTUPHUTUNG.TENVATTUPHUTUNG, VATTUPHUTUNG.SOLUONGTON, sum(SOLUONGNHAP),
-    (VATTUPHUTUNG.SOLUONGTON + sum(SOLUONGNHAP))
+    select _MaBaoCao,
+    VATTUPHUTUNG.MAVATTUPHUTUNG,
+    VATTUPHUTUNG.SOLUONGTON,
+    sum(QUANLYNHAPVATTU.SOLUONGNHAP),
+    (VATTUPHUTUNG.SOLUONGTON + sum(QUANLYNHAPVATTU.SOLUONGNHAP))
     from VATTUPHUTUNG, QUANLYNHAPVATTU
     where month(_Time) = month(QUANLYNHAPVATTU.NGAYNHAP)
     and year(_Time) = year(QUANLYNHAPVATTU.NGAYNHAP)

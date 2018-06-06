@@ -31,8 +31,8 @@ namespace DTO
 			set { ngaySuaChua = value; }
 		}
 
-		private Int64 tongTien;
-		public Int64 TongTien
+		private Decimal tongTien;
+		public Decimal TongTien
 		{
 			get { return tongTien; }
 			set { tongTien = value; }
@@ -51,16 +51,14 @@ namespace DTO
             this.bienSo = "";
             this.ngaySuaChua = new DateTime();
             this.tongTien = 0;
-            this.maKhachSuaXe = "";
         }
 
-		public PhieuSuaChuaDTO(string maPhieuSuaChua, string bienSo, DateTime ngaySuaChua, Int64 tongTien, string maKhachSuaXe)
+		public PhieuSuaChuaDTO(string maPhieuSuaChua, string bienSo, DateTime ngaySuaChua, Decimal tongTien)
 		{
 			this.maPhieuSuaChua = maPhieuSuaChua;
 			this.bienSo = bienSo;
 			this.ngaySuaChua = ngaySuaChua;
 			this.tongTien = tongTien;
-			this.maKhachSuaXe = maKhachSuaXe;
 		}
 
 		~PhieuSuaChuaDTO() { }

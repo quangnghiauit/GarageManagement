@@ -15,6 +15,11 @@ namespace BUS
         public static DataTable selectAllChiTietPhieuSuaChua()
         {
             return ChiTietPhieuSuaChuaDAO.selectAllChiTietPhieuSuaChua();
-        }        
+        }
+
+        public static void addChiTietPhieuSuaChua(ChiTietPhieuSuaChuaDTO ChiTiet)
+        {
+            ChiTietPhieuSuaChuaDAO.insertChiTietPhieuChuaChua(ChiTiet);
+        }
     }
 }

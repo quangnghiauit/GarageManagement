@@ -50,8 +50,8 @@ namespace DTO
 			set { tienCong = value; }
 		}
 
-		private Int64 thanhTien;
-		public Int64 ThanhTien
+		private Decimal thanhTien;
+		public Decimal ThanhTien
 		{
 			get { return thanhTien; }
 			set { thanhTien = value; }
@@ -67,7 +67,7 @@ namespace DTO
             this.thanhTien = 0;
         }
 
-        public ChiTietPhieuSuaChuaDTO(string _maPhieuSuaChua, string _noiDung, string _maVatTuPhuTung, int _soLuongSuaChua, int _tienCong, Int64 _thanhTien)
+        public ChiTietPhieuSuaChuaDTO(string _maPhieuSuaChua, string _noiDung, string _maVatTuPhuTung, int _soLuongSuaChua, int _tienCong, Decimal _thanhTien)
 		{			
 			this.maPhieuSuaChua = _maPhieuSuaChua;
 			this.noiDung = _noiDung;
