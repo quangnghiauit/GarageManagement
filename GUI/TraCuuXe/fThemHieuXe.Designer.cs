@@ -49,6 +49,7 @@
 			// 
 			// btnXoa
 			// 
+			this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnXoa.Location = new System.Drawing.Point(538, 196);
 			this.btnXoa.Name = "btnXoa";
 			this.btnXoa.Size = new System.Drawing.Size(94, 46);
@@ -60,9 +61,10 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label1.Location = new System.Drawing.Point(453, 27);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(63, 13);
+			this.label1.Size = new System.Drawing.Size(84, 19);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Mã Hiệu Xe";
 			// 
@@ -83,14 +85,16 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label2.Location = new System.Drawing.Point(453, 86);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(67, 13);
+			this.label2.Size = new System.Drawing.Size(86, 19);
 			this.label2.TabIndex = 4;
 			this.label2.Text = "Tên Hiệu Xe";
 			// 
 			// btnDongYThem
 			// 
+			this.btnDongYThem.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnDongYThem.Location = new System.Drawing.Point(422, 196);
 			this.btnDongYThem.Name = "btnDongYThem";
 			this.btnDongYThem.Size = new System.Drawing.Size(98, 46);
@@ -101,6 +105,7 @@
 			// 
 			// btnLichSu
 			// 
+			this.btnLichSu.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnLichSu.Location = new System.Drawing.Point(151, 265);
 			this.btnLichSu.Name = "btnLichSu";
 			this.btnLichSu.Size = new System.Drawing.Size(83, 29);

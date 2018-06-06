@@ -28,112 +28,114 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.dtmThangLapBaoCao = new System.Windows.Forms.DateTimePicker();
-            this.dgvBaoCaoTon = new System.Windows.Forms.DataGridView();
-            this.btnLapBaoCao = new System.Windows.Forms.Button();
-            this.btnXuatFileExcel = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtMaBaoCao = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCaoTon)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // dtmThangLapBaoCao
-            // 
-            this.dtmThangLapBaoCao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmThangLapBaoCao.Location = new System.Drawing.Point(233, 80);
-            this.dtmThangLapBaoCao.Name = "dtmThangLapBaoCao";
-            this.dtmThangLapBaoCao.Size = new System.Drawing.Size(125, 20);
-            this.dtmThangLapBaoCao.TabIndex = 2;
-            // 
-            // dgvBaoCaoTon
-            // 
-            this.dgvBaoCaoTon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBaoCaoTon.Location = new System.Drawing.Point(5, 124);
-            this.dgvBaoCaoTon.Name = "dgvBaoCaoTon";
-            this.dgvBaoCaoTon.Size = new System.Drawing.Size(840, 320);
-            this.dgvBaoCaoTon.TabIndex = 3;
-            // 
-            // btnLapBaoCao
-            // 
-            this.btnLapBaoCao.Location = new System.Drawing.Point(216, 472);
-            this.btnLapBaoCao.Name = "btnLapBaoCao";
-            this.btnLapBaoCao.Size = new System.Drawing.Size(142, 43);
-            this.btnLapBaoCao.TabIndex = 4;
-            this.btnLapBaoCao.Text = "Lập Báo Cáo";
-            this.btnLapBaoCao.UseVisualStyleBackColor = true;
-            this.btnLapBaoCao.Click += new System.EventHandler(this.btnLapBaoCao_Click);
-            // 
-            // btnXuatFileExcel
-            // 
-            this.btnXuatFileExcel.Location = new System.Drawing.Point(407, 472);
-            this.btnXuatFileExcel.Name = "btnXuatFileExcel";
-            this.btnXuatFileExcel.Size = new System.Drawing.Size(142, 43);
-            this.btnXuatFileExcel.TabIndex = 5;
-            this.btnXuatFileExcel.Text = "Xuất File Excel";
-            this.btnXuatFileExcel.UseVisualStyleBackColor = true;
-            this.btnXuatFileExcel.Click += new System.EventHandler(this.btnXuatFileExcel_Click);
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(67, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 40);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Tháng Lập Báo Cáo";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(350, 35);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "LẬP BÁO CÁO TỒN";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtMaBaoCao
-            // 
-            this.txtMaBaoCao.Location = new System.Drawing.Point(233, 48);
-            this.txtMaBaoCao.Name = "txtMaBaoCao";
-            this.txtMaBaoCao.Size = new System.Drawing.Size(125, 20);
-            this.txtMaBaoCao.TabIndex = 19;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(67, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 40);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Mã số báo cáo";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // fBaoCaoTon
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 540);
-            this.Controls.Add(this.txtMaBaoCao);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnXuatFileExcel);
-            this.Controls.Add(this.btnLapBaoCao);
-            this.Controls.Add(this.dgvBaoCaoTon);
-            this.Controls.Add(this.dtmThangLapBaoCao);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "fBaoCaoTon";
-            this.Text = "BaoCaoTon";
-            this.Load += new System.EventHandler(this.BaoCaoTon_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCaoTon)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.dtmThangLapBaoCao = new System.Windows.Forms.DateTimePicker();
+			this.dgvBaoCaoTon = new System.Windows.Forms.DataGridView();
+			this.btnLapBaoCao = new System.Windows.Forms.Button();
+			this.btnXuatFileExcel = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.txtMaBaoCao = new System.Windows.Forms.TextBox();
+			this.label4 = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.dgvBaoCaoTon)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// dtmThangLapBaoCao
+			// 
+			this.dtmThangLapBaoCao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtmThangLapBaoCao.Location = new System.Drawing.Point(233, 80);
+			this.dtmThangLapBaoCao.Name = "dtmThangLapBaoCao";
+			this.dtmThangLapBaoCao.Size = new System.Drawing.Size(125, 20);
+			this.dtmThangLapBaoCao.TabIndex = 2;
+			// 
+			// dgvBaoCaoTon
+			// 
+			this.dgvBaoCaoTon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvBaoCaoTon.Location = new System.Drawing.Point(5, 124);
+			this.dgvBaoCaoTon.Name = "dgvBaoCaoTon";
+			this.dgvBaoCaoTon.Size = new System.Drawing.Size(840, 320);
+			this.dgvBaoCaoTon.TabIndex = 3;
+			// 
+			// btnLapBaoCao
+			// 
+			this.btnLapBaoCao.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.btnLapBaoCao.Location = new System.Drawing.Point(216, 472);
+			this.btnLapBaoCao.Name = "btnLapBaoCao";
+			this.btnLapBaoCao.Size = new System.Drawing.Size(142, 43);
+			this.btnLapBaoCao.TabIndex = 4;
+			this.btnLapBaoCao.Text = "Lập Báo Cáo";
+			this.btnLapBaoCao.UseVisualStyleBackColor = true;
+			this.btnLapBaoCao.Click += new System.EventHandler(this.btnLapBaoCao_Click);
+			// 
+			// btnXuatFileExcel
+			// 
+			this.btnXuatFileExcel.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.btnXuatFileExcel.Location = new System.Drawing.Point(407, 472);
+			this.btnXuatFileExcel.Name = "btnXuatFileExcel";
+			this.btnXuatFileExcel.Size = new System.Drawing.Size(142, 43);
+			this.btnXuatFileExcel.TabIndex = 5;
+			this.btnXuatFileExcel.Text = "Xuất File Excel";
+			this.btnXuatFileExcel.UseVisualStyleBackColor = true;
+			this.btnXuatFileExcel.Click += new System.EventHandler(this.btnXuatFileExcel_Click);
+			// 
+			// label1
+			// 
+			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label1.Location = new System.Drawing.Point(67, 70);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(160, 40);
+			this.label1.TabIndex = 6;
+			this.label1.Text = "Tháng Lập Báo Cáo";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label2
+			// 
+			this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(1, 1);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(350, 35);
+			this.label2.TabIndex = 7;
+			this.label2.Text = "LẬP BÁO CÁO TỒN";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// txtMaBaoCao
+			// 
+			this.txtMaBaoCao.Location = new System.Drawing.Point(233, 48);
+			this.txtMaBaoCao.Name = "txtMaBaoCao";
+			this.txtMaBaoCao.Size = new System.Drawing.Size(125, 20);
+			this.txtMaBaoCao.TabIndex = 19;
+			// 
+			// label4
+			// 
+			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label4.Location = new System.Drawing.Point(67, 36);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(160, 40);
+			this.label4.TabIndex = 18;
+			this.label4.Text = "Mã số báo cáo";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// fBaoCaoTon
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(850, 540);
+			this.Controls.Add(this.txtMaBaoCao);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.btnXuatFileExcel);
+			this.Controls.Add(this.btnLapBaoCao);
+			this.Controls.Add(this.dgvBaoCaoTon);
+			this.Controls.Add(this.dtmThangLapBaoCao);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Name = "fBaoCaoTon";
+			this.Text = "BaoCaoTon";
+			this.Load += new System.EventHandler(this.BaoCaoTon_Load);
+			((System.ComponentModel.ISupportInitialize)(this.dgvBaoCaoTon)).EndInit();
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 

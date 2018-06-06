@@ -34,9 +34,10 @@
 			// 
 			// btnBaoCaoTon
 			// 
-			this.btnBaoCaoTon.Location = new System.Drawing.Point(118, 151);
+			this.btnBaoCaoTon.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.btnBaoCaoTon.Location = new System.Drawing.Point(147, 154);
 			this.btnBaoCaoTon.Name = "btnBaoCaoTon";
-			this.btnBaoCaoTon.Size = new System.Drawing.Size(209, 173);
+			this.btnBaoCaoTon.Size = new System.Drawing.Size(174, 152);
 			this.btnBaoCaoTon.TabIndex = 0;
 			this.btnBaoCaoTon.Text = "Báo Cáo Tồn ";
 			this.btnBaoCaoTon.UseVisualStyleBackColor = true;
@@ -44,9 +45,10 @@
 			// 
 			// btnDoanhSo
 			// 
-			this.btnDoanhSo.Location = new System.Drawing.Point(411, 151);
+			this.btnDoanhSo.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.btnDoanhSo.Location = new System.Drawing.Point(452, 154);
 			this.btnDoanhSo.Name = "btnDoanhSo";
-			this.btnDoanhSo.Size = new System.Drawing.Size(209, 173);
+			this.btnDoanhSo.Size = new System.Drawing.Size(174, 152);
 			this.btnDoanhSo.TabIndex = 1;
 			this.btnDoanhSo.Text = "Doanh Số";
 			this.btnDoanhSo.UseVisualStyleBackColor = true;

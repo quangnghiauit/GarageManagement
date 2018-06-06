@@ -35,6 +35,7 @@
 			// 
 			// btnLapPhieuSuaChua
 			// 
+			this.btnLapPhieuSuaChua.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnLapPhieuSuaChua.Location = new System.Drawing.Point(334, 154);
 			this.btnLapPhieuSuaChua.Name = "btnLapPhieuSuaChua";
 			this.btnLapPhieuSuaChua.Size = new System.Drawing.Size(174, 152);
@@ -45,6 +46,7 @@
 			// 
 			// btnLapPhieuThuTien
 			// 
+			this.btnLapPhieuThuTien.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnLapPhieuThuTien.Location = new System.Drawing.Point(560, 154);
 			this.btnLapPhieuThuTien.Name = "btnLapPhieuThuTien";
 			this.btnLapPhieuThuTien.Size = new System.Drawing.Size(174, 152);
@@ -55,6 +57,7 @@
 			// 
 			// btnTiepNhanBaoTriXe
 			// 
+			this.btnTiepNhanBaoTriXe.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnTiepNhanBaoTriXe.Location = new System.Drawing.Point(97, 154);
 			this.btnTiepNhanBaoTriXe.Name = "btnTiepNhanBaoTriXe";
 			this.btnTiepNhanBaoTriXe.Size = new System.Drawing.Size(174, 152);

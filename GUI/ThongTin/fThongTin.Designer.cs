@@ -35,9 +35,10 @@
 			// 
 			// btnThayDoiDatabase
 			// 
-			this.btnThayDoiDatabase.Location = new System.Drawing.Point(155, 113);
+			this.btnThayDoiDatabase.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.btnThayDoiDatabase.Location = new System.Drawing.Point(97, 154);
 			this.btnThayDoiDatabase.Name = "btnThayDoiDatabase";
-			this.btnThayDoiDatabase.Size = new System.Drawing.Size(198, 119);
+			this.btnThayDoiDatabase.Size = new System.Drawing.Size(174, 152);
 			this.btnThayDoiDatabase.TabIndex = 1;
 			this.btnThayDoiDatabase.Text = "Thay Đổi Database";
 			this.btnThayDoiDatabase.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
 			// 
 			// btnThayDoiQuyDinh
 			// 
-			this.btnThayDoiQuyDinh.Location = new System.Drawing.Point(438, 113);
+			this.btnThayDoiQuyDinh.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.btnThayDoiQuyDinh.Location = new System.Drawing.Point(334, 154);
 			this.btnThayDoiQuyDinh.Name = "btnThayDoiQuyDinh";
-			this.btnThayDoiQuyDinh.Size = new System.Drawing.Size(207, 119);
+			this.btnThayDoiQuyDinh.Size = new System.Drawing.Size(174, 152);
 			this.btnThayDoiQuyDinh.TabIndex = 2;
 			this.btnThayDoiQuyDinh.Text = "Thay Đổi Quy Định";
 			this.btnThayDoiQuyDinh.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
 			// 
 			// fThayDoiTienCong
 			// 
-			this.fThayDoiTienCong.Location = new System.Drawing.Point(155, 254);
+			this.fThayDoiTienCong.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.fThayDoiTienCong.Location = new System.Drawing.Point(560, 154);
 			this.fThayDoiTienCong.Name = "fThayDoiTienCong";
-			this.fThayDoiTienCong.Size = new System.Drawing.Size(207, 119);
+			this.fThayDoiTienCong.Size = new System.Drawing.Size(174, 152);
 			this.fThayDoiTienCong.TabIndex = 4;
 			this.fThayDoiTienCong.Text = "Thay Đổi Số Loại \r\nTiền Công";
 			this.fThayDoiTienCong.UseVisualStyleBackColor = true;
@@ -67,13 +70,14 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(850, 540);
+			this.ClientSize = new System.Drawing.Size(850, 539);
 			this.Controls.Add(this.fThayDoiTienCong);
 			this.Controls.Add(this.btnThayDoiQuyDinh);
 			this.Controls.Add(this.btnThayDoiDatabase);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "fThongTin";
 			this.Text = "fThongTin";
+			this.Load += new System.EventHandler(this.fThongTin_Load);
 			this.ResumeLayout(false);
 
 		}

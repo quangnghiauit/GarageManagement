@@ -56,9 +56,10 @@
 			// checkSuDungQuyDinh
 			// 
 			this.checkSuDungQuyDinh.AutoSize = true;
+			this.checkSuDungQuyDinh.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.checkSuDungQuyDinh.Location = new System.Drawing.Point(407, 204);
 			this.checkSuDungQuyDinh.Name = "checkSuDungQuyDinh";
-			this.checkSuDungQuyDinh.Size = new System.Drawing.Size(66, 17);
+			this.checkSuDungQuyDinh.Size = new System.Drawing.Size(79, 23);
 			this.checkSuDungQuyDinh.TabIndex = 6;
 			this.checkSuDungQuyDinh.Text = "Sử dụng";
 			this.checkSuDungQuyDinh.UseVisualStyleBackColor = true;
@@ -66,39 +67,40 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label1.Location = new System.Drawing.Point(49, 281);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(334, 13);
+			this.label1.Size = new System.Drawing.Size(417, 19);
 			this.label1.TabIndex = 7;
 			this.label1.Text = "Quy định 4: Số tiền thu không vượt quá số tiền khách hàng đang  nợ";
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label2.Location = new System.Drawing.Point(0, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(219, 25);
+			this.label2.Size = new System.Drawing.Size(161, 19);
 			this.label2.TabIndex = 8;
 			this.label2.Text = "THAY ĐỔI QUY ĐỊNH";
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label3.Location = new System.Drawing.Point(78, 73);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(301, 25);
+			this.label3.Size = new System.Drawing.Size(199, 19);
 			this.label3.TabIndex = 9;
 			this.label3.Text = "Số Xe Sửa Tối Đa Trong Ngày";
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label4.Location = new System.Drawing.Point(78, 128);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(188, 25);
+			this.label4.Size = new System.Drawing.Size(125, 19);
 			this.label4.TabIndex = 10;
 			this.label4.Text = "Số Tiền Nợ Tối Đa";
 			this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -106,16 +108,16 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label5.Location = new System.Drawing.Point(78, 196);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(208, 25);
+			this.label5.Size = new System.Drawing.Size(137, 19);
 			this.label5.TabIndex = 11;
 			this.label5.Text = "Sử Dụng Quy Định 4";
 			// 
 			// btnApply
 			// 
-			this.btnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnApply.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnApply.Location = new System.Drawing.Point(315, 349);
 			this.btnApply.Name = "btnApply";
 			this.btnApply.Size = new System.Drawing.Size(157, 61);

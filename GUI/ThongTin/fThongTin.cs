@@ -45,6 +45,9 @@ namespace GUI
 
 		}
 
-		
+		private void fThongTin_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

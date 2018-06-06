@@ -43,6 +43,7 @@
 			// 
 			// btnThem
 			// 
+			this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnThem.Location = new System.Drawing.Point(422, 243);
 			this.btnThem.Name = "btnThem";
 			this.btnThem.Size = new System.Drawing.Size(98, 56);
@@ -61,9 +62,10 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label2.Location = new System.Drawing.Point(458, 85);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(78, 13);
+			this.label2.Size = new System.Drawing.Size(98, 19);
 			this.label2.TabIndex = 12;
 			this.label2.Text = "Tên Tiền Công";
 			// 
@@ -77,14 +79,16 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label1.Location = new System.Drawing.Point(462, 31);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(74, 13);
+			this.label1.Size = new System.Drawing.Size(96, 19);
 			this.label1.TabIndex = 10;
 			this.label1.Text = "Mã Tiền Công";
 			// 
 			// btnXoa
 			// 
+			this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnXoa.Location = new System.Drawing.Point(526, 243);
 			this.btnXoa.Name = "btnXoa";
 			this.btnXoa.Size = new System.Drawing.Size(106, 56);
@@ -103,6 +107,7 @@
 			// 
 			// btnView
 			// 
+			this.btnView.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnView.Location = new System.Drawing.Point(151, 269);
 			this.btnView.Name = "btnView";
 			this.btnView.Size = new System.Drawing.Size(87, 30);
@@ -114,9 +119,10 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label3.Location = new System.Drawing.Point(458, 152);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(40, 13);
+			this.label3.Size = new System.Drawing.Size(51, 19);
 			this.label3.TabIndex = 17;
 			this.label3.Text = "Số tiền";
 			// 
