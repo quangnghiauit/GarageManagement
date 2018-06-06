@@ -29,6 +29,10 @@
 		private void InitializeComponent()
 		{
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtSoPhieuSuaChua = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.cboBienSo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtmNgaySuaChua = new System.Windows.Forms.DateTimePicker();
@@ -64,10 +68,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtSoPhieuSuaChua = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuLapPhieu)).BeginInit();
@@ -89,6 +89,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(826, 84);
             this.panel1.TabIndex = 1;
+            // 
+            // txtTongTien
+            // 
+            this.txtTongTien.Location = new System.Drawing.Point(99, 42);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
+            this.txtTongTien.Size = new System.Drawing.Size(208, 20);
+            this.txtTongTien.TabIndex = 8;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(39, 47);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Tổng tiền";
+            // 
+            // txtSoPhieuSuaChua
+            // 
+            this.txtSoPhieuSuaChua.Location = new System.Drawing.Point(99, 9);
+            this.txtSoPhieuSuaChua.Name = "txtSoPhieuSuaChua";
+            this.txtSoPhieuSuaChua.Size = new System.Drawing.Size(208, 20);
+            this.txtSoPhieuSuaChua.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(39, 14);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 13);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Số phiếu";
             // 
             // cboBienSo
             // 
@@ -141,6 +174,7 @@
             this.btnXuatExcel.TabIndex = 3;
             this.btnXuatExcel.Text = "Xuất File Excel";
             this.btnXuatExcel.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // btnTaoPhieuMoi
             // 
@@ -430,39 +464,6 @@
             this.btnHuy.Text = "HỦY";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(39, 14);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 13);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Số phiếu";
-            // 
-            // txtSoPhieuSuaChua
-            // 
-            this.txtSoPhieuSuaChua.Location = new System.Drawing.Point(99, 9);
-            this.txtSoPhieuSuaChua.Name = "txtSoPhieuSuaChua";
-            this.txtSoPhieuSuaChua.Size = new System.Drawing.Size(208, 20);
-            this.txtSoPhieuSuaChua.TabIndex = 6;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(39, 47);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(52, 13);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Tổng tiền";
-            // 
-            // txtTongTien
-            // 
-            this.txtTongTien.Location = new System.Drawing.Point(99, 42);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.ReadOnly = true;
-            this.txtTongTien.Size = new System.Drawing.Size(208, 20);
-            this.txtTongTien.TabIndex = 8;
             // 
             // fLapPhieuSuaChua
             // 

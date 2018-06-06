@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnXuatFileExcel = new System.Windows.Forms.Button();
             this.btnLapBaoCao = new System.Windows.Forms.Button();
             this.dtmThangLapBaoCao = new System.Windows.Forms.DateTimePicker();
             this.dgvBaoCaoDoanhSo = new System.Windows.Forms.DataGridView();
@@ -41,14 +41,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCaoDoanhSo)).BeginInit();
             this.SuspendLayout();
             // 
-            // button4
+            // btnXuatFileExcel
             // 
-            this.button4.Location = new System.Drawing.Point(462, 465);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(142, 43);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Xuất File Excel";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnXuatFileExcel.Location = new System.Drawing.Point(462, 465);
+            this.btnXuatFileExcel.Name = "btnXuatFileExcel";
+            this.btnXuatFileExcel.Size = new System.Drawing.Size(142, 43);
+            this.btnXuatFileExcel.TabIndex = 7;
+            this.btnXuatFileExcel.Text = "Xuất File Excel";
+            this.btnXuatFileExcel.UseVisualStyleBackColor = true;
+            this.btnXuatFileExcel.Click += new System.EventHandler(this.btnXuatFileExcel_Click);
             // 
             // btnLapBaoCao
             // 
@@ -147,7 +148,7 @@
             this.Controls.Add(this.txtTongDoanhThu);
             this.Controls.Add(this.dgvBaoCaoDoanhSo);
             this.Controls.Add(this.dtmThangLapBaoCao);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnXuatFileExcel);
             this.Controls.Add(this.btnLapBaoCao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fDoanhSo";
@@ -159,7 +160,7 @@
 		}
 
 		#endregion
-		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button btnXuatFileExcel;
 		private System.Windows.Forms.Button btnLapBaoCao;
 		private System.Windows.Forms.DateTimePicker dtmThangLapBaoCao;
 		private System.Windows.Forms.DataGridView dgvBaoCaoDoanhSo;

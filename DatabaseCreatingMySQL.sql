@@ -657,7 +657,7 @@ DELIMITER ;
 		declare MaKhachSuaXe int;
 		set MaKhachSuaXe =
 		(
-		select MaKhachSuaXe
+		select XE.MaKhachSuaXe
 		from XE
 		where XE.BIENSO = _BienSo
 		);    

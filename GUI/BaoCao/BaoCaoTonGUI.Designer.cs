@@ -31,7 +31,7 @@
             this.dtmThangLapBaoCao = new System.Windows.Forms.DateTimePicker();
             this.dgvBaoCaoTon = new System.Windows.Forms.DataGridView();
             this.btnLapBaoCao = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnXuatFileExcel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaBaoCao = new System.Windows.Forms.TextBox();
@@ -65,14 +65,15 @@
             this.btnLapBaoCao.UseVisualStyleBackColor = true;
             this.btnLapBaoCao.Click += new System.EventHandler(this.btnLapBaoCao_Click);
             // 
-            // button4
+            // btnXuatFileExcel
             // 
-            this.button4.Location = new System.Drawing.Point(407, 472);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(142, 43);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Xuất File Excel";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnXuatFileExcel.Location = new System.Drawing.Point(407, 472);
+            this.btnXuatFileExcel.Name = "btnXuatFileExcel";
+            this.btnXuatFileExcel.Size = new System.Drawing.Size(142, 43);
+            this.btnXuatFileExcel.TabIndex = 5;
+            this.btnXuatFileExcel.Text = "Xuất File Excel";
+            this.btnXuatFileExcel.UseVisualStyleBackColor = true;
+            this.btnXuatFileExcel.Click += new System.EventHandler(this.btnXuatFileExcel_Click);
             // 
             // label1
             // 
@@ -122,7 +123,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnXuatFileExcel);
             this.Controls.Add(this.btnLapBaoCao);
             this.Controls.Add(this.dgvBaoCaoTon);
             this.Controls.Add(this.dtmThangLapBaoCao);
@@ -140,7 +141,7 @@
 		private System.Windows.Forms.DateTimePicker dtmThangLapBaoCao;
 		private System.Windows.Forms.DataGridView dgvBaoCaoTon;
 		private System.Windows.Forms.Button btnLapBaoCao;
-		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button btnXuatFileExcel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaBaoCao;
