@@ -39,7 +39,7 @@ namespace GUI
 
                 BaoCaoTonDTO BaoCao = new BaoCaoTonDTO(MaBaoCao, Month, Year);
                 BaoCaoTonBUS.addBaoCaoTon(BaoCao);
-                ChiTietTonBUS.addChiTietTon(MaBaoCao, Time);
+                ChiTietTonBUS.addChiTietTon(MaBaoCao, Month,Year);
 
                 dgvBaoCaoTon.DataSource = BaoCaoTonBUS.createBaoCaoTon(Time);
                 VatTuPhuTungBUS.updateSoLuongTon();

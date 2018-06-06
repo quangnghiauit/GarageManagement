@@ -10,9 +10,9 @@ namespace BUS
 {
 	public class ChiTietTonBUS
 	{
-        public static void addChiTietTon(string MaBaoCao, DateTime Time)
+        public static void addChiTietTon(string MaBaoCao, int _Month, int _Year)
         {
-            ChiTietTonDAO.insertChiTietTon(MaBaoCao, Time);
+            ChiTietTonDAO.insertChiTietTon(MaBaoCao, _Month,_Year);
         }        
     }
 }
