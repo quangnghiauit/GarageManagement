@@ -327,5 +327,8 @@
   <ItemGroup>
     <None Include="Resources\administrative-tools-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VatTuPhuTung.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
