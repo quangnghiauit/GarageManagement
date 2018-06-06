@@ -140,7 +140,18 @@ namespace GUI
 				}
 				else
 				{
-					MessageBox.Show("Dữ liệu vừa nhập vào không hợp lệ, do bị trùng khóa chính.");
+					//MessageBox.Show("Dữ liệu vừa nhập vào không hợp lệ, do bị trùng khóa chính.");
+					string MaVatTuPhuTung = tbMaVatTuThaoTac.Text.Trim();
+
+					string TenVatTuPhuTung = tbTenVatTuThaoTac.Text;
+					int DonGia = Convert.ToInt32(tbDonGiaThaoTac.Text);
+					int SoLuongThem = Convert.ToInt32(tbSoLuongThaoTac.Text);
+
+
+
+					//VatTuPhuTungDTO vatTu = new VatTuPhuTungDTO(MaVatTuPhuTung, TenVatTuPhuTung, DonGia,);
+					VatTuPhuTungBUS.updateAddSpareParts(MaVatTuPhuTung, TenVatTuPhuTung, DonGia, SoLuongThem);
+					dtgvThaoTac.DataSource = VatTuPhuTungBUS.loadAllSpareParts();
 				}
 
 			}
@@ -175,6 +186,7 @@ namespace GUI
 				else
 				{
 					MessageBox.Show("Dữ liệu vừa nhập vào không hợp lệ, do bị trùng khóa chính.");
+					
 				}
 
 			}

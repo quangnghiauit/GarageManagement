@@ -60,6 +60,30 @@ namespace DAO
 			Conn.Close();
 		}
 
+		public static void InsertAddSpareParts(string _MaVatTuPhuTung,string _TenVatTuPhuTung,decimal _DonGia, decimal _SoLuongThem)
+		{
+			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
+
+
+
+			MySqlCommand cmd = new MySqlCommand("UpdateAddSpareParts", Conn);
+			cmd.CommandType = CommandType.StoredProcedure;
+
+			cmd.Parameters.Add("@_MaVatTuPhuTung", MySqlDbType.VarChar, 10);
+			cmd.Parameters.Add("@_TenVatTuPhuTung", MySqlDbType.VarChar, 100);
+			cmd.Parameters.Add("@_DonGia", MySqlDbType.Decimal);
+			cmd.Parameters.Add("@_SoLuongThem", MySqlDbType.Decimal);
+
+			cmd.Parameters["@_MaVatTuPhuTung"].Value = _MaVatTuPhuTung;
+			cmd.Parameters["@_TenVatTuPhuTung"].Value = _TenVatTuPhuTung;
+			cmd.Parameters["@_DonGia"].Value = _DonGia;
+			cmd.Parameters["@_SoLuongThem"].Value = _SoLuongThem;
+
+			Conn.Open();
+			cmd.ExecuteNonQuery();
+			Conn.Close();
+		}
+
 
 
 		public static void UpdateSpareParts(VatTuPhuTungDTO vatTu)
@@ -157,11 +181,11 @@ namespace DAO
 
 		#endregion
 		#region Check
-		public static bool CheckPrimary(string _textBox)
+		public static bool CheckPrimary(string _MaVatTuPhuTung)
 		{
 			bool check = false;
 
-			string cPrimaryKey = "Select *From VATTUPHUTUNG Where MaVatTuPhuTung = '" + _textBox + "' ";
+			string cPrimaryKey = "Select *From VATTUPHUTUNG Where MaVatTuPhuTung = '" + _MaVatTuPhuTung + "' ";
 			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmd = new MySqlCommand(cPrimaryKey, Conn);
 			cmd.CommandType = CommandType.Text;

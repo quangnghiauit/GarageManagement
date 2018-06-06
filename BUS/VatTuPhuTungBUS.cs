@@ -32,6 +32,11 @@ namespace BUS
 			VatTuPhuTungDAO.InsertSpareParts(vatTu);
 		}
 
+		public static void updateAddSpareParts(string _MaVatTuPhuTung, string _TenVatTuPhuTung, decimal _DonGia, decimal SoLuongThem)
+		{
+			VatTuPhuTungDAO.InsertAddSpareParts(_MaVatTuPhuTung,_TenVatTuPhuTung,_DonGia,SoLuongThem);
+		}
+
 		public static void updateSpareParts(VatTuPhuTungDTO vatTu)
 		{
 			VatTuPhuTungDAO.UpdateSpareParts(vatTu);
