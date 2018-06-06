@@ -64,7 +64,7 @@
 			// btnLichSuTiepNhan
 			// 
 			this.btnLichSuTiepNhan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnLichSuTiepNhan.Location = new System.Drawing.Point(0, 217);
+			this.btnLichSuTiepNhan.Location = new System.Drawing.Point(0, 221);
 			this.btnLichSuTiepNhan.Name = "btnLichSuTiepNhan";
 			this.btnLichSuTiepNhan.Size = new System.Drawing.Size(198, 30);
 			this.btnLichSuTiepNhan.TabIndex = 10;
@@ -104,14 +104,14 @@
 			// 
 			this.txtDienThoai.Location = new System.Drawing.Point(467, 55);
 			this.txtDienThoai.Name = "txtDienThoai";
-			this.txtDienThoai.Size = new System.Drawing.Size(220, 20);
+			this.txtDienThoai.Size = new System.Drawing.Size(200, 20);
 			this.txtDienThoai.TabIndex = 20;
 			// 
 			// txtDiaChi
 			// 
 			this.txtDiaChi.Location = new System.Drawing.Point(467, 20);
 			this.txtDiaChi.Name = "txtDiaChi";
-			this.txtDiaChi.Size = new System.Drawing.Size(220, 20);
+			this.txtDiaChi.Size = new System.Drawing.Size(200, 20);
 			this.txtDiaChi.TabIndex = 19;
 			// 
 			// txtTenChuXe
@@ -124,7 +124,7 @@
 			// cboHieuXe
 			// 
 			this.cboHieuXe.FormattingEnabled = true;
-			this.cboHieuXe.Location = new System.Drawing.Point(132, 82);
+			this.cboHieuXe.Location = new System.Drawing.Point(132, 89);
 			this.cboHieuXe.Name = "cboHieuXe";
 			this.cboHieuXe.Size = new System.Drawing.Size(200, 21);
 			this.cboHieuXe.TabIndex = 15;
@@ -132,7 +132,7 @@
 			// cboBienSo
 			// 
 			this.cboBienSo.FormattingEnabled = true;
-			this.cboBienSo.Location = new System.Drawing.Point(132, 51);
+			this.cboBienSo.Location = new System.Drawing.Point(132, 54);
 			this.cboBienSo.Name = "cboBienSo";
 			this.cboBienSo.Size = new System.Drawing.Size(200, 21);
 			this.cboBienSo.TabIndex = 14;
@@ -140,9 +140,9 @@
 			// btnTiepNhan
 			// 
 			this.btnTiepNhan.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.btnTiepNhan.Location = new System.Drawing.Point(302, 148);
+			this.btnTiepNhan.Location = new System.Drawing.Point(317, 167);
 			this.btnTiepNhan.Name = "btnTiepNhan";
-			this.btnTiepNhan.Size = new System.Drawing.Size(174, 45);
+			this.btnTiepNhan.Size = new System.Drawing.Size(128, 36);
 			this.btnTiepNhan.TabIndex = 12;
 			this.btnTiepNhan.Text = "Tiếp Nhận";
 			this.btnTiepNhan.UseVisualStyleBackColor = true;
@@ -150,7 +150,7 @@
 			// 
 			// dtmNgayTiepNhan
 			// 
-			this.dtmNgayTiepNhan.Location = new System.Drawing.Point(132, 122);
+			this.dtmNgayTiepNhan.Location = new System.Drawing.Point(132, 129);
 			this.dtmNgayTiepNhan.Name = "dtmNgayTiepNhan";
 			this.dtmNgayTiepNhan.Size = new System.Drawing.Size(200, 20);
 			this.dtmNgayTiepNhan.TabIndex = 9;
@@ -179,7 +179,7 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label5.Location = new System.Drawing.Point(379, 25);
+			this.label5.Location = new System.Drawing.Point(370, 25);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(55, 19);
 			this.label5.TabIndex = 6;
@@ -189,7 +189,7 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label4.Location = new System.Drawing.Point(36, 87);
+			this.label4.Location = new System.Drawing.Point(6, 96);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(63, 19);
 			this.label4.TabIndex = 5;
@@ -199,7 +199,7 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label3.Location = new System.Drawing.Point(36, 58);
+			this.label3.Location = new System.Drawing.Point(6, 58);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(57, 19);
 			this.label3.TabIndex = 4;
@@ -209,7 +209,7 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label2.Location = new System.Drawing.Point(27, 25);
+			this.label2.Location = new System.Drawing.Point(6, 25);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(87, 19);
 			this.label2.TabIndex = 3;

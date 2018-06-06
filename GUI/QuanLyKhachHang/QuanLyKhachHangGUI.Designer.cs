@@ -147,23 +147,25 @@
 			// 
 			// btnXuatFile
 			// 
+			this.btnXuatFile.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnXuatFile.ForeColor = System.Drawing.Color.Black;
-			this.btnXuatFile.Location = new System.Drawing.Point(638, 173);
+			this.btnXuatFile.Location = new System.Drawing.Point(623, 173);
 			this.btnXuatFile.Name = "btnXuatFile";
-			this.btnXuatFile.Size = new System.Drawing.Size(109, 34);
+			this.btnXuatFile.Size = new System.Drawing.Size(124, 34);
 			this.btnXuatFile.TabIndex = 15;
-			this.btnXuatFile.Text = "Xuất file excel";
+			this.btnXuatFile.Text = "XUẤT FILE EXCEL";
 			this.btnXuatFile.UseVisualStyleBackColor = true;
 			this.btnXuatFile.Click += new System.EventHandler(this.btnXuatFile_Click);
 			// 
 			// btnTimKiem
 			// 
+			this.btnTimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
-			this.btnTimKiem.Location = new System.Drawing.Point(512, 173);
+			this.btnTimKiem.Location = new System.Drawing.Point(508, 173);
 			this.btnTimKiem.Name = "btnTimKiem";
 			this.btnTimKiem.Size = new System.Drawing.Size(109, 34);
 			this.btnTimKiem.TabIndex = 14;
-			this.btnTimKiem.Text = "Tìm kiếm";
+			this.btnTimKiem.Text = "TÌM KIẾM";
 			this.btnTimKiem.UseVisualStyleBackColor = true;
 			this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
 			// 
@@ -405,7 +407,7 @@
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label5.ForeColor = System.Drawing.Color.Black;
-			this.label5.Location = new System.Drawing.Point(22, 175);
+			this.label5.Location = new System.Drawing.Point(7, 175);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(70, 19);
 			this.label5.TabIndex = 45;
@@ -416,22 +418,22 @@
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label9.ForeColor = System.Drawing.Color.Black;
-			this.label9.Location = new System.Drawing.Point(22, 82);
+			this.label9.Location = new System.Drawing.Point(7, 83);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(70, 19);
+			this.label9.Size = new System.Drawing.Size(78, 19);
 			this.label9.TabIndex = 43;
-			this.label9.Text = "Điện thoại";
+			this.label9.Text = "Điện thoại*";
 			// 
 			// label10
 			// 
 			this.label10.AutoSize = true;
 			this.label10.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label10.ForeColor = System.Drawing.Color.Black;
-			this.label10.Location = new System.Drawing.Point(24, 147);
+			this.label10.Location = new System.Drawing.Point(7, 146);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(42, 19);
+			this.label10.Size = new System.Drawing.Size(50, 19);
 			this.label10.TabIndex = 44;
-			this.label10.Text = "Email";
+			this.label10.Text = "Email*";
 			// 
 			// tbEmail
 			// 
@@ -454,33 +456,33 @@
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label11.ForeColor = System.Drawing.Color.Black;
-			this.label11.Location = new System.Drawing.Point(24, 113);
+			this.label11.Location = new System.Drawing.Point(7, 112);
 			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(51, 19);
+			this.label11.Size = new System.Drawing.Size(59, 19);
 			this.label11.TabIndex = 36;
-			this.label11.Text = "Địa chỉ";
+			this.label11.Text = "Địa chỉ*";
 			// 
 			// label12
 			// 
 			this.label12.AutoSize = true;
 			this.label12.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label12.ForeColor = System.Drawing.Color.Black;
-			this.label12.Location = new System.Drawing.Point(22, 46);
+			this.label12.Location = new System.Drawing.Point(7, 46);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(75, 19);
+			this.label12.Size = new System.Drawing.Size(83, 19);
 			this.label12.TabIndex = 37;
-			this.label12.Text = "Tên chủ xe";
+			this.label12.Text = "Tên chủ xe*";
 			// 
 			// label13
 			// 
 			this.label13.AutoSize = true;
 			this.label13.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label13.ForeColor = System.Drawing.Color.Black;
-			this.label13.Location = new System.Drawing.Point(22, 15);
+			this.label13.Location = new System.Drawing.Point(7, 15);
 			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(114, 19);
+			this.label13.Size = new System.Drawing.Size(122, 19);
 			this.label13.TabIndex = 38;
-			this.label13.Text = "Mã khách sửa xe";
+			this.label13.Text = "Mã khách sửa xe*";
 			// 
 			// tbDiaChi
 			// 

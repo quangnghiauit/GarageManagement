@@ -43,14 +43,14 @@
 			// 
 			this.tbSoXeSua.Location = new System.Drawing.Point(407, 78);
 			this.tbSoXeSua.Name = "tbSoXeSua";
-			this.tbSoXeSua.Size = new System.Drawing.Size(213, 20);
+			this.tbSoXeSua.Size = new System.Drawing.Size(208, 20);
 			this.tbSoXeSua.TabIndex = 3;
 			// 
 			// tbSoTienNo
 			// 
 			this.tbSoTienNo.Location = new System.Drawing.Point(407, 133);
 			this.tbSoTienNo.Name = "tbSoTienNo";
-			this.tbSoTienNo.Size = new System.Drawing.Size(213, 20);
+			this.tbSoTienNo.Size = new System.Drawing.Size(208, 20);
 			this.tbSoTienNo.TabIndex = 4;
 			// 
 			// checkSuDungQuyDinh
@@ -68,7 +68,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label1.Location = new System.Drawing.Point(49, 281);
+			this.label1.Location = new System.Drawing.Point(78, 282);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(417, 19);
 			this.label1.TabIndex = 7;
@@ -77,10 +77,10 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label2.Font = new System.Drawing.Font("Times New Roman", 20.25F);
 			this.label2.Location = new System.Drawing.Point(0, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(161, 19);
+			this.label2.Size = new System.Drawing.Size(274, 31);
 			this.label2.TabIndex = 8;
 			this.label2.Text = "THAY ĐỔI QUY ĐỊNH";
 			// 

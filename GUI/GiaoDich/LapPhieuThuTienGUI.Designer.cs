@@ -34,15 +34,6 @@
 			this.txtEmail = new System.Windows.Forms.TextBox();
 			this.txtDienThoai = new System.Windows.Forms.TextBox();
 			this.cboBienSo = new System.Windows.Forms.ComboBox();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
 			this.btnLapPhieu = new System.Windows.Forms.Button();
 			this.txtTienThu = new System.Windows.Forms.TextBox();
 			this.txtTienTraKhach = new System.Windows.Forms.TextBox();
@@ -51,6 +42,15 @@
 			this.dgvLichSuPTT = new System.Windows.Forms.DataGridView();
 			this.btnLichSuThuTien = new System.Windows.Forms.Button();
 			this.label11 = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label12 = new System.Windows.Forms.Label();
+			this.label13 = new System.Windows.Forms.Label();
+			this.label14 = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLichSuPTT)).BeginInit();
 			this.SuspendLayout();
@@ -59,24 +59,24 @@
 			// 
 			this.dtmNgayThuTien.Location = new System.Drawing.Point(160, 13);
 			this.dtmNgayThuTien.Name = "dtmNgayThuTien";
-			this.dtmNgayThuTien.Size = new System.Drawing.Size(267, 20);
+			this.dtmNgayThuTien.Size = new System.Drawing.Size(200, 20);
 			this.dtmNgayThuTien.TabIndex = 2;
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.label4);
+			this.panel1.Controls.Add(this.label3);
+			this.panel1.Controls.Add(this.label15);
+			this.panel1.Controls.Add(this.label14);
+			this.panel1.Controls.Add(this.label13);
+			this.panel1.Controls.Add(this.label12);
+			this.panel1.Controls.Add(this.label2);
+			this.panel1.Controls.Add(this.label1);
+			this.panel1.Controls.Add(this.label10);
 			this.panel1.Controls.Add(this.txtTenChuXe);
 			this.panel1.Controls.Add(this.txtEmail);
 			this.panel1.Controls.Add(this.txtDienThoai);
 			this.panel1.Controls.Add(this.cboBienSo);
-			this.panel1.Controls.Add(this.label9);
-			this.panel1.Controls.Add(this.label8);
-			this.panel1.Controls.Add(this.label7);
-			this.panel1.Controls.Add(this.label6);
-			this.panel1.Controls.Add(this.label5);
-			this.panel1.Controls.Add(this.label4);
-			this.panel1.Controls.Add(this.label3);
-			this.panel1.Controls.Add(this.label2);
-			this.panel1.Controls.Add(this.label1);
 			this.panel1.Controls.Add(this.btnLapPhieu);
 			this.panel1.Controls.Add(this.txtTienThu);
 			this.panel1.Controls.Add(this.txtTienTraKhach);
@@ -92,21 +92,21 @@
 			// 
 			this.txtTenChuXe.Location = new System.Drawing.Point(160, 79);
 			this.txtTenChuXe.Name = "txtTenChuXe";
-			this.txtTenChuXe.Size = new System.Drawing.Size(182, 20);
+			this.txtTenChuXe.Size = new System.Drawing.Size(200, 20);
 			this.txtTenChuXe.TabIndex = 35;
 			// 
 			// txtEmail
 			// 
-			this.txtEmail.Location = new System.Drawing.Point(511, 79);
+			this.txtEmail.Location = new System.Drawing.Point(511, 51);
 			this.txtEmail.Name = "txtEmail";
-			this.txtEmail.Size = new System.Drawing.Size(182, 20);
+			this.txtEmail.Size = new System.Drawing.Size(200, 20);
 			this.txtEmail.TabIndex = 34;
 			// 
 			// txtDienThoai
 			// 
-			this.txtDienThoai.Location = new System.Drawing.Point(511, 45);
+			this.txtDienThoai.Location = new System.Drawing.Point(511, 16);
 			this.txtDienThoai.Name = "txtDienThoai";
-			this.txtDienThoai.Size = new System.Drawing.Size(182, 20);
+			this.txtDienThoai.Size = new System.Drawing.Size(200, 20);
 			this.txtDienThoai.TabIndex = 33;
 			// 
 			// cboBienSo
@@ -114,114 +114,15 @@
 			this.cboBienSo.FormattingEnabled = true;
 			this.cboBienSo.Location = new System.Drawing.Point(160, 45);
 			this.cboBienSo.Name = "cboBienSo";
-			this.cboBienSo.Size = new System.Drawing.Size(182, 21);
+			this.cboBienSo.Size = new System.Drawing.Size(200, 21);
 			this.cboBienSo.TabIndex = 29;
-			// 
-			// label9
-			// 
-			this.label9.BackColor = System.Drawing.SystemColors.ButtonFace;
-			this.label9.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label9.Location = new System.Drawing.Point(531, 163);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(105, 28);
-			this.label9.TabIndex = 28;
-			this.label9.Text = "Số tiền thu";
-			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label8
-			// 
-			this.label8.BackColor = System.Drawing.SystemColors.ButtonFace;
-			this.label8.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label8.Location = new System.Drawing.Point(283, 163);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(105, 28);
-			this.label8.TabIndex = 27;
-			this.label8.Text = "Số tiền trả khách";
-			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label7
-			// 
-			this.label7.BackColor = System.Drawing.SystemColors.ButtonFace;
-			this.label7.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label7.Location = new System.Drawing.Point(30, 163);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(105, 28);
-			this.label7.TabIndex = 26;
-			this.label7.Text = "Số tiền khách trả";
-			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label6
-			// 
-			this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
-			this.label6.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label6.Location = new System.Drawing.Point(381, 74);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(105, 28);
-			this.label6.TabIndex = 25;
-			this.label6.Text = "Email";
-			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label5
-			// 
-			this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
-			this.label5.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label5.Location = new System.Drawing.Point(381, 41);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(105, 28);
-			this.label5.TabIndex = 24;
-			this.label5.Text = "Điện thoại";
-			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label4
-			// 
-			this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
-			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label4.Location = new System.Drawing.Point(30, 117);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(105, 28);
-			this.label4.TabIndex = 23;
-			this.label4.Text = "Số tiền nợ";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label3
-			// 
-			this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
-			this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label3.Location = new System.Drawing.Point(30, 74);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(105, 28);
-			this.label3.TabIndex = 22;
-			this.label3.Text = "Tên chủ xe";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label2
-			// 
-			this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
-			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label2.Location = new System.Drawing.Point(30, 41);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(105, 28);
-			this.label2.TabIndex = 21;
-			this.label2.Text = "Biển số";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label1
-			// 
-			this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
-			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label1.Location = new System.Drawing.Point(30, 8);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(105, 28);
-			this.label1.TabIndex = 20;
-			this.label1.Text = "Ngày thu tiền";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// btnLapPhieu
 			// 
 			this.btnLapPhieu.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.btnLapPhieu.Location = new System.Drawing.Point(297, 211);
+			this.btnLapPhieu.Location = new System.Drawing.Point(323, 255);
 			this.btnLapPhieu.Name = "btnLapPhieu";
-			this.btnLapPhieu.Size = new System.Drawing.Size(234, 75);
+			this.btnLapPhieu.Size = new System.Drawing.Size(128, 36);
 			this.btnLapPhieu.TabIndex = 19;
 			this.btnLapPhieu.Text = "Lập Phiếu";
 			this.btnLapPhieu.UseVisualStyleBackColor = true;
@@ -256,7 +157,7 @@
 			// 
 			this.txtSoTienNo.Location = new System.Drawing.Point(160, 121);
 			this.txtSoTienNo.Name = "txtSoTienNo";
-			this.txtSoTienNo.Size = new System.Drawing.Size(182, 20);
+			this.txtSoTienNo.Size = new System.Drawing.Size(200, 20);
 			this.txtSoTienNo.TabIndex = 10;
 			this.txtSoTienNo.TextChanged += new System.EventHandler(this.txtSoTienNo_TextChanged);
 			// 
@@ -273,7 +174,7 @@
 			this.btnLichSuThuTien.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnLichSuThuTien.Location = new System.Drawing.Point(20, 369);
 			this.btnLichSuThuTien.Name = "btnLichSuThuTien";
-			this.btnLichSuThuTien.Size = new System.Drawing.Size(102, 29);
+			this.btnLichSuThuTien.Size = new System.Drawing.Size(141, 29);
 			this.btnLichSuThuTien.TabIndex = 5;
 			this.btnLichSuThuTien.Text = "Lịch Sử Thu Tiền";
 			this.btnLichSuThuTien.UseVisualStyleBackColor = true;
@@ -288,6 +189,96 @@
 			this.label11.Size = new System.Drawing.Size(220, 31);
 			this.label11.TabIndex = 7;
 			this.label11.Text = "PHIẾU THU TIỀN";
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label10.Location = new System.Drawing.Point(30, 15);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(89, 19);
+			this.label10.TabIndex = 36;
+			this.label10.Text = "Ngày thu tiền";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label1.Location = new System.Drawing.Point(30, 50);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(54, 19);
+			this.label1.TabIndex = 37;
+			this.label1.Text = "Biển số";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label2.Location = new System.Drawing.Point(409, 50);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(42, 19);
+			this.label2.TabIndex = 38;
+			this.label2.Text = "Email";
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label12.Location = new System.Drawing.Point(409, 15);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(70, 19);
+			this.label12.TabIndex = 39;
+			this.label12.Text = "Điện thoại";
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label13.Location = new System.Drawing.Point(30, 167);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(111, 19);
+			this.label13.TabIndex = 40;
+			this.label13.Text = "Số tiền khách trả";
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label14.Location = new System.Drawing.Point(30, 122);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(70, 19);
+			this.label14.TabIndex = 41;
+			this.label14.Text = "Số tiền nợ";
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label15.Location = new System.Drawing.Point(30, 83);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(75, 19);
+			this.label15.TabIndex = 42;
+			this.label15.Text = "Tên chủ xe";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label3.Location = new System.Drawing.Point(556, 168);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(73, 19);
+			this.label3.TabIndex = 43;
+			this.label3.Text = "Số tiền thu";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label4.Location = new System.Drawing.Point(296, 167);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(111, 19);
+			this.label4.TabIndex = 44;
+			this.label4.Text = "Số tiền trả khách";
 			// 
 			// fLapPhieuThuTien
 			// 
@@ -320,19 +311,19 @@
 		private System.Windows.Forms.TextBox txtSoTienNo;
 		private System.Windows.Forms.DataGridView dgvLichSuPTT;
 		private System.Windows.Forms.Button btnLichSuThuTien;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboBienSo;
         private System.Windows.Forms.TextBox txtTenChuXe;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtDienThoai;
 		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label3;
 	}
 }

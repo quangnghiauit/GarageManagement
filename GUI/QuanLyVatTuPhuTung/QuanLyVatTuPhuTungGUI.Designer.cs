@@ -116,7 +116,7 @@
 			this.panel3.Controls.Add(this.textBox2);
 			this.panel3.Location = new System.Drawing.Point(29, 12);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(794, 191);
+			this.panel3.Size = new System.Drawing.Size(794, 223);
 			this.panel3.TabIndex = 17;
 			// 
 			// cbbMaVatTuTraCuu
@@ -129,23 +129,25 @@
 			// 
 			// btnXuatFile
 			// 
+			this.btnXuatFile.Font = new System.Drawing.Font("Times New Roman", 9.75F);
 			this.btnXuatFile.ForeColor = System.Drawing.Color.Black;
-			this.btnXuatFile.Location = new System.Drawing.Point(667, 147);
+			this.btnXuatFile.Location = new System.Drawing.Point(623, 173);
 			this.btnXuatFile.Name = "btnXuatFile";
-			this.btnXuatFile.Size = new System.Drawing.Size(109, 34);
+			this.btnXuatFile.Size = new System.Drawing.Size(124, 34);
 			this.btnXuatFile.TabIndex = 26;
-			this.btnXuatFile.Text = "Xuất file excel";
+			this.btnXuatFile.Text = "XUẤT FILE EXCEL";
 			this.btnXuatFile.UseVisualStyleBackColor = true;
 			this.btnXuatFile.Click += new System.EventHandler(this.btnXuatFile_Click);
 			// 
 			// btnTimKiemTraCuu
 			// 
+			this.btnTimKiemTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnTimKiemTraCuu.ForeColor = System.Drawing.Color.Black;
-			this.btnTimKiemTraCuu.Location = new System.Drawing.Point(541, 147);
+			this.btnTimKiemTraCuu.Location = new System.Drawing.Point(508, 173);
 			this.btnTimKiemTraCuu.Name = "btnTimKiemTraCuu";
 			this.btnTimKiemTraCuu.Size = new System.Drawing.Size(109, 34);
 			this.btnTimKiemTraCuu.TabIndex = 25;
-			this.btnTimKiemTraCuu.Text = "Tìm kiếm";
+			this.btnTimKiemTraCuu.Text = "TÌM KIẾM";
 			this.btnTimKiemTraCuu.UseVisualStyleBackColor = true;
 			this.btnTimKiemTraCuu.Click += new System.EventHandler(this.btnTimKiemTraCuu_Click);
 			// 
@@ -321,7 +323,7 @@
 			this.label10.AutoSize = true;
 			this.label10.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.label10.ForeColor = System.Drawing.Color.Black;
-			this.label10.Location = new System.Drawing.Point(22, 139);
+			this.label10.Location = new System.Drawing.Point(22, 144);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(75, 19);
 			this.label10.TabIndex = 49;
@@ -329,9 +331,9 @@
 			// 
 			// dtmNgayNhap
 			// 
-			this.dtmNgayNhap.Location = new System.Drawing.Point(123, 137);
+			this.dtmNgayNhap.Location = new System.Drawing.Point(123, 143);
 			this.dtmNgayNhap.Name = "dtmNgayNhap";
-			this.dtmNgayNhap.Size = new System.Drawing.Size(221, 20);
+			this.dtmNgayNhap.Size = new System.Drawing.Size(246, 20);
 			this.dtmNgayNhap.TabIndex = 48;
 			// 
 			// tbMaVatTuThaoTac
@@ -348,9 +350,9 @@
 			this.label4.ForeColor = System.Drawing.Color.Black;
 			this.label4.Location = new System.Drawing.Point(22, 82);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(56, 19);
+			this.label4.Size = new System.Drawing.Size(64, 19);
 			this.label4.TabIndex = 43;
-			this.label4.Text = "Đơn giá";
+			this.label4.Text = "Đơn giá*";
 			// 
 			// label5
 			// 
@@ -359,9 +361,9 @@
 			this.label5.ForeColor = System.Drawing.Color.Black;
 			this.label5.Location = new System.Drawing.Point(24, 113);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(68, 19);
+			this.label5.Size = new System.Drawing.Size(72, 19);
 			this.label5.TabIndex = 36;
-			this.label5.Text = "Số lượng ";
+			this.label5.Text = "Số lượng*";
 			// 
 			// label6
 			// 
@@ -370,9 +372,9 @@
 			this.label6.ForeColor = System.Drawing.Color.Black;
 			this.label6.Location = new System.Drawing.Point(22, 46);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(71, 19);
+			this.label6.Size = new System.Drawing.Size(79, 19);
 			this.label6.TabIndex = 37;
-			this.label6.Text = "Tên vật tư";
+			this.label6.Text = "Tên vật tư*";
 			// 
 			// label9
 			// 
@@ -381,9 +383,9 @@
 			this.label9.ForeColor = System.Drawing.Color.Black;
 			this.label9.Location = new System.Drawing.Point(22, 15);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(73, 19);
+			this.label9.Size = new System.Drawing.Size(81, 19);
 			this.label9.TabIndex = 38;
-			this.label9.Text = "Mã vật tư ";
+			this.label9.Text = "Mã vật tư *";
 			// 
 			// tbSoLuongThaoTac
 			// 

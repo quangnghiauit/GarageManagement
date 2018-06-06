@@ -33,11 +33,11 @@
 			this.dtmThangLapBaoCao = new System.Windows.Forms.DateTimePicker();
 			this.dgvBaoCaoDoanhSo = new System.Windows.Forms.DataGridView();
 			this.txtTongDoanhThu = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
 			this.txtMaBaoCao = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBaoCaoDoanhSo)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -88,48 +88,6 @@
 			this.txtTongDoanhThu.Size = new System.Drawing.Size(182, 20);
 			this.txtTongDoanhThu.TabIndex = 12;
 			// 
-			// label1
-			// 
-			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label1.Location = new System.Drawing.Point(60, 82);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(160, 40);
-			this.label1.TabIndex = 13;
-			this.label1.Text = "Tháng Lập Báo Cáo";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label2
-			// 
-			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label2.Location = new System.Drawing.Point(426, 83);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(160, 40);
-			this.label2.TabIndex = 14;
-			this.label2.Text = "Tổng Doanh Thu";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label3
-			// 
-			this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
-			this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(1, 1);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(350, 35);
-			this.label3.TabIndex = 15;
-			this.label3.Text = "LẬP BÁO CÁO DOANH SỐ";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label4
-			// 
-			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label4.Location = new System.Drawing.Point(60, 36);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(160, 40);
-			this.label4.TabIndex = 16;
-			this.label4.Text = "Mã số báo cáo";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
 			// txtMaBaoCao
 			// 
 			this.txtMaBaoCao.Location = new System.Drawing.Point(241, 48);
@@ -137,16 +95,56 @@
 			this.txtMaBaoCao.Size = new System.Drawing.Size(123, 20);
 			this.txtMaBaoCao.TabIndex = 17;
 			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(5, 4);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(332, 31);
+			this.label5.TabIndex = 21;
+			this.label5.Text = "LẬP BÁO CÁO DOANH SỐ";
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label10.Location = new System.Drawing.Point(438, 91);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(111, 19);
+			this.label10.TabIndex = 37;
+			this.label10.Text = "Tổng Doanh Thu";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label3.Location = new System.Drawing.Point(78, 91);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(133, 19);
+			this.label3.TabIndex = 38;
+			this.label3.Text = "Tháng Lập Báo Cáo";
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.label6.Location = new System.Drawing.Point(78, 48);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(101, 19);
+			this.label6.TabIndex = 39;
+			this.label6.Text = "Mã số báo cáo";
+			// 
 			// fDoanhSo
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(850, 540);
-			this.Controls.Add(this.txtMaBaoCao);
-			this.Controls.Add(this.label4);
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.label10);
+			this.Controls.Add(this.label5);
+			this.Controls.Add(this.txtMaBaoCao);
 			this.Controls.Add(this.txtTongDoanhThu);
 			this.Controls.Add(this.dgvBaoCaoDoanhSo);
 			this.Controls.Add(this.dtmThangLapBaoCao);
@@ -167,10 +165,10 @@
 		private System.Windows.Forms.DateTimePicker dtmThangLapBaoCao;
 		private System.Windows.Forms.DataGridView dgvBaoCaoDoanhSo;
 		private System.Windows.Forms.TextBox txtTongDoanhThu;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaBaoCao;
-    }
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label6;
+	}
 }

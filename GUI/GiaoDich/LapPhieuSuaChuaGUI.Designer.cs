@@ -92,7 +92,7 @@
 			// 
 			// txtTongTien
 			// 
-			this.txtTongTien.Location = new System.Drawing.Point(99, 42);
+			this.txtTongTien.Location = new System.Drawing.Point(99, 45);
 			this.txtTongTien.Name = "txtTongTien";
 			this.txtTongTien.ReadOnly = true;
 			this.txtTongTien.Size = new System.Drawing.Size(208, 20);
@@ -102,7 +102,7 @@
 			// 
 			this.label12.AutoSize = true;
 			this.label12.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label12.Location = new System.Drawing.Point(39, 47);
+			this.label12.Location = new System.Drawing.Point(12, 45);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(65, 19);
 			this.label12.TabIndex = 7;
@@ -119,7 +119,7 @@
 			// 
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label11.Location = new System.Drawing.Point(39, 14);
+			this.label11.Location = new System.Drawing.Point(12, 11);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(62, 19);
 			this.label11.TabIndex = 5;
@@ -128,7 +128,7 @@
 			// cboBienSo
 			// 
 			this.cboBienSo.FormattingEnabled = true;
-			this.cboBienSo.Location = new System.Drawing.Point(481, 40);
+			this.cboBienSo.Location = new System.Drawing.Point(481, 44);
 			this.cboBienSo.Name = "cboBienSo";
 			this.cboBienSo.Size = new System.Drawing.Size(208, 21);
 			this.cboBienSo.TabIndex = 4;
@@ -137,7 +137,7 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label2.Location = new System.Drawing.Point(388, 47);
+			this.label2.Location = new System.Drawing.Point(366, 47);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(57, 19);
 			this.label2.TabIndex = 2;
@@ -154,7 +154,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label1.Location = new System.Drawing.Point(372, 14);
+			this.label1.Location = new System.Drawing.Point(366, 11);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(109, 19);
 			this.label1.TabIndex = 0;
@@ -184,7 +184,7 @@
 			// btnTaoPhieuMoi
 			// 
 			this.btnTaoPhieuMoi.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.btnTaoPhieuMoi.Location = new System.Drawing.Point(9, 6);
+			this.btnTaoPhieuMoi.Location = new System.Drawing.Point(4, 7);
 			this.btnTaoPhieuMoi.Name = "btnTaoPhieuMoi";
 			this.btnTaoPhieuMoi.Size = new System.Drawing.Size(119, 28);
 			this.btnTaoPhieuMoi.TabIndex = 1;
@@ -285,9 +285,9 @@
 			// btnLichSuLapPhieu
 			// 
 			this.btnLichSuLapPhieu.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.btnLichSuLapPhieu.Location = new System.Drawing.Point(8, 396);
+			this.btnLichSuLapPhieu.Location = new System.Drawing.Point(8, 400);
 			this.btnLichSuLapPhieu.Name = "btnLichSuLapPhieu";
-			this.btnLichSuLapPhieu.Size = new System.Drawing.Size(117, 32);
+			this.btnLichSuLapPhieu.Size = new System.Drawing.Size(140, 32);
 			this.btnLichSuLapPhieu.TabIndex = 7;
 			this.btnLichSuLapPhieu.Text = "Lịch Sử Lập Phiếu";
 			this.btnLichSuLapPhieu.UseVisualStyleBackColor = true;

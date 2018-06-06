@@ -153,23 +153,23 @@
 			// 
 			this.btnXuatFileTraCuuXe.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnXuatFileTraCuuXe.ForeColor = System.Drawing.Color.Black;
-			this.btnXuatFileTraCuuXe.Location = new System.Drawing.Point(590, 172);
+			this.btnXuatFileTraCuuXe.Location = new System.Drawing.Point(623, 173);
 			this.btnXuatFileTraCuuXe.Name = "btnXuatFileTraCuuXe";
-			this.btnXuatFileTraCuuXe.Size = new System.Drawing.Size(109, 34);
+			this.btnXuatFileTraCuuXe.Size = new System.Drawing.Size(124, 34);
 			this.btnXuatFileTraCuuXe.TabIndex = 13;
-			this.btnXuatFileTraCuuXe.Text = "Xuất file excel";
+			this.btnXuatFileTraCuuXe.Text = "XUẤT FILE EXCEL";
 			this.btnXuatFileTraCuuXe.UseVisualStyleBackColor = true;
 			this.btnXuatFileTraCuuXe.Click += new System.EventHandler(this.btnXuatFileTraCuuXe_Click);
 			// 
 			// btnTimKiemTraCuuXe
 			// 
-			this.btnTimKiemTraCuuXe.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnTimKiemTraCuuXe.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnTimKiemTraCuuXe.ForeColor = System.Drawing.Color.Black;
-			this.btnTimKiemTraCuuXe.Location = new System.Drawing.Point(447, 172);
+			this.btnTimKiemTraCuuXe.Location = new System.Drawing.Point(508, 173);
 			this.btnTimKiemTraCuuXe.Name = "btnTimKiemTraCuuXe";
 			this.btnTimKiemTraCuuXe.Size = new System.Drawing.Size(109, 34);
 			this.btnTimKiemTraCuuXe.TabIndex = 12;
-			this.btnTimKiemTraCuuXe.Text = "Tìm kiếm";
+			this.btnTimKiemTraCuuXe.Text = "TÌM KIẾM";
 			this.btnTimKiemTraCuuXe.UseVisualStyleBackColor = true;
 			this.btnTimKiemTraCuuXe.Click += new System.EventHandler(this.btnTimKiemTraCuuXe_Click);
 			// 
@@ -334,7 +334,7 @@
 			// cbbHieuXe
 			// 
 			this.cbbHieuXe.FormattingEnabled = true;
-			this.cbbHieuXe.Location = new System.Drawing.Point(93, 98);
+			this.cbbHieuXe.Location = new System.Drawing.Point(93, 101);
 			this.cbbHieuXe.Name = "cbbHieuXe";
 			this.cbbHieuXe.Size = new System.Drawing.Size(239, 21);
 			this.cbbHieuXe.TabIndex = 48;
@@ -380,7 +380,7 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.label3.Location = new System.Drawing.Point(8, 98);
+			this.label3.Location = new System.Drawing.Point(8, 103);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(55, 19);
 			this.label3.TabIndex = 42;

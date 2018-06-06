@@ -54,37 +54,37 @@
 			// 
 			this.tbServer.Location = new System.Drawing.Point(286, 95);
 			this.tbServer.Name = "tbServer";
-			this.tbServer.Size = new System.Drawing.Size(273, 20);
+			this.tbServer.Size = new System.Drawing.Size(208, 20);
 			this.tbServer.TabIndex = 6;
 			// 
 			// tbUser
 			// 
 			this.tbUser.Location = new System.Drawing.Point(286, 149);
 			this.tbUser.Name = "tbUser";
-			this.tbUser.Size = new System.Drawing.Size(273, 20);
+			this.tbUser.Size = new System.Drawing.Size(208, 20);
 			this.tbUser.TabIndex = 7;
 			// 
 			// tbPassword
 			// 
 			this.tbPassword.Location = new System.Drawing.Point(286, 205);
 			this.tbPassword.Name = "tbPassword";
-			this.tbPassword.Size = new System.Drawing.Size(273, 20);
+			this.tbPassword.Size = new System.Drawing.Size(208, 20);
 			this.tbPassword.TabIndex = 8;
 			// 
 			// tbDatabaseName
 			// 
 			this.tbDatabaseName.Location = new System.Drawing.Point(286, 267);
 			this.tbDatabaseName.Name = "tbDatabaseName";
-			this.tbDatabaseName.Size = new System.Drawing.Size(273, 20);
+			this.tbDatabaseName.Size = new System.Drawing.Size(208, 20);
 			this.tbDatabaseName.TabIndex = 9;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F);
 			this.label1.Location = new System.Drawing.Point(0, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(229, 25);
+			this.label1.Size = new System.Drawing.Size(282, 31);
 			this.label1.TabIndex = 10;
 			this.label1.Text = "THAY ĐỔI DATABASE";
 			// 

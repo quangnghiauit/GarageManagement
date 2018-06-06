@@ -44,9 +44,9 @@
 			// btnThem
 			// 
 			this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.btnThem.Location = new System.Drawing.Point(422, 243);
+			this.btnThem.Location = new System.Drawing.Point(418, 243);
 			this.btnThem.Name = "btnThem";
-			this.btnThem.Size = new System.Drawing.Size(98, 56);
+			this.btnThem.Size = new System.Drawing.Size(110, 40);
 			this.btnThem.TabIndex = 15;
 			this.btnThem.Text = " Thêm";
 			this.btnThem.UseVisualStyleBackColor = true;
@@ -89,9 +89,9 @@
 			// btnXoa
 			// 
 			this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F);
-			this.btnXoa.Location = new System.Drawing.Point(526, 243);
+			this.btnXoa.Location = new System.Drawing.Point(529, 243);
 			this.btnXoa.Name = "btnXoa";
-			this.btnXoa.Size = new System.Drawing.Size(106, 56);
+			this.btnXoa.Size = new System.Drawing.Size(110, 40);
 			this.btnXoa.TabIndex = 9;
 			this.btnXoa.Text = "Xóa";
 			this.btnXoa.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
 			this.btnView.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnView.Location = new System.Drawing.Point(151, 269);
 			this.btnView.Name = "btnView";
-			this.btnView.Size = new System.Drawing.Size(87, 30);
+			this.btnView.Size = new System.Drawing.Size(111, 30);
 			this.btnView.TabIndex = 16;
 			this.btnView.Text = "Xem Lịch Sử";
 			this.btnView.UseVisualStyleBackColor = true;
