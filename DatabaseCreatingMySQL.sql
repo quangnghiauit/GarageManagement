@@ -265,6 +265,16 @@ Begin
 End //
 DELIMITER ;
 
+#Procedure dung cho PhieuThuTien
+DELIMITER //
+create procedure payTIENNO (in _MaKhachHang int, in _SoTien decimal)
+Begin
+	update KHACHSUAXE
+    set TienNo = TienNo - _SoTien
+    where MaKhachHang = _MaKhachHang;
+End //
+DELIMITER ;
+
 
 
 /*Thao tác với hiệu xe*/
@@ -483,7 +493,6 @@ begin
     set SOLUONGTON = SOLUONGVATTU;
 end //
 DELIMITER //
-
 
 DELIMITER // 
 create procedure SearchSpareParts (in _MaVatTuPhuTung char(10), in _TenVatTuPhuTung char(100), in _DonGia decimal, in _SoLuongVatTu int)
