@@ -197,6 +197,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ThongTin\fThongTin.resx">
       <DependentUpon>fThongTin.cs</DependentUpon>
@@ -297,7 +298,34 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\IconTraCuuXe1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconQuanLyKhachHang1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconQuanLyVatTu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconGiaoDich1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconBaoCao1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconThongTin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconTroGiup1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainLogo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VerticalLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrative-tools-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

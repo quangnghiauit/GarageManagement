@@ -34,6 +34,7 @@ namespace GUI
 		{
 			//Export report table
 			pnMainGara.Controls.Clear();
+			pnMainGara.BackgroundImage = null;
 			pnMain.Controls.Clear();
 			pnThaoTac.Controls.Clear();
 			fBaoCao myForm = new fBaoCao();
@@ -47,6 +48,7 @@ namespace GUI
 		{
 			//Export transaction table
 			pnMainGara.Controls.Clear();
+			pnMainGara.BackgroundImage = null;
 			pnMain.Controls.Clear();
 			pnThaoTac.Controls.Clear();
 			fGiaoDich myForm = new fGiaoDich();
@@ -60,6 +62,7 @@ namespace GUI
 		{
 			//Export table information
 			pnMainGara.Controls.Clear();
+			pnMainGara.BackgroundImage = null;
 			pnMain.Controls.Clear();
 			pnThaoTac.Controls.Clear();
 			fThongTin myForm = new fThongTin();
@@ -73,6 +76,7 @@ namespace GUI
 		{
 			
 			pnMainGara.Controls.Clear();
+			pnMainGara.BackgroundImage = null;
 			pnMain.Controls.Clear();
 			pnThaoTac.Controls.Clear();
 			fQuanLyKhachHangGUI myForm = new fQuanLyKhachHangGUI();
@@ -91,6 +95,8 @@ namespace GUI
 		private void btnTCX_Click(object sender, EventArgs e)
 		{
 			pnMainGara.Controls.Clear();
+			pnMainGara.BackgroundImage = null;
+
 			pnMain.Controls.Clear();
 			pnThaoTac.Controls.Clear();
 			fQuanLyXeGUI myForm = new fQuanLyXeGUI();
@@ -108,6 +114,7 @@ namespace GUI
 		private void btnQuanLyVatTu_Click(object sender, EventArgs e)
 		{
 			pnMainGara.Controls.Clear();
+			pnMainGara.BackgroundImage = null;
 			pnMain.Controls.Clear();
 			pnThaoTac.Controls.Clear();
 			fQuanLyVatTuPhuTungGUI myForm = new fQuanLyVatTuPhuTungGUI();
@@ -125,6 +132,7 @@ namespace GUI
 		private void btnTroGiup_Click(object sender, EventArgs e)
 		{
 			pnMainGara.Controls.Clear();
+			pnMainGara.BackgroundImage = null;
 			pnMain.Controls.Clear();
 			pnThaoTac.Controls.Clear();
 			fHelps myForm = new fHelps();
@@ -150,6 +158,17 @@ namespace GUI
 				
 
 		
+		}
+
+		private void fMainForm_Load(object sender, EventArgs e)
+		{
+			pnMain.Visible = false;
+			pnThaoTac.Visible = false;
+		}
+
+		private void pnMainGara_BackgroundImageChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
