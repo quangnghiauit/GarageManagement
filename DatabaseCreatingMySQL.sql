@@ -679,7 +679,7 @@ begin
     set MaVT = (select MAVATTUPHUTUNG
 			   from VATTUPHUTUNG
                where MAVATTUPHUTUNG = _MaVatTu);
-	insert into 0 (MAVATTUPHUTUNG, SOLUONGNHAP, NGAYNHAP)
+	insert into QUANLYNHAPVATTU (MAVATTUPHUTUNG, SOLUONGNHAP, NGAYNHAP)
     values (MaVT, _SoLuongNhap, _NgayNhap);
 End //
 DELIMITER ;
@@ -799,5 +799,3 @@ begin
 end //
 DELIMITER ;
 #drop procedure createBaoCaoTon;
-
-    
