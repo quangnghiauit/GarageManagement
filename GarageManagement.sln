@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseCreatingMySQL", "Da
 		DatabaseCreatingMySQL.txt = DatabaseCreatingMySQL.txt
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{95E0C271-EE75-4B8E-BAAA-EB473AEA43F4}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GarageManagementSetup", "GarageManagementSetup\GarageManagementSetup.vdproj", "{81B83377-30B3-4B01-A603-F19113CD1FCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,8 +40,8 @@ Global
 		{951342E1-F503-43D4-82F9-70402CB5BB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{951342E1-F503-43D4-82F9-70402CB5BB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{951342E1-F503-43D4-82F9-70402CB5BB3D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95E0C271-EE75-4B8E-BAAA-EB473AEA43F4}.Debug|Any CPU.ActiveCfg = Debug
-		{95E0C271-EE75-4B8E-BAAA-EB473AEA43F4}.Release|Any CPU.ActiveCfg = Release
+		{81B83377-30B3-4B01-A603-F19113CD1FCD}.Debug|Any CPU.ActiveCfg = Debug
+		{81B83377-30B3-4B01-A603-F19113CD1FCD}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
