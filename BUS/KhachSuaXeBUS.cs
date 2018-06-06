@@ -29,11 +29,19 @@ namespace BUS
 			return KhachSuaXeDAO.getData();
 		}
 		
-		public static void addCustomer(KhachSuaXeDTO kh)
+		//public static void addCustomer(KhachSuaXeDTO kh)
+		//{
+		//	KhachSuaXeDAO.InsertCustomer(kh);
+		//}
+		public static bool InsertCustomer(KhachSuaXeDTO kh, string exception="")
 		{
-			KhachSuaXeDAO.InsertCustomer(kh);
+			return KhachSuaXeDAO.InsertCustomer(kh, exception);
+			
 		}
-		
+
+
+
+
 		public static void updateCustomer(KhachSuaXeDTO kh)
 		{
 			KhachSuaXeDAO.UpdateCustomer(kh);

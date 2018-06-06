@@ -99,6 +99,13 @@ namespace GUI
 		//Conditional customer search function
 		private void FindCustomer()
 		{
+			if (IsNumber(tbMaKhachHangTraCuu.Text) == false)
+			{
+				MessageBox.Show("Mã khách hàng là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				
+				return;
+			}
+			
 			string CompareType = "";
 
 			switch (cbbTienNo.SelectedIndex)
@@ -206,9 +213,18 @@ namespace GUI
 		}
 
 		#region Buttons Insert, Update, Remove
-		
 
-		
+
+
+		private bool IsNumber(string pValue)
+		{
+			foreach (Char c in pValue)
+			{
+				if (!Char.IsDigit(c))
+					return false;
+			}
+			return true;
+		}
 
 		private void btnThem_Click_1(object sender, EventArgs e)
 		{
@@ -233,35 +249,81 @@ namespace GUI
 			//tbSoTienNo.ReadOnly = false;
 
 
-			if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text) && !fMainForm.cNullTB(tbTenChuXe.Text) && !fMainForm.cNullTB(tbDienThoai.Text) && !fMainForm.cNullTB(tbDiaChi.Text) && !fMainForm.cNullTB(tbEmail.Text) && !fMainForm.cNullTB(tbSoTienNo.Text))
+			//if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text) && !fMainForm.cNullTB(tbTenChuXe.Text) && !fMainForm.cNullTB(tbDienThoai.Text) && !fMainForm.cNullTB(tbDiaChi.Text) && !fMainForm.cNullTB(tbEmail.Text) && !fMainForm.cNullTB(tbSoTienNo.Text))
+			//{
+			//	if (!KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
+			//	{
+
+			//		string strMaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
+			//		int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
+			//		string TenChuXe = tbTenChuXe.Text;
+			//		string DienThoai = tbDienThoai.Text;
+			//		string DiaChi = tbDiaChi.Text;
+			//		string Email = tbEmail.Text;
+			//		int TienNo = Convert.ToInt32(tbSoTienNo.Text);
+
+
+			//		KhachSuaXeDTO kh = new KhachSuaXeDTO(MaKhachSuaXe, TenChuXe, DienThoai, DiaChi, Email, TienNo);
+			//		KhachSuaXeBUS.addCustomer(kh);
+			//		dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
+
+			//	}
+			//	else
+			//	{
+			//		MessageBox.Show("Dữ liệu vừa nhập vào không hợp lệ, do bị trùng khóa chính.");
+			//	}
+
+			//}
+			//else
+			//{
+
+			//	MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
+			//}
+			if(IsNumber(tbMaKhachSuaXe.Text)==false)
+			{
+				MessageBox.Show("Mã khách hàng là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RefreshQLKH();
+				return;
+			}
+			if (IsNumber(tbDienThoai.Text) == false)
+			{
+				MessageBox.Show("Điện thoại là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
+			if (fMainForm.cNullTB(tbMaKhachSuaXe.Text) && fMainForm.cNullTB(tbTenChuXe.Text) && fMainForm.cNullTB(tbDienThoai.Text) && fMainForm.cNullTB(tbDiaChi.Text) && fMainForm.cNullTB(tbEmail.Text) && fMainForm.cNullTB(tbSoTienNo.Text))
+			{
+				MessageBox.Show("Xin hãy điền đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RefreshQLKH();
+				return;
+			}
+			DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thêm khách hàng này không? ", "Cảnh báo!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if(result == DialogResult.Yes)
 			{
 				if (!KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
 				{
-
-					string strMaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
-					int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
-					string TenChuXe = tbTenChuXe.Text;
-					string DienThoai = tbDienThoai.Text;
-					string DiaChi = tbDiaChi.Text;
-					string Email = tbEmail.Text;
-					int TienNo = Convert.ToInt32(tbSoTienNo.Text);
-
-
-					KhachSuaXeDTO kh = new KhachSuaXeDTO(MaKhachSuaXe, TenChuXe, DienThoai, DiaChi, Email, TienNo);
-					KhachSuaXeBUS.addCustomer(kh);
+					string ex = "";
+				string strMaKhachSuaXe = tbMaKhachSuaXe.Text.Trim();
+				int MaKhachSuaXe = Convert.ToInt32(strMaKhachSuaXe);
+				string TenChuXe = tbTenChuXe.Text;
+				string DienThoai = tbDienThoai.Text;
+				string DiaChi = tbDiaChi.Text;
+				string Email = tbEmail.Text;
+				int TienNo = Convert.ToInt32(tbSoTienNo.Text);
+				KhachSuaXeDTO kh = new KhachSuaXeDTO(MaKhachSuaXe, TenChuXe, DienThoai, DiaChi, Email, TienNo);
+				if ( KhachSuaXeBUS.InsertCustomer(kh,ex)==true)
+				{
+					MessageBox.Show("Thêm thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
-
+					RefreshQLKH();
+					return;
+				}
 				}
 				else
 				{
 					MessageBox.Show("Dữ liệu vừa nhập vào không hợp lệ, do bị trùng khóa chính.");
 				}
-
-			}
-			else
-			{
-
-				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
+				//MessageBox.Show(ex, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 
 			RefreshQLKH();

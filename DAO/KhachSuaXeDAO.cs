@@ -38,35 +38,57 @@ namespace DAO
 		#endregion
 		#region Insert, Update, Remove
 		
-		public static void InsertCustomer(KhachSuaXeDTO kh)
+		//public static void InsertCustomer(KhachSuaXeDTO kh)
+		//{
+		//	MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
+			
+			
+			
+		//	MySqlCommand cmd = new MySqlCommand("InsertCustomer", Conn);
+		//	cmd.CommandType = CommandType.StoredProcedure;
+
+		//	cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.VarChar, 10);
+		//	cmd.Parameters.Add("@_TenChuXe", MySqlDbType.VarChar, 100);
+		//	cmd.Parameters.Add("@_DienThoai", MySqlDbType.VarChar, 20);
+		//	cmd.Parameters.Add("@_DiaChi", MySqlDbType.VarChar, 100);
+		//	cmd.Parameters.Add("@_Email", MySqlDbType.VarChar, 40);
+		//	cmd.Parameters.Add("@_TienNo", MySqlDbType.Decimal);
+		//	cmd.Parameters["@_MaKhachSuaXe"].Value = kh.MaKhachSuaXe;
+		//	cmd.Parameters["@_TenChuXe"].Value = kh.TenChuXe;
+		//	cmd.Parameters["@_DienThoai"].Value = kh.DienThoai;
+		//	cmd.Parameters["@_DiaChi"].Value = kh.DiaChi;
+		//	cmd.Parameters["@_Email"].Value = kh.Email;
+		//	cmd.Parameters["@_TienNo"].Value = kh.TienNo;
+
+		//	Conn.Open();
+		//	cmd.ExecuteNonQuery();
+		//	Conn.Close();
+		//}
+
+		public static bool InsertCustomer(KhachSuaXeDTO kh, string exception ="")
 		{
-			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
-			
-			
-			
-			MySqlCommand cmd = new MySqlCommand("InsertCustomer", Conn);
-			cmd.CommandType = CommandType.StoredProcedure;
 
-			cmd.Parameters.Add("@_MaKhachSuaXe", MySqlDbType.VarChar, 10);
-			cmd.Parameters.Add("@_TenChuXe", MySqlDbType.VarChar, 100);
-			cmd.Parameters.Add("@_DienThoai", MySqlDbType.VarChar, 20);
-			cmd.Parameters.Add("@_DiaChi", MySqlDbType.VarChar, 100);
-			cmd.Parameters.Add("@_Email", MySqlDbType.VarChar, 40);
-			cmd.Parameters.Add("@_TienNo", MySqlDbType.Decimal);
-			cmd.Parameters["@_MaKhachSuaXe"].Value = kh.MaKhachSuaXe;
-			cmd.Parameters["@_TenChuXe"].Value = kh.TenChuXe;
-			cmd.Parameters["@_DienThoai"].Value = kh.DienThoai;
-			cmd.Parameters["@_DiaChi"].Value = kh.DiaChi;
-			cmd.Parameters["@_Email"].Value = kh.Email;
-			cmd.Parameters["@_TienNo"].Value = kh.TienNo;
+			try
+			{
 
-			Conn.Open();
-			cmd.ExecuteNonQuery();
-			Conn.Close();
+				//ExcuteQuery
+				DatabaseConnectionDAO.ExcuteProcedure("InsertCustomer", ref exception, new MySqlParameter[] { new MySqlParameter("@_MaKhachSuaXe", kh.MaKhachSuaXe), new MySqlParameter("@_TenChuXe", kh.TenChuXe), new MySqlParameter("@_DienThoai", kh.DienThoai), new MySqlParameter("@_DiaChi", kh.DiaChi), new MySqlParameter("@_Email", kh.Email), new MySqlParameter("@_TienNo", kh.TienNo) });
+				//if there is no exception
+				if (exception == "")
+				{
+					return true;
+				}
+			}
+			catch (Exception ex)
+			{
+				exception = ex.Message;
+			}
+
+
+			return false;
 		}
 
 
-		
 		public static void UpdateCustomer(KhachSuaXeDTO kh)
 		{
 
