@@ -230,6 +230,7 @@
             // 
             this.txtTienTraKhach.Location = new System.Drawing.Point(413, 169);
             this.txtTienTraKhach.Name = "txtTienTraKhach";
+            this.txtTienTraKhach.ReadOnly = true;
             this.txtTienTraKhach.Size = new System.Drawing.Size(93, 20);
             this.txtTienTraKhach.TabIndex = 16;
             this.txtTienTraKhach.TextChanged += new System.EventHandler(this.txtTienTraKhach_TextChanged);
@@ -248,6 +249,7 @@
             this.txtSoTienNo.Name = "txtSoTienNo";
             this.txtSoTienNo.Size = new System.Drawing.Size(182, 20);
             this.txtSoTienNo.TabIndex = 10;
+            this.txtSoTienNo.TextChanged += new System.EventHandler(this.txtSoTienNo_TextChanged);
             // 
             // dgvLichSuPTT
             // 

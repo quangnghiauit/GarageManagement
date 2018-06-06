@@ -123,10 +123,45 @@ namespace DAO
 			//cmd.ExecuteNonQuery();
 			//Conn.Close();
 		}
-		#endregion
-		#region Find Customers
-		//Tìm khách hàng theo mã khách hàng
-		public static void FindCustomerByID(KhachSuaXeDTO kh)
+
+        public static void addTienNo(string BienSo, decimal SoTien)
+        {
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            MySqlCommand cmd = new MySqlCommand("addTienNo", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@_BienSo", MySqlDbType.VarChar, 10);            
+            cmd.Parameters.Add("@_SoTien", MySqlDbType.Decimal);
+
+            cmd.Parameters["@_BienSo"].Value = BienSo;            
+            cmd.Parameters["@_SoTien"].Value = SoTien;
+
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public static void payTienNo(string BienSo, decimal SoTien)
+        {
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            MySqlCommand cmd = new MySqlCommand("payTienNo", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@_BienSo", MySqlDbType.VarChar, 10);
+            cmd.Parameters.Add("@_SoTien", MySqlDbType.Decimal);
+
+            cmd.Parameters["@_BienSo"].Value = BienSo;
+            cmd.Parameters["@_SoTien"].Value = SoTien;
+
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        #endregion
+        #region Find Customers
+        //Tìm khách hàng theo mã khách hàng
+        public static void FindCustomerByID(KhachSuaXeDTO kh)
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();

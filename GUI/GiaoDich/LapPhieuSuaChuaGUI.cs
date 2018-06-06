@@ -89,6 +89,8 @@ namespace GUI
                         SoLuongSuaChua, TienCong, ThanhTien);
                     ChiTietPhieuSuaChuaBUS.addChiTietPhieuSuaChua(CTPhieuSuaChua);
                 }
+
+                KhachSuaXeDAO.addTienNo(BienSo, _TongTien);
                   
                 dgvLichSuLapPhieu.DataSource = PhieuSuaChuaBUS.selectAllPhieuSuaChua();
 

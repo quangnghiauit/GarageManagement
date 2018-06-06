@@ -261,20 +261,50 @@ DELIMITER ;
 DELIMITER //
 Create Procedure UpdateTienNo (in _MaKhachHang int, in _SoTien decimal)
 Begin
-	update KHACHSUAXE set TienNo = TienNo + _SoTien where MaKhachHang=_MaKhachHang;
+	update KHACHSUAXE
+    set TienNo = TienNo + _SoTien
+    where MaKhachHang=_MaKhachHang;
 End //
 DELIMITER ;
 
 #Procedure dung cho PhieuThuTien
 DELIMITER //
-create procedure payTIENNO (in _MaKhachHang int, in _SoTien decimal)
+create procedure payTIENNO (in _BienSo char (10), in _SoTien decimal)
 Begin
+	declare MaKH int;
+    set MaKH = 
+    (
+    select KHACHSUAXE.MAKHACHSUAXE
+    from KHACHSUAXE, XE
+    where KHACHSUAXE.MAKHACHSUAXE = XE.MAKHACHSUAXE
+    and XE.BIENSO = _BienSo
+    );
 	update KHACHSUAXE
     set TienNo = TienNo - _SoTien
-    where MaKhachHang = _MaKhachHang;
+    where MAKHACHSUAXE = MaKH;
 End //
 DELIMITER ;
+#drop procedure payTIENNO;
 
+select * from KHACHSUAXE;
+
+DELIMITER //
+Create Procedure addTienNo (in _BienSo char (10), in _SoTien decimal)
+Begin
+	declare MaKH int;
+    set MaKH = 
+    (
+    select KHACHSUAXE.MAKHACHSUAXE
+    from KHACHSUAXE, XE
+    where KHACHSUAXE.MAKHACHSUAXE = XE.MAKHACHSUAXE
+    and XE.BIENSO = _BienSo
+    );
+	update KHACHSUAXE
+    set TienNo = TienNo + _SoTien
+    where MAKHACHSUAXE = MaKH;
+End //
+DELIMITER ;
+#drop Procedure addTienNo;
 
 
 /*Thao tác với hiệu xe*/

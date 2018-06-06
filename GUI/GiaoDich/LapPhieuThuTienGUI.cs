@@ -24,13 +24,26 @@ namespace GUI
         {
             if (!fMainForm.cNullTB(cboBienSo.Text) && !fMainForm.cNullTB(txtTenChuXe.Text) && !fMainForm.cNullTB(txtDienThoai.Text)
                 && !fMainForm.cNullTB(txtEmail.Text) && !fMainForm.cNullTB(txtSoTienNo.Text) && !fMainForm.cNullTB(txtSoTienNo.Text) &&
-                    !fMainForm.cNullTB(txtTienKhachTra.Text) && !fMainForm.cNullTB(txtTienTraKhach.Text) && !fMainForm.cNullTB(txtTienThu.Text))
+                    !fMainForm.cNullTB(txtTienKhachTra.Text))
             {
                 string BienSo = cboBienSo.Text;
-                DateTime NgayThuTien = dtmNgayThuTien.Value;
-                int SoTienThu = int.Parse(txtTienThu.Text);
+                DateTime NgayThuTien = dtmNgayThuTien.Value;                
                 int SoTienKhachTra = int.Parse(txtTienKhachTra.Text);
-                int SoTienTraKhach = int.Parse(txtTienTraKhach.Text);
+                int SoTienTraKhach;
+                int SoTienNo = int.Parse(txtSoTienNo.Text);                
+                if (SoTienNo > SoTienKhachTra)
+                {
+                    SoTienTraKhach = 0;
+                    SoTienNo -= SoTienKhachTra;
+                    KhachSuaXeDAO.addTienNo(BienSo, SoTienNo);
+                }                    
+                else
+                {
+                    SoTienTraKhach = SoTienKhachTra - SoTienNo;
+                    KhachSuaXeDAO.payTienNo(BienSo, SoTienNo);
+                }
+                    
+                int SoTienThu = SoTienNo;
 
                 PhieuThuTienDTO PhieuThu = new PhieuThuTienDTO("", BienSo,NgayThuTien,SoTienThu, SoTienKhachTra, SoTienTraKhach);
                 PhieuThuTienBUS.addPhieuThuTien(PhieuThu);
@@ -67,8 +80,22 @@ namespace GUI
         #region Calculate value of SoTienThu
         private void txtTienKhachTra_TextChanged(object sender, EventArgs e)
         {
-            if (!fMainForm.cNullTB(txtTienKhachTra.Text) && !fMainForm.cNullTB(txtTienTraKhach.Text))
-                txtTienThu.Text = (int.Parse(txtTienKhachTra.Text) - int.Parse(txtTienTraKhach.Text)).ToString();
+            if (!fMainForm.cNullTB(txtSoTienNo.Text))
+            {
+                int SoTienKhachTra = int.Parse(txtTienKhachTra.Text);
+                int SoTienTraKhach;
+                int SoTienNo = int.Parse(txtSoTienNo.Text);
+                if (SoTienNo > SoTienKhachTra)
+                {
+                    SoTienTraKhach = 0;
+                    SoTienNo -= SoTienKhachTra;
+                }
+                else
+                {
+                    SoTienTraKhach = SoTienKhachTra - SoTienNo;
+                }
+                txtTienTraKhach.Text = SoTienTraKhach.ToString();
+            }            
         }
 
         private void txtTienTraKhach_TextChanged(object sender, EventArgs e)
@@ -82,6 +109,27 @@ namespace GUI
         {
             fillCboTenChuXe();
             cboBienSo.SelectedIndex = -1;
+        }
+
+        private void txtSoTienNo_TextChanged(object sender, EventArgs e)
+        {
+            if (!fMainForm.cNullTB(txtTienKhachTra.Text))
+            {
+                int SoTienKhachTra = int.Parse(txtTienKhachTra.Text);
+                int SoTienTraKhach;
+                int SoTienNo = int.Parse(txtSoTienNo.Text);
+                if (SoTienNo > SoTienKhachTra)
+                {
+                    SoTienTraKhach = 0;
+                    SoTienNo -= SoTienKhachTra;
+                }
+                else
+                {
+                    SoTienTraKhach = SoTienKhachTra - SoTienNo;
+                }
+                txtTienTraKhach.Text = SoTienTraKhach.ToString();
+            }
+                
         }
     }
 }
