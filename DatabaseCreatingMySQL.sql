@@ -286,7 +286,7 @@ End //
 DELIMITER ;
 #drop procedure payTIENNO;
 
-select * from KHACHSUAXE;
+/*select * from KHACHSUAXE;*/
 
 DELIMITER //
 Create Procedure addTienNo (in _BienSo char (10), in _SoTien decimal)
