@@ -59,7 +59,8 @@
 			// 
 			// btnGD
 			// 
-			this.btnGD.Location = new System.Drawing.Point(548, 3);
+			this.btnGD.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.btnGD.Location = new System.Drawing.Point(552, 3);
 			this.btnGD.Name = "btnGD";
 			this.btnGD.Size = new System.Drawing.Size(162, 83);
 			this.btnGD.TabIndex = 2;
@@ -69,6 +70,7 @@
 			// 
 			// btnQuanLyVatTu
 			// 
+			this.btnQuanLyVatTu.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnQuanLyVatTu.Location = new System.Drawing.Point(380, 3);
 			this.btnQuanLyVatTu.Name = "btnQuanLyVatTu";
 			this.btnQuanLyVatTu.Size = new System.Drawing.Size(162, 83);
@@ -79,6 +81,7 @@
 			// 
 			// btnTroGiup
 			// 
+			this.btnTroGiup.Font = new System.Drawing.Font("Times New Roman", 12F);
 			this.btnTroGiup.Location = new System.Drawing.Point(1073, 3);
 			this.btnTroGiup.Name = "btnTroGiup";
 			this.btnTroGiup.Size = new System.Drawing.Size(162, 83);
@@ -89,7 +92,8 @@
 			// 
 			// btnTT
 			// 
-			this.btnTT.Location = new System.Drawing.Point(905, 3);
+			this.btnTT.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.btnTT.Location = new System.Drawing.Point(900, 3);
 			this.btnTT.Name = "btnTT";
 			this.btnTT.Size = new System.Drawing.Size(162, 83);
 			this.btnTT.TabIndex = 4;
@@ -99,7 +103,8 @@
 			// 
 			// btnBC
 			// 
-			this.btnBC.Location = new System.Drawing.Point(726, 3);
+			this.btnBC.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.btnBC.Location = new System.Drawing.Point(725, 3);
 			this.btnBC.Name = "btnBC";
 			this.btnBC.Size = new System.Drawing.Size(162, 83);
 			this.btnBC.TabIndex = 3;
@@ -109,7 +114,8 @@
 			// 
 			// btnTCX
 			// 
-			this.btnTCX.Location = new System.Drawing.Point(202, 3);
+			this.btnTCX.Font = new System.Drawing.Font("Times New Roman", 12F);
+			this.btnTCX.Location = new System.Drawing.Point(207, 3);
 			this.btnTCX.Name = "btnTCX";
 			this.btnTCX.Size = new System.Drawing.Size(162, 83);
 			this.btnTCX.TabIndex = 1;
@@ -119,6 +125,7 @@
 			// 
 			// btnQLKH
 			// 
+			this.btnQLKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnQLKH.Location = new System.Drawing.Point(34, 3);
 			this.btnQLKH.Name = "btnQLKH";
 			this.btnQLKH.Size = new System.Drawing.Size(162, 83);
