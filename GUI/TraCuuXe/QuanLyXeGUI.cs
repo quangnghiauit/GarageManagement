@@ -1,19 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Media;
-using System.IO;
 using MySql.Data.MySqlClient;
 using DAO;
 using BUS;
-using DTO;
-using System.Globalization;
-using Microsoft.Office.Interop.Excel;
 using app = Microsoft.Office.Interop.Excel.Application;
 
 namespace GUI
@@ -27,7 +17,7 @@ namespace GUI
 			//fillCboBienSo();
 			//cbbBienSoTraCuu.SelectedIndex = -1;
 		}
-
+		#region Function
 		private void panel1_Paint(object sender, PaintEventArgs e)
 		{
 
@@ -128,40 +118,6 @@ namespace GUI
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
 		}
-
-
-		#region Export Excel
-		private void export2Excel(DataGridView g, string path, string filename)
-		{
-
-			app obj = new app();
-			obj.Application.Workbooks.Add(Type.Missing);
-			obj.Columns.ColumnWidth = 25;
-			for (int i = 1; i < g.Columns.Count + 1; i++)
-			{
-				obj.Cells[1, i] = g.Columns[i - 1].HeaderText;
-			}
-
-			for (int i = 0; i < g.Rows.Count; i++)
-			{
-				for (int j = 0; j < g.Columns.Count; j++)
-				{
-					if (g.Rows[i].Cells[j].Value != null)
-					{
-						obj.Cells[i + 2, j + 1] = g.Rows[i].Cells[j].Value.ToString();
-					}
-				}
-			}
-			obj.ActiveWorkbook.SaveCopyAs(path + filename + ".xlsx");
-			obj.ActiveWorkbook.Saved = true;
-		}
-		private void btnXuatFileTraCuuXe_Click(object sender, EventArgs e)
-		{
-			export2Excel(dtgvTraCuuXe, @"E:\", "ExportCars");
-		}
-
-		#endregion
-
 
 		private void QuanLyXeGUI_Load(object sender, EventArgs e)
 		{
@@ -283,6 +239,104 @@ namespace GUI
 			tbBienSoXe.Text = "";
 			tbTienNoTraCuu.Text = "0";
 		}
+		private void btnLichSuThaoTacXe_Click(object sender, EventArgs e)
+		{
+			dtgvLichSuThaoTacXe.DataSource = XeBUS.loadAllCar();
+		}
+
+		private void btnThemHieuXe_Click(object sender, EventArgs e)
+		{
+			//Add car brands
+			fThemHieuXe myForm = new fThemHieuXe();
+
+			myForm.ShowDialog();
+
+			this.Show();
+			RefreshHieuXe();
+		}
+		private void RefreshGUI()
+		{
+			#region Load car name and customer name
+
+
+
+			//display customer name and set value ID customer
+			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
+			MySqlCommand cmdcustomer = new MySqlCommand("select MAKHACHSUAXE,TENCHUXE from KHACHSUAXE", Conncustomer);
+
+
+			Conncustomer.Open();
+			MySqlDataAdapter dacustomer = new MySqlDataAdapter();
+			dacustomer.SelectCommand = cmdcustomer;
+			DataSet dscustomer = new DataSet();
+			dacustomer.Fill(dscustomer, "TenChuXe");
+			cbbTenChuXe.DataSource = dscustomer.Tables[0];
+			cbbTenChuXe.DisplayMember = "TenChuXe";
+			cbbTenChuXe.ValueMember = "MaKhachSuaXe";
+			cbbTenChuXe.SelectedIndex = -1;
+
+			tbTienNo.Text = "0";
+			#endregion
+		}
+
+		//private void fillCboBienSo()
+		//{
+		//	TiepNhanXeSuaDAO.fillCBO("BIENSO", "XE", cbbBienSoTraCuu);
+		//}
+		private void RefreshHieuXe()
+		{
+			//display car name and set value car
+			MySqlConnection ConnCar = DatabaseConnectionDAO.connectionDatabase();
+			MySqlCommand cmdCar = new MySqlCommand("select MAHIEUXE,TENHIEUXE from HIEUXE", ConnCar);
+
+
+			ConnCar.Open();
+			MySqlDataAdapter daCar = new MySqlDataAdapter();
+			daCar.SelectCommand = cmdCar;
+			DataSet dsCar = new DataSet();
+			daCar.Fill(dsCar, "TenHieuXe");
+			cbbHieuXe.DataSource = dsCar.Tables[0];
+			cbbHieuXe.DisplayMember = "TenHieuXe";
+			cbbHieuXe.ValueMember = "MaHieuXe";
+			cbbHieuXe.SelectedIndex = -1;
+		}
+		#endregion
+
+
+		#region Export Excel
+		private void export2Excel(DataGridView g, string path, string filename)
+		{
+
+			app obj = new app();
+			obj.Application.Workbooks.Add(Type.Missing);
+			obj.Columns.ColumnWidth = 25;
+			for (int i = 1; i < g.Columns.Count + 1; i++)
+			{
+				obj.Cells[1, i] = g.Columns[i - 1].HeaderText;
+			}
+
+			for (int i = 0; i < g.Rows.Count; i++)
+			{
+				for (int j = 0; j < g.Columns.Count; j++)
+				{
+					if (g.Rows[i].Cells[j].Value != null)
+					{
+						obj.Cells[i + 2, j + 1] = g.Rows[i].Cells[j].Value.ToString();
+					}
+				}
+			}
+			obj.ActiveWorkbook.SaveCopyAs(path + filename + ".xlsx");
+			obj.ActiveWorkbook.Saved = true;
+		}
+		private void btnXuatFileTraCuuXe_Click(object sender, EventArgs e)
+		{
+			export2Excel(dtgvTraCuuXe, @"E:\", "ExportCars");
+		}
+
+		#endregion
+
+
+		
 		#region Insert , Update, Remove
 		private void btnThemXe_Click(object sender, EventArgs e)
 		{
@@ -388,67 +442,7 @@ namespace GUI
 			}
 		}
 		#endregion
-		private void btnLichSuThaoTacXe_Click(object sender, EventArgs e)
-		{
-			dtgvLichSuThaoTacXe.DataSource = XeBUS.loadAllCar();
-		}
-
-		private void btnThemHieuXe_Click(object sender, EventArgs e)
-		{
-			//Add car brands
-			fThemHieuXe myForm = new fThemHieuXe();
-
-			myForm.ShowDialog();
-
-			this.Show();
-			RefreshHieuXe();
-		}
-		private void RefreshGUI()
-		{
-			#region Load car name and customer name
-			
-
-
-			//display customer name and set value ID customer
-			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
-			MySqlCommand cmdcustomer = new MySqlCommand("select MAKHACHSUAXE,TENCHUXE from KHACHSUAXE", Conncustomer);
-
-
-			Conncustomer.Open();
-			MySqlDataAdapter dacustomer = new MySqlDataAdapter();
-			dacustomer.SelectCommand = cmdcustomer;
-			DataSet dscustomer = new DataSet();
-			dacustomer.Fill(dscustomer, "TenChuXe");
-			cbbTenChuXe.DataSource = dscustomer.Tables[0];
-			cbbTenChuXe.DisplayMember = "TenChuXe";
-			cbbTenChuXe.ValueMember = "MaKhachSuaXe";
-			cbbTenChuXe.SelectedIndex = -1;
-
-			tbTienNo.Text = "0";
-			#endregion
-		}
-
-		//private void fillCboBienSo()
-		//{
-		//	TiepNhanXeSuaDAO.fillCBO("BIENSO", "XE", cbbBienSoTraCuu);
-		//}
-		private void RefreshHieuXe()
-		{
-			//display car name and set value car
-			MySqlConnection ConnCar = DatabaseConnectionDAO.connectionDatabase();
-			MySqlCommand cmdCar = new MySqlCommand("select MAHIEUXE,TENHIEUXE from HIEUXE", ConnCar);
-
-
-			ConnCar.Open();
-			MySqlDataAdapter daCar = new MySqlDataAdapter();
-			daCar.SelectCommand = cmdCar;
-			DataSet dsCar = new DataSet();
-			daCar.Fill(dsCar, "TenHieuXe");
-			cbbHieuXe.DataSource = dsCar.Tables[0];
-			cbbHieuXe.DisplayMember = "TenHieuXe";
-			cbbHieuXe.ValueMember = "MaHieuXe";
-			cbbHieuXe.SelectedIndex = -1;
-		}
+		
 
 	}
 }

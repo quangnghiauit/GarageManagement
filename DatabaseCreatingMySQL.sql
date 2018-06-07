@@ -401,30 +401,6 @@ Begin
 End //
 DELIMITER ;
 
-/*
-DELIMITER // 
-create procedure FindCars (in _BienSo char(10) , in _MaKhachSuaXe int, in _MaHieuXe char(10),in _TenChuXe char(100),in _TenHieuXe char(100), in _TienNo decimal, in _SoTienNoCompareType varchar(2))
-Begin 
-		create temporary table SoTienNoTable (MaKhachSuaXe int);
-        case _SoTienNoCompareType
-			when '=' then insert into SoTienNoTable select MaKhachSuaXe from KHACHSUAXE where TienNo = _TienNo;
-            when '>' then insert into SoTienNoTable select MaKhachSuaXe from KHACHSUAXE where TienNo > _TienNo;
-            when '>=' then insert into SoTienNoTable select MaKhachSuaXe from KHACHSUAXE where TienNo >= _TienNo;
-            when '<' then insert into SoTienNoTable select MaKhachSuaXe from KHACHSUAXE where TienNo < _TienNo;
-            when '<=' then insert into SoTienNoTable select MaKhachSuaXe from KHACHSUAXE where TienNo <= _TienNo;
-            end case;
-            
-            select BienSo As 'Biển số', TenChuXe As 'Tên chủ xe', TenHieuXe As 'Tên hiệu xe',
-            CONCAT('', Format(TienNo,0), ' đ') As 'Số Tiền Nợ'
-            from KHACHSUAXE,XE,HIEUXE
-            where TenChuXe like CONCAT('%', _TenChuXe, '%') and TenHieuXe like CONCAT('%', _TenHieuXe, '%')  and
-            MaKhachSuaXe in (select MaKhachSuaXe from SoTienNoTable)  and
-            HIEUXE.MaHieuXe= _MaHieuXe and XE.MaHieuXe= _MaHieuXe;
-            
-            drop table SoTienNoTable; 
-End //
-DELIMITER ;
-*/
 
 
 
@@ -659,6 +635,8 @@ Begin
 End //
 DELIMITER ;
 
+
+
 DELIMITER // 
 create procedure InsertCHITIETPHIEUSUACHUA ( in _MaPhieuSuaChua char(10), in _NoiDung char(100),
  in _MaVatTuPhuTung char(10), _SoLuongSuaChua int, in _TienCong decimal, _ThanhTien decimal)
@@ -670,6 +648,8 @@ End //
 DELIMITER ;
 #drop procedure InsertCHITIETPHIEUSUACHUA;
 
+
+
 DELIMITER //
 Create Procedure SelectAllPHIEUSUACHUA()
 Begin
@@ -679,6 +659,9 @@ Begin
 End //
 DELIMITER ;
 #drop procedure SelectAllPHIEUSUACHUA;
+
+
+
 
 	DELIMITER // 
 	create procedure InsertPHIEUSUACHUA(in _MaPhieuSuaChua char (10), in _BienSo char(20), in _NgaySuaChua date,
@@ -792,34 +775,7 @@ begin
 end //
 DELIMITER ;
 
-/*DELIMITER //
-create procedure insertCTBaoCaoTon( in _MaBaoCao char(10), in _Month int , in _Year int)
-begin
-	insert into CHITIETTON (MABAOCAOTON, MAVATTUPHUTUNG, TONDAU, TONPHATSINH, TONCUOI)
-    values(_MaBaoCao,(select  VATTUPHUTUNG.MAVATTUPHUTUNG 
-    from VATTUPHUTUNG, QUANLYNHAPVATTU
-    where  month(QUANLYNHAPVATTU.NGAYNHAP) = _Month
-    and year(QUANLYNHAPVATTU.NGAYNHAP) =_Year
-    and QUANLYNHAPVATTU.MAVATTUPHUTUNG = VATTUPHUTUNG.MAVATTUPHUTUNG
-    group by VATTUPHUTUNG.MAVATTUPHUTUNG),(select  VATTUPHUTUNG.SOLUONGTON 
-    from VATTUPHUTUNG, QUANLYNHAPVATTU
-    where  month(QUANLYNHAPVATTU.NGAYNHAP) = _Month
-    and year(QUANLYNHAPVATTU.NGAYNHAP) =_Year
-    and QUANLYNHAPVATTU.MAVATTUPHUTUNG = VATTUPHUTUNG.MAVATTUPHUTUNG
-    group by VATTUPHUTUNG.MAVATTUPHUTUNG),(select  sum(QUANLYNHAPVATTU.SOLUONGNHAP) 
-    from VATTUPHUTUNG, QUANLYNHAPVATTU
-    where  month(QUANLYNHAPVATTU.NGAYNHAP) = _Month
-    and year(QUANLYNHAPVATTU.NGAYNHAP) =_Year
-    and QUANLYNHAPVATTU.MAVATTUPHUTUNG = VATTUPHUTUNG.MAVATTUPHUTUNG
-    group by VATTUPHUTUNG.MAVATTUPHUTUNG),(select  
-    (VATTUPHUTUNG.SOLUONGTON + sum(QUANLYNHAPVATTU.SOLUONGNHAP))
-    from VATTUPHUTUNG, QUANLYNHAPVATTU
-    where  month(QUANLYNHAPVATTU.NGAYNHAP) = _Month
-    and year(QUANLYNHAPVATTU.NGAYNHAP) =_Year
-    and QUANLYNHAPVATTU.MAVATTUPHUTUNG = VATTUPHUTUNG.MAVATTUPHUTUNG
-    group by VATTUPHUTUNG.MAVATTUPHUTUNG));
-end //
-DELIMITER ;*/
+
 
 
 DELIMITER //
@@ -838,48 +794,7 @@ begin
     group by VATTUPHUTUNG.MAVATTUPHUTUNG);
 end //
 DELIMITER ;
-/*insert into CHITIETTON (MABAOCAOTON, MAVATTUPHUTUNG, TONDAU, TONPHATSINH, TONCUOI)
-    (select '123','VT001',0,0,0);
-    select * from chitietton;
 
-insert into CHITIETTON (MABAOCAOTON, MAVATTUPHUTUNG, TONDAU, TONPHATSINH, TONCUOI)
-    (select '123',VATTUPHUTUNG.MAVATTUPHUTUNG ,
-      VATTUPHUTUNG.SOLUONGTON ,
-     sum(QUANLYNHAPVATTU.SOLUONGNHAP) ,
-   
-    (VATTUPHUTUNG.SOLUONGTON + sum(QUANLYNHAPVATTU.SOLUONGNHAP))
-    from VATTUPHUTUNG, QUANLYNHAPVATTU
-    where  month(QUANLYNHAPVATTU.NGAYNHAP) = 6
-    and year(QUANLYNHAPVATTU.NGAYNHAP) =2018    
-    and QUANLYNHAPVATTU.MAVATTUPHUTUNG = VATTUPHUTUNG.MAVATTUPHUTUNG
-    group by VATTUPHUTUNG.MAVATTUPHUTUNG);
-select * from chitietton;
-select * from baocaoton;
-
- insert into CHITIETTON (MABAOCAOTON, MAVATTUPHUTUNG, TONDAU, TONPHATSINH, TONCUOI)
-    values( '123',(select  VATTUPHUTUNG.MAVATTUPHUTUNG 
-    from VATTUPHUTUNG, QUANLYNHAPVATTU
-    where  month(QUANLYNHAPVATTU.NGAYNHAP) = 6
-    and year(QUANLYNHAPVATTU.NGAYNHAP) =2018
-    and QUANLYNHAPVATTU.MAVATTUPHUTUNG = VATTUPHUTUNG.MAVATTUPHUTUNG
-    group by VATTUPHUTUNG.MAVATTUPHUTUNG),(select  VATTUPHUTUNG.SOLUONGTON 
-    from VATTUPHUTUNG, QUANLYNHAPVATTU
-    where  month(QUANLYNHAPVATTU.NGAYNHAP) = 6
-    and year(QUANLYNHAPVATTU.NGAYNHAP) =2018
-    and QUANLYNHAPVATTU.MAVATTUPHUTUNG = VATTUPHUTUNG.MAVATTUPHUTUNG
-    group by VATTUPHUTUNG.MAVATTUPHUTUNG),(select  sum(QUANLYNHAPVATTU.SOLUONGNHAP) 
-    from VATTUPHUTUNG, QUANLYNHAPVATTU
-    where  month(QUANLYNHAPVATTU.NGAYNHAP) = 6
-    and year(QUANLYNHAPVATTU.NGAYNHAP) =2018
-    and QUANLYNHAPVATTU.MAVATTUPHUTUNG = VATTUPHUTUNG.MAVATTUPHUTUNG
-    group by VATTUPHUTUNG.MAVATTUPHUTUNG),(select  
-    (VATTUPHUTUNG.SOLUONGTON + sum(QUANLYNHAPVATTU.SOLUONGNHAP)) as 'Cong'
-    from VATTUPHUTUNG, QUANLYNHAPVATTU
-    where  month(QUANLYNHAPVATTU.NGAYNHAP) = 6
-    and year(QUANLYNHAPVATTU.NGAYNHAP) =2018
-    and QUANLYNHAPVATTU.MAVATTUPHUTUNG = VATTUPHUTUNG.MAVATTUPHUTUNG
-    group by VATTUPHUTUNG.MAVATTUPHUTUNG));*/
-#drop procedure insertCTBaoCaoTon;
 
 DELIMITER //
 create procedure createBaoCaoTon( in _Time date)

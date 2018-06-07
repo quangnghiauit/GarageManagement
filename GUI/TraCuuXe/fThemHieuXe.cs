@@ -1,15 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Media;
-using System.IO;
-using MySql.Data.MySqlClient;
-using DAO;
 using BUS;
 using DTO;
 
@@ -70,11 +60,12 @@ namespace GUI
 				}
 			}
 		}
-		#endregion
-
 		private void btnLichSu_Click(object sender, EventArgs e)
 		{
 			dtgvHieuXe.DataSource = HieuXeBUS.loadTatCaHieuXe();
 		}
+		#endregion
+
+
 	}
 }

@@ -1,19 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Media;
-using System.IO;
-using MySql.Data.MySqlClient;
-using DAO;
 using BUS;
 using DTO;
-using System.Globalization;
-using Microsoft.Office.Interop.Excel;
 using app = Microsoft.Office.Interop.Excel.Application;
 
 
@@ -27,21 +15,17 @@ namespace GUI
 		}
 
 
+
+		#region Functions
 		//button search customer
 		private void btnTimKiem_Click(object sender, EventArgs e)
 		{
-			string tbMaKhachHangTraCuu = "0";
 
-			string tbTenKhachHangTraCuu = "";
-			string tbDienThoaiTraCuu = "";
-			string tbDiaChiTraCuu = "";
-			string tbEmailTraCuu = "";
-			string tbSoTienNoTraCuu = "";
 			FindCustomer();
 		}
 
 
-		
+
 
 		private void fQuanLyKhachHangGUI_Load(object sender, EventArgs e)
 		{
@@ -95,7 +79,6 @@ namespace GUI
 
 
 		}
-		#region Functions
 		//Conditional customer search function
 		private void FindCustomer()
 		{
@@ -205,12 +188,18 @@ namespace GUI
 			tbEmail.Text = "";
 			tbSoTienNo.Text = "0";
 		}
-		#endregion
 
+		private void btnLichSuThaoTac_Click_1(object sender, EventArgs e)
+		{
+			dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
+		}
 		private void pnThaoTac_Paint(object sender, PaintEventArgs e)
 		{
 
 		}
+		#endregion
+
+
 
 		#region Buttons Insert, Update, Remove
 
@@ -442,10 +431,7 @@ namespace GUI
 			
 		}
 		#endregion
-		private void btnLichSuThaoTac_Click_1(object sender, EventArgs e)
-		{
-			dtgvThaoTac.DataSource = KhachSuaXeBUS.loadAllCustomer();
-		}
+		
 		
 	}
 }

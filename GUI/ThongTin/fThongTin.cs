@@ -16,7 +16,7 @@ namespace GUI
 		{
 			InitializeComponent();
 		}
-
+		#region Button
 		private void btnThayDoiQuyDinh_Click(object sender, EventArgs e)
 		{
 			this.Visible = false;
@@ -49,5 +49,7 @@ namespace GUI
 		{
 
 		}
+		#endregion
+
 	}
 }

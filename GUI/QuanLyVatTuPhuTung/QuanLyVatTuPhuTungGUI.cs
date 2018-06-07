@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Media;
-using System.IO;
 using MySql.Data.MySqlClient;
 using DAO;
 using BUS;
 using DTO;
-using System.Globalization;
-using Microsoft.Office.Interop.Excel;
 using app = Microsoft.Office.Interop.Excel.Application;
 
 namespace GUI
@@ -25,7 +16,7 @@ namespace GUI
 			InitializeComponent();
 			//fillCboBienSo();
 		}
-
+		#region Function
 		private void btnTimKiemTraCuu_Click(object sender, EventArgs e)
 		{
 			if (!fMainForm.cNullTB(cbbMaVatTuTraCuu.DisplayMember))
@@ -57,6 +48,65 @@ namespace GUI
 				MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 			}
 		}
+
+		private void QuanLyVatTuPhuTungGUI_Load(object sender, EventArgs e)
+		{
+			//load CustomerID
+
+			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
+			MySqlCommand cmdcustomer = new MySqlCommand("select MaVatTuPhuTung from VATTUPHUTUNG", Conncustomer);
+
+
+			Conncustomer.Open();
+			MySqlDataAdapter dacustomer = new MySqlDataAdapter();
+			dacustomer.SelectCommand = cmdcustomer;
+			DataSet dscustomer = new DataSet();
+			dacustomer.Fill(dscustomer, "MaVatTuPhuTung");
+			cbbMaVatTuTraCuu.DataSource = dscustomer.Tables[0];
+			cbbMaVatTuTraCuu.DisplayMember = "MaVatTuPhuTung";
+			cbbMaVatTuTraCuu.ValueMember = "MaVatTuPhuTung";
+			cbbMaVatTuTraCuu.SelectedIndex = -1;
+			tbDonGiaThaoTac.Text = "0";
+			tbSoLuongThaoTac.Text = "0";
+
+			tbDonGiaTraCuu.Text = "0";
+			tbSoLuongTraCuu.Text = "0";
+		}
+		private void btnLichSuThaoTac_Click(object sender, EventArgs e)
+		{
+			dtgvThaoTac.DataSource = VatTuPhuTungBUS.loadAllSpareParts();
+		}
+		//private void fillCboBienSo()
+		//{
+		//	TiepNhanXeSuaDAO.fillCBO("MaVatTuPhuTung", "VATTUPHUTUNG", cbbMaVatTuTraCuu);
+		//}
+		private void RefreshGUI()
+		{
+			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
+			MySqlCommand cmdcustomer = new MySqlCommand("select MaVatTuPhuTung from VATTUPHUTUNG", Conncustomer);
+
+
+			Conncustomer.Open();
+			MySqlDataAdapter dacustomer = new MySqlDataAdapter();
+			dacustomer.SelectCommand = cmdcustomer;
+			DataSet dscustomer = new DataSet();
+			dacustomer.Fill(dscustomer, "MaVatTuPhuTung");
+			cbbMaVatTuTraCuu.DataSource = dscustomer.Tables[0];
+			cbbMaVatTuTraCuu.DisplayMember = "MaVatTuPhuTung";
+			cbbMaVatTuTraCuu.ValueMember = "MaVatTuPhuTung";
+			cbbMaVatTuTraCuu.SelectedIndex = -1;
+
+
+			tbMaVatTuThaoTac.Text = "";
+			tbTenVatTuThaoTac.Text = "";
+			tbDonGiaThaoTac.Text = "0";
+			tbSoLuongThaoTac.Text = "0";
+			tbTenVatTuTraCuu.Text = "";
+			tbDonGiaTraCuu.Text = "0";
+			tbSoLuongTraCuu.Text = "0";
+		}
+		#endregion
+
 		#region Export Excel
 		private void export2Excel(DataGridView g, string path, string filename)
 		{
@@ -89,29 +139,7 @@ namespace GUI
 
 		#endregion
 		
-		private void QuanLyVatTuPhuTungGUI_Load(object sender, EventArgs e)
-		{
-			//load CustomerID
-
-			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
-			MySqlCommand cmdcustomer = new MySqlCommand("select MaVatTuPhuTung from VATTUPHUTUNG", Conncustomer);
-
-
-			Conncustomer.Open();
-			MySqlDataAdapter dacustomer = new MySqlDataAdapter();
-			dacustomer.SelectCommand = cmdcustomer;
-			DataSet dscustomer = new DataSet();
-			dacustomer.Fill(dscustomer, "MaVatTuPhuTung");
-			cbbMaVatTuTraCuu.DataSource = dscustomer.Tables[0];
-			cbbMaVatTuTraCuu.DisplayMember = "MaVatTuPhuTung";
-			cbbMaVatTuTraCuu.ValueMember = "MaVatTuPhuTung";
-			cbbMaVatTuTraCuu.SelectedIndex = -1;
-			tbDonGiaThaoTac.Text = "0";
-			tbSoLuongThaoTac.Text = "0";
-			
-			tbDonGiaTraCuu.Text = "0";
-			tbSoLuongTraCuu.Text = "0";
-		}
+		
 		#region Buttons Insert, Update, Remove
 		private void btnThem_Click(object sender, EventArgs e)
 		{
@@ -222,38 +250,6 @@ namespace GUI
 			RefreshGUI();
 		}
 		#endregion
-		private void btnLichSuThaoTac_Click(object sender, EventArgs e)
-		{
-			dtgvThaoTac.DataSource = VatTuPhuTungBUS.loadAllSpareParts();
-		}
-		//private void fillCboBienSo()
-		//{
-		//	TiepNhanXeSuaDAO.fillCBO("MaVatTuPhuTung", "VATTUPHUTUNG", cbbMaVatTuTraCuu);
-		//}
-		private void RefreshGUI()
-		{
-			MySqlConnection Conncustomer = DatabaseConnectionDAO.connectionDatabase();
-			MySqlCommand cmdcustomer = new MySqlCommand("select MaVatTuPhuTung from VATTUPHUTUNG", Conncustomer);
-
-
-			Conncustomer.Open();
-			MySqlDataAdapter dacustomer = new MySqlDataAdapter();
-			dacustomer.SelectCommand = cmdcustomer;
-			DataSet dscustomer = new DataSet();
-			dacustomer.Fill(dscustomer, "MaVatTuPhuTung");
-			cbbMaVatTuTraCuu.DataSource = dscustomer.Tables[0];
-			cbbMaVatTuTraCuu.DisplayMember = "MaVatTuPhuTung";
-			cbbMaVatTuTraCuu.ValueMember = "MaVatTuPhuTung";
-			cbbMaVatTuTraCuu.SelectedIndex = -1;
-
-
-			tbMaVatTuThaoTac.Text = "";
-			tbTenVatTuThaoTac.Text = "";
-			tbDonGiaThaoTac.Text = "0";
-			tbSoLuongThaoTac.Text = "0";
-			tbTenVatTuTraCuu.Text = "";
-			tbDonGiaTraCuu.Text = "0";
-			tbSoLuongTraCuu.Text = "0";
-		}
+		
 	}
 }
