@@ -24,6 +24,7 @@ namespace DAO
 		{
 
 			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
+			
 			MySqlCommand cmd = new MySqlCommand("LoadAllCustomer", Conn);
 			
 
@@ -242,6 +243,7 @@ namespace DAO
 
 			string cPrimaryKey = "Select *From KHACHSUAXE Where MAKHACHSUAXE = '" + _textBox + "' ";
 			MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
+			
 			MySqlCommand cmd = new MySqlCommand(cPrimaryKey, Conn);
 			cmd.CommandType = CommandType.Text;
 			Conn.Open();

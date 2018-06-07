@@ -38,15 +38,16 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
+			this.btnLuuKetNoi = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnConnect
 			// 
-			this.btnConnect.Location = new System.Drawing.Point(325, 389);
+			this.btnConnect.Location = new System.Drawing.Point(172, 371);
 			this.btnConnect.Name = "btnConnect";
-			this.btnConnect.Size = new System.Drawing.Size(224, 107);
+			this.btnConnect.Size = new System.Drawing.Size(110, 40);
 			this.btnConnect.TabIndex = 5;
-			this.btnConnect.Text = "Kết Nối";
+			this.btnConnect.Text = "Kiểm Tra Kết Nối";
 			this.btnConnect.UseVisualStyleBackColor = true;
 			this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
 			// 
@@ -129,11 +130,22 @@
 			this.label5.TabIndex = 14;
 			this.label5.Text = "Database Name";
 			// 
+			// btnLuuKetNoi
+			// 
+			this.btnLuuKetNoi.Location = new System.Drawing.Point(370, 371);
+			this.btnLuuKetNoi.Name = "btnLuuKetNoi";
+			this.btnLuuKetNoi.Size = new System.Drawing.Size(110, 40);
+			this.btnLuuKetNoi.TabIndex = 15;
+			this.btnLuuKetNoi.Text = "Lưu Kết Nối";
+			this.btnLuuKetNoi.UseVisualStyleBackColor = true;
+			this.btnLuuKetNoi.Click += new System.EventHandler(this.btnLuuKetNoi_Click);
+			// 
 			// fThayDoiDatabase
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(850, 540);
+			this.Controls.Add(this.btnLuuKetNoi);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
@@ -164,5 +176,6 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Button btnLuuKetNoi;
 	}
 }

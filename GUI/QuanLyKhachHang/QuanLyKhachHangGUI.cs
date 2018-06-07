@@ -291,7 +291,7 @@ namespace GUI
 
 				return;
 			}
-			if (fMainForm.cNullTB(tbMaKhachSuaXe.Text) && fMainForm.cNullTB(tbTenChuXe.Text) && fMainForm.cNullTB(tbDienThoai.Text) && fMainForm.cNullTB(tbDiaChi.Text) && fMainForm.cNullTB(tbEmail.Text) && fMainForm.cNullTB(tbSoTienNo.Text))
+			if (fMainForm.cNullTB(tbMaKhachSuaXe.Text) || fMainForm.cNullTB(tbTenChuXe.Text) || fMainForm.cNullTB(tbDienThoai.Text) || fMainForm.cNullTB(tbDiaChi.Text) || fMainForm.cNullTB(tbEmail.Text) || fMainForm.cNullTB(tbSoTienNo.Text))
 			{
 				MessageBox.Show("Xin hãy điền đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				RefreshQLKH();

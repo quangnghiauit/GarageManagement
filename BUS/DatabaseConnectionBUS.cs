@@ -48,5 +48,10 @@ namespace BUS
 			}
 			return false;
 		}
+
+		public static void SaveChangeConection()
+		{
+			DatabaseConnectionDAO.SaveChangeConection();
+		}
 	}
 }
