@@ -13,9 +13,23 @@ namespace GUI
 		}
 
 		#region Add,remove,view
-
+		private bool IsNumber(string pValue)
+		{
+			foreach (Char c in pValue)
+			{
+				if (!Char.IsDigit(c))
+					return false;
+			}
+			return true;
+		}
 		private void btnThem_Click(object sender, EventArgs e)
 		{
+			if (IsNumber(tbSoTienCong.Text) == false)
+			{
+				MessageBox.Show("Số tiền công là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
 			if (!fMainForm.cNullTB(tbMaTienCong.Text) && !fMainForm.cNullTB(tbTenTienCong.Text))
 			{
 				if (!TienCongBUS.cPrimaryKey(tbMaTienCong.Text.Trim()))
@@ -49,6 +63,13 @@ namespace GUI
 
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
+			if (IsNumber(tbSoTienCong.Text) == false)
+			{
+				MessageBox.Show("Số tiền công là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
+
 			if (!fMainForm.cNullTB(tbMaTienCong.Text))
 			{
 				if (TienCongBUS.cPrimaryKey(tbMaTienCong.Text.Trim()))

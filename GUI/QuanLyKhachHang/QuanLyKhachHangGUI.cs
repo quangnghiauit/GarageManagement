@@ -20,7 +20,24 @@ namespace GUI
 		//button search customer
 		private void btnTimKiem_Click(object sender, EventArgs e)
 		{
-
+			if (IsNumber(tbMaKhachHangTraCuu.Text) == false)
+			{
+				MessageBox.Show("Mã khách hàng là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RefreshQLKH();
+				return;
+			}
+			if (IsNumber(tbDienThoaiTraCuu.Text) == false)
+			{
+				MessageBox.Show("Điện thoại là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RefreshQLKH();
+				return;
+			}
+			if (IsNumber(tbSoTienNoTraCuu.Text) == false)
+			{
+				MessageBox.Show("Số tiền nợ là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RefreshQLKH();
+				return;
+			}
 			FindCustomer();
 		}
 
@@ -187,6 +204,12 @@ namespace GUI
 			tbDiaChi.Text = "";
 			tbEmail.Text = "";
 			tbSoTienNo.Text = "0";
+			tbMaKhachHangTraCuu.Text = "";
+			tbTenKhachHangTraCuu.Text = "";
+			tbDienThoaiTraCuu.Text = "";
+			tbDiaChiTraCuu.Text = "";
+			tbEmailTraCuu.Text = "";
+			tbSoTienNoTraCuu.Text = "0";
 		}
 
 		private void btnLichSuThaoTac_Click_1(object sender, EventArgs e)
@@ -277,7 +300,13 @@ namespace GUI
 			if (IsNumber(tbDienThoai.Text) == false)
 			{
 				MessageBox.Show("Điện thoại là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+				RefreshQLKH();
+				return;
+			}
+			if (IsNumber(tbSoTienNo.Text) == false)
+			{
+				MessageBox.Show("Số tiền nợ là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RefreshQLKH();
 				return;
 			}
 			if (fMainForm.cNullTB(tbMaKhachSuaXe.Text) || fMainForm.cNullTB(tbTenChuXe.Text) || fMainForm.cNullTB(tbDienThoai.Text) || fMainForm.cNullTB(tbDiaChi.Text) || fMainForm.cNullTB(tbEmail.Text) || fMainForm.cNullTB(tbSoTienNo.Text))
@@ -330,7 +359,24 @@ namespace GUI
 
 			//btnCapNhat.BackColor = Color.DimGray;
 			//btnCapNhat.ForeColor = Color.White;
-
+			if (IsNumber(tbMaKhachSuaXe.Text) == false)
+			{
+				MessageBox.Show("Mã khách hàng là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RefreshQLKH();
+				return;
+			}
+			if (IsNumber(tbDienThoai.Text) == false)
+			{
+				MessageBox.Show("Điện thoại là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RefreshQLKH();
+				return;
+			}
+			if (IsNumber(tbSoTienNo.Text) == false)
+			{
+				MessageBox.Show("Số tiền nợ là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RefreshQLKH();
+				return;
+			}
 			if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text) && !fMainForm.cNullTB(tbTenChuXe.Text) && !fMainForm.cNullTB(tbDienThoai.Text) && !fMainForm.cNullTB(tbDiaChi.Text) && !fMainForm.cNullTB(tbEmail.Text) && !fMainForm.cNullTB(tbSoTienNo.Text))
 			{
 				if (KhachSuaXeBUS.cPrimaryKey(tbMaKhachSuaXe.Text.Trim()))
@@ -393,7 +439,24 @@ namespace GUI
 			//		MessageBox.Show("Dữ liệu nhập vào chưa đúng vui lòng nhập vào ô Mã Khách Sửa Xe.");
 			//	}
 			//}
-
+			if (IsNumber(tbMaKhachSuaXe.Text) == false)
+			{
+				MessageBox.Show("Mã khách hàng là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RefreshQLKH();
+				return;
+			}
+			if (IsNumber(tbDienThoai.Text) == false)
+			{
+				MessageBox.Show("Điện thoại là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RefreshQLKH();
+				return;
+			}
+			if (IsNumber(tbSoTienNo.Text) == false)
+			{
+				MessageBox.Show("Số tiền nợ là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				RefreshQLKH();
+				return;
+			}
 			string ex = "";
 			if (!fMainForm.cNullTB(tbMaKhachSuaXe.Text))
 			{

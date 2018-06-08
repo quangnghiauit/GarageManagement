@@ -19,6 +19,15 @@ namespace GUI
 		{
 			InitializeComponent();
 		}
+		private bool IsNumber(string pValue)
+		{
+			foreach (Char c in pValue)
+			{
+				if (!Char.IsDigit(c))
+					return false;
+			}
+			return true;
+		}
 		private void fThayDoiQuyDinh_Load(object sender, EventArgs e)
 		{
 			//a variable to store exception
@@ -45,8 +54,20 @@ namespace GUI
 
 		private void btnApply_Click(object sender, EventArgs e)
 		{
+			if (IsNumber(tbSoTienNo.Text) == false)
+			{
+				MessageBox.Show("Số tiền nợ là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
+			if (IsNumber(tbSoXeSua.Text) == false)
+			{
+				MessageBox.Show("Số xe sửa là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
 			//if there is nothing in any text boxes
-			if(tbSoTienNo.Text==""||tbSoXeSua.Text=="")
+			if (tbSoTienNo.Text==""||tbSoXeSua.Text=="")
 			{
 				MessageBox.Show("Xin hãy điền đầy đủ thông tin!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;

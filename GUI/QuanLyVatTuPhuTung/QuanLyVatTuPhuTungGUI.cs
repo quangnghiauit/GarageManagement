@@ -17,8 +17,29 @@ namespace GUI
 			//fillCboBienSo();
 		}
 		#region Function
+		private bool IsNumber(string pValue)
+		{
+			foreach (Char c in pValue)
+			{
+				if (!Char.IsDigit(c))
+					return false;
+			}
+			return true;
+		}
 		private void btnTimKiemTraCuu_Click(object sender, EventArgs e)
 		{
+			if (IsNumber(tbSoLuongTraCuu.Text) == false)
+			{
+				MessageBox.Show("Số lượng tra cứu là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				
+				return;
+			}
+			if (IsNumber(tbDonGiaTraCuu.Text) == false)
+			{
+				MessageBox.Show("Đơn giá tra cứu là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				
+				return;
+			}
 			if (!fMainForm.cNullTB(cbbMaVatTuTraCuu.DisplayMember))
 			{
 				if (VatTuPhuTungBUS.cPrimaryKey(cbbMaVatTuTraCuu.SelectedValue.ToString().Trim()))
@@ -143,6 +164,18 @@ namespace GUI
 		#region Buttons Insert, Update, Remove
 		private void btnThem_Click(object sender, EventArgs e)
 		{
+			if (IsNumber(tbSoLuongThaoTac.Text) == false)
+			{
+				MessageBox.Show("Số lượng tra cứu là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
+			if (IsNumber(tbDonGiaThaoTac.Text) == false)
+			{
+				MessageBox.Show("Đơn giá tra cứu là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
 			if (!fMainForm.cNullTB(tbMaVatTuThaoTac.Text) && !fMainForm.cNullTB(tbTenVatTuThaoTac.Text) && !fMainForm.cNullTB(tbDonGiaThaoTac.Text) && !fMainForm.cNullTB(tbSoLuongThaoTac.Text))
 			{
 				if (!VatTuPhuTungBUS.cPrimaryKey(tbMaVatTuThaoTac.Text.Trim()))
@@ -193,6 +226,18 @@ namespace GUI
 
 		private void btnCapNhat_Click(object sender, EventArgs e)
 		{
+			if (IsNumber(tbSoLuongThaoTac.Text) == false)
+			{
+				MessageBox.Show("Số lượng tra cứu là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
+			if (IsNumber(tbDonGiaThaoTac.Text) == false)
+			{
+				MessageBox.Show("Đơn giá tra cứu là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
 			if (!fMainForm.cNullTB(tbMaVatTuThaoTac.Text) && !fMainForm.cNullTB(tbTenVatTuThaoTac.Text) && !fMainForm.cNullTB(tbDonGiaThaoTac.Text) && !fMainForm.cNullTB(tbSoLuongThaoTac.Text))
 			{
 				if (VatTuPhuTungBUS.cPrimaryKey(tbMaVatTuThaoTac.Text.Trim()))
@@ -228,6 +273,18 @@ namespace GUI
 
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
+			if (IsNumber(tbSoLuongThaoTac.Text) == false)
+			{
+				MessageBox.Show("Số lượng tra cứu là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
+			if (IsNumber(tbDonGiaThaoTac.Text) == false)
+			{
+				MessageBox.Show("Đơn giá tra cứu là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
 			if (!fMainForm.cNullTB(tbMaVatTuThaoTac.Text))
 			{
 				if (VatTuPhuTungBUS.cPrimaryKey(tbMaVatTuThaoTac.Text.Trim()))

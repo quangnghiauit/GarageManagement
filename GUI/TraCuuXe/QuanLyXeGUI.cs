@@ -22,9 +22,24 @@ namespace GUI
 		{
 
 		}
+		private bool IsNumber(string pValue)
+		{
+			foreach (Char c in pValue)
+			{
+				if (!Char.IsDigit(c))
+					return false;
+			}
+			return true;
+		}
 
 		private void btnTimKiemTraCuuXe_Click(object sender, EventArgs e)
 		{
+			if (IsNumber(tbTienNoTraCuu.Text) == false)
+			{
+				MessageBox.Show("Số tiền nợ là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				
+				return;
+			}
 			//string CompareType = "";
 
 			//switch (cbbTienNoTraCuu.SelectedIndex)
@@ -340,6 +355,12 @@ namespace GUI
 		#region Insert , Update, Remove
 		private void btnThemXe_Click(object sender, EventArgs e)
 		{
+			if (IsNumber(tbTienNo.Text) == false)
+			{
+				MessageBox.Show("Số tiền nợ là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
 			if (!fMainForm.cNullTB(tbBienSoXe.Text) && !fMainForm.cNullTB(cbbTenChuXe.DisplayMember) && !fMainForm.cNullTB(cbbHieuXe.DisplayMember) && !fMainForm.cNullTB(tbTienNo.Text))
 			{
 
@@ -378,6 +399,12 @@ namespace GUI
 
 		private void btnCapNhatXe_Click(object sender, EventArgs e)
 		{
+			if (IsNumber(tbTienNo.Text) == false)
+			{
+				MessageBox.Show("Số tiền nợ là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
 			if (!fMainForm.cNullTB(tbBienSoXe.Text) && !fMainForm.cNullTB(cbbTenChuXe.DisplayMember) && !fMainForm.cNullTB(cbbHieuXe.DisplayMember) && !fMainForm.cNullTB(tbTienNo.Text))
 			{
 				if (XeBUS.cPrimaryKey(tbBienSoXe.Text.Trim()))
@@ -414,6 +441,12 @@ namespace GUI
 
 		private void btnXoaXe_Click(object sender, EventArgs e)
 		{
+			if (IsNumber(tbTienNo.Text) == false)
+			{
+				MessageBox.Show("Số tiền nợ là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return;
+			}
 			if (!fMainForm.cNullTB(tbBienSoXe.Text) && !fMainForm.cNullTB(cbbTenChuXe.Text) && !fMainForm.cNullTB(cbbHieuXe.Text))
 			{
 				if (XeBUS.cPrimaryKey(tbBienSoXe.Text.Trim()))
