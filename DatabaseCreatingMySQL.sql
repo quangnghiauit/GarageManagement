@@ -824,6 +824,17 @@ insert into HIEUXE (MAHIEUXE,TENHIEUXE) values ('HX008','Nissan');
 insert into HIEUXE (MAHIEUXE,TENHIEUXE) values ('HX009','Suzuki');
 insert into HIEUXE (MAHIEUXE,TENHIEUXE) values ('HX010','Chevrolet');
 
+insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (111,'Nguyễn Minh Luân','0922636154', '54/12, Quận 4, TP Hồ Chí Minh', 'luan214@gmail.com',100000);
+insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (112,'Trần Hoàng','0903677951', '26/5, Quận Tân Bình, TP Hồ Chí Minh', 'hoangtran88@gmail.com',931000);
+insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (113,'Lê Nguyễn Minh Anh','0935541986', '12/8A, Quận 7, TP Hồ Chí Minh', 'minhanhle@gmail.com',951000);
+insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (114,'Võ Văn Nhân','0922316285', '30/5, Dĩ An, Bình Dương', 'nhan9887@gmail.com',150000);
+insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (115,'Lê Trần Ánh Dương','0903122893', '20/8, Quận 8, TP Hồ Chí Minh', 'anhduong040595@gmail.com',0);
+insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (116,'Trương Hoàng Thái','0908988263', '34/3, Phường 4, TP Vũng Tàu', 'thaihoangtruong@gmail.com',0);
+insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (117,'Lê Anh Tuấn','0981200874', '28/7, Phường 12, TP Vũng Tàu', 'anhtuanle22@gmail.com',2835000);
+insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (118,'Hà Anh Tú','0925521226', '3/5, Dĩ An, Bình Dương', 'anhtu6692@gmail.com',535000);
+insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (119,'Nguyễn Nhật Anh','0931568325', '26/7, Dĩ An Bình Dương', 'nhatanhnguyen@gmail.com',757000);
+insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (120,'Nguyễn Mỹ Kim','0921538876', '56/5, Phường 3, TP Vũng Tàu', 'mykim12896@gmail.com',0);
+
 
 insert into XE (BIENSO,MAKHACHSUAXE,MAHIEUXE) values ('67N15126',115,'HX002');
 insert into XE (BIENSO,MAKHACHSUAXE,MAHIEUXE) values ('34N21531',116,'HX002');
@@ -835,18 +846,6 @@ insert into XE (BIENSO,MAKHACHSUAXE,MAHIEUXE) values ('32A84135',120,'HX004');
 insert into XE (BIENSO,MAKHACHSUAXE,MAHIEUXE) values ('53B22484',112,'HX003');
 insert into XE (BIENSO,MAKHACHSUAXE,MAHIEUXE) values ('34N11415',118,'HX007');
 insert into XE (BIENSO,MAKHACHSUAXE,MAHIEUXE) values ('62A25314',117,'HX009');
-
-
-insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (111,'Nguyễn Minh Luân','0922636154', '54/12, Quận 4, TP Hồ Chí Minh', 'luan214@gmail.com',100000);
-insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (112,'Trần Hoàng','0903677951', '26/5, Quận Tân Bình, TP Hồ Chí Minh', 'hoangtran88@gmail.com',931000);
-insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (113,'Lê Nguyễn Minh Anh','0935541986', '12/8A, Quận 7, TP Hồ Chí Minh', 'minhanhle@gmail.com',951000);
-insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (114,'Võ Văn Nhân','0922316285', '30/5, Dĩ An, Bình Dương', 'nhan9887@gmail.com',150000);
-insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (115,'Lê Trần Ánh Dương','0903122893', '20/8, Quận 8, TP Hồ Chí Minh', 'anhduong040595@gmail.com',0);
-insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (116,'Trương Hoàng Thái','0908988263', '34/3, Phường 4, TP Vũng Tàu', 'thaihoangtruong@gmail.com',0);
-insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (117,'Lê Anh Tuấn','0981200874', '28/7, Phường 12, TP Vũng Tàu', 'anhtuanle22@gmail.com',2835000);
-insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (118,'Hà Anh Tú','0925521226', '3/5, Dĩ An, Bình Dương', 'anhtu6692@gmail.com',535000);
-insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (119,'Nguyễn Nhật Anh','0931568325', '26/7, Dĩ An Bình Dương', 'nhatanhnguyen@gmail.com',757000);
-insert into KHACHSUAXE (MAKHACHSUAXE,TENCHUXE,DIENTHOAI,DIACHI,EMAIL,TIENNO) values (120,'Nguyễn Mỹ Kim','0921538876', '56/5, Phường 3, TP Vũng Tàu', 'mykim12896@gmail.com',0);
 
 
 insert into PHIEUTHUTIEN (BIENSO,NGAYTHUTIEN,SOTIENTHU,SOTIENKHACHTRA,SOTIENTRAKHACH) values ('67N15126',STR_TO_DATE('20/5/2018', '%d/%m/%Y'),30000, 300000, 270000);
