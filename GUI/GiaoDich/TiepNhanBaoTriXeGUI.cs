@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using DAO;
@@ -21,12 +15,13 @@ namespace GUI
             InitializeComponent();
             fillCboBienSo();
             fillCboHieuXe();
-            
+            fillCboTenChuXe();
         }
 
+        #region Button event
         private void btnTiepNhan_Click(object sender, EventArgs e)
         {
-            if (!fMainForm.cNullTB(txtTenChuXe.Text) && !fMainForm.cNullTB(cboBienSo.DisplayMember) && !fMainForm.cNullTB(cboHieuXe.DisplayMember)
+            if (!fMainForm.cNullTB(cboTenChuXe.Text) && !fMainForm.cNullTB(cboBienSo.DisplayMember) && !fMainForm.cNullTB(cboHieuXe.DisplayMember)
                 && !fMainForm.cNullTB(txtDiaChi.Text) && !fMainForm.cNullTB(txtDienThoai.Text))
             {
                 string BienSo = cboBienSo.SelectedValue.ToString().Trim();
@@ -47,6 +42,8 @@ namespace GUI
             dgvLichSuTiepNhan.DataSource = TiepNhanXeSuaBUS.selectAllTiepNhanXeSua();
         }
 
+        #endregion
+
         #region Fill ComboBox
 
         private void fillCboBienSo()
@@ -63,24 +60,10 @@ namespace GUI
             cboBienSo.DisplayMember = "BIENSO";
             cboBienSo.ValueMember = "BIENSO";
 			cboBienSo.SelectedIndex = -1;
-            //TiepNhanXeSuaDAO.fillCBO("BIENSO", "XE", cboBienSo);
         }
 
         private void fillCboHieuXe()
         {
-            //MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
-            //MySqlCommand cmd = new MySqlCommand("select MAHIEUXE from XE", connection);
-
-            //connection.Open();
-            //MySqlDataAdapter adapter = new MySqlDataAdapter();
-            //DataSet dataset = new DataSet();
-            //adapter.SelectCommand = cmd;
-            //adapter.Fill(dataset, "MAHIEUXE");
-            //cboHieuXe.DataSource = dataset.Tables[0];
-            //cboHieuXe.DisplayMember = "TENHIEUXE";
-            //cboHieuXe.ValueMember = "MAHIEUXE";
-			//TiepNhanXeSuaDAO.fillCBO("TENHIEUXE", "HIEUXE", cboHieuXe);
-
 			MySqlConnection ConnCar = DatabaseConnectionDAO.connectionDatabase();
 			MySqlCommand cmdCar = new MySqlCommand("select MAHIEUXE,TENHIEUXE from HIEUXE", ConnCar);
 
@@ -95,7 +78,23 @@ namespace GUI
 			cboHieuXe.ValueMember = "MaHieuXe";
 			cboHieuXe.SelectedIndex = -1;
 		}
+
+        private void fillCboTenChuXe()
+        {
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            MySqlCommand cmd = new MySqlCommand("select MAKHACHSUAXE, TENCHUXE from KHACHSUAXE", connection);
+
+            connection.Open();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataSet dataset = new DataSet();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(dataset, "TENCHUXE");
+            cboTenChuXe.DataSource = dataset.Tables[0];
+            cboTenChuXe.DisplayMember = "TENCHUXE";
+            cboTenChuXe.ValueMember = "MAKHACHSUAXE";
+
+            cboTenChuXe.SelectedIndex = -1;
+        }
         #endregion
-       
     }
 }

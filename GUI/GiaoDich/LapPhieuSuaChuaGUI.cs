@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
 using BUS;
 using DTO;
 using MySql.Data.MySqlClient;
-using Microsoft.Office.Interop.Excel;
 using app = Microsoft.Office.Interop.Excel.Application;
 
 
@@ -35,6 +28,7 @@ namespace GUI
             txtTongTien.Text = TongTien.ToString();
         }
 
+        #region Button event
         private void btnTaoPhieuMoi_Click(object sender, EventArgs e)
         {         
                 reset = true;                
@@ -46,24 +40,7 @@ namespace GUI
         }
         
 
-        public void insertPhieuSuaChua()
-        {
-            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
-            MySqlCommand command = new MySqlCommand("InsertCHITIETPHIEUSUACHUA", connection);
-            command.CommandType = CommandType.StoredProcedure;
-            for (int i = 0; i < dgvPhieuSuaChua.Rows.Count - 1; i++)
-            {
-                command.Parameters.Add("@_MaPhieSuaChua", MySqlDbType.VarChar, 10);
-                command.Parameters.Add(new MySqlParameter("@_NoiDung", dgvPhieuSuaChua.Rows[i].Cells["NoiDung"].Value));
-                command.Parameters.Add(new MySqlParameter("@_MaVatTuPhuTung", dgvPhieuSuaChua.Rows[i].Cells["VatTuPhuTung"].Value));
-                command.Parameters.Add(new MySqlParameter("@_SoLuongSuaChua", dgvPhieuSuaChua.Rows[i].Cells["SoLuong"].Value));
-                command.Parameters.Add(new MySqlParameter("@_TienCong", dgvPhieuSuaChua.Rows[i].Cells["TienCong"].Value));
-                command.Parameters.Add(new MySqlParameter("@_ThanhTien", dgvPhieuSuaChua.Rows[i].Cells["ThanhTien"].Value));
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-        }
+        
 
         private void btnLapPhieu_Click(object sender, EventArgs e)
         {
@@ -117,7 +94,17 @@ namespace GUI
             if (!fMainForm.cNullTB(txtNoiDung.Text) && !fMainForm.cNullTB(cboVatTuPhuTung.Text) &&
                 !fMainForm.cNullTB(txtSoLuong.Text) && !fMainForm.cNullTB(txtDonGia.Text) &&
                 !fMainForm.cNullTB(cboTienCong.Text))
-            {                
+            {
+                if (IsNumber(txtSoLuong.Text) == false)
+                {
+                    MessageBox.Show("Số lượng là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (IsNumber(txtDonGia.Text) == false)
+                {
+                    MessageBox.Show("Đơn giá là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 dgvPhieuSuaChua.Rows.Add(rownum, txtNoiDung.Text, cboVatTuPhuTung.SelectedValue, txtSoLuong.Text,
                     txtDonGia.Text, cboTienCong.SelectedValue, txtThanhTien.Text);
 
@@ -144,6 +131,24 @@ namespace GUI
                 MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");
 
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            reset = true;
+            txtNoiDung.Clear();
+            cboVatTuPhuTung.SelectedIndex = -1;
+            txtSoLuong.Clear();
+            txtDonGia.Clear();
+            txtThanhTien.Clear();
+            cboTienCong.SelectedIndex = -1;
+            reset = false;
+        }
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            export2Excel(dgvLichSuLapPhieu, @"E:\", "ExportPhieuSuaChua");
+        }
+        #endregion
 
         #region Fill cbo
         private void fillCBOVatTuPhuTung()
@@ -204,6 +209,16 @@ namespace GUI
         {
             if (!fMainForm.cNullTB(txtDonGia.Text) && !fMainForm.cNullTB(cboTienCong.Text) && !reset)
             {
+                if (IsNumber(txtSoLuong.Text) == false)
+                {
+                    MessageBox.Show("Số lượng là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (IsNumber(txtDonGia.Text) == false)
+                {
+                    MessageBox.Show("Đơn giá là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 txtThanhTien.Text = (int.Parse(txtSoLuong.Text) * int.Parse(txtDonGia.Text) + int.Parse(cboTienCong.SelectedValue.ToString())).ToString();
             }
         }
@@ -212,6 +227,16 @@ namespace GUI
         {
             if (!fMainForm.cNullTB(txtSoLuong.Text) && !fMainForm.cNullTB(cboTienCong.Text) && !reset)
             {
+                if (IsNumber(txtSoLuong.Text) == false)
+                {
+                    MessageBox.Show("Số lượng là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (IsNumber(txtDonGia.Text) == false)
+                {
+                    MessageBox.Show("Đơn giá là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 txtThanhTien.Text = (int.Parse(txtSoLuong.Text) * int.Parse(txtDonGia.Text) + int.Parse(cboTienCong.SelectedValue.ToString())).ToString();
             }
         }
@@ -220,28 +245,41 @@ namespace GUI
         {
             if (!fMainForm.cNullTB(txtDonGia.Text) && !fMainForm.cNullTB(txtSoLuong.Text) && !reset)
             {
+                if (IsNumber(txtSoLuong.Text) == false)
+                {
+                    MessageBox.Show("Số lượng là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (IsNumber(txtDonGia.Text) == false)
+                {
+                    MessageBox.Show("Đơn giá là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 txtThanhTien.Text = (int.Parse(txtSoLuong.Text) * int.Parse(txtDonGia.Text) + int.Parse(cboTienCong.SelectedValue.ToString())).ToString();
             }
         }
         #endregion
-
-        private void btnHuy_Click(object sender, EventArgs e)
+        
+        #region Function
+        public void insertPhieuSuaChua()
         {
-            reset = true;
-            txtNoiDung.Clear();
-            cboVatTuPhuTung.SelectedIndex = -1;
-            txtSoLuong.Clear();
-            txtDonGia.Clear();
-            txtThanhTien.Clear();
-            cboTienCong.SelectedIndex = -1;
-            reset = false;
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            MySqlCommand command = new MySqlCommand("InsertCHITIETPHIEUSUACHUA", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            for (int i = 0; i < dgvPhieuSuaChua.Rows.Count - 1; i++)
+            {
+                command.Parameters.Add("@_MaPhieSuaChua", MySqlDbType.VarChar, 10);
+                command.Parameters.Add(new MySqlParameter("@_NoiDung", dgvPhieuSuaChua.Rows[i].Cells["NoiDung"].Value));
+                command.Parameters.Add(new MySqlParameter("@_MaVatTuPhuTung", dgvPhieuSuaChua.Rows[i].Cells["VatTuPhuTung"].Value));
+                command.Parameters.Add(new MySqlParameter("@_SoLuongSuaChua", dgvPhieuSuaChua.Rows[i].Cells["SoLuong"].Value));
+                command.Parameters.Add(new MySqlParameter("@_TienCong", dgvPhieuSuaChua.Rows[i].Cells["TienCong"].Value));
+                command.Parameters.Add(new MySqlParameter("@_ThanhTien", dgvPhieuSuaChua.Rows[i].Cells["ThanhTien"].Value));
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
         }
 
-        private void btnXuatExcel_Click(object sender, EventArgs e)
-        {
-            export2Excel(dgvLichSuLapPhieu, @"E:\", "ExportPhieuSuaChua");
-        }
-        //Excel export function
         private void export2Excel(DataGridView g, string path, string filename)
         {
 
@@ -266,7 +304,16 @@ namespace GUI
             obj.ActiveWorkbook.SaveCopyAs(path + filename + ".xlsx");
             obj.ActiveWorkbook.Saved = true;
         }
-       
-        
+
+        private bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
+        #endregion
     }
 }

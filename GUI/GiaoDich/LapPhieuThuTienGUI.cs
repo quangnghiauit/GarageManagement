@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using DAO;
 using BUS;
+using MySql.Data.MySqlClient;
 
 namespace GUI
 {
@@ -17,12 +12,16 @@ namespace GUI
 	{
 		public fLapPhieuThuTien()
 		{
-			InitializeComponent();            
+			InitializeComponent();
+            fillCboTenChuXe();
+            fillCboBienSo();
 		}
 
+
+        #region Button event
         private void btnLapPhieu_Click(object sender, EventArgs e)
         {
-            if (!fMainForm.cNullTB(cboBienSo.Text) && !fMainForm.cNullTB(txtTenChuXe.Text) && !fMainForm.cNullTB(txtDienThoai.Text)
+            if (!fMainForm.cNullTB(cboBienSo.Text) && !fMainForm.cNullTB(cboTenChuXe.Text) && !fMainForm.cNullTB(txtDienThoai.Text)
                 && !fMainForm.cNullTB(txtEmail.Text) && !fMainForm.cNullTB(txtSoTienNo.Text) && !fMainForm.cNullTB(txtSoTienNo.Text) &&
                     !fMainForm.cNullTB(txtTienKhachTra.Text))
             {
@@ -52,7 +51,7 @@ namespace GUI
                 #region Reset value of form after insertion
                 cboBienSo.SelectedIndex = -1;
                 dtmNgayThuTien.Value = DateTime.Today;
-                txtTenChuXe.Clear();
+                cboTenChuXe.SelectedIndex = -1;
                 txtDienThoai.Clear();
                 txtEmail.Clear();
                 txtSoTienNo.Clear();
@@ -71,17 +70,61 @@ namespace GUI
         {
             dgvLichSuPTT.DataSource = PhieuThuTienBUS.selectAllPhieuThuTien();
         }
+        #endregion
+
+        #region fillCBO
 
         private void fillCboTenChuXe()
         {
-            TiepNhanXeSuaDAO.fillCBO("BIENSO", "XE", cboBienSo);
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            MySqlCommand cmd = new MySqlCommand("select MAKHACHSUAXE, TENCHUXE from KHACHSUAXE", connection);
+
+            connection.Open();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataSet dataset = new DataSet();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(dataset, "TENCHUXE");
+            cboTenChuXe.DataSource = dataset.Tables[0];
+            cboTenChuXe.DisplayMember = "TENCHUXE";
+            cboTenChuXe.ValueMember = "MAKHACHSUAXE";
+
+            cboTenChuXe.SelectedIndex = -1;
         }
+
+        private void fillCboBienSo()
+        {
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            MySqlCommand cmd = new MySqlCommand("select BIENSO from XE", connection);
+
+            connection.Open();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataSet dataset = new DataSet();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(dataset, "BIENSO");
+            cboBienSo.DataSource = dataset.Tables[0];
+            cboBienSo.DisplayMember = "BIENSO";
+            cboBienSo.ValueMember = "BIENSO";
+
+            cboBienSo.SelectedIndex = -1;
+        }
+
+        #endregion
 
         #region Calculate value of SoTienThu
         private void txtTienKhachTra_TextChanged(object sender, EventArgs e)
         {
             if (!fMainForm.cNullTB(txtSoTienNo.Text))
             {
+                if (IsNumber(txtSoTienNo.Text) == false)
+                {
+                    MessageBox.Show("Số tiền nợ là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (IsNumber(txtTienKhachTra.Text) == false)
+                {
+                    MessageBox.Show("Số khách trả là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 int SoTienKhachTra = int.Parse(txtTienKhachTra.Text);
                 int SoTienTraKhach;
                 int SoTienNo = int.Parse(txtSoTienNo.Text);
@@ -103,18 +146,21 @@ namespace GUI
             if (!fMainForm.cNullTB(txtTienKhachTra.Text) && !fMainForm.cNullTB(txtTienTraKhach.Text))
                 txtTienThu.Text = (int.Parse(txtTienKhachTra.Text) - int.Parse(txtTienTraKhach.Text)).ToString();
         }
-        #endregion
-
-        private void fLapPhieuThuTien_Load(object sender, EventArgs e)
-        {
-            fillCboTenChuXe();
-            cboBienSo.SelectedIndex = -1;
-        }
 
         private void txtSoTienNo_TextChanged(object sender, EventArgs e)
         {
             if (!fMainForm.cNullTB(txtTienKhachTra.Text))
             {
+                if (IsNumber(txtSoTienNo.Text) == false)
+                {
+                    MessageBox.Show("Số tiền nợ là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (IsNumber(txtTienKhachTra.Text) == false)
+                {
+                    MessageBox.Show("Số khách trả là số.Mời nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 int SoTienKhachTra = int.Parse(txtTienKhachTra.Text);
                 int SoTienTraKhach;
                 int SoTienNo = int.Parse(txtSoTienNo.Text);
@@ -129,7 +175,20 @@ namespace GUI
                 }
                 txtTienTraKhach.Text = SoTienTraKhach.ToString();
             }
-                
+
         }
+        #endregion
+
+        #region Function
+        private bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
+        #endregion
     }
 }
