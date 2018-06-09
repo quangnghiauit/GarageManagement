@@ -29,6 +29,7 @@ namespace GUI
 			else
 			{
 				MessageBox.Show("Kết nối thành công!", "THÀNH CÔNG", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				btnLuuKetNoi.Enabled = true;
 			}
 
 
@@ -44,6 +45,7 @@ namespace GUI
 			tbPassword.PasswordChar = char.Parse("*");
 			tbPassword.Text = "123456";
 			tbDatabaseName.Text = "gara";
+			btnLuuKetNoi.Enabled = false;
 		}
 
 		private void btnLuuKetNoi_Click(object sender, EventArgs e)

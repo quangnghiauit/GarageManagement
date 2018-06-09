@@ -24,15 +24,66 @@ namespace GUI
 			string selectedNodeText = e.Node.Text;
 			if(selectedNodeText== "Quản lý khách hàng")
 			{
-				tbHelp.Text = "Hướng dẫn quản lý khách hàng.";
+				tbHelp.Text = "\tKhung Thao Tác bên phải dùng để nhập từng công việc của Quản lý khách hàng, trong đó:\r\n"
+					+ "\t- Mã khách sửa xe: CHÚ Ý Mã khách hàng là số nên chú ý trong việc nhập dữ liệu vào.\r\n"
+					+ "\t- Tên chủ xe: Tên của khách sửa xe.\r\n"
+					+ "\t- Điện thoại: Số điện thoại của khách sửa xe.Dữ liệu nhập vào là số.\r\n"
+					+ "\t- Địa chỉ: Địa chỉ của khách sửa xe.\r\n"
+					+ "\t- Email: Email của khách sửa xe.\r\n"
+					+ "\t- Số tiền nợ: Số tiền nợ của khách hàng đó khi nhập xe vào.Mặc định khi thêm mới là số tiền nợ bằng 0.\r\n"
+					+ "\t- Nút thêm sẽ nhập dữ liệu của khách hàng vào database.\r\n"
+					+ "\t- Nút cập nhật sẽ cập nhật lại dữ liệu của khách hàng vào database.\r\n"
+					+ "\t- Nút xóa sẽ xóa hết các dữ liệu đã nhập của khách hàng đó.LƯU Ý: Muốn xóa khách hàng phải xóa hết các xe của khách hàng đó rồi mới được xóa khách hàng.\r\n\r\n"
+					+ "\t- Nút Lịch sử thao tác cho phép hiển thị tất cả thông tin của khách hàng nhập vào.\r\n"
+					+ "\tPhía bên trái là khu vực tìm kiếm và xử lí các thông tin tổng quan của chức năng quản lý khách hàng:\r\n"
+					+ "\t- Mã khách hàng: CHÚ Ý Mã khách hàng là số nên chú ý trong việc nhập dữ liệu vào.Khi sử dụng chức năng tìm kiếm thì mã khách hàng nhập vào chỉ cần nhớ một phần của mã khách hàng vẫn có thể tìm được thông tin khách hàng đó.\r\n"
+					+ "\t- Tên khách hàng: Tên của khách sửa xe.\r\n"
+					+ "\t- Điện thoại: Số điện thoại của khách sửa xe.Dữ liệu nhập vào là số.\r\n"
+					+ "\t- Địa chỉ: Địa chỉ của khách sửa xe.\r\n"
+					+ "\t- Email: Email của khách sửa xe.\r\n"
+					+ "\t- Combobox số tiền nợ: Được sử dụng cho chức năng tìm kiếm.Có thể tìm khách hàng theo từng loại tiền nợ khác nhau.\r\n"
+					+ "\t- Số tiền nợ: Số tiền nợ của khách hàng đó khi nhập xe vào.Mặc định khi thêm mới là số tiền nợ bằng 0.\r\n"
+					+ "\t- Nút Tìm kiếm: Dùng để tìm kiếm những khách hàng có thông tin như người dùng muốn tìm kiếm.Lưu ý: Mã khách hàng có thể chỉ cần nhập một phần mã cần tìm và có thể chọn theo từng khung số tiền nợ.\r\n"
+					+ "\t- Nút Xuất File: Xuất nội dung của phiếu đang nhập ra tập tin Excel.";
 			}
 			if (selectedNodeText == "Tra cứu xe")
 			{
-				tbHelp.Text = "Hướng dẫn tra cứu xe.";
+				tbHelp.Text = "\tKhung Thao Tác bên phải dùng để nhập từng công việc của Quản lý xe, trong đó:\r\n"
+					+ "\t- Biển số: Dữ liệu nhập vào là chuỗi.\r\n"
+					+ "\t- Tên chủ xe: Tên của khách sửa xe.Dữ liệu được lấy từ việc nhập khách hàng ở chức năng quản lý khách hàng.\r\n"
+					+ "\t- Hiệu xe: Nếu chưa có hiệu xe thì phải thêm hiệu xe vào. Nhấn vào nút '+' để thêm hiệu xe.Nhập Mã hiệu xe là chuỗi.\n +Nhấn Nút Thêm để thêm hiệu xe.\n +Nhấn nút Xóa để xóa Hiệu xe.\n +Nhấn nút Lịch sử để hiển thị tất cả các hiệu xe đã nhập.\n Nếu đã có Hiệu xe thì chọn trong list Hiệu xe để nhập hiệu xe.\r\n"
+					+ "\t- Tiền nợ: Số tiền nợ của khách hàng đó khi nhập xe vào.Mặc định khi thêm mới là số tiền nợ bằng 0.\r\n"
+					+ "\t- Nút thêm sẽ nhập dữ liệu của xe vào database.\r\n"
+					+ "\t- Nút cập nhật sẽ cập nhật lại dữ liệu của xe vào database.\r\n"
+					+ "\t- Nút xóa sẽ xóa hết các dữ liệu đã nhập của xe đó.\r\n\r\n"
+					+ "\t- Nút Lịch sử thao tác cho phép hiển thị tất cả thông tin của xe nhập vào.\r\n"
+					+ "\tPhía bên trái là khu vực tìm kiếm và xử lí các thông tin tổng quan của chức năng quản lý xe:\r\n"
+					+ "\t- Biển số: Chọn biển số trong list các xe cần tìm kiếm.\r\n"
+					+ "\t- Tên chủ xe: Tên của khách sửa xe.\r\n"
+					+ "\t- Hiệu xe: Tên hiệu xe đó.\r\n"
+					+ "\t- Tiền nợ: Số tiền nợ của khách hàng đó khi nhập xe vào.Mặc định khi thêm mới là số tiền nợ bằng 0.\r\n"
+					+ "\t- Nút Tìm kiếm: Dùng để tìm kiếm những xe có thông tin như người dùng muốn tìm kiếm.Có thể tìm xe bằng cách nhập mỗi biển số.\r\n"
+					+ "\t- Nút Xuất File: Xuất nội dung của phiếu đang nhập ra tập tin Excel.";
 			}
 			if (selectedNodeText == "Quản lý vật tư")
 			{
-				tbHelp.Text = "Hướng dẫn quản lý vật tư.";
+				tbHelp.Text = "\tKhung Thao Tác bên phải dùng để nhập từng công việc của Quản lý vật tư, trong đó:\r\n"
+					+ "\t- Mã vật tư: Mã vật tư là chuỗi.\r\n"
+					+ "\t- Tên vật tư: Tên của vật tư phụ tùng.\r\n"
+					+ "\t- Đơn giá: Đơn giá của vật tư phụ tùng.Dữ liệu nhập vào là số.\r\n"
+					+ "\t- Số lượng: Số lượng của vật tư nhập vào.\r\n"
+					+ "\t- Ngày nhập: Ngày nhập vật tư.\r\n"
+					+ "\t- Nút thêm sẽ nhập dữ liệu của vật tư vào database.\r\n"
+					+ "\t- Nút cập nhật sẽ cập nhật lại dữ liệu của vật tư vào database.\r\n"
+					+ "\t- Nút xóa sẽ xóa hết các dữ liệu đã nhập của vật tư đó.\r\n\r\n"
+					+ "\t- Nút Lịch sử thao tác cho phép hiển thị tất cả thông tin của vật tư nhập vào.\r\n"
+					+ "\tPhía bên trái là khu vực tìm kiếm và xử lí các thông tin tổng quan của chức năng quản lý vật tư:\r\n"
+					+ "\t- Mã vật tư: Mã vật tư được chọn trong list vật tư đã được nhập ở phần Thao tác.\r\n"
+					+ "\t- Tên vật tư: Tên của vật tư phụ tùng.\r\n"
+					+ "\t- Đơn giá: Đơn giá của vật tư phụ tùng.Dữ liệu nhập vào là số.\r\n"
+					+ "\t- Số lượng: Số lượng của vật tư nhập vào.\r\n"
+					+ "\t- Nút Tìm kiếm: Dùng để tìm kiếm những vật tư có thông tin như người dùng muốn tìm kiếm.\r\n"
+					+ "\t- Nút Xuất File: Xuất nội dung của phiếu đang nhập ra tập tin Excel.";
 			}
             if (selectedNodeText == "Giao dịch")
             {
@@ -98,18 +149,34 @@ namespace GUI
                     + "\tNút Lập Báo Cáo sẽ tự động lập báo cáo dựa vào các dữ liệu đã nhập ở mục Giao Dịch, chức năng Phiếu Thu Tiền.\r\n"
                     + "\tNút Xuất File Excel sẽ xuất kết quả của báo cáo đã hiện về trên bảng ra tập tin Excel.";
 			}
+			if (selectedNodeText == "Thông tin")
+			{
+				tbHelp.Text = "\tChức năng thông tin bao gồm 3 chức năng nhỏ:\r\n."
+					+ "\t- Thay đổi Database: Kết nối và lưu thông tin kết nối với database.\r\n"
+					+ "\t- Thay đổi quy định: Thay đổi các quy định của phần mềm.\r\n"
+					+ "\t- Thay đổi số loại tiền công: Thêm hoặc xóa các loại tiền công của các nhân viên trong gara.";
+			}
 			if (selectedNodeText == "Thay đổi Database")
 			{
-				tbHelp.Text = "Hướng dẫn thay đổi database.";
+				tbHelp.Text = "\tKiểm tra lại cơ sở dữ liệu của máy bạn sau đó nhập đúng Server, User, Password, Database Name.\r\n"
+					+ "\tKiểm tra kết nối để xem phần mềm đã kết nối với database thành công hay chưa.Nếu không kết nối thành công thì bạn kiểm tra lại thông tin đã nhập vào đúng hay chưa.\r\n"
+					+ "\tSau khi đã kết nối thành công thì nhấn nút lưu kết nối để lưu lại thông tin kết nối.\r\n"
+					+ "\tCHÚ Ý: PHẢI KẾT NỐI VỚI DATABASE THÀNH CÔNG MỚI SỬ DỤNG ĐƯỢC PHẦN MỀM.";
 			}
 			if (selectedNodeText == "Thay đổi quy định")
 			{
-				tbHelp.Text = "Hướng dẫn thay đổi quy định.";
+				tbHelp.Text = "\tSố xe sửa tối đa trong ngày và số tiền nợ tối đa nhập vào là số.\r\n"
+					+ "\tKhi sử dụng quy định 4 thì click vào checkbox Sử dụng quy định 4.\r\n"
+					+ "\tNút Áp dụng để sử dụng tất cả các quy định mà bạn vừa thay đổi.";
+					
 			}
 
 			if (selectedNodeText == "Thay đổi số loại tiền công")
 			{
-				tbHelp.Text = "Hướng dẫn thay đổi số loại tiền công.";
+				tbHelp.Text = "\tMã tiền công nhập vào là chuỗi kí tự.\r\n"
+					+ "\tNút Thêm để thêm Mã tiền công, Tên tiền công và số tiền công khi được thêm mới.\r\n"
+					+ "\tNút Xóa để xóa một loại tiền công có sẵn trong cơ sở dữ liệu.Chỉ cần nhập Mã tiền công để xóa loại Tiền công đó.\r\n"
+					+ "\tNút Xem lịch sử để xem các loại Tiền công được thêm vào.";
 			}
 
 
