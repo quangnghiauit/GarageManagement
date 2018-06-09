@@ -8,7 +8,7 @@
 
 ------------------------How to connect to database-----------------------------
 
-1. If you already open the program, Go to "Thong Tin", fill in server, user, password, database name
+1. If you already opened the program, Go to "Thong Tin", fill in server, user, password, database name
 2. Click "Kiem Tra Ket Noi" and "Luu Ket Noi".
 
 
