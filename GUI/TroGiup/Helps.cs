@@ -17,6 +17,7 @@ namespace GUI
 		{
 			InitializeComponent();
 			LoadTreeView();
+            tbHelp.ScrollBars = ScrollBars.Vertical;
 		}
 
 		private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
