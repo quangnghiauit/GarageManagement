@@ -26,7 +26,7 @@ namespace GUI
 			if(selectedNodeText== "Quản lý khách hàng")
 			{
 				tbHelp.Text = "\tKhung Thao Tác bên phải dùng để nhập từng công việc của Quản lý khách hàng, trong đó:\r\n"
-					+ "\t- Mã khách sửa xe: CHÚ Ý Mã khách hàng là số nên chú ý trong việc nhập dữ liệu vào.\r\n"
+					+ "\t- Mã khách sửa xe: (CHÚ Ý) Mã khách hàng là số nên chú ý trong việc nhập dữ liệu vào.\r\n"
 					+ "\t- Tên chủ xe: Tên của khách sửa xe.\r\n"
 					+ "\t- Điện thoại: Số điện thoại của khách sửa xe.Dữ liệu nhập vào là số.\r\n"
 					+ "\t- Địa chỉ: Địa chỉ của khách sửa xe.\r\n"
