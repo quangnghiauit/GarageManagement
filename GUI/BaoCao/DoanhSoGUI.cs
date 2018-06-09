@@ -23,12 +23,16 @@ namespace GUI
             if (!fMainForm.cNullTB(txtMaBaoCao.Text))
             {
                 DateTime thang0 = dtmThangLapBaoCao.Value;
-                string maBC = txtMaBaoCao.Text;
+                string maBC = txtMaBaoCao.Text.Trim();
+                if (!DoanhSoDAO.CheckPrimary(maBC))
+                {
+                    dgvBaoCaoDoanhSo.DataSource = DoanhSoBUS.createBaoCaoDoanhSo(thang0.Month, thang0.Year);
+                    DoanhSoBUS.insertBaoCaoDoanhSo(maBC, thang0, thang0.Month, thang0.Year);
 
-                dgvBaoCaoDoanhSo.DataSource = DoanhSoBUS.createBaoCaoDoanhSo(thang0.Month, thang0.Year);
-                DoanhSoBUS.insertBaoCaoDoanhSo(maBC, thang0, thang0.Month, thang0.Year);
-
-                txtTongDoanhThu.Text = DoanhSoBUS.selectTongDoanhThu(thang0).ToString();
+                    txtTongDoanhThu.Text = DoanhSoBUS.selectTongDoanhThu(thang0).ToString();
+                }
+                else
+                    MessageBox.Show("Dữ liệu vừa nhập vào không hợp lệ, do bị trùng khóa chính.");
             }
             else
                 MessageBox.Show("Hãy nhập mã báo cáo.");

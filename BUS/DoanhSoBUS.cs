@@ -22,5 +22,9 @@ namespace BUS
             return DoanhSoDAO.selectTongDoanhThu(_Thang0);
         }
 
+        public static bool checkPK(string primaryKey)
+        {
+            return DoanhSoDAO.CheckPrimary(primaryKey);
+        }
     }
 }

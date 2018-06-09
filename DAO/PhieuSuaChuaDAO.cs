@@ -46,5 +46,24 @@ namespace DAO
             command.ExecuteNonQuery();
             connect.Close();
         }
+
+        public static bool CheckPrimary(string _textBox)
+        {
+            bool check = false;
+
+            string cPrimaryKey = "Select *From PHIEUSUACHUA Where MAPHIEUSUACHUA = '" + _textBox + "' ";
+            MySqlConnection Conn = DatabaseConnectionDAO.connectionDatabase();
+
+            MySqlCommand cmd = new MySqlCommand(cPrimaryKey, Conn);
+            cmd.CommandType = CommandType.Text;
+            Conn.Open();
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                check = true;
+            }
+
+            return check;
+        }
     }
 }

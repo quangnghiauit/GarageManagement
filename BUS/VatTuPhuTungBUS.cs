@@ -48,6 +48,10 @@ namespace BUS
             VatTuPhuTungDAO.updateSoLuongTon();
         }
 
+        public static void decreaseSoLuongVatTu(string MaVatTu, int SoLuong)
+        {
+            VatTuPhuTungDAO.decreaseSoLuongVatTu(MaVatTu, SoLuong);
+        }
 
 		public static bool cPrimaryKey(string _cPrim)
 		{

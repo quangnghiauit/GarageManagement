@@ -38,47 +38,51 @@ namespace GUI
                 txtTongTien.Text = TongTien.ToString();
                 reset = false;
         }
-        
-
-        
 
         private void btnLapPhieu_Click(object sender, EventArgs e)
         {
             if (!fMainForm.cNullTB(cboBienSo.Text) && !fMainForm.cNullTB(txtSoPhieuSuaChua.Text))
             {
-                string MaPhieuSuaChua = txtSoPhieuSuaChua.Text;
+                string MaPhieuSuaChua = txtSoPhieuSuaChua.Text.Trim();
                 string BienSo = cboBienSo.SelectedValue.ToString();
                 DateTime NgaySuaChua = dtmNgaySuaChua.Value;
                 Decimal _TongTien = int.Parse(txtTongTien.Text);
 
-                PhieuSuaChuaDTO PhieuSuaChua = new PhieuSuaChuaDTO(MaPhieuSuaChua, BienSo, NgaySuaChua, _TongTien);
-                PhieuSuaChuaBUS.addPhieuSuaChua(PhieuSuaChua);
-
-                for (int i = 0; i < dgvPhieuSuaChua.Rows.Count - 1; i++)
+                if (!PhieuSuaChuaBUS.checkPK(MaPhieuSuaChua))
                 {
-                    string NoiDung = dgvPhieuSuaChua.Rows[i].Cells["NoiDung"].Value.ToString();
-                    string MaVatTuPhuTung = dgvPhieuSuaChua.Rows[i].Cells["VatTuPhuTung"].Value.ToString();
-                    int SoLuongSuaChua = int.Parse(dgvPhieuSuaChua.Rows[i].Cells["SoLuong"].Value.ToString());
-                    int TienCong = int.Parse(dgvPhieuSuaChua.Rows[i].Cells["TienCong"].Value.ToString());
-                    Decimal ThanhTien = int.Parse(dgvPhieuSuaChua.Rows[i].Cells["ThanhTien"].Value.ToString());
+                    PhieuSuaChuaDTO PhieuSuaChua = new PhieuSuaChuaDTO(MaPhieuSuaChua, BienSo, NgaySuaChua, _TongTien);
+                    PhieuSuaChuaBUS.addPhieuSuaChua(PhieuSuaChua);
 
-                    ChiTietPhieuSuaChuaDTO CTPhieuSuaChua = new ChiTietPhieuSuaChuaDTO(MaPhieuSuaChua, NoiDung, MaVatTuPhuTung,
-                        SoLuongSuaChua, TienCong, ThanhTien);
-                    ChiTietPhieuSuaChuaBUS.addChiTietPhieuSuaChua(CTPhieuSuaChua);
+                    for (int i = 0; i < dgvPhieuSuaChua.Rows.Count - 1; i++)
+                    {
+                        string NoiDung = dgvPhieuSuaChua.Rows[i].Cells["NoiDung"].Value.ToString();
+                        string MaVatTuPhuTung = dgvPhieuSuaChua.Rows[i].Cells["VatTuPhuTung"].Value.ToString();
+                        int SoLuongSuaChua = int.Parse(dgvPhieuSuaChua.Rows[i].Cells["SoLuong"].Value.ToString());
+                        int TienCong = int.Parse(dgvPhieuSuaChua.Rows[i].Cells["TienCong"].Value.ToString());
+                        Decimal ThanhTien = int.Parse(dgvPhieuSuaChua.Rows[i].Cells["ThanhTien"].Value.ToString());
+
+                        ChiTietPhieuSuaChuaDTO CTPhieuSuaChua = new ChiTietPhieuSuaChuaDTO(MaPhieuSuaChua, NoiDung, MaVatTuPhuTung,
+                            SoLuongSuaChua, TienCong, ThanhTien);
+                        ChiTietPhieuSuaChuaBUS.addChiTietPhieuSuaChua(CTPhieuSuaChua);
+                        VatTuPhuTungBUS.decreaseSoLuongVatTu(MaVatTuPhuTung, SoLuongSuaChua);
+                    }
+
+                    KhachSuaXeDAO.addTienNo(BienSo, _TongTien);
+
+                    dgvLichSuLapPhieu.DataSource = PhieuSuaChuaBUS.selectAllPhieuSuaChua();
+
+                    #region Clear dgvTable
+                    reset = true;
+                    rownum = 1;
+                    this.dgvPhieuSuaChua.Rows.Clear();
+                    TongTien = 0;
+                    txtTongTien.Text = TongTien.ToString();
+                    reset = false;
+                    #endregion
                 }
-
-                KhachSuaXeDAO.addTienNo(BienSo, _TongTien);
-                  
-                dgvLichSuLapPhieu.DataSource = PhieuSuaChuaBUS.selectAllPhieuSuaChua();
-
-                #region Clear dgvTable
-                reset = true;
-                rownum = 1;
-                this.dgvPhieuSuaChua.Rows.Clear();
-                TongTien = 0;
-                txtTongTien.Text = TongTien.ToString();
-                reset = false;
-                #endregion
+                else
+                    MessageBox.Show("Dữ liệu vừa nhập vào không hợp lệ, do bị trùng khóa chính.");
+                
             }
             else
                 MessageBox.Show("Bạn chưa nhập vào đủ dữ liệu xin vui lòng nhập lại.");

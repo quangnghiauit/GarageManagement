@@ -223,5 +223,22 @@ namespace DAO
             cmd.ExecuteNonQuery();
             connection.Close();
         }
+
+        public static void decreaseSoLuongVatTu(string MaVatTuPhuTung, int SoLuong)
+        {
+            MySqlConnection connection = DatabaseConnectionDAO.connectionDatabase();
+            MySqlCommand cmd = new MySqlCommand("decreaseSpareParts", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@_MaVatTuPhuTung", MySqlDbType.VarChar, 10);
+            cmd.Parameters.Add("@_SoLuong", MySqlDbType.Int16);
+
+            cmd.Parameters["@_MaVatTuPhuTung"].Value = MaVatTuPhuTung;
+            cmd.Parameters["@_SoLuong"].Value = SoLuong;
+
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
 	}
 }

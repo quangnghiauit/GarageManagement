@@ -17,5 +17,9 @@ namespace BUS
             return BaoCaoTonDAO.createBaoCaoTon(Time);
         }
 
+        public static bool checkPK(string primaryKey)
+        {
+            return BaoCaoTonDAO.CheckPrimary(primaryKey);
+        }
     }
 }

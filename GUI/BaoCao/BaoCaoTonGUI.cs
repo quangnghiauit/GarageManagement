@@ -25,18 +25,23 @@ namespace GUI
         private void btnLapBaoCao_Click(object sender, EventArgs e)
         {
             if (!fMainForm.cNullTB(txtMaBaoCao.Text))
-            {
-                string MaBaoCao = txtMaBaoCao.Text;
+            {                
+                string MaBaoCao = txtMaBaoCao.Text.Trim();
                 int Month = dtmThangLapBaoCao.Value.Month;
                 int Year = dtmThangLapBaoCao.Value.Year;
                 DateTime Time = dtmThangLapBaoCao.Value;
+                if (!BaoCaoTonBUS.checkPK(MaBaoCao))
+                {
+                    BaoCaoTonDTO BaoCao = new BaoCaoTonDTO(MaBaoCao, Month, Year);
+                    BaoCaoTonBUS.addBaoCaoTon(BaoCao);
+                    ChiTietTonBUS.addChiTietTon(MaBaoCao, Month, Year);
 
-                BaoCaoTonDTO BaoCao = new BaoCaoTonDTO(MaBaoCao, Month, Year);
-                BaoCaoTonBUS.addBaoCaoTon(BaoCao);
-                ChiTietTonBUS.addChiTietTon(MaBaoCao, Month,Year);
+                    dgvBaoCaoTon.DataSource = BaoCaoTonBUS.createBaoCaoTon(Time);
+                    VatTuPhuTungBUS.updateSoLuongTon();
+                }
+                else
+                    MessageBox.Show("Dữ liệu vừa nhập vào không hợp lệ, do bị trùng khóa chính.");
 
-                dgvBaoCaoTon.DataSource = BaoCaoTonBUS.createBaoCaoTon(Time);
-                VatTuPhuTungBUS.updateSoLuongTon();
             }
             else
                 MessageBox.Show("Hãy nhập mã báo cáo.");

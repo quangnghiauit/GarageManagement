@@ -16,5 +16,10 @@ namespace BUS
         {
             PhieuSuaChuaDAO.insertPHIEUSUACHUA(PhieuSuaChua);
         }
+
+        public static bool checkPK(string primaryKey)
+        {
+            return PhieuSuaChuaDAO.CheckPrimary(primaryKey);
+        }
     }
 }

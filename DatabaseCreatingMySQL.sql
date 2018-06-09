@@ -16,7 +16,6 @@ CREATE TABLE PHIEUTHUTIEN
 #create lai table PHIEUTHUTIEN, them vao 2 col moi SOTIENTRAKHACH va SOTIENKHACHTRA
 #create lai table PHIEUTHUTIEN, doi ma phieu thanh auto-increment
 
-
 CREATE TABLE DOANHSO 
 (
 	MADOANHSO CHAR(10) NOT NULL,
@@ -24,7 +23,6 @@ CREATE TABLE DOANHSO
 	TONGDOANHSO DECIMAL,
 	PRIMARY KEY (MADOANHSO)
 );
-
 
 CREATE TABLE XE 
 (
@@ -514,8 +512,14 @@ Begin
 End //
 DELIMITER ;
 
-
-
+DELIMITER //
+create procedure decreaseSpareParts( in _MaVatTuPhuTung char(10), in _SoLuong int)
+begin
+	update VATTUPHUTUNG
+    set SOLUONGVATTU = SOLUONGVATTU - _SoLuong
+    where MAVATTUPHUTUNG = _MaVatTuPhuTung;
+end //
+DELIMITER ;
 
 /*Phần này sử dụng cho bảng tiền công*/
 DELIMITER //
