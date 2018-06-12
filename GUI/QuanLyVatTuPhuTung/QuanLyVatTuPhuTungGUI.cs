@@ -40,7 +40,7 @@ namespace GUI
 				
 				return;
 			}
-			if (!fMainForm.cNullTB(cbbMaVatTuTraCuu.DisplayMember))
+			if (!fMainForm.cNullTB(cbbMaVatTuTraCuu.Text))
 			{
 				if (VatTuPhuTungBUS.cPrimaryKey(cbbMaVatTuTraCuu.SelectedValue.ToString().Trim()))
 				{

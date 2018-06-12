@@ -128,10 +128,12 @@ namespace GUI
                 int SoTienKhachTra = int.Parse(txtTienKhachTra.Text);
                 int SoTienTraKhach;
                 int SoTienNo = int.Parse(txtSoTienNo.Text);
+
                 if (SoTienNo > SoTienKhachTra)
                 {
                     SoTienTraKhach = 0;
                     SoTienNo -= SoTienKhachTra;
+                    txtTienThu.Text = SoTienKhachTra.ToString();
                 }
                 else
                 {
@@ -144,7 +146,13 @@ namespace GUI
         private void txtTienTraKhach_TextChanged(object sender, EventArgs e)
         {
             if (!fMainForm.cNullTB(txtTienKhachTra.Text) && !fMainForm.cNullTB(txtTienTraKhach.Text))
-                txtTienThu.Text = (int.Parse(txtTienKhachTra.Text) - int.Parse(txtTienTraKhach.Text)).ToString();
+            {
+                if (!(int.Parse(txtSoTienNo.Text) > int.Parse(txtTienKhachTra.Text)))
+                    txtTienThu.Text = (int.Parse(txtTienKhachTra.Text) - int.Parse(txtTienTraKhach.Text)).ToString();
+            }
+                
+
+                    
         }
 
         private void txtSoTienNo_TextChanged(object sender, EventArgs e)
@@ -164,10 +172,12 @@ namespace GUI
                 int SoTienKhachTra = int.Parse(txtTienKhachTra.Text);
                 int SoTienTraKhach;
                 int SoTienNo = int.Parse(txtSoTienNo.Text);
+
                 if (SoTienNo > SoTienKhachTra)
                 {
                     SoTienTraKhach = 0;
                     SoTienNo -= SoTienKhachTra;
+                    txtTienThu.Text = SoTienKhachTra.ToString();
                 }
                 else
                 {
